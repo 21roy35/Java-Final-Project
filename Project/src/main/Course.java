@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Course {
 		 private String name;
 		 private int credits;
-		 private ArrayList<Course> prerequisites;
-		 private ArrayList<Section> sections;
-		 private ArrayList<Professor> professors;
+		 private ArrayList<Course> prerequisites=new ArrayList<Course>();
+		 private ArrayList<Section> sections=new ArrayList<Section>();
+		 private ArrayList<Professor> professors=new ArrayList<Professor>();
 
 		 public Course(String course, int credit, ArrayList<Course> prereqList, ArrayList<Section> sections, ArrayList<Professor> professors) {
 			 this.name=course;
