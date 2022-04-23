@@ -10,6 +10,7 @@ public class Main {
 		 Section section5 = new Section("section5");
 		 Section section6 = new Section("section6");
 
+		
 		 Major computerEngineering = new Major();
 		 
 		 Professor hussain = new Professor("1","Hussain");
