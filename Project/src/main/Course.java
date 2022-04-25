@@ -37,7 +37,7 @@ public class Course {
 		 	return this.prerequisites;
 		 }
 		 public void createSections(Department d) {
-		 	//
+			 Section(d);
 		 }
 		 public void removeSections(Department d) {
 		 	
