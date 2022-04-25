@@ -10,7 +10,7 @@ public class Section {
 	private LocalTime sectionTime;
 	private ArrayList<Student> students = new ArrayList<Student>();
 	private String sectionID;
-	public Section(String name, String professor, int capacity, LocalTime time, ArrayList<Student> students, String sectionid) {
+	public Section(String name, Professor professor, int capacity, LocalTime time, ArrayList<Student> students, String sectionid) {
 		this.CourseName=name;
 		this.professor=professor;
 		this.maxStudents=capacity;
@@ -54,12 +54,19 @@ public void addStudents(Student...stu) {
 }
 public void removeStudents(Student...stu) {
 	for (Student st : students) {
-				
+				for (Student s : stu) {
+					if (st.equals(s)){
+						students.remove(st);
+					}
+				}
 	}
+}
+public ArrayList<Student> getStudentList(){
+	return this.students;
 }
 	@Override
 	public String toString() {
-		return  CourseName + " Time: " + sectionTime + "Number of students: " + students.size() + "Professor: " + professor;
+		return  "Course Name: " + CourseName + "Section Id: " + sectionID +" Time: " + sectionTime + "Number of students: " + students.size() + "Professor: " + professor;
 	}
 	
 }
