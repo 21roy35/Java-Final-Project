@@ -13,6 +13,13 @@ public class Student extends Person{
 		this.major = major;
 		this.coursesCompleted = coursesCompleted;
 	}
+	public Student() {
+		super("100","Jane Doe");
+		for(int i =1; i<5; i++) {
+			this.coursesCompleted.add(new Course());
+		}
+		this.major = new Major();
+	}
 	public Major getMajor() {
 		return major;
 	}

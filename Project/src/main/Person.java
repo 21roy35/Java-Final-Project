@@ -1,5 +1,6 @@
 package main;
 
+
 public abstract class  Person {
 
 	String id;
@@ -13,6 +14,7 @@ public abstract class  Person {
 	public String getid() {
 		return id;
 	}
+
 	public void setid(String id) {
 		this.id = id;
 	}

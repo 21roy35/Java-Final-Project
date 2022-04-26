@@ -2,6 +2,7 @@ package main;
 
 import java.time.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Section {
 	private String CourseName;
@@ -18,6 +19,17 @@ public class Section {
 		this.students=students;
 		this.sectionID=sectionid;
 	}
+	public Section() { // ----------------------------------- a method for testing
+		int rand = new Random().nextInt(1000);
+		this.CourseName="Course 1";
+		this.professor=new Professor();;
+		this.maxStudents=(int) Math.random()+1;
+		this.sectionTime=LocalTime.parse("12:00");
+		for(int i =1; i<5; i++) {
+			this.students.add(new Student());
+		}
+		this.sectionID=String.valueOf(rand);
+	} // -------------------------------------------------------------------------------
 public void setID(int i) {
 	this.sectionID=String.valueOf(i);
 }
@@ -66,7 +78,7 @@ public ArrayList<Student> getStudentList(){
 }
 	@Override
 	public String toString() {
-		return  "Course Name: " + CourseName + "Section Id: " + sectionID +" Time: " + sectionTime + "Number of students: " + students.size() + "Professor: " + professor;
+		return  "Course Name: " + CourseName + "\nSection Id: " + sectionID +" \nTime: " + sectionTime + "\nNumber of students: " + students.size() + "\nProfessor: " + professor;
 	}
 	
 }
