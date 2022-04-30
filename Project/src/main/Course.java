@@ -45,17 +45,19 @@ public class Course {
 		 public int getCredits() {
 		 	return this.credits;
 		 }
-		 public void setPrerequisites(ArrayList<Course> c_list) {
+		 public void setPrerequisites(ArrayList<Course> courseList) {
 		 	
 		 }
 		 public ArrayList<Course> getPrerequisites() {
 		 	return this.prerequisites;
 		 }
-		 public void createSections(Department d) {
-			 //	public Section(String name, Professor professor, int capacity, LocalTime time, ArrayList<Student> students, String sectionid)
+		 public void createSections(Department department) {
+			 //	public Section(Professor professor, LocalTime time)
 			 //Section(d);
+			 // Section creation depends on: Student.neededCourses(), Course.professors, Major.plan.get(term).sectionloop.(onlyDepartmentCourses), 
+			 
 		 }
-		 public void removeSections(Department d) {
+		 public void removeSections(Department department) {
 		 	
 		 }
 		 public void setProfessors(ArrayList<Professor> professors) {

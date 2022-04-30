@@ -5,19 +5,25 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Section {
-	private String CourseName;
+	private Course course;
 	private Professor professor;
 	private int maxStudents;
 	private LocalTime sectionTime;
 	private ArrayList<Student> students = new ArrayList<Student>();
 	private String sectionID;
-	public Section(String name, Professor professor, int capacity, LocalTime time, ArrayList<Student> students, String sectionid) {
-		this.CourseName=name;
+	public Section(Course course, Professor professor, int capacity, LocalTime time, ArrayList<Student> students, String sectionid) {
+		this.course=course;
 		this.professor=professor;
 		this.maxStudents=capacity;
 		this.sectionTime=time;
 		this.students=students;
 		this.sectionID=sectionid;
+	}
+	public Section(Course course, Professor professor,LocalTime time) {
+		//randomize all other variables
+		this.course=course;
+		this.professor=professor;
+		this.sectionTime=time;
 	}
 	public Section() { // ----------------------------------- a method for testing
 		int rand = new Random().nextInt(1000);
