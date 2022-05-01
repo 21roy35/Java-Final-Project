@@ -17,6 +17,14 @@ public class Course {
 			 this.sections=sections;
 			 this.professors=professors;
 		 }
+		 
+		 ///new Course(tempName, tempCredits, tempCourses)
+		 
+		 public Course(String name, int credit, ArrayList<Course> prereqList) {
+			 this.name=name;
+			 this.credits=credit;
+			 this.prerequisites=prereqList;
+		 }
 		 public Course() {
 			 ArrayList<Course> prereq = new ArrayList<Course>();
 			 this.name="Stats";

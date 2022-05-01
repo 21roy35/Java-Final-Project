@@ -1,4 +1,7 @@
 package main;
+
+import java.io.FileNotFoundException;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -6,7 +9,13 @@ public class Main {
 		 Section section1 = new Section();
 
 		System.out.println(section1);
-		 Major computerEngineering = new Major();
+		 Major computerEngineering = null;
+		try {
+			computerEngineering = new Major(null);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		 System.out.println(computerEngineering);
 //		 Professor hussain = new Professor("1","Hussain");
 //		 hussain.addCurrentSections(section1,section2);

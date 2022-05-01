@@ -1,5 +1,6 @@
 package main;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Student extends Person{
@@ -18,7 +19,12 @@ public class Student extends Person{
 		for(int i =1; i<5; i++) {
 			this.coursesCompleted.add(new Course());
 		}
-		this.major = new Major();
+		try {
+			this.major = new Major(null);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public Major getMajor() {
 		return major;
