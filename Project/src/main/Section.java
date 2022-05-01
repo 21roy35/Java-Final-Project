@@ -27,7 +27,7 @@ public class Section {
 	}
 	public Section() { // ----------------------------------- a method for testing
 		int rand = new Random().nextInt(1000);
-		this.CourseName="Course 1";
+		this.course=new Course();
 		this.professor=new Professor();;
 		this.maxStudents=(int) Math.random()+1;
 		this.sectionTime=LocalTime.parse("12:00");
@@ -84,7 +84,7 @@ public ArrayList<Student> getStudentList(){
 }
 	@Override
 	public String toString() {
-		return  "Course Name: " + CourseName + "\nSection Id: " + sectionID +" \nTime: " + sectionTime + "\nNumber of students: " + students.size() + "\nProfessor: " + professor;
+		return  "Course Name: " + course.getName() + "\nSection Id: " + sectionID +" \nTime: " + sectionTime + "\nNumber of students: " + students.size() + "\nProfessor: " + professor;
 	}
 	
 }
