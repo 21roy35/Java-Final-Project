@@ -1,22 +1,18 @@
 package main;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		
 		 Section section1 = new Section();
 
 		System.out.println(section1);
-		 Major computerEngineering = null;
-		try {
-			computerEngineering = new Major(null);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		 System.out.println(computerEngineering);
+	//	File file = new File("C:\\Users\\User\\git\\Java-Final-Project\\data\\Aerospace_ENG.txt");
+	//	Major aero = new Major(file);
+	//	 System.out.println(aero);
 //		 Professor hussain = new Professor("1","Hussain");
 //		 hussain.addCurrentSections(section1,section2);
 //		 System.out.println(hussain.currentSections);

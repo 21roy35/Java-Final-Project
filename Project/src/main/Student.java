@@ -1,5 +1,6 @@
 package main;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
@@ -20,7 +21,8 @@ public class Student extends Person{
 			this.coursesCompleted.add(new Course());
 		}
 		try {
-			this.major = new Major(null);
+			File file = new File("C:\\Users\\User\\git\\Java-Final-Project\\data\\Aerospace_ENG.txt");
+			this.major = new Major(file);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

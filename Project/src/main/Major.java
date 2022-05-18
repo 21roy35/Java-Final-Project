@@ -9,6 +9,7 @@ public class Major {
     private int credits;
 
     public Major(File file) throws FileNotFoundException {
+    	
         Scanner input = new Scanner(file);
 
         String[] tempArray = input.nextLine().split(",");
@@ -60,7 +61,8 @@ public class Major {
         }
 
         input.close();
-    }
+    	}
+    
 
     public String getName() {
         return name;

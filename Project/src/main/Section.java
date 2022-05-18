@@ -20,17 +20,33 @@ public class Section {
 		this.sectionID=sectionid;
 	}
 	public Section(Course course, Professor professor,LocalTime time) {
-		//randomize all other variables
+		for(int i = 0;i<new Random(2).nextInt();i++) {
+			this.students.add(new Student());
+		}
+		this.maxStudents=new Random(7).nextInt()+1;
+		this.sectionID=String.valueOf(new Random(7).nextInt()+10000);
 		this.course=course;
 		this.professor=professor;
 		this.sectionTime=time;
+	}
+	
+	public String randomClassTime() { 
+	    
+	    Random rand = new Random(); 
+	    int hour = rand.nextInt(12) + 8; 
+	    int minute = rand.nextInt(60); 
+	    while(minute>30 || minute<30) {
+	    	minute =(int) Math.ceil(minute);
+	    }
+	    
+	    return String.format("%02d:%02d", hour, minute); 
 	}
 	public Section() { // ----------------------------------- a method for testing
 		int rand = new Random().nextInt(1000);
 		this.course=new Course();
 		this.professor=new Professor();;
 		this.maxStudents=(int) Math.random()+1;
-		this.sectionTime=LocalTime.parse("12:00");
+		this.sectionTime=LocalTime.parse(randomClassTime());
 		for(int i =1; i<5; i++) {
 			this.students.add(new Student());
 		}
