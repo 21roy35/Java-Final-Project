@@ -2,6 +2,7 @@
 
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Course {
 		 private String name;
@@ -59,12 +60,21 @@ public class Course {
 		 public ArrayList<Course> getPrerequisites() {
 		 	return this.prerequisites;
 		 }
-		 public void createSections(Department department) {
+		 public void createSections(Department department) {}
 			 //	public Section(Professor professor, LocalTime time)
 			 //Section(d);
 			 // Section creation depends on: Student.neededCourses(), Course.professors, Major.plan.get(term).sectionloop.(onlyDepartmentCourses), 
 			 
-		 }
+			 //Course course, Professor professor, int capacity, LocalTime time, LocalTime duration,ArrayList<Student> students, String sectionid)
+				/*
+				 * for (Professor prof : this.professors) { // for each professor, a new section
+				 * will be created this.sections.add( this, prof, 20, LocalTime.now(), // time
+				 * should be defined in main method to avoid conflicts, LocalTime.of(00, 50), //
+				 * ignore hour field, mins will be used // students not defined here. // this
+				 * method should go to the main method (in the simulation)
+				 */		
+//		}
+		
 		 public void removeSections(Department department) {
 		 	
 		 }

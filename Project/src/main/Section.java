@@ -9,10 +9,12 @@ public class Section {
 	private Professor professor;
 	private int maxStudents;
 	private LocalTime sectionTime;
+	private LocalTime duration;
 	private ArrayList<Student> students = new ArrayList<Student>();
 	private String sectionID;
-	public Section(Course course, Professor professor, int capacity, LocalTime time, ArrayList<Student> students, String sectionid) {
+	public Section(Course course, Professor professor, int capacity, LocalTime time, LocalTime duration,ArrayList<Student> students, String sectionid) {
 		this.course=course;
+		this.duration=duration;
 		this.professor=professor;
 		this.maxStudents=capacity;
 		this.sectionTime=time;
@@ -23,6 +25,7 @@ public class Section {
 		for(int i = 0;i<new Random(2).nextInt();i++) {
 			this.students.add(new Student());
 		}
+		this.duration=LocalTime.parse("00:50");
 		this.maxStudents=new Random(7).nextInt()+1;
 		this.sectionID=String.valueOf(new Random(7).nextInt()+10000);
 		this.course=course;
@@ -34,9 +37,18 @@ public class Section {
 	    
 	    Random rand = new Random(); 
 	    int hour = rand.nextInt(12) + 8; 
-	    int minute = rand.nextInt(60); 
-	    while(minute>30 || minute<30) {
-	    	minute =(int) Math.ceil(minute);
+	    int minute = rand.nextInt(2)+1;
+	    System.out.println(minute);
+	    switch(minute) {
+	    case 1:
+	    	minute=00;
+	    	break;
+	    case 2:
+	    	minute = 30;
+	    	break;
+	    	default:
+	    		minute = 30;
+	    		break;
 	    }
 	    
 	    return String.format("%02d:%02d", hour, minute); 
@@ -45,9 +57,9 @@ public class Section {
 		int rand = new Random().nextInt(1000);
 		this.course=new Course();
 		this.professor=new Professor();;
-		this.maxStudents=(int) Math.random()+1;
+		this.maxStudents=new Random().nextInt(20);
 		this.sectionTime=LocalTime.parse(randomClassTime());
-		for(int i =1; i<5; i++) {
+		for(int i =1; i<this.maxStudents; i++) {
 			this.students.add(new Student());
 		}
 		this.sectionID=String.valueOf(rand);
