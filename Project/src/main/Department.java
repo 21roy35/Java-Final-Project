@@ -1,3 +1,5 @@
+package main;
+
 import java.util.ArrayList;
 
 import main.*;
@@ -5,18 +7,51 @@ import main.*;
 public class Department {
 
     private String name;
-    private Major major;
+    private ArrayList<Major> majors = new ArrayList<Major>();
     private  ArrayList<Professor>professor= new ArrayList <Professor>();
     private ArrayList <Student> Student =new ArrayList <Student>();
+    public static ArrayList<Department> allDepartments = new ArrayList<Department>();
 
 
-    public Department (String name , Major major , ArrayList<Professor> professors, ArrayList<Student> students){
+    public Department (String name , ArrayList<Major> majors , ArrayList<Professor> professors, ArrayList<Student> students) throws Exception{
+    	
+    	for(Department d : allDepartments) {
+    		if(allDepartments.contains(d)) {
+    			throw new Exception("Department already exists.");
+    		}
+    	}
+    	
         this.name=name;
-        this.major=major;
+        for(Major m : majors) this.majors.add(m);
         for (int i=0; i<professor.size(); i++) {
             professor.add(professors.get(i));
         }
         this.Student=students;
+        allDepartments.add(this);
+    }
+    public Department (String name , Major m , ArrayList<Professor> professors, ArrayList<Student> students) throws Exception{
+    	
+    	for(Department d : allDepartments) {
+    		if(allDepartments.contains(d)) {
+    			for(Major maj : this.majors) {
+    				if(this.majors.contains(maj)) {
+    					throw new Exception("Major already exists in department.");
+    				}
+    				else {
+    					this.majors.add(m);
+    				}
+    			}
+    			throw new Exception("Department already exists.");
+    		}
+    	}
+
+        this.name=name;
+        this.majors.add(m);
+        for (int i=0; i<professor.size(); i++) {
+            professor.add(professors.get(i));
+        }
+        this.Student=students;
+        allDepartments.add(this);
     }
 
     public void setName(String name) {
@@ -25,6 +60,9 @@ public class Department {
 
     public String  getName () {
         return name;
+    }
+    public static ArrayList<Department> getAllDepartments(){
+    	return allDepartments;
     }
 
     public void addProfessorList (ArrayList<Professor>professors) {
