@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Main {
 
-	
+	//lol
 	public static String[] RandomNames(int number) {
 	    String[] first = {"Mohammed", "Ahmed", "Ali", "Sami", "Omar", "Samer", "Nour", "Tamer", "Lina", "Dina", "Nada", "Hana", "Rania", "Yasmine", "Lamia", "Salma", "Aya", "Heba", "Mona", "Reem"};
 	    String[] last = {"Smith", "Jones", "Brown", "Williams", "Wilson", "Taylor", "Davies", "Evans", "Thomas", "Roberts", "Hughes", "Turner", "Price", "Morgan", "Bell", "Cooper", "Richardson", "Murphy", "Bailey", "Collins"};
