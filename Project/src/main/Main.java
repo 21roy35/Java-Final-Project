@@ -2,13 +2,20 @@ package main;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 
 public class Main {
 
-	//lol
+	
+	static String CURRENT_YEAR = "2022";
+	static int numberOfYears;
+	static DecimalFormat _ID = new DecimalFormat("00000");
+	static int LATEST_ID;
+	
+	
 	public static ArrayList<String> StudentRandomNames(int number) {
 	    String[] first = {"Mohammed", "Ahmed", "Ali", "Sami", "Omar", "Samer", "Nour", "Tamer", "Lina", "Dina", "Nada", "Hana", "Rania", "Yasmine", "Lamia", "Salma", "Aya", "Heba", "Mona", "Reem"};
 	    String[] last = {"Alqahtani", "Alotaibi", "Alghamdi", "Alyami", "Alshehri", "Alzahrani", "Aldossari", "Alamri", "Alsaggaf", "Alabdullah", "Aldakheil", "Aldhari", "Alrufaydi", "Almagrabi", "Alasais", "Alhabshi", "Altamimi", "Almutari", "Alkodry", "Alsulami"};
@@ -36,6 +43,39 @@ public class Main {
 	    }
 	    return result;
 	}
+	
+	
+	public static String randomID() throws Exception {
+		if (LATEST_ID<99999) {
+		String Latest_ID_UPDT;
+		Latest_ID_UPDT = _ID.format(LATEST_ID);
+		LATEST_ID+=1;
+		String return_val;
+		return_val = CURRENT_YEAR.substring(2).concat(Latest_ID_UPDT); 
+		return return_val;
+		}
+		else {
+			throw new Exception("randomID exception. LATEST_ID max limit reached.");
+		}
+	}
+	public static Student newStudent() throws Exception {
+		String name = StudentRandomNames(1).get(0);
+		String ID = randomID();
+		Major major = Major.getAllMajors().get(new Random().nextInt(Major.getAllMajors().size()));
+		ArrayList<Course> coursesC = new ArrayList<>();
+		Student student = new Student(name, ID, major, coursesC);
+		return student;
+	}
+	
+	public static Professor newProfessor() throws Exception {
+		String name = ProfRandomNames(1).get(0);
+		String ID = randomID();
+	    Section section = new Section(); // needs editing
+		ArrayList<Section> SectionsC = new ArrayList<Section>();
+		SectionsC.add(section);
+		Professor prof = new Professor(name, ID, SectionsC);
+		return prof;
+	}
 
 
 	public static void createMajors() {
@@ -45,11 +85,18 @@ public class Main {
 		try {
 			
 			Major m = new Major(major);
-			for(Department de : Department)
-			//Department department = new Department(major.getName(), m, ProfRandomNames(3), StudentRandomNames(20));
+			//for(Department de : Department)
+			ArrayList<Professor> profs = new ArrayList<>();
+			profs.add(newProfessor());
+			ArrayList<Student> students = new ArrayList<>();
+			students.add(newStudent());
+			Department department = new Department(major.getName(), m, profs, students);
 			// To be continued
 			
 		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		}
@@ -76,28 +123,12 @@ public class Main {
 		 */		
 
 	public static void main(String[] args) throws FileNotFoundException {
-		
-		createMajors();
+
+//		createMajors();
 //		 Professor pickedProfessor = this.professors.get((new Random().nextInt(this.professors.size())));
 //		 Section newSection = new Section(this, pickedProfessor, 20, this.duration, this.);
 		
 
-		// Section section1 = new Section();
-		// section1.addStudents();
-		//System.out.println(section1);
-	//	File file = new File("C:\\Users\\User\\git\\Java-Final-Project\\data\\Aerospace_ENG.txt");
-	//	Major aero = new Major(file);
-	//	 System.out.println(aero);
-//		 Professor hussain = new Professor("1","Hussain");
-//		 hussain.addCurrentSections(section1,section2);
-//		 System.out.println(hussain.currentSections);
-//		 hussain.addCurrentSections(section3,section4,section5,section6);
-//		 System.out.println(hussain.currentSections);
-//		 hussain.removeCurrentSections(section4,section3);
-//		 System.out.println(hussain.currentSections);
-//		 System.out.println(hussain.getLimit());
-		 
-//		 Student ahmed = new Student("1","Ahmed", computerEngineering,);
 
 	}
 }

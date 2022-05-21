@@ -7,6 +7,7 @@ public class Major {
     private String name;
     private ArrayList<ArrayList<Course>> plan = new ArrayList<>();
     private int credits;
+    private static ArrayList<Major> allMajors = new ArrayList<>();
 
     public Major(File file) throws FileNotFoundException {
     	
@@ -61,6 +62,7 @@ public class Major {
         }
 
         input.close();
+        allMajors.add(this);
     	}
     
 
@@ -79,7 +81,9 @@ public class Major {
     public void setPlan(ArrayList<ArrayList<Course>> plan) {
         this.plan = plan;
     }
-
+    public static ArrayList<Major> getAllMajors(){
+    	return allMajors;
+    }
     public int getCredits() {
         return credits;
     }
