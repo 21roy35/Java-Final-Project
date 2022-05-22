@@ -66,7 +66,7 @@ public class Main {
 		String ID = randomID();
 		Major major = Major.getAllMajors().get(new Random().nextInt(Major.getAllMajors().size()));
 		ArrayList<Course> coursesC = new ArrayList<>();
-		Student student = new Student(name, ID, major, coursesC);
+		Student student = new Student(name, ID, major, coursesC, major.createPlanForStudent()); //ahmed wut
 		students.add(student);
 		}
 		return students;
@@ -146,8 +146,7 @@ public class Main {
 	public static String randomSectionID() {
 		return String.valueOf(new Random(7).nextInt()+10000);
 	}
-	public static void createCourses() {
-		
+	public static void createCoursesForStudent(Student s) {
 	}
 	 public static void createSections(Course course) {
 	 //Course course, Professor professor, int capacity, LocalTime time, LocalTime duration,ArrayList<Student> students, String sectionid)
@@ -209,6 +208,13 @@ try
 			
 			for(Student stu: s.getStudentList()) {
 				//System.out.println(stu.name + stu.id);
+			}
+		}
+		
+
+		for(Section s: Section.getAllSections()) {
+			for(Student stu: s.getStudentList()) {
+				progressStudent(stu, stu.currentCourses);
 			}
 		}
 		
