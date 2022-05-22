@@ -22,7 +22,7 @@ public class Major {
         if (tempArray[0].equals("credits")) {
             try {
                 this.credits = Integer.parseInt(tempArray[1].trim());
-            } catch (NumberFormatException ex) {
+            } catch (Exception ex) {
                 System.out.printf("Please check %s credits", this.name);
             }
         }
@@ -39,7 +39,7 @@ public class Major {
                 int tempCredits = 0;
                 try {
                     tempCredits = Integer.parseInt(tempArray[1].trim());
-                } catch (NumberFormatException ex) {
+                } catch (Exception ex) {
                     System.out.printf("Please check %s credits", tempName);
                 }
                 ArrayList<Course> tempCourses = new ArrayList<>();

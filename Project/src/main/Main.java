@@ -93,10 +93,7 @@ public class Main {
 			Department department = new Department(major.getName(), m, profs, students);
 			// To be continued
 			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		}
@@ -123,8 +120,17 @@ public class Main {
 		 */		
 
 	public static void main(String[] args) throws FileNotFoundException {
-
-//		createMajors();
+try
+	{ 
+		createMajors();
+		
+		}
+	catch (Exception e) {
+		e.printStackTrace();
+	}
+		for(Major m: Major.getAllMajors()) {
+			System.out.println(m.getName());
+		}
 //		 Professor pickedProfessor = this.professors.get((new Random().nextInt(this.professors.size())));
 //		 Section newSection = new Section(this, pickedProfessor, 20, this.duration, this.);
 		
