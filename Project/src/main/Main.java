@@ -3,6 +3,7 @@ package main;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
@@ -25,7 +26,7 @@ public class Main {
 	      	if(i==20) {
 	    		break; // only 20 preallocated names exist
 	    	}
-	        result.add( "[Student]: " + first[rand.nextInt(number)] + " " + last[rand.nextInt(number)]);
+	        result.add( "[Student]: " + first[rand.nextInt(20)] + " " + last[rand.nextInt(20)]);
 	    }
 	    return result;
 	}
@@ -39,7 +40,7 @@ public class Main {
 	    	if(i==20) {
 	    		break; // only 20 preallocated names exist
 	    	}
-	        result.add("[Prof]: " + first[rand.nextInt(number)] + " " + last[rand.nextInt(number)]);
+	        result.add("[Prof]: " + first[rand.nextInt(20)] + " " + last[rand.nextInt(20)]);
 	    }
 	    return result;
 	}
@@ -58,23 +59,31 @@ public class Main {
 			throw new Exception("randomID exception. LATEST_ID max limit reached.");
 		}
 	}
-	public static Student newStudent() throws Exception {
+	public static ArrayList<Student> newStudent(int i) throws Exception {
+		ArrayList<Student> students = new ArrayList<>();
+		for (int j = 0; j < i; j++) {
 		String name = StudentRandomNames(1).get(0);
 		String ID = randomID();
 		Major major = Major.getAllMajors().get(new Random().nextInt(Major.getAllMajors().size()));
 		ArrayList<Course> coursesC = new ArrayList<>();
-		Student student = new Student(name, ID, major, coursesC);
-		return student;
+		Student student = new Student(name, ID, major, coursesC, major.createPlanForStudent()); //ahmed wut
+		students.add(student);
+		}
+		return students;
 	}
 	
-	public static Professor newProfessor() throws Exception {
+	public static ArrayList<Professor> newProfessor(int i) throws Exception {
+		ArrayList<Professor> profs = new ArrayList<>();
+		for(int j = 0; j < i; j++) {
 		String name = ProfRandomNames(1).get(0);
 		String ID = randomID();
-	    Section section = new Section(); // needs editing
+	    Section section = null; // needs editing
 		ArrayList<Section> SectionsC = new ArrayList<Section>();
 		SectionsC.add(section);
 		Professor prof = new Professor(name, ID, SectionsC);
-		return prof;
+		profs.add(prof);
+		}
+		return profs;
 	}
 
 
@@ -85,12 +94,7 @@ public class Main {
 		try {
 			
 			Major m = new Major(major);
-			//for(Department de : Department)
-			ArrayList<Professor> profs = new ArrayList<>();
-			profs.add(newProfessor());
-			ArrayList<Student> students = new ArrayList<>();
-			students.add(newStudent());
-			Department department = new Department(major.getName(), m, profs, students);
+			Department department = new Department(major.getName(), m, newProfessor(20), newStudent(200));
 			// To be continued
 			
 		} catch (Exception e) {
@@ -98,39 +102,124 @@ public class Main {
 		}
 		}
 	}
-	public static void createCourses() {
-		
+	public static String randomClassTime() { 
+	    
+	    Random rand = new Random(); 
+	    int hour = rand.nextInt(12) + 8; 
+	    int minute = rand.nextInt(2)+1;
+	    System.out.println(minute);
+	    switch(minute) {
+	    case 1:
+	    	minute=00;
+	    	break;
+	    case 2:
+	    	minute = 30;
+	    	break;
+	    	default:
+	    		minute = 30;
+	    		break;
+	    }
+	    
+	    return String.format("%02d:%02d", hour, minute); 
 	}
-	 public static void createSections(Course course, Department department) {}
+	
+	public String randomClassDuration() { 
+	    
+	    Random rand = new Random(); 
+	    int hour = rand.nextInt(12); 
+	    int minute = rand.nextInt(2)+1;
+	    System.out.println(minute);
+	    switch(minute) {
+	    case 1:
+	    	minute=00;
+	    	break;
+	    case 2:
+	    	minute = 30;
+	    	break;
+	    	default:
+	    		minute = 30;
+	    		break;
+	    }
+	    
+	    return String.format("%02d:%02d", hour, minute); 
+	}
+	public static String randomSectionID() {
+		return String.valueOf(new Random(7).nextInt()+10000);
+	}
+	public static void createCoursesForStudent(Student s) {
+	}
+	 public static void createSections(Course course) {
 	 //Course course, Professor professor, int capacity, LocalTime time, LocalTime duration,ArrayList<Student> students, String sectionid)
-	 Section newSection = new Section();
-	 
-	 
-	 //	public Section(Professor professor, LocalTime time)
-	 //Section(d);
-	 // Section creation depends on: Student.neededCourses(), Course.professors, Major.plan.get(term).sectionloop.(onlyDepartmentCourses), 
-	 
-	 //Course course, Professor professor, int capacity, LocalTime time, LocalTime duration,ArrayList<Student> students, String sectionid)
-		/*
-		 * for (Professor prof : this.professors) { // for each professor, a new section
-		 * will be created this.sections.add( this, prof, 20, LocalTime.now(), // time
-		 * should be defined in main method to avoid conflicts, LocalTime.of(00, 50), //
-		 * ignore hour field, mins will be used // students not defined here. // this
-		 * method should go to the main method (in the simulation)
-		 */		
+	int capacity = new Random().nextInt(19);
+	 if(course.getCredits()==4) {
 
+	 try {
+		Section newSection = new Section(course, newProfessor(1).get(0), capacity, LocalTime.parse(randomClassTime()), "100", newStudent(20), randomSectionID());
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 } else if(course.getCredits()==2) {
+			try {
+				Section newSection = new Section(course, newProfessor(1).get(0), capacity, LocalTime.parse(randomClassTime()), "70", newStudent(20), randomSectionID());
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	 }
+	 else {
+			try {
+				Section newSection = new Section(course, newProfessor(1).get(0), capacity, LocalTime.parse(randomClassTime()), "70", newStudent(20), randomSectionID());
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+	 }
+	 
+	 }
+public static void progressStudent(Student s, ArrayList<Course> coursesCompleted) {
+	//s.addCoursesCompleted(coursesCompleted);
+	for(Course course : coursesCompleted) {
+		s.addCoursesCompleted(course);
+	}
+}
 	public static void main(String[] args) throws FileNotFoundException {
+		System.out.println();
+		int i =0;
 try
 	{ 
-		createMajors();
 		
+		createMajors();
 		}
 	catch (Exception e) {
 		e.printStackTrace();
 	}
 		for(Major m: Major.getAllMajors()) {
-			System.out.println(m.getName());
+			for(ArrayList<Course> cA : m.getPlan()) {
+				for(Course c: cA) {
+					createSections(c);
+					i+=1;
+					System.out.println(c.getName());
+				}
+			}
 		}
+		for(Section s: Section.getAllSections()) {
+			
+			for(Student stu: s.getStudentList()) {
+				//System.out.println(stu.name + stu.id);
+			}
+		}
+		
+
+		for(Section s: Section.getAllSections()) {
+			for(Student stu: s.getStudentList()) {
+				progressStudent(stu, stu.currentCourses);
+			}
+		}
+		
+		
+
 //		 Professor pickedProfessor = this.professors.get((new Random().nextInt(this.professors.size())));
 //		 Section newSection = new Section(this, pickedProfessor, 20, this.duration, this.);
 		

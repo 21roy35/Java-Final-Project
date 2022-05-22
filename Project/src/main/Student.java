@@ -10,10 +10,14 @@ public class Student extends Person{
 	ArrayList<Course> coursesCompleted = new ArrayList<Course>();
 	int creditsCompleted;
 	ArrayList<Section> currentSections = new ArrayList<Section>();
-	public Student(String id,String name,Major major, ArrayList<Course> coursesCompleted) {
+	ArrayList<Course> currentCourses = new ArrayList<Course>();
+	
+	
+	public Student(String id,String name,Major major, ArrayList<Course> coursesCompleted, ArrayList<Course> currentCourses) {
 		super(id,name);
 		this.major = major;
 		this.coursesCompleted = coursesCompleted;
+		this.currentCourses = currentCourses;
 	}
 	public Student() {
 		super("100","Jane Doe");
@@ -41,6 +45,9 @@ public class Student extends Person{
 	}
 	public ArrayList<Course> getCoursesCompleted(){
 		return coursesCompleted;
+	}
+	public ArrayList<Course> getCurrentCourses(){
+		return this.currentCourses;
 	}
 	public void addCurrentSections(Section... sections){
 		for(Section section : sections) {
