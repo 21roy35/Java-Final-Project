@@ -9,10 +9,13 @@ public class Section {
 	private Professor professor;
 	private int maxStudents;
 	private LocalTime sectionTime;
-	private LocalTime duration;
+	private String duration; // parsed as minutes 
 	private ArrayList<Student> students = new ArrayList<Student>();
 	private String sectionID;
-	public Section(Course course, Professor professor, int capacity, LocalTime time, LocalTime duration,ArrayList<Student> students, String sectionid) {
+	private static ArrayList<Section> sections = new ArrayList<Section>();
+	
+	
+	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration,ArrayList<Student> students, String sectionid) {
 		this.course=course;
 		this.duration=duration;
 		this.professor=professor;
@@ -20,12 +23,13 @@ public class Section {
 		this.sectionTime=time;
 		this.students=students;
 		this.sectionID=sectionid;
+		sections.add(this);
 	}
 	public Section(Course course, Professor professor,LocalTime time) {
 		for(int i = 0;i<new Random(2).nextInt();i++) {
 			this.students.add(new Student());
 		}
-		this.duration=LocalTime.parse("00:50");
+		this.duration="50";
 		this.maxStudents=new Random(7).nextInt()+1;
 		this.sectionID=String.valueOf(new Random(7).nextInt()+10000);
 		this.course=course;
@@ -33,37 +37,18 @@ public class Section {
 		this.sectionTime=time;
 	}
 	
-	public String randomClassTime() { 
-	    
-	    Random rand = new Random(); 
-	    int hour = rand.nextInt(12) + 8; 
-	    int minute = rand.nextInt(2)+1;
-	    System.out.println(minute);
-	    switch(minute) {
-	    case 1:
-	    	minute=00;
-	    	break;
-	    case 2:
-	    	minute = 30;
-	    	break;
-	    	default:
-	    		minute = 30;
-	    		break;
-	    }
-	    
-	    return String.format("%02d:%02d", hour, minute); 
-	}
-	public Section() { // ----------------------------------- a method for testing
-		int rand = new Random().nextInt(1000);
-		this.course=new Course();
-		this.professor=new Professor();;
-		this.maxStudents=new Random().nextInt(20);
-		this.sectionTime=LocalTime.parse(randomClassTime());
-		for(int i =1; i<this.maxStudents; i++) {
-			this.students.add(new Student());
-		}
-		this.sectionID=String.valueOf(rand);
-	} // -------------------------------------------------------------------------------
+//
+//	public Section() { // ----------------------------------- a method for testing
+//		int rand = new Random().nextInt(1000);
+//		this.course=new Course();
+//		this.professor=new Professor();;
+//		this.maxStudents=new Random().nextInt(20);
+//		this.sectionTime=LocalTime.parse(randomClassTime());
+//		for(int i =1; i<this.maxStudents; i++) {
+//			this.students.add(new Student());
+//		}
+//		this.sectionID=String.valueOf(rand);
+//	} // -------------------------------------------------------------------------------
 public void setID(int i) {
 	this.sectionID=String.valueOf(i);
 }
@@ -75,6 +60,9 @@ public LocalTime getSectionTime() {
 }
 public void setSectionTime(LocalTime time) {
 	this.sectionTime=time;
+}
+public static ArrayList<Section> getAllSections(){
+	return sections;
 }
 public int getCapacity() {
 	return maxStudents;
