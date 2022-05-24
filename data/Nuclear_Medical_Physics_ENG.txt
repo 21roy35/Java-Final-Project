@@ -1,4 +1,4 @@
-name, Mining Engineering
+name, Nuclear Engineering (Medical Physics)
 credits, 155
 CPIT110, 3
 COMM101, 3
