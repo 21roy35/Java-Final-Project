@@ -2,33 +2,31 @@ package main;
 
 import java.util.ArrayList;
 
-import main.*;
-
 public class Department {
 
     private String name;
     private ArrayList<Major> majors = new ArrayList<Major>();
     private  ArrayList<Professor>professor= new ArrayList <Professor>();
-    private ArrayList <Student> Student =new ArrayList <Student>();
+    private ArrayList <Student> studentList = new ArrayList <Student>();
     public static ArrayList<Department> allDepartments = new ArrayList<Department>();
 
 
     public Department (String name , ArrayList<Major> majors , ArrayList<Professor> professors, ArrayList<Student> students) throws Exception{
-    	
     	for(Department d : allDepartments) {
     		if(allDepartments.contains(d)) {
     			throw new Exception("Department already exists.");
     		}
     	}
     	
-        this.name=name;
+        this.name = name;
         for(Major m : majors) this.majors.add(m);
         for (int i=0; i<professor.size(); i++) {
             professor.add(professors.get(i));
         }
-        this.Student=students;
+        this.studentList=students;
         allDepartments.add(this);
     }
+
     public Department (String name , Major m , ArrayList<Professor> professors, ArrayList<Student> students) throws Exception{
     	
     	for(Department d : allDepartments) {
@@ -50,7 +48,7 @@ public class Department {
         for (int i=0; i<professor.size(); i++) {
             professor.add(professors.get(i));
         }
-        this.Student=students;
+        this.studentList=students;
         allDepartments.add(this);
     }
 
@@ -97,8 +95,18 @@ public class Department {
     }
 
     public ArrayList<Student> getStudentList (){
-        return this.Student;
+        return this.studentList;
     }
 
+    public static Course createCourse(String name, int credits, ArrayList<Course> prereqList) {
+        for (int i = 0; i <= Course.allCourses.size() - 1; i++) {
+            if (Course.allCourses.get(i).getName().equals(name)) {
+                return Course.allCourses.get(i);
+            }
+        }
 
+        Course tempCourse = new Course(name, credits, prereqList);
+        Course.allCourses.add(tempCourse);
+        return tempCourse;
+    }
 }
