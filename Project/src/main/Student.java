@@ -10,22 +10,16 @@ public class Student extends Person{
 	ArrayList<Course> coursesCompleted = new ArrayList<Course>();
 	int creditsCompleted;
 	ArrayList<Section> currentSections = new ArrayList<Section>();
-	ArrayList<Course> currentCourses = new ArrayList<Course>();
 	
 	
-	public Student(String id,String name,Major major, ArrayList<Course> coursesCompleted, ArrayList<Course> currentCourses) {
+	public Student(String id,String name,Major major) {
 		super(id,name);
 		this.major = major;
-		this.coursesCompleted = coursesCompleted;
-		this.currentCourses = currentCourses;
 	}
 	public Student() {
 		super("100","Jane Doe");
-		for(int i =1; i<5; i++) {
-			this.coursesCompleted.add(new Course());
-		}
 		try {
-			File file = new File("C:\\Users\\User\\git\\Java-Final-Project\\data\\Aerospace_ENG.txt");
+			File file = new File("C:\\Users\\Mosmar\\git\\Java-Final-Project\\data\\Aerospace_ENG.txt");
 			this.major = new Major(file);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -46,9 +40,6 @@ public class Student extends Person{
 	public ArrayList<Course> getCoursesCompleted(){
 		return coursesCompleted;
 	}
-	public ArrayList<Course> getCurrentCourses(){
-		return this.currentCourses;
-	}
 	public void addCurrentSections(Section... sections){
 		for(Section section : sections) {
 			currentSections.add(section);
@@ -61,5 +52,40 @@ public class Student extends Person{
 	}
 	public ArrayList<Section> getCurrentSections(){
 		return currentSections;
+	}
+	public ArrayList<Course> neededCourses() {
+		ArrayList<Course> neededCourses = new ArrayList<Course>();
+		int i = 0;
+			for(ArrayList<Course> courseArray: major.getPlan()){
+				for(Course course: courseArray) {
+					if(coursesCompleted.contains(course)) {
+						break;
+						}
+					else {
+						if(course.getPrerequisites().isEmpty()) {
+							if(i!=5) {
+								neededCourses.add(course);
+								i++;
+								}
+							}
+						else {
+							for(Course preCourse: course.getPrerequisites()) {
+								if(coursesCompleted.contains(preCourse)) {
+									if(!neededCourses.contains(course)) {
+										if(i!=5) {
+											neededCourses.add(course);
+											i++;
+											}
+										}
+									}
+								else {
+									break;
+								}
+							}
+						}
+					}
+				}
+			}
+		return neededCourses;
 	}
 }
