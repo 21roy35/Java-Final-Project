@@ -10,10 +10,6 @@ import java.util.Random;
  *
  */
 
-
-
-
-
 public class Section {
 	
 	
@@ -27,19 +23,48 @@ public class Section {
 	private static ArrayList<Section> sections = new ArrayList<Section>();
 	
 	
-	
-	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration,ArrayList<Student> students, String sectionid) {
+	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration,Student students) {
+
+		
+		for(Section section : getAllSections()) {
+			while(section.getStudentList().size()<section.maxStudents) {
+					section.addStudents(students);
+			}
+		}
+		if(!sections.contains(this)) {
+		this.course=course;
+		this.duration=duration;
+		this.professor=professor;
+		this.maxStudents=capacity;
+		this.sectionTime=time;
+		this.students.add(students);
+		this.sectionID=randomSectionID();
+		sections.add(this);
+		}
+	}
+	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration,ArrayList<Student> students) {
+
+		
+		for(Section section : getAllSections()) {
+			while(section.getStudentList().size()<section.maxStudents) {
+				for(Student student: students) {
+					section.addStudents(student);
+				}
+			}
+		}
+		if(!sections.contains(this)) {
 		this.course=course;
 		this.duration=duration;
 		this.professor=professor;
 		this.maxStudents=capacity;
 		this.sectionTime=time;
 		this.students=students;
-		this.sectionID=sectionid;
+		this.sectionID=randomSectionID();
 		sections.add(this);
+		}
 	}
 
-	
+
 /**
  * @param i as integer, sets the section ID to the given parameter
  */
@@ -132,5 +157,12 @@ public ArrayList<Student> getStudentList(){
 	public String toString() {
 		return  "Course Name: " + course.getName() + "\nSection Id: " + sectionID +" \nTime: " + sectionTime + "\nNumber of students: " + students.size() + "\nProfessor: " + professor;
 	}
+	
+/**
+ * @return a random Section ID
+ */
+public static String randomSectionID() {
+		return String.valueOf(new Random(7).nextInt()+10000);
+}
 	
 }
