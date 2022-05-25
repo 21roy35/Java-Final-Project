@@ -30,6 +30,16 @@ public class Student extends Person{
 	public ArrayList<Course> getCoursesCompleted(){
 		return coursesCompleted;
 	}
+	public void updateStudent() {
+		for(Section section: this.currentSections) {
+			this.coursesCompleted.add(section.getCourse());
+		}
+		int credit = 0;
+		for(Course c: this.coursesCompleted) {
+			credit += c.getCredits();
+		}
+		this.creditsCompleted=credit;
+	}
 	public void addCurrentSections(Section... sections){
 		for(Section section : sections) {
 			currentSections.add(section);

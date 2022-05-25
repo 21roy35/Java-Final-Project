@@ -10,7 +10,7 @@ import java.util.Random;
 public class Main {
 
 	static String CURRENT_YEAR = "2022";
-	static int NUMBER_OF_YEARS = 1; // one cycle = 5 years
+	static int NUMBER_OF_YEARS = 5; // one cycle = 5 years
 	static DecimalFormat _ID = new DecimalFormat("00000");
 	static int LATEST_ID;
 	static ArrayList<Student> current_students = new ArrayList<>();
@@ -96,7 +96,8 @@ public class Main {
 			// To be continued
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			//System.out.println("CreateMajors: Department already exists or major problem.");
 		}
 		}
 	}
@@ -156,20 +157,32 @@ public class Main {
 
 
 public static void startYear() {
-	int StudentsPerYear = 300;
+	int Students = 300; //students per term
 	try {
-		current_students = newStudent(StudentsPerYear);
+		createMajors();
+		current_students = newStudent(Students);
+		System.out.println("Year Starting...");
+		Thread.sleep(3000);
 		for(Student student : current_students) {
-			// TODO
+			student.updateStudent();
+		} // TODO: Failure (F) factor not included, current method assumes all students graduate succesfully
+		System.out.println("Students graduated term 1");
+		current_students = newStudent(Students);
+		Thread.sleep(3000);
+		for(Student student : current_students) {
+			student.updateStudent();
 		}
+		System.out.printf("Students #%d graduated year #%s\n", current_students.size(), CURRENT_YEAR);
+		CURRENT_YEAR = String.valueOf(Integer.parseInt(CURRENT_YEAR)+1);
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
 }
 public static void main(String[] args) throws FileNotFoundException {
 	int YEAR_COUNT = 0;
-	while(NUMBER_OF_YEARS<YEAR_COUNT) {
-		
+	while(NUMBER_OF_YEARS>YEAR_COUNT) {
+		startYear();
+		YEAR_COUNT++;
 	}
 }
 }

@@ -164,5 +164,9 @@ public ArrayList<Student> getStudentList(){
 public static String randomSectionID() {
 		return String.valueOf(new Random(7).nextInt()+10000);
 }
+
+public Course getCourse() {
+	return this.course;
+}
 	
 }

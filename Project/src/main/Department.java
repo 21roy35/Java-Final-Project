@@ -12,11 +12,10 @@ public class Department {
 
 
     public Department (String name , ArrayList<Major> majors , ArrayList<Professor> professors, ArrayList<Student> students) throws Exception{
-    	for(Department d : allDepartments) {
-    		if(allDepartments.contains(d)) {
+    		if(allDepartments.contains(this)) {
     			throw new Exception("Department already exists.");
     		}
-    	}
+
     	
         this.name = name;
         for(Major m : majors) this.majors.add(m);
