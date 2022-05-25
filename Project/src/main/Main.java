@@ -10,9 +10,8 @@ import java.util.Random;
 
 public class Main {
 
-	
-	static String CURRENT_YEAR = "2022";
-	static int numberOfYears;
+	static String CURRENT_YEAR = "2022"; 
+	static int NUMBER_OF_CYCLES; // one cycle = 5 years
 	static DecimalFormat _ID = new DecimalFormat("00000");
 	static int LATEST_ID;
 	

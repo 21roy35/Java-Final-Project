@@ -2,11 +2,13 @@ package main;
 
 import java.util.*;
 import java.io.*;
+import java.time.LocalTime;
 
 public class Major {
     private String name;
     private ArrayList<ArrayList<Course>> plan = new ArrayList<>();
     private int credits;
+    private static ArrayList<Major> allMajors = new ArrayList<>();
 
     public Major(File file) throws FileNotFoundException {
         Scanner input = new Scanner(file); //Here we are reading the file
@@ -58,6 +60,7 @@ public class Major {
             }
             input.nextLine();
         }
+        allMajors.add(this);
         input.close();
     }
 
@@ -124,4 +127,8 @@ public class Major {
 
         return new ArrayList<>();
     }
+
+	public static ArrayList<Major> getAllMajors() {
+		return allMajors;
+	}
 }
