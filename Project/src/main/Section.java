@@ -4,7 +4,19 @@ import java.time.*;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * @author Mansour Alasais
+ * @since 5-25-22
+ *
+ */
+
+
+
+
+
 public class Section {
+	
+	
 	private Course course;
 	private Professor professor;
 	private int maxStudents;
@@ -13,6 +25,7 @@ public class Section {
 	private ArrayList<Student> students = new ArrayList<Student>();
 	private String sectionID;
 	private static ArrayList<Section> sections = new ArrayList<Section>();
+	
 	
 	
 	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration,ArrayList<Student> students, String sectionid) {
@@ -25,57 +38,65 @@ public class Section {
 		this.sectionID=sectionid;
 		sections.add(this);
 	}
-	public Section(Course course, Professor professor,LocalTime time) {
-		for(int i = 0;i<new Random(2).nextInt();i++) {
-			this.students.add(new Student());
-		}
-		this.duration="50";
-		this.maxStudents=new Random(7).nextInt()+1;
-		this.sectionID=String.valueOf(new Random(7).nextInt()+10000);
-		this.course=course;
-		this.professor=professor;
-		this.sectionTime=time;
-	}
+
 	
-//
-//	public Section() { // ----------------------------------- a method for testing
-//		int rand = new Random().nextInt(1000);
-//		this.course=new Course();
-//		this.professor=new Professor();;
-//		this.maxStudents=new Random().nextInt(20);
-//		this.sectionTime=LocalTime.parse(randomClassTime());
-//		for(int i =1; i<this.maxStudents; i++) {
-//			this.students.add(new Student());
-//		}
-//		this.sectionID=String.valueOf(rand);
-//	} // -------------------------------------------------------------------------------
+/**
+ * @param i as integer, sets the section ID to the given parameter
+ */
 public void setID(int i) {
 	this.sectionID=String.valueOf(i);
 }
+/**
+ * @return sectionID as integer
+ */
 public String getID() {
 	return this.sectionID;
 }
+/**
+ * @return sectionTime as LocalTime
+ */
 public LocalTime getSectionTime() {
 	return this.sectionTime;
 }
+/**
+ * @param time as LocalTime, sets the given parameter to sectionTime
+ */
 public void setSectionTime(LocalTime time) {
 	this.sectionTime=time;
 }
+/**
+ * @return ArrayList sections
+ */
 public static ArrayList<Section> getAllSections(){
 	return sections;
 }
+/**
+ * @return maxStudents as integer
+ */
 public int getCapacity() {
 	return maxStudents;
 }
-public void setCapacity(int a) {
-	this.maxStudents=a;
+/**
+ * @param number as integer, sets maxStudents to the given parameter
+ */
+public void setCapacity(int number) {
+	this.maxStudents=number;
 }
+/**
+ * @param prof as Professor, sets professor to the given parameter
+ */
 public void setProfessor(Professor prof) {
 	this.professor=prof;
 }
+/**
+ * @return professor
+ */
 public Professor getProfessor() {
 	return this.professor;
 }
+/**
+ * @param stu as Student, adds to the students ArrayList with the given parameter.
+ */
 public void addStudents(Student...stu) {
 	for (Student stus : stu) {
 		int len=students.size();
@@ -86,6 +107,9 @@ public void addStudents(Student...stu) {
 		}
 	}
 }
+/**
+ * @param stu as Student, removes from the students ArrayList with the given parameter.
+ */
 public void removeStudents(Student...stu) {
 	for (Student st : students) {
 				for (Student s : stu) {
@@ -95,9 +119,15 @@ public void removeStudents(Student...stu) {
 				}
 	}
 }
+/**
+ * @return students
+ */
 public ArrayList<Student> getStudentList(){
 	return this.students;
 }
+	/**
+	 * @return formatted text about the object.
+	 */
 	@Override
 	public String toString() {
 		return  "Course Name: " + course.getName() + "\nSection Id: " + sectionID +" \nTime: " + sectionTime + "\nNumber of students: " + students.size() + "\nProfessor: " + professor;

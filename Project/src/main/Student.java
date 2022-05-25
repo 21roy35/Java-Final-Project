@@ -11,21 +11,11 @@ public class Student extends Person{
 	int creditsCompleted;
 	ArrayList<Section> currentSections = new ArrayList<Section>();
 	
-	
 	public Student(String id,String name,Major major) {
 		super(id,name);
 		this.major = major;
 	}
-	public Student() {
-		super("100","Jane Doe");
-		try {
-			File file = new File("C:\\Users\\Mosmar\\git\\Java-Final-Project\\data\\Aerospace_ENG.txt");
-			this.major = new Major(file);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+
 	public Major getMajor() {
 		return major;
 	}
