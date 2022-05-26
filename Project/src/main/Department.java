@@ -12,21 +12,25 @@ public class Department {
 
 
     public Department (String name , ArrayList<Major> majors , ArrayList<Professor> professors, ArrayList<Student> students) throws Exception{
-    		if(allDepartments.contains(this)) {
-    			throw new Exception("Department already exists.");
-    		}
+        if(allDepartments.contains(this)) {
+            throw new Exception("Department already exists.");
+        }
 
-    	
         this.name = name;
-        for(Major m : majors) this.majors.add(m);
+
+        for(Major m : majors) {
+            this.majors.add(m);
+        }
+
         for (int i=0; i<professor.size(); i++) {
             professor.add(professors.get(i));
         }
-        this.studentList=students;
+
+        this.studentList = students;
         allDepartments.add(this);
     }
 
-    public Department (String name , Major m , ArrayList<Professor> professors, ArrayList<Student> students) throws Exception{
+    public Department (String name, Major m, ArrayList<Professor> professors, ArrayList<Student> students) throws Exception{
     	
     	for(Department d : allDepartments) {
     		if(allDepartments.contains(d)) {
@@ -99,13 +103,53 @@ public class Department {
 
     public static Course createCourse(String name, int credits, ArrayList<Course> prereqList) {
         for (int i = 0; i <= Course.allCourses.size() - 1; i++) {
-            if (Course.allCourses.get(i).getName().equals(name)) {
-                return Course.allCourses.get(i);
+            Course tempCourse = Course.allCourses.get(i);
+            if (tempCourse.getName().equals(name)) {
+                return tempCourse;
             }
         }
 
-        Course tempCourse = new Course(name, credits, prereqList);
-        Course.allCourses.add(tempCourse);
-        return tempCourse;
+        Course course = new Course(name, credits, prereqList);
+        Course.allCourses.add(course);
+        return course;
+    }
+
+    public static Elective createElective(String name, ArrayList<Course> prereqList) {
+        for (int i = 0; i <= Course.allCourses.size() - 1; i++) {
+            Course tempCourse = Course.allCourses.get(i);
+            if (tempCourse.getName().equals(name)) {
+                return (Elective) tempCourse;
+            }
+        }
+
+        Elective elective = new Elective(name, prereqList);
+        Course.allCourses.add(elective);
+        return elective;
+    }
+
+    public static UniversityCourse createUniversityCourse(String name, ArrayList<Course> prereqList) {
+        for (int i = 0; i <= Course.allCourses.size() - 1; i++) {
+            Course tempCourse = Course.allCourses.get(i);
+            if (tempCourse.getName().equals(name)) {
+                return (UniversityCourse) tempCourse;
+            }
+        }
+
+        UniversityCourse universityCourse = new UniversityCourse(name, prereqList);
+        Course.allCourses.add(universityCourse);
+        return universityCourse;
+    }
+
+    public static GeneralCourse createGeneralCourse(String name, int credits, ArrayList<Course> prereqList) {
+        for (int i = 0; i <= Course.allCourses.size() - 1; i++) {
+            Course tempCourse = Course.allCourses.get(i);
+            if (tempCourse.getName().equals(name)) {
+                return (GeneralCourse) tempCourse;
+            }
+        }
+
+        GeneralCourse generalCourse = new GeneralCourse(name, credits, prereqList);
+        Course.allCourses.add(generalCourse);
+        return generalCourse;
     }
 }

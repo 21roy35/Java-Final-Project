@@ -2,13 +2,12 @@ package main;
 
 import java.util.*;
 import java.io.*;
-import java.time.LocalTime;
 
 public class Major {
     private String name;
     private ArrayList<ArrayList<Course>> plan = new ArrayList<>();
     private int credits;
-    private static ArrayList<Major> allMajors = new ArrayList<>();
+    public static ArrayList<Major> allMajors = new ArrayList<>();
 
     public Major(File file) throws FileNotFoundException {
         Scanner input = new Scanner(file); //Here we are reading the file
@@ -44,24 +43,40 @@ public class Major {
                         tempCredits = Integer.parseInt(tempArray[1].trim());
                     } catch (NumberFormatException ex) {
                         System.out.printf("Please check %s credits", tempName);
-                    } //The second part is the credits. Again, since it is string we convert to an int while looking for the exception
+                    } //The second part is the credits. Again, since it is a string we convert to an int while looking for the exception
 
                     ArrayList<Course> tempCourses = new ArrayList<>();
                     for (int r = 2; r <= tempArray.length - 1; r++) {
                         for (int s = 0; s <= Course.allCourses.size() - 1; s++) {
-                            if (Course.allCourses.get(s).getName().equals(tempArray[r].trim()))
-                                tempCourses.add(Course.allCourses.get(s));
+                            Course tempCourse = Course.allCourses.get(s);
+                            if (tempCourse.getName().equals(tempArray[r].trim()))
+                                tempCourses.add(tempCourse);
                         }
+                    } //Last part of the course is the prerequisites. We check the prerequisite with its name in the allCourses list.
+                    if (i == 0 | i == 1| i == 2| i == 3) {
+                        plan.get(i).add(Department.createGeneralCourse(tempName, tempCredits, tempCourses)); // Then we create the course with createCourse method
+                        tempCourses.clear();
+                    }
+                    else if (i == 10) {
+                        plan.get(i).add(Department.createElective(tempName, tempCourses)); // Then we create the course with createCourse method
+                        tempCourses.clear();
+                    }
+                    else if (i == 11) {
+                        plan.get(i).add(Department.createUniversityCourse(tempName, tempCourses)); // Then we create the course with createCourse method
+                        tempCourses.clear();
+                    }
+                    else {
+                        plan.get(i).add(Department.createCourse(tempName, tempCredits, tempCourses)); // Then we create the course with createCourse method
+                        tempCourses.clear();
                     }
 
-                    plan.get(i).add(Department.createCourse(tempName, tempCredits, tempCourses));
-                    tempCourses.clear();
                 }
             }
-            input.nextLine();
+            input.nextLine(); //we use this statement to read "end" which is in the end of the semester in file
         }
-        allMajors.add(this);
-        input.close();
+
+        allMajors.add(this); //We add the constructed object is added to the allMajors list
+        input.close(); //We close the input stream
     }
 
     public String getName() {
@@ -88,13 +103,11 @@ public class Major {
         this.credits = credits;
     }
 
-    public ArrayList<ArrayList<Course>> createPlanForStudent() {
-        //UniversityCourse is in 9th semester
-        //Electives: one in 9th semester and two in 10th semester
+    public ArrayList<ArrayList<Course>> createPlanForStudent() { //this method is for creating plans for students. The major object only holds a default plan
+                                                                 //Therefore we need to create a specific plan for each student
+        //The UniversityCourse will be in 9th semester
+        //The Electives: one in 9th semester and two in 10th semester
         ArrayList<ArrayList<Course>> studentPlan = new ArrayList<>();
-//        for (int i = 0; i <= 9; i++) {
-//            plan.add(new ArrayList<>());
-//        }
 
         for (int i = 0; i <= 9; i++) {
             studentPlan.add(this.plan.get(i));
@@ -123,7 +136,7 @@ public class Major {
         return studentPlan;
     }
 
-    public ArrayList<Major> searchForCourse(ArrayList<Major> majors, String name) {
+    public ArrayList<Major> searchForCourse(String name) {
 
         return new ArrayList<>();
     }
