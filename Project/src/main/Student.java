@@ -3,6 +3,7 @@ package main;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Student extends Person{
 
@@ -31,6 +32,8 @@ public class Student extends Person{
 		return coursesCompleted;
 	}
 	public void updateStudent() {
+		Random rand = new Random();
+		
 		for(Section section: this.currentSections) {
 			this.coursesCompleted.add(section.getCourse());
 		}
