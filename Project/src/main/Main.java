@@ -7,13 +7,16 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.swing.JList;
+import javax.swing.ListSelectionModel;
+
 public class Main {
 
 	static String CURRENT_YEAR = "2022";
 	static int NUMBER_OF_YEARS = 5; // one cycle = 5 years
 	static DecimalFormat _ID = new DecimalFormat("00000");
 	static int LATEST_ID;
-	static ArrayList<Student> current_students = new ArrayList<>();
+	public static ArrayList<Student> current_students = new ArrayList<>();
 
 
 	public static ArrayList<String> StudentRandomNames(int number) {
@@ -155,12 +158,18 @@ public class Main {
 		 }
 	 }
 
-
+public static void sendStudents() {
+	
+}
 public static void startYear() {
 	int Students = 300; //students per term
 	try {
 		createMajors();
 		current_students = newStudent(Students);
+		
+		 MainGUI.updateJList(current_students);
+		
+		
 		System.out.println("Year Starting...");
 		Thread.sleep(3000);
 		for(Student student : current_students) {
@@ -184,5 +193,6 @@ public static void main(String[] args) throws FileNotFoundException {
 		startYear();
 		YEAR_COUNT++;
 	}
+	MainGUI.main(null, current_students);
 }
 }
