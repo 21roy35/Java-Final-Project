@@ -91,10 +91,22 @@ public class Main {
 	public static void createMajors() {
 		File dir = new File(System.getProperty("user.dir"));
 		File[] data = new File(dir + "\\data").listFiles();
+		Boolean exists = false;
 		for(File major : data) {
 		try {
 			Major m = new Major(major);
-			Department department = new Department(m.getName(), m, newProfessor(20), newStudent(200));
+			for(Department de: Department.allDepartments) {
+				if(de.getName().substring(0,5).equals(m.getName().substring(0,5))) {
+					exists=true;
+				}
+				else {
+					
+					exists=false;
+				}
+			}
+			if(!exists) {
+			Department department = new Department(m.getName().split(" ")[0], m, newProfessor(20), newStudent(200));
+			}
 			// To be continued
 
 		} catch (Exception e) {
