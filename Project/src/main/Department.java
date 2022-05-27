@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Department {
 
     private String name;
-    private ArrayList<Major> majors = new ArrayList<Major>();
+    private static ArrayList<Major> majors = new ArrayList<Major>();
     private  ArrayList<Professor>professor= new ArrayList <Professor>();
     private ArrayList <Student> studentList = new ArrayList <Student>();
     public static ArrayList<Department> allDepartments = new ArrayList<Department>();
@@ -32,19 +32,18 @@ public class Department {
 
     public Department (String name, Major m, ArrayList<Professor> professors, ArrayList<Student> students) throws Exception{
     	
-    	for(Department d : allDepartments) {
-    		if(allDepartments.contains(d)) {
-    			for(Major maj : this.majors) {
-    				if(this.majors.contains(maj)) {
+    		if(allDepartments.contains(this)) {
+    				if(this.majors.contains(m)) {
     					throw new Exception("Major already exists in department.");
     				}
     				else {
     					this.majors.add(m);
     				}
+        			throw new Exception("Department already exists.");
     			}
-    			throw new Exception("Department already exists.");
-    		}
-    	}
+
+    
+    	
 
         this.name=name;
         this.majors.add(m);
@@ -139,7 +138,9 @@ public class Department {
         Course.allCourses.add(universityCourse);
         return universityCourse;
     }
-
+    public static ArrayList<Major> allMajors(){
+    	return majors;
+    }
     public static GeneralCourse createGeneralCourse(String name, int credits, ArrayList<Course> prereqList) {
         for (int i = 0; i <= Course.allCourses.size() - 1; i++) {
             Course tempCourse = Course.allCourses.get(i);

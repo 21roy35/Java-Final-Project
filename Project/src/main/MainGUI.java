@@ -25,6 +25,10 @@ import javax.swing.ListModel;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.JLabel;
+import javax.swing.JTree;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.JTextPane;
 
 public class MainGUI {
 
@@ -33,11 +37,11 @@ public class MainGUI {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args, ArrayList<Student> stus) {
+	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainGUI window = new MainGUI(stus);
+					MainGUI window = new MainGUI();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -49,29 +53,17 @@ public class MainGUI {
 	/**
 	 * Create the application.
 	 */
-	public MainGUI(ArrayList<Student> stus) {
-		initialize(stus);
+	public MainGUI() {
+		initialize();
 	}
 
-	
-		public static void updateJList(ArrayList<Student> newContents) { //WIP
-			DefaultListModel model = new DefaultListModel();
-		    for (Student s : newContents) {
-		        model.addElement(s);
-		    }
-		    JList list= new JList(model);
-			 list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-			 list.setLayoutOrientation(JList.HORIZONTAL_WRAP);
-			 list.setVisibleRowCount(-1);
-			 JScrollPane listScroller = new JScrollPane(list);
-			 listScroller.setPreferredSize(new Dimension(250, 80));
-		}
+
 	
 	/**
 	 * Initialize the contents of the frame.
 	 */
 
-	private void initialize(ArrayList<Student> stus) {
+	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 586, 381);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -79,44 +71,65 @@ public class MainGUI {
 		JProgressBar progressBar = new JProgressBar();
 		
 		
-		DefaultListModel dList = new DefaultListModel();
-		for(Student s: stus) {
-			dList.addElement(s.name +" : " + s.id);
-		}
-		 JList list = new JList(dList);
-		 list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-		 list.setLayoutOrientation(JList.HORIZONTAL_WRAP);
-		 list.setVisibleRowCount(-1);
-		 JScrollPane listScroller = new JScrollPane(list);
-		 listScroller.setPreferredSize(new Dimension(250, 80));
+
 
 		
 		JLabel lblNewLabel = new JLabel("Students:");
+		
+		JTree tree = new JTree();
+		tree.setModel(new DefaultTreeModel(
+			new DefaultMutableTreeNode("All") {
+				{
+					DefaultMutableTreeNode node_1;
+					DefaultMutableTreeNode node_2;
+					node_1 = new DefaultMutableTreeNode("Departments");
+					for(Department d : main.Department.allDepartments) {
+						node_2 = new DefaultMutableTreeNode(d.getName());
+						for(Major j:d.allMajors()) {
+							for(ArrayList<Course> courses:j.getPlan()) {
+								for(Course course_:courses) {
+							node_2.add(new DefaultMutableTreeNode(course_.getName()));
+								}
+							}
+						}
+						node_1.add(node_2);
+					}
+					add(node_1);
+				}
+			}
+		));
+		
+		JScrollBar scrollBar = new JScrollBar();
+		
+		JTextPane textPane = new JTextPane();
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(progressBar, GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(progressBar, GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
-							.addContainerGap())
-						.addGroup(Alignment.TRAILING, groupLayout.createParallelGroup(Alignment.LEADING)
-							.addGroup(groupLayout.createSequentialGroup()
-								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-								.addContainerGap())
-							.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-								.addComponent(list, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
-								.addGap(18)))))
+							.addComponent(tree, GroupLayout.PREFERRED_SIZE, 166, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(scrollBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(textPane, GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(21)
-					.addComponent(lblNewLabel)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(list, GroupLayout.PREFERRED_SIZE, 226, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(textPane)
+						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+							.addComponent(lblNewLabel)
+							.addComponent(tree, GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE))
+						.addComponent(scrollBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
 					.addComponent(progressBar, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
