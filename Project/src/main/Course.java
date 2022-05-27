@@ -9,7 +9,7 @@ public class Course {
     private int credits;
     private ArrayList<Course> prerequisites = new ArrayList<>();
     private ArrayList<Section> sections = new ArrayList<>();
-    private ArrayList<Professor> professors=new ArrayList<>();
+    private ArrayList<Professor> professors = new ArrayList<>();
     public static ArrayList<Course> allCourses = new ArrayList<>();
 
     public Course(String course, int credit, ArrayList<Course> prereqList, ArrayList<Section> sections, ArrayList<Professor> professors) {
@@ -45,26 +45,33 @@ public class Course {
         // TODO Auto-generated method stub
         return null;
     }
+
     public void setName(String name) {
         this.name=name;
     }
+
     public String getName() {
         return this.name;
     }
+
     public void setCredits(int c) {
         if (c>0) {
             this.credits=c;
         }
     }
+
     public int getCredits() {
         return this.credits;
     }
+
     public void setPrerequisites(ArrayList<Course> courseList) {
         this.prerequisites = courseList;
     }
+
     public ArrayList<Course> getPrerequisites() {
         return this.prerequisites;
     }
+
     public void createSections(Department department) {}
     //	public Section(Professor professor, LocalTime time)
     //Section(d);
@@ -81,15 +88,17 @@ public class Course {
 //		}
 
     public void removeSections(Department department) {
-
+        this.sections.clear();
     }
+
     public void setProfessors(ArrayList<Professor> professors) {
-
+        this.professors = professors;
     }
+
     public ArrayList<Professor> getProfessors(){
         return this.professors;
-
     }
+
     public String getProfessorListAsString() {
         String professorListString = new String();
         for(Professor prof :professors) {
@@ -97,13 +106,25 @@ public class Course {
         }
         return professorListString;
     }
+
     public String getSectionsListAsString() {
-        String sectionListString=new String();
+        String sectionListString = new String();
         for(Section sect : sections) {
-            sectionListString=sectionListString + sect.getID() +", ";
+            sectionListString = sectionListString + sect.getID() +", ";
         }
         return sectionListString;
     }
+
+    public static Course searchForCourse(String name) {
+        Course wantedCourse = null;
+        for (int s = 0; s <= Course.allCourses.size() - 1; s++) {
+            Course tempCourse = Course.allCourses.get(s);
+            if (tempCourse.getName().equals(name))
+                wantedCourse = tempCourse;
+        }
+        return wantedCourse;
+    }
+
     // toString
     @Override
     public String toString() {
