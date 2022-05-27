@@ -13,7 +13,7 @@ import javax.swing.ListSelectionModel;
 public class Main {
 
 	static String CURRENT_YEAR = "2022";
-	static int NUMBER_OF_YEARS = 5; // one cycle = 5 years
+	static int NUMBER_OF_YEARS = 1; // one cycle = 5 years
 	static DecimalFormat _ID = new DecimalFormat("00000");
 	static int LATEST_ID;
 	public static ArrayList<Student> current_students = new ArrayList<>();
@@ -91,16 +91,15 @@ public class Main {
 	public static void createMajors() {
 		File dir = new File(System.getProperty("user.dir"));
 		File[] data = new File(dir + "\\data").listFiles();
-		for(File major :data) {
+		for(File major : data) {
 		try {
-
 			Major m = new Major(major);
-			Department department = new Department(major.getName(), m, newProfessor(20), newStudent(200));
+			Department department = new Department(m.getName(), m, newProfessor(20), newStudent(200));
 			// To be continued
 
 		} catch (Exception e) {
 			//e.printStackTrace();
-			//System.out.println("CreateMajors: Department already exists or major problem.");
+			System.out.println("CreateMajors: Department already exists or major problem.");
 		}
 		}
 	}
@@ -167,7 +166,7 @@ public static void startYear() {
 		createMajors();
 		current_students = newStudent(Students);
 		
-		 MainGUI.updateJList(current_students);
+		// pdateJList(current_students);
 		
 		
 		System.out.println("Year Starting...");
@@ -193,6 +192,6 @@ public static void main(String[] args) throws FileNotFoundException {
 		startYear();
 		YEAR_COUNT++;
 	}
-	MainGUI.main(null, current_students);
+	MainGUI.main(null);
 }
 }
