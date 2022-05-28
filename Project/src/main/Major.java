@@ -8,6 +8,7 @@ public class Major {
     private ArrayList<ArrayList<Course>> plan = new ArrayList<>();
     private int credits;
     public static ArrayList<Major> allMajors = new ArrayList<>();
+    private String sym;
 
     public Major(File file) throws FileNotFoundException {
         Scanner input = new Scanner(file); //Here we are reading the file
@@ -17,6 +18,14 @@ public class Major {
             this.name = tempArray[1].trim();
         } //Here we are checking whether the read line holds the name
 
+        tempArray = input.nextLine().split(","); // Next we read the total number of credits for the major
+        if (tempArray[0].equals("sym")) {
+            try {
+                this.sym = tempArray[1].trim();
+            } catch (NumberFormatException ex) {
+                System.out.printf("Please check %s credits", this.name);
+            } //since the number of credits is a string, we convert it to int using paeseint. Furthermore, we need to check for NumberFormatExpection
+        }
         tempArray = input.nextLine().split(","); // Next we read the total number of credits for the major
         if (tempArray[0].equals("credits")) {
             try {
@@ -83,7 +92,15 @@ public class Major {
         input.close(); //We close the input stream
     }
 
-    public String getName() {
+    public String getSym() {
+		return this.sym;
+	}
+
+	public void setSym(String sym) {
+		this.sym = sym;
+	}
+
+	public String getName() {
         return name;
     }
 
@@ -180,4 +197,10 @@ public class Major {
         }
         return trueCredits;
     }
+
+	@Override
+	public String toString() {
+		return name;
+	}
+    
 }

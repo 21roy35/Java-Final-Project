@@ -9,15 +9,13 @@ public class Course {
     private int credits;
     private ArrayList<Course> prerequisites = new ArrayList<>();
     private ArrayList<Section> sections = new ArrayList<>();
-    private ArrayList<Professor> professors = new ArrayList<>();
     public static ArrayList<Course> allCourses = new ArrayList<>();
 
-    public Course(String course, int credit, ArrayList<Course> prereqList, ArrayList<Section> sections, ArrayList<Professor> professors) {
+    public Course(String course, int credit, ArrayList<Course> prereqList, ArrayList<Section> sections) {
         this.name=course;
         this.credits=credit;
         this.prerequisites.addAll(prereqList);
         this.sections = sections;
-        this.professors = professors;
     }
 
     //new Course(tempName, tempCredits, tempCourses)
@@ -37,9 +35,9 @@ public class Course {
         this.credits=4;
         this.prerequisites = null;
         this.sections=Section();
-        for(int i =1; i<5; i++) {
-            this.professors.add(new Professor());
-        }
+//        for(int i =1; i<5; i++) {
+//            this.professors.add(new Professor());
+//        }
     }
     private ArrayList<Section> Section() {
         // TODO Auto-generated method stub
@@ -91,21 +89,21 @@ public class Course {
         this.sections.clear();
     }
 
-    public void setProfessors(ArrayList<Professor> professors) {
-        this.professors = professors;
-    }
-
-    public ArrayList<Professor> getProfessors(){
-        return this.professors;
-    }
-
-    public String getProfessorListAsString() {
-        String professorListString = new String();
-        for(Professor prof :professors) {
-            professorListString=professorListString + prof.name + ", ";
-        }
-        return professorListString;
-    }
+//    public void setProfessors(ArrayList<Professor> professors) {
+//        this.professors = professors;
+//    }
+//
+//    public ArrayList<Professor> getProfessors(){
+//        return this.professors;
+//    }
+//
+//    public String getProfessorListAsString() {
+//        String professorListString = new String();
+//        for(Professor prof :professors) {
+//            professorListString=professorListString + prof.name + ", ";
+//        }
+//        return professorListString;
+//    }
 
     public String getSectionsListAsString() {
         String sectionListString = new String();
@@ -128,6 +126,6 @@ public class Course {
     // toString
     @Override
     public String toString() {
-        return "\n Course: " + this.name + "\n Credits: " + this.credits + "\n Professors: " + getProfessorListAsString() + "\n Sections: \n" + getSectionsListAsString();
+        return " Course: " + this.name + " Credits: " + this.credits + " Sections: " + getSectionsListAsString();
     }
 }

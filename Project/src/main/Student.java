@@ -20,6 +20,8 @@ public class Student extends Person{
 	public Major getMajor() {
 		return major;
 	}
+
+
 	public void setMajor(Major major) {
 		this.major = major;
 	}
@@ -91,4 +93,10 @@ public class Student extends Person{
 			}
 		return neededCourses;
 	}
+	
+	@Override
+	public String toString() {
+		return "" + name + " [major]: "+major;
+	}
 }
+

@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Department {
 
     private String name;
-    private static ArrayList<Major> majors = new ArrayList<Major>();
-    private  ArrayList<Professor>professor= new ArrayList <Professor>();
+    private  ArrayList<Major> majors = new ArrayList<Major>();
+	private  ArrayList<Professor>professor= new ArrayList <Professor>();
     private ArrayList <Student> studentList = new ArrayList <Student>();
     public static ArrayList<Department> allDepartments = new ArrayList<Department>();
 
@@ -53,6 +53,16 @@ public class Department {
         this.studentList=students;
         allDepartments.add(this);
     }
+    
+    public ArrayList<Major> getMajors() {
+		return majors;
+	}
+
+	public void addMajors(Major... majors){
+		for(Major major : majors) {
+			this.majors.add(major);
+		}
+	}
 
     public void setName(String name) {
         this.name=name;
@@ -66,7 +76,7 @@ public class Department {
     }
 
     public void addProfessorList (ArrayList<Professor>professors) {
-        for (int i=0; i<professor.size(); i++) {
+        for (int i=0; i<professors.size(); i++) {
             professor.add(professors.get(i));
         }
     }
@@ -74,7 +84,7 @@ public class Department {
 
     public void removeProfessorList(ArrayList<Professor> professors) {
 
-        for (int i=0; i<professor.size(); i++) {
+        for (int i=0; i<professors.size(); i++) {
             professor.remove(professors.get(i));
         }
     }
@@ -85,13 +95,13 @@ public class Department {
 
     public void addStudentList (ArrayList<Student> students) {
         for (int i=0; i<students.size(); i++) {
-            students.add(students.get(i));
+        	studentList.add(students.get(i));
         }
 
     }
     public void removeStudentList(ArrayList<Student> students) {
         for (int i=0; i<students.size(); i++) {
-            students.remove(students.get(i));
+            studentList.remove(students.get(i));
         }
 
     }
@@ -138,7 +148,7 @@ public class Department {
         Course.allCourses.add(universityCourse);
         return universityCourse;
     }
-    public static ArrayList<Major> allMajors(){
+    public ArrayList<Major> allMajors(){
     	return majors;
     }
     public static GeneralCourse createGeneralCourse(String name, int credits, ArrayList<Course> prereqList) {

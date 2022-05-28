@@ -6,13 +6,11 @@ public class Professor extends Person{
 	
 	ArrayList<Section> currentSections = new ArrayList<Section>();
 	final int limit = 12;
+	ArrayList<Course> courses= new ArrayList<Course>();
 	
-	public Professor(String id, String name,ArrayList<Section> currentSections) {
+	public Professor(String id, String name,ArrayList<Course> courses) {
 		super(id,name);
-		this.currentSections = currentSections;
-	}
-	public Professor(String id, String name) {
-		super(id,name);
+		this.courses = courses;
 	}
 	public Professor() {
 		super("1001","John Doe");
