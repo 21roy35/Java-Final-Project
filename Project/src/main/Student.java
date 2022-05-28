@@ -41,13 +41,14 @@ public class Student extends Person{
 		Random rand = new Random();
 		
 		for(Section section: this.currentSections) {
-			this.coursesCompleted.add(section.getCourse());
+			Course course = section.getCourse();
+			this.coursesCompleted.add(course);
 		}
 		int credit = 0;
 		for(Course c: this.coursesCompleted) {
 			credit += c.getCredits();
 		}
-		this.creditsCompleted = credit;
+		this.creditsCompleted += credit;
 		this.currentSections.clear();
 	}
 	public void addCurrentSections(Section... sections){
