@@ -162,12 +162,12 @@ public class Course {
                 }
 
                 try {
-                    Section section = new Section(this, prof, 20, Main.randomClassTime(), Main.randomClassDuration(), tempStudentList);
+                    Section section = new Section(this, prof, 20, sectionTime, Main.randomClassDuration(), tempStudentList);
                     prof.addCurrentSections(section);
                     this.sections.add(section);
                 } catch (StudentRegistrationConflictException e) {
                     tempStudentList = e.removeStudents(tempStudentList);
-                    Section section = new Section(this, prof, 20, Main.randomClassTime(), Main.randomClassDuration(), tempStudentList);
+                    Section section = new Section(this, prof, 20, sectionTime, Main.randomClassDuration(), tempStudentList);
                     prof.addCurrentSections(section);
                     this.sections.add(section);
                 }
