@@ -130,7 +130,8 @@ public class Course {
                     Section section = new Section(this, prof, 20, Main.randomClassTime(), Main.randomClassDuration(), tempStudentList);
                     prof.addCurrentSections(section);
                     this.sections.add(section);
-                } catch () {
+                } catch (FullSectionsException e) {
+                    
                 }
             }
         }

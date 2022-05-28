@@ -41,7 +41,7 @@ public class Section {
 		sections.add(this);
 		}
 	}
-	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, ArrayList<Student> students) {
+	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, ArrayList<Student> students) throws Exception{
 //		for(Section section : getAllSections()) {
 //			while(section.getStudentList().size() < section.maxStudents) {
 //				for(Student student: students) {
