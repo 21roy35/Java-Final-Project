@@ -97,10 +97,11 @@ public class Student extends Person{
 		return neededCourses;
 	}
 
-	public ArrayList<LocalTime> getSectionsTime() {
+	public ArrayList<LocalTime> getStudentSectionsTime() {
 		ArrayList<LocalTime> sectionsTime = new ArrayList<>();
 		for (int i = 0; i <= this.currentSections.size() - 1; i++) {
-			LocalTime time = this.currentSections.get(i).getSectionTime();
+			Section section = this.currentSections.get(i);
+			LocalTime time = section.getSectionTime();
 			sectionsTime.add(time);
 		}
 		return sectionsTime;

@@ -21,46 +21,39 @@ public class Section {
 	private static ArrayList<Section> sections = new ArrayList<Section>();
 	
 	
-	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, Student students) throws Exception{
-//		for(Section section : getAllSections()) {
-//			while(section.getStudentList().size()<section.maxStudents) {
-//					section.addStudents(students);
-//			}
-//		}
+	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, Student student) throws Exception{
 		if(!sections.contains(this)) {
 		this.course = course;
 		this.duration = duration;
 		this.professor = professor;
 		this.maxStudents = capacity;
 		this.sectionTime = time;
-		this.students.add(students);
-		students.addCurrentSections(this);
+			if (student.getStudentSectionsTime().contains(time)) {
+				throw new StudentRegistrationConflictException(student, this);
+			}
+			else {
+				this.students.add(student);
+				student.addCurrentSections(this);
+			}
 		this.sectionID = randomSectionID();
 		sections.add(this);
 		}
 	}
 	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, ArrayList<Student> students) throws Exception{
-//		for(Section section : getAllSections()) {
-//			while(section.getStudentList().size() < section.maxStudents) {
-//				for(Student student: students) {
-//					section.addStudents(student);
-//				}
-//			}
-//		}
 		if(!sections.contains(this)) {
 		this.course = course;
 		this.duration = duration;
 		this.professor = professor;
 		this.maxStudents = capacity;
 		this.sectionTime = time;
-		this.students = students;
 		for (int i = 0; i <= students.size() - 1; i++) {
 			Student student = students.get(i);
 
-			if (student.getSectionsTime().contains(time)) {
+			if (student.getStudentSectionsTime().contains(time)) {
 				throw new StudentRegistrationConflictException(student, this);
 			}
 			else {
+				this.students.add(student);
 				student.addCurrentSections(this);
 			}
 		}

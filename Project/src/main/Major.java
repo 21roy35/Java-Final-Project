@@ -198,6 +198,24 @@ public class Major {
         return trueCredits;
     }
 
+    public static ArrayList<Course> getTerm(Department department, Course course) {
+        ArrayList<Major> majors = department.getMajors();
+        ArrayList<Course> term = new ArrayList<>();
+        for (int i = 0; i <= majors.size() - 1; i++) {
+            Major major = majors.get(i);
+            for (int r = 0; r <= 9; r++) {
+                ArrayList<Course> tempTerm = major.getPlan().get(r);
+                for (int s = 0; s <= tempTerm.size(); s++) {
+                    Course tempCourse = tempTerm.get(s);
+                    if (tempCourse == course) {
+                        term = tempTerm;
+                    }
+                }
+            }
+        }
+        return term;
+    }
+
 	@Override
 	public String toString() {
 		return name;
