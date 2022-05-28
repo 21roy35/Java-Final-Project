@@ -12,6 +12,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.JTextField;
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
@@ -23,10 +25,12 @@ import javax.swing.JProgressBar;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.ListModel;
 import javax.swing.ListSelectionModel;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.JLabel;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.JTextPane;
 
@@ -60,7 +64,24 @@ public class MainGUI {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-
+//	void showOnClick(JTree tree, MouseEvent me, JTextPane jtp) {
+//	    TreePath tp = tree.getPathForLocation(me.getX(), me.getY());
+//	    if (tp != null) {
+//	    	for(Student stu : main.Main.current_students) {
+//	    	    TreePath tps = tree.getPathForLocation(me.getX(), me.getY());
+//	    		if(tps.toString().substring(19, 23).equalsIgnoreCase(stu.major.getName().strip().substring(0,4))){
+//	    		      jtp.setText(tps.toString() +"\n" + "Number of failed students: " + stu.major.failedStudentsNumber);
+//	    		}
+//	    		else {
+//	    		
+//	    		}
+//	    	}
+//
+//	    }
+//	    else {
+//	      jtp.setText("");
+//	    }
+//	}
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 586, 381);
@@ -69,8 +90,22 @@ public class MainGUI {
 		JProgressBar progressBar = new JProgressBar();
 
 		JLabel lblNewLabel = new JLabel("Students:");
+		JTextPane textPane = new JTextPane();
 		
 		JTree tree = new JTree();
+
+
+//	    int v = ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED;
+//	    int h = ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED;
+//	    JScrollPane jsp = new JScrollPane(tree, v, h);
+//	    tree.addMouseListener(new MouseAdapter() {
+//	        public void mouseClicked(MouseEvent me) {
+//	          showOnClick(tree, me, textPane);
+//	        }
+//	      });
+	    
+	    
+	    
 		tree.setModel(new DefaultTreeModel(
 			new DefaultMutableTreeNode("All") {
 				{
@@ -79,13 +114,17 @@ public class MainGUI {
 					node_1 = new DefaultMutableTreeNode("Departments");
 					for(Department d : main.Department.allDepartments) {
 						node_2 = new DefaultMutableTreeNode(d.getName());
-						for(Major j:d.allMajors()) {
-							for(ArrayList<Course> courses:j.getPlan()) {
-								for(Course course_:courses) {
-							node_2.add(new DefaultMutableTreeNode(course_.getName()));
-								}
-							}
-						}
+						
+						
+					for(Major j:d.allMajors()) {
+
+						
+//	for(ArrayList<Course> courses:j.getPlan()) {
+//	for(Course course_:courses) {
+//node_2.add(new DefaultMutableTreeNode(course_.getName()));
+//	}
+//} 
+					}
 						node_1.add(node_2);
 					}
 					add(node_1);
@@ -95,7 +134,7 @@ public class MainGUI {
 		
 		JScrollBar scrollBar = new JScrollBar();
 		
-		JTextPane textPane = new JTextPane();
+
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
