@@ -149,11 +149,10 @@ public class Main {
 				Major m = new Major(major);
 				for(Department de: Department.allDepartments) {
 					if(de.getName().substring(0,5).equals(m.getName().substring(0,5))) {
-						exists=true;
+						exists = true;
 					}
 					else {
-						
-						exists=false;
+						exists = false;
 					}
 				}
 				if(!exists) {
@@ -164,14 +163,13 @@ public class Main {
 				}
 				// To be continued
 
-		} catch (Exception e) {
-			//e.printStackTrace();
-			System.out.println("CreateMajors: Department already exists or major problem.");
-		}
+			} catch (Exception e) {
+				//e.printStackTrace();
+				System.out.println("CreateMajors: Department already exists or major problem.");
+			}
 		}
 	}
 	public static LocalTime randomClassTime() {
-
 	    Random rand = new Random();
 	    int hour = rand.nextInt(12) + 8;
 	    int minute = rand.nextInt(2)+1;
@@ -214,41 +212,33 @@ public class Main {
 
 //	public static void createCoursesForStudent(Student s) {
 //	}
-//	 public static void createSections() throws Exception {
-//		 for(Student student : current_students) {
-//			 ArrayList<Course> neededCourses = student.neededCourses();
-//			 for(Course course: neededCourses) {
-//				 int credits = course.getCredits();
-//				 Section section =  new Section(course, newProfessor(1).get(0), 20, randomClassTime(), randomClassDuration(), student);
-//			 }
-//		 }
-//	 }
 
-public static void sendStudents() {
-	
-}
-public static void startYear() {
-	int Students = 300; //students per term
-	try {
-		current_students = Department.allDepartments.get(0).getStudentList();
-		
-		// pdateJList(current_students);
-		
-		System.out.println("Year Starting...");
-		Thread.sleep(3000);
-		for(Student student : current_students) {
-			student.updateStudent();
-		} // TODO: Failure (F) factor not included, current method assumes all students graduate succesfully
-		System.out.println("Students graduated term 1");
-//		current_students = newStudent(Students);
-		Thread.sleep(3000);
-		for(Student student : current_students) {
-			student.updateStudent();
-		}
-		System.out.printf("Students #%d graduated year #%s\n", current_students.size(), CURRENT_YEAR);
-		CURRENT_YEAR = String.valueOf(Integer.parseInt(CURRENT_YEAR)+1);
-	} catch (Exception e) {
-		e.printStackTrace();
+
+	public static void sendStudents() {
+
 	}
-}
+	public static void startYear() {
+		int Students = 300; //students per term
+		try {
+			current_students = Department.allDepartments.get(0).getStudentList();
+
+			// pdateJList(current_students);
+
+			System.out.println("Year Starting...");
+			Thread.sleep(3000);
+			for(Student student : current_students) {
+				student.updateStudent();
+			} // TODO: Failure (F) factor not included, current method assumes all students graduate succesfully
+			System.out.println("Students graduated term 1");
+	//		current_students = newStudent(Students);
+			Thread.sleep(3000);
+			for(Student student : current_students) {
+				student.updateStudent();
+			}
+			System.out.printf("Students #%d graduated year #%s\n", current_students.size(), CURRENT_YEAR);
+			CURRENT_YEAR = String.valueOf(Integer.parseInt(CURRENT_YEAR)+1);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

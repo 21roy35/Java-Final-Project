@@ -43,7 +43,8 @@ public class Student extends Person{
 		for(Course c: this.coursesCompleted) {
 			credit += c.getCredits();
 		}
-		this.creditsCompleted=credit;
+		this.creditsCompleted = credit;
+		this.currentSections.clear();
 	}
 	public void addCurrentSections(Section... sections){
 		for(Section section : sections) {

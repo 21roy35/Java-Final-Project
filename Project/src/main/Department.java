@@ -41,10 +41,6 @@ public class Department {
     				}
         			throw new Exception("Department already exists.");
     			}
-
-    
-    	
-
         this.name=name;
         this.majors.add(m);
         for (int i=0; i<professor.size(); i++) {

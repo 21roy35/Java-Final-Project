@@ -6,12 +6,13 @@ public class Professor extends Person{
 	
 	ArrayList<Section> currentSections = new ArrayList<Section>();
 	final int limit = 12;
-	ArrayList<Course> courses= new ArrayList<Course>();
+	ArrayList<Course> courses = new ArrayList<Course>();
 	
 	public Professor(String id, String name,ArrayList<Course> courses) {
 		super(id,name);
 		this.courses = courses;
 	}
+
 	public Professor() {
 		super("1001","John Doe");
 		for(int i=1;5>i;i++) {
@@ -24,19 +25,21 @@ public class Professor extends Person{
 		for(Section section : sections) {
 			currentSections.add(section);
 		}
-		
 	}
+
 	public void removeCurrentSections(Section... sections){
 		for(Section section : sections) {
 			currentSections.remove(section);
 		}
 	}
-	public ArrayList<Section> getCurrentCourses(){
-		return currentSections;
+	public ArrayList<Course> getCurrentCourses(){
+		return courses;
 	}
+
 	public int getLimit() {
 		return limit;
 	}
+
 	@Override
 	public String toString() {
 		return  this.name;
