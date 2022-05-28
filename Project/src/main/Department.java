@@ -1,5 +1,6 @@
 package main;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 
 public class Department {
@@ -9,7 +10,9 @@ public class Department {
 	private  ArrayList<Professor>professor= new ArrayList <Professor>();
     private ArrayList <Student> studentList = new ArrayList <Student>();
     public static ArrayList<Department> allDepartments = new ArrayList<Department>();
-
+    public enum ENG {EE, IE, AE, ChE, CE, ME, MINE, NE}
+    public enum Science {PHYS, CHEM, BIO, MATH, STAT}
+    public enum General {CPIT, COMM, ELIS, ARAB, ISLS, LANE, HIST, GEOG, IS, SOC, COM, PSY, BL, BLA}
 
     public Department (String name , ArrayList<Major> majors , ArrayList<Professor> professors, ArrayList<Student> students) throws Exception{
         if(allDepartments.contains(this)) {

@@ -19,16 +19,46 @@ public class Main {
 	public static ArrayList<Student> current_students = new ArrayList<>();
 	
 	public static void main(String[] args) throws Exception {
-		
 		createDepartments();
 		createStudentsAndProfessors(200,10);
 		
 		int YEAR_COUNT = 0;
-		while(NUMBER_OF_YEARS>YEAR_COUNT) {
+		while(NUMBER_OF_YEARS > YEAR_COUNT) {
 			startYear();
 			YEAR_COUNT++;
 		}
 		MainGUI.main(null);
+	}
+
+	public static void createDepartments() {
+		File dir = new File(System.getProperty("user.dir"));
+		File[] data = new File(dir + "\\data").listFiles();
+		Boolean exists = false;
+		Department department = null;
+		for(File major : data) {
+			try {
+				Major m = new Major(major);
+				for(Department de: Department.allDepartments) {
+					if(de.getName().substring(0,5).equals(m.getName().substring(0,5))) {
+						exists = true;
+					}
+					else {
+						exists = false;
+					}
+				}
+				if(!exists) {
+					department = new Department(m.getName().split(" ")[0], m, new ArrayList<Professor>(), new ArrayList<Student>());
+				}
+				else{
+					department.addMajors(m);
+				}
+				// To be continued
+
+			} catch (Exception e) {
+				//e.printStackTrace();
+				System.out.println("CreateMajors: Department already exists or major problem.");
+			}
+		}
 	}
 
 	private static void createStudentsAndProfessors(int numberOfStudents, int numberOfProfessors) throws Exception {
@@ -44,8 +74,8 @@ public class Main {
 			System.out.println("\nDepartment: "+department.getName()+"\nMajors: "+Department.allDepartments.get(i).allMajors());
 			department.addStudentList(departmentStudents);
 			department.addProfessorList(departmentProfessors);
-			System.out.println("Students: "+department.getStudentList());
-			System.out.println("Professers: "+department.getProfessorList());			
+			System.out.println("Students: " + department.getStudentList());
+			System.out.println("Professers: " + department.getProfessorList());
 			i++;
 		}//some files couldn't be read for some reason thats why not all majors are in the departments
 		
@@ -93,7 +123,7 @@ public class Main {
 			throw new Exception("randomID exception. LATEST_ID max limit reached.");
 		}
 	}
-	public static ArrayList<Student> newStudent(int i,Department department) throws Exception {
+	public static ArrayList<Student> newStudent(int i, Department department) throws Exception {
 		ArrayList<Student> students = new ArrayList<>();
 		for (int j = 0; j < i; j++) {
 		String name = StudentRandomNames(1).get(0);
@@ -105,16 +135,27 @@ public class Main {
 		return students;
 	}
 
+	public static ArrayList<Professor> newProfessor(int i, Department department) throws Exception {
+		ArrayList<Professor> profs = new ArrayList<>();
+		for(int j = 0; j < i; j++) {
+			String name = ProfRandomNames(1).get(0);
+			String ID = randomID();
+			ArrayList<Course> courses = randomCourse(department);
+			Professor prof = new Professor(ID, name, courses);
+			profs.add(prof);
+		}
+		return profs;
+	}
+
 	public static ArrayList<Course> randomCourse(Department department) throws Exception {
-		
-		ArrayList<Course> courses = new ArrayList<Course>();
+		ArrayList<Course> courses = new ArrayList<>();
 		Major major = department.getMajors().get(new Random().nextInt(department.getMajors().size()));
 		ArrayList<Course> randomTerm = major.getPlan().get(new Random().nextInt(major.getPlan().size()));
 		Course randomCourse1 = randomTerm.get(new Random().nextInt(randomTerm.size()));
 		Course randomCourse2 = randomTerm.get(new Random().nextInt(randomTerm.size()));
 		Course randomCourse3 = randomTerm.get(new Random().nextInt(randomTerm.size()));
-		
-		if(randomCourse1.getName().contains(major.getSym()) && randomCourse2.getName().contains(major.getSym()) && randomCourse3.getName().contains(major.getSym())) {// need to make the Majors or the departments get a special words. like "EE" 
+
+		if (randomCourse1.getName().contains(major.getSym()) && randomCourse2.getName().contains(major.getSym()) && randomCourse3.getName().contains(major.getSym())) {// need to make the Majors or the departments get a special words. like "EE"
 			courses.add(randomCourse1);
 			courses.add(randomCourse2);
 			courses.add(randomCourse3);
@@ -123,52 +164,8 @@ public class Main {
 		else {
 			return randomCourse(department);
 		}
-
-	}
-	
-	public static ArrayList<Professor> newProfessor(int i,Department department) throws Exception {
-		ArrayList<Professor> profs = new ArrayList<>();
-		for(int j = 0; j < i; j++) {
-		String name = ProfRandomNames(1).get(0);
-		String ID = randomID();
-		ArrayList<Course> courses = randomCourse(department);
-		Professor prof = new Professor(ID, name,courses);
-		profs.add(prof);
-		}
-		return profs;
 	}
 
-
-	public static void createDepartments() {
-		File dir = new File(System.getProperty("user.dir"));
-		File[] data = new File(dir + "\\data").listFiles();
-		Boolean exists = false;
-		Department department = null;
-		for(File major : data) {
-			try {
-				Major m = new Major(major);
-				for(Department de: Department.allDepartments) {
-					if(de.getName().substring(0,5).equals(m.getName().substring(0,5))) {
-						exists = true;
-					}
-					else {
-						exists = false;
-					}
-				}
-				if(!exists) {
-				 department = new Department(m.getName().split(" ")[0], m, new ArrayList<Professor>(), new ArrayList<Student>());
-				}
-				else{
-				department.addMajors(m);
-				}
-				// To be continued
-
-			} catch (Exception e) {
-				//e.printStackTrace();
-				System.out.println("CreateMajors: Department already exists or major problem.");
-			}
-		}
-	}
 	public static LocalTime randomClassTime() {
 	    Random rand = new Random();
 	    int hour = rand.nextInt(12) + 8;
@@ -210,13 +207,6 @@ public class Main {
 	    return frmtTime;
 	}
 
-//	public static void createCoursesForStudent(Student s) {
-//	}
-
-
-	public static void sendStudents() {
-
-	}
 	public static void startYear() {
 		int Students = 300; //students per term
 		try {

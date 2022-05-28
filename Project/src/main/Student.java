@@ -9,13 +9,15 @@ import java.util.Random;
 public class Student extends Person{
 
 	Major major;
-	ArrayList<Course> coursesCompleted = new ArrayList<Course>();
+	private ArrayList<Course> coursesCompleted = new ArrayList<Course>();
 	int creditsCompleted;
-	ArrayList<Section> currentSections = new ArrayList<Section>();
+	private ArrayList<Section> currentSections = new ArrayList<Section>();
+	private ArrayList<ArrayList<Course>> studentPlan;
 	
 	public Student(String id, String name, Major major) {
 		super(id,name);
 		this.major = major;
+		this.studentPlan = this.major.createPlanForStudent();
 	}
 
 	public Major getMajor() {

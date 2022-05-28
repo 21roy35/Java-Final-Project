@@ -8,7 +8,7 @@ public class Major {
     private ArrayList<ArrayList<Course>> plan = new ArrayList<>();
     private int credits;
     public static ArrayList<Major> allMajors = new ArrayList<>();
-    private String sym;
+    private String sym; //this should be in department and not major
 
     public Major(File file) throws FileNotFoundException {
         Scanner input = new Scanner(file); //Here we are reading the file
