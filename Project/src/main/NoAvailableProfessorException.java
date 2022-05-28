@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class NoAvailableProfessorException extends Exception{
     private Course course;
-    public ArrayList<NoAvailableProfessorException> allNoAvailableProfessorExceptions = new ArrayList<>();
+    public static ArrayList<NoAvailableProfessorException> allNoAvailableProfessorExceptions = new ArrayList<>();
 
     public NoAvailableProfessorException(Course course) {
         this.course = course;

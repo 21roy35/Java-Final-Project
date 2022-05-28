@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class FullSectionsException extends Exception{
     private Course course;
     private ArrayList<Student> studentsCouldNotRegister = new ArrayList<>();
-    public ArrayList<FullSectionsException> allFullSectionsExceptions = new ArrayList<>();
+    public static ArrayList<FullSectionsException> allFullSectionsExceptions = new ArrayList<>();
 
     public FullSectionsException(Course course, ArrayList<Student> students) {
         this.course = course;

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class StudentRegistrationConflictException extends Exception{
     private ArrayList<Student> students = new ArrayList<>();
     private Section section;
-    public ArrayList<StudentRegistrationConflictException> allStudentRegistrationConflictExceptions = new ArrayList<>();
+    public static ArrayList<StudentRegistrationConflictException> allStudentRegistrationConflictExceptions = new ArrayList<>();
 
     public StudentRegistrationConflictException(ArrayList<Student> students, Section section) {
         this.students = students;
