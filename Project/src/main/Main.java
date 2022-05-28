@@ -21,7 +21,7 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		createDepartments();
-//		createGeneralDepartments();
+		createGeneralDepartments();
 		createStudentsAndProfessors(200,10);
 		
 		int YEAR_COUNT = 0;
@@ -36,6 +36,7 @@ public class Main {
 		File dir = new File(System.getProperty("user.dir"));
 		File[] data = new File(dir + "\\data").listFiles();
 		Boolean exists = false;
+		Department department = null;
 		for(File major : data) {
 			try {
 				Major m = new Major(major);
@@ -49,11 +50,15 @@ public class Main {
 					}
 				}
 				if(!exists) {
-					Department department = new Department(m.getName().split(" ")[0], m, new ArrayList<>(), new ArrayList<>());
+					department = new Department(m.getName().split(" ")[0], m, new ArrayList<Professor>(), new ArrayList<Student>());
 				}
+				else{
+					department.addMajors(m);
+				}
+				// To be continued
+
 			} catch (Exception e) {
 //				e.printStackTrace();
-
 				System.out.println("CreateMajors: Department already exists or major problem.");
 			}
 		}
@@ -61,7 +66,30 @@ public class Main {
 
 	public static void createGeneralDepartments() throws Exception {
 		Department science = new Department("Science");
+		Major Math = new Major("Math", "MATH");
+		Major Chemistry = new Major("Chemistry", "CHEM");
+		Major Biology = new Major("Biology", "BIO");
+		Major Physics = new Major("Physics", "PHYS");
+		Major Stats = new Major("Stats", "STAT");
+		science.addMajors(Math, Chemistry, Biology, Physics, Stats);
+
 		Department general = new Department("General");
+		Major Arabic = new Major("Arabic", "ARAB");
+		Major Islamic = new Major("Islamic", "ISLS");
+		Major LANE = new Major("LANE", "LANE");
+		Major LANF = new Major("LANF", "LANF");
+		Major HIST = new Major("HIST", "HIST");
+		Major GEOG = new Major("GEOG", "GEOG");
+		Major IS = new Major("IS", "IS");
+		Major SOC = new Major("SOC", "SOC");
+		Major COM = new Major("COM", "COM");
+		Major COMM = new Major("COMM", "COMM");
+		Major PSY = new Major("PSY", "PSY");
+		Major BL = new Major("BL", "BL");
+		Major BLA = new Major("BLA", "BLA");
+		Major CPIT = new Major("CPIT", "CPIT");
+		Major ELIS = new Major("ELIS", "ELIS");
+		general.addMajors(Arabic, Islamic, LANE, LANF, HIST, GEOG, IS, COM, COMM, PSY, SOC, BL, BLA, CPIT, ELIS);
 	}
 
 	private static void createStudentsAndProfessors(int numberOfStudents, int numberOfProfessors) throws Exception {

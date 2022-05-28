@@ -92,6 +92,15 @@ public class Major {
         input.close(); //We close the input stream
     }
 
+    public Major(String name, String Sym) {
+        this.name = name;
+        this.sym = Sym;
+        for (int i = 0; i <= 11; i++) {
+            ArrayList<Course> tempSemester = new ArrayList<>();
+            this.plan.add(tempSemester);
+        }
+    }
+
     public String getSym() {
 		return this.sym;
 	}
@@ -199,6 +208,7 @@ public class Major {
     }
 
     public static ArrayList<Course> getTerm(Department department, Course course) {
+//        try {
         ArrayList<Major> majors = department.getMajors();
         ArrayList<Course> term = new ArrayList<>();
         for (int i = 0; i <= majors.size() - 1; i++) {
