@@ -22,7 +22,6 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		createDepartments();
 //		createGeneralDepartments();
-		System.out.println(Department.allDepartments.get(1).getName());
 		createStudentsAndProfessors(200,10);
 		
 		int YEAR_COUNT = 0;
@@ -37,61 +36,33 @@ public class Main {
 		File dir = new File(System.getProperty("user.dir"));
 		File[] data = new File(dir + "\\data").listFiles();
 		Boolean exists = false;
-		Department department = null;
 		for(File major : data) {
-			Major m = null;
-			try	{
-				m = new Major(major);
-			} catch (FileNotFoundException e) {
-			} catch (ClassCastException x) {
-			}
+			try {
+				Major m = new Major(major);
+				for(Department de: Department.allDepartments) {
+					if(de.getName().substring(0,5).equals(m.getName().substring(0,5))) {
+						exists=true;
+					}
+					else {
 
-			for(Department de: Department.allDepartments) {
-				if(de.getName().substring(0,5).equals(m.getName().substring(0,5))) {
-					exists = true;
+						exists=false;
+					}
 				}
-				else {
-					exists = false;
+				if(!exists) {
+					Department department = new Department(m.getName().split(" ")[0], m, new ArrayList<>(), new ArrayList<>());
 				}
-			}
-			if(!exists) {
-				try {
-					department = new Department(m.getName().split(" ")[0], m, new ArrayList<>(), new ArrayList<>());
-				} catch (Exception e) {}
-			}
-			else{
-				department.addMajors(m);
+			} catch (Exception e) {
+//				e.printStackTrace();
+
+				System.out.println("CreateMajors: Department already exists or major problem.");
 			}
 		}
 	}
 
-//	public static void createGeneralDepartments() throws Exception {
-//		ArrayList<String> scienceCodes = new ArrayList<>();
-//		scienceCodes.add(Department.Science.BIO.name());
-//		scienceCodes.add(Department.Science.CHEM.name());
-//		scienceCodes.add(Department.Science.PHYS.name());
-//		scienceCodes.add(Department.Science.MATH.name());
-//		scienceCodes.add(Department.Science.STAT.name());
-//
-//		ArrayList<String> GeneralCodes = new ArrayList<>();
-//		scienceCodes.add(Department.General.CPIT.name());
-//		scienceCodes.add(Department.General.COMM.name());
-//		scienceCodes.add(Department.General.COM.name());
-//		scienceCodes.add(Department.General.ELIS.name());
-//		scienceCodes.add(Department.General.ARAB.name());
-//		scienceCodes.add(Department.General.ISLS.name());
-//		scienceCodes.add(Department.General.LANE.name());
-//		scienceCodes.add(Department.General.HIST.name());
-//		scienceCodes.add(Department.General.GEOG.name());
-//		scienceCodes.add(Department.General.IS.name());
-//		scienceCodes.add(Department.General.SOC.name());
-//		scienceCodes.add(Department.General.PSY.name());
-//		scienceCodes.add(Department.General.BL.name());
-//		scienceCodes.add(Department.General.BLA.name());
-//
-//		Department science = new Department("Science", scienceCodes);
-//		Department general = new Department("General", GeneralCodes);
-//	}
+	public static void createGeneralDepartments() throws Exception {
+		Department science = new Department("Science");
+		Department general = new Department("General");
+	}
 
 	private static void createStudentsAndProfessors(int numberOfStudents, int numberOfProfessors) throws Exception {
 		//testing
@@ -181,7 +152,7 @@ public class Main {
 		return profs;
 	}
 
-	public static ArrayList<Course> randomCourse(Department department) throws Exception {
+	public static ArrayList<Course> randomCourse(Department department) {
 		ArrayList<Course> courses = new ArrayList<>();
 		Major major = department.getMajors().get(new Random().nextInt(department.getMajors().size()));
 		ArrayList<Course> randomTerm = major.getPlan().get(new Random().nextInt(major.getPlan().size()));
@@ -252,7 +223,7 @@ public class Main {
 			Thread.sleep(3000);
 
 			for (Course course : Course.allCourses) {
-				String courseID = course.getCourseID();
+				String courseID = course.getCourseSym();
 				Department department = Department.getDepartmentFromID(courseID);
 				try {
 					course.createSections(department);
@@ -274,7 +245,7 @@ public class Main {
 			Thread.sleep(3000);
 
 			for (Course course : Course.allCourses) {
-				String courseID = course.getCourseID();
+				String courseID = course.getCourseSym();
 				Department department = Department.getDepartmentFromID(courseID);
 				try {
 					course.createSections(department);

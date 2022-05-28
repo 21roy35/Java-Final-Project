@@ -10,10 +10,6 @@ public class GeneralCourse extends Course implements GeneralCourseInterface{
 
     @Override
     public void createSections(Department department) throws Exception {
-        //public Section(Professor professor, LocalTime time)
-        //Section(d);
-        //Section creation depends on: Student.neededCourses(), Course.professors, Major.plan.get(term).sectionloop.(onlyDepartmentCourses),
-
         String departmentID = this.getName().substring(0, 2);
         ArrayList<Course> term = Major.getTerm(department, this);
         ArrayList<LocalTime> times = new ArrayList<>();

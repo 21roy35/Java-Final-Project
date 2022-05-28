@@ -201,11 +201,11 @@ public class Course {
         return sectionsTime;
     }
 
-    public String getCourseID() {
-        int index = this.name.indexOf(1);
+    public String getCourseSym() {
+        int index = this.name.indexOf("1");
         for (int i = 2; i <= 4; i++) {
-            int tempIndex = this.name.indexOf(i);
-            if (tempIndex < index) {
+            int tempIndex = this.name.indexOf(String.valueOf(i).trim());
+            if (tempIndex < index & tempIndex > 1) {
                 index = tempIndex; }
         }
         String courseID = this.name.substring(0, index);
