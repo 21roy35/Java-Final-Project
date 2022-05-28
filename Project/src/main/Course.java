@@ -75,8 +75,23 @@ public class Course {
     //public Section(Professor professor, LocalTime time)
     //Section(d);
     //Section creation depends on: Student.neededCourses(), Course.professors, Major.plan.get(term).sectionloop.(onlyDepartmentCourses),
-        ArrayList<Student> studentList = department.getStudentList();
-        ArrayList<Professor> professorList = department.getProfessorList();
+        ArrayList<Student> studentList = new ArrayList<>();
+        ArrayList<Professor> professorList = new ArrayList<>();
+
+        for (int i = 0; i <= Department.allDepartments.size() - 1; i++) {
+            ArrayList<Student> tempStudentList = Department.allDepartments.get(i).getStudentList();
+            ArrayList<Professor> tempProfessorList = Department.allDepartments.get(i).getProfessorList();
+
+            for (int r = 0; r <= tempStudentList.size() - 1; r++) {
+                Student student = tempStudentList.get(r);
+                studentList.add(student);
+            }
+            for (int r = 0; r <= tempProfessorList.size() - 1; r++) {
+                Professor prof = tempProfessorList.get(r);
+                professorList.add(prof);
+            }
+        }
+
         ArrayList<Student> studentsNeedThisCourse = new ArrayList<>();
         ArrayList<Professor> professorTeachThisCourse = new ArrayList<>();
 
@@ -91,28 +106,33 @@ public class Course {
         for (int i = 0; i <= professorList.size() - 1; i++) {
             Professor prof = professorList.get(i);
             ArrayList<Course> tempCourses = prof.getCurrentCourses();
-            if (tempCourses.contains(this)) {
+            if (tempCourses.contains(this) & prof.getLimit() <= 12 - this.credits) {
                 professorTeachThisCourse.add(prof);
             }
         }
 
-        if (professorTeachThisCourse.size() == 0) {//throw exception and create section!!!
+        if (professorTeachThisCourse.size() == 0) {
             throw new Exception("NoAvailableProfessorException. No professors teach the course: " + this.name);
         }
-        else if ((studentsNeedThisCourse.size() + professorTeachThisCourse.size() - 1)/professorTeachThisCourse.size() > 20) {
-            throw new Exception("NotEnoughProfessorsException. need more professors to teach the course: " + this.name);
-        }
         else {
+            if ((studentsNeedThisCourse.size() + professorTeachThisCourse.size() - 1)/professorTeachThisCourse.size() > 20) {
+                throw new Exception("NotEnoughProfessorsException. need more professors to teach the course: " + this.name); }
+
             for (int i = 0; i <= professorTeachThisCourse.size() - 1; i++) {
-                ArrayList<Student> tempStudentList = (ArrayList<Student>) studentsNeedThisCourse.subList(0, 20);
+                ArrayList<Student> tempStudentList = new ArrayList<>();
+                try {
+                    tempStudentList = (ArrayList<Student>) studentsNeedThisCourse.subList(20*i, 20*(i+1));
+                } catch (IndexOutOfBoundsException e) {
+                    tempStudentList = (ArrayList<Student>) studentsNeedThisCourse.subList(20*i, studentsNeedThisCourse.size());
+                }
 
                 Section section = new Section(this, professorTeachThisCourse.get(i), 20, Main.randomClassTime(), Main.randomClassDuration(), tempStudentList);
+
                 this.sections.add(section);
                 professorTeachThisCourse.get(i).addCurrentSections(section);
             }
+
         }
-
-
 
     //Course course, Professor professor, int capacity, LocalTime time, LocalTime duration,ArrayList<Student> students, String sectionid)
     /*

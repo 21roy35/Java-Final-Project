@@ -24,11 +24,11 @@ public class Section {
 	
 	
 	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, Student students) {
-		for(Section section : getAllSections()) {
-			while(section.getStudentList().size()<section.maxStudents) {
-					section.addStudents(students);
-			}
-		}
+//		for(Section section : getAllSections()) {
+//			while(section.getStudentList().size()<section.maxStudents) {
+//					section.addStudents(students);
+//			}
+//		}
 		if(!sections.contains(this)) {
 		this.course=course;
 		this.duration=duration;
@@ -36,20 +36,19 @@ public class Section {
 		this.maxStudents=capacity;
 		this.sectionTime=time;
 		this.students.add(students);
+		students.addCurrentSections(this);
 		this.sectionID = randomSectionID();
 		sections.add(this);
 		}
 	}
-	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration,ArrayList<Student> students) {
-
-		
-		for(Section section : getAllSections()) {
-			while(section.getStudentList().size()<section.maxStudents) {
-				for(Student student: students) {
-					section.addStudents(student);
-				}
-			}
-		}
+	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, ArrayList<Student> students) {
+//		for(Section section : getAllSections()) {
+//			while(section.getStudentList().size() < section.maxStudents) {
+//				for(Student student: students) {
+//					section.addStudents(student);
+//				}
+//			}
+//		}
 		if(!sections.contains(this)) {
 		this.course=course;
 		this.duration=duration;
@@ -57,23 +56,14 @@ public class Section {
 		this.maxStudents=capacity;
 		this.sectionTime=time;
 		this.students=students;
+		for (int i = 0; i <= students.size() - 1; i++) {
+			Student student = students.get(i);
+			student.addCurrentSections(this);
+		}
 		this.sectionID=randomSectionID();
 		sections.add(this);
 		}
 	}
-
-	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration) {
-		if(!sections.contains(this)) {
-			this.course=course;
-			this.duration=duration;
-			this.professor=professor;
-			this.maxStudents=capacity;
-			this.sectionTime=time;
-			this.sectionID = randomSectionID();
-			sections.add(this);
-		}
-	}
-
 
 	/**
 	 * @param i as integer, sets the section ID to the given parameter

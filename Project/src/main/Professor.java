@@ -37,7 +37,11 @@ public class Professor extends Person{
 	}
 
 	public int getLimit() {
-		return limit;
+		int profLimit = 0;
+		for (Course course : this.courses) {
+			profLimit += course.getCredits();
+		}
+		return profLimit;
 	}
 
 	@Override
