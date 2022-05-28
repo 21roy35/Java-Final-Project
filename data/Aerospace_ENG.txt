@@ -1,4 +1,5 @@
 name, Aeronautical Engineering
+sym, AE
 credits, 155
 CPIT110, 3
 COMM101, 3

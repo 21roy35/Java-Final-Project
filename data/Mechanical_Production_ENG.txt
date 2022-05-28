@@ -1,4 +1,5 @@
 name, Mechanical Engineering (Production)
+sym, MENG
 credits, 155
 CPIT110, 3
 COMM101, 3

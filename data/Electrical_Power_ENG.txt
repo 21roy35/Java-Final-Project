@@ -1,4 +1,5 @@
 name, Electrical Power and machines Engineering
+sym, EE
 credits, 155
 CPIT110, 3
 COMM101, 3
