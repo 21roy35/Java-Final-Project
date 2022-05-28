@@ -1,7 +1,9 @@
 package main;
 
+import java.lang.reflect.Array;
 import java.time.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Course {
     private String name;
@@ -34,6 +36,9 @@ public class Course {
         this.credits=4;
         this.prerequisites = null;
         this.sections=Section();
+//        for(int i =1; i<5; i++) {
+//            this.professors.add(new Professor());
+//        }
     }
     private ArrayList<Section> Section() {
         // TODO Auto-generated method stub
@@ -66,43 +71,10 @@ public class Course {
         return this.prerequisites;
     }
 
-    public ArrayList<Section> getSections() {
-        return sections;
-    }
-
     public void createSections(Department department) throws Exception {
         //public Section(Professor professor, LocalTime time)
         //Section(d);
         //Section creation depends on: Student.neededCourses(), Course.professors, Major.plan.get(term).sectionloop.(onlyDepartmentCourses),
-
-        String departmentID = this.name.substring(0, 2);
-        ArrayList<Course> term = Major.getTerm(department, this);
-        ArrayList<LocalTime> times = new ArrayList<>();
-        ArrayList<Course> removeList = new ArrayList<>();
-
-        for (int i = 0; i <= term.size() - 1; i++) {
-            Course course = term.get(i);
-            String courseID = course.getName().substring(0, 2);
-            if (departmentID.equals(courseID)) {
-                removeList.add(course);
-            }
-        }
-
-        term.removeAll(removeList);
-
-        for (int i = 0; i <= term.size() - 1; i++) {
-            Course course = term.get(i);
-            times.addAll(course.getCourseSectionsTime());
-        }
-
-        LocalTime sectionTime = Main.randomClassTime();
-        for (int i = 0; i <= times.size() - 1; i++) {
-            LocalTime time = times.get(i);
-            if (time == sectionTime) {
-                sectionTime = Main.randomClassTime();
-            }
-        }
-
         ArrayList<Student> studentList = new ArrayList<>();
         ArrayList<Professor> professorList = new ArrayList<>();
 
@@ -139,37 +111,27 @@ public class Course {
             }
         }
 
-        int studentsNeedThisCourseSize = studentsNeedThisCourse.size();
-        int professorTeachThisCourseSize = professorTeachThisCourse.size();
-
         if (professorTeachThisCourse.size() == 0) {
-            throw new NoAvailableProfessorException(this);
+            throw new Exception("NoAvailableProfessorException. No professors teach the course: " + this.name);
         } else {
-            if ((studentsNeedThisCourseSize + professorTeachThisCourseSize - 1) /   professorTeachThisCourseSize > 20) {
-                int index = professorTeachThisCourseSize*20;
-                ArrayList<Student> studentsCouldNotRegister = (ArrayList<Student>) studentsNeedThisCourse.subList(index, studentsNeedThisCourseSize);
-                throw new FullSectionsException(this, studentsCouldNotRegister);
+            if ((studentsNeedThisCourse.size() + professorTeachThisCourse.size() - 1) / professorTeachThisCourse.size() > 20) {
+                throw new Exception("NotEnoughProfessorsException. need more professors to teach the course: " + this.name);
             }
 
-            for (int i = 0; i <= professorTeachThisCourseSize - 1; i++) {
+            for (int i = 0; i <= professorTeachThisCourse.size() - 1; i++) {
                 Professor prof = professorTeachThisCourse.get(i);
                 ArrayList<Student> tempStudentList = new ArrayList<>();
-
                 try {
                     tempStudentList.addAll((ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, 20 * (i + 1)));
                 } catch (IndexOutOfBoundsException e) {
-                    tempStudentList.addAll((ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, studentsNeedThisCourseSize));
+                    tempStudentList.addAll((ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, studentsNeedThisCourse.size()));
                 }
-
                 try {
-                    Section section = new Section(this, prof, 20, sectionTime, Main.randomClassDuration(), tempStudentList);
+                    Section section = new Section(this, prof, 20, Main.randomClassTime(), Main.randomClassDuration(), tempStudentList);
                     prof.addCurrentSections(section);
                     this.sections.add(section);
-                } catch (StudentRegistrationConflictException e) {
-                    tempStudentList = e.removeStudents(tempStudentList);
-                    Section section = new Section(this, prof, 20, sectionTime, Main.randomClassDuration(), tempStudentList);
-                    prof.addCurrentSections(section);
-                    this.sections.add(section);
+                } catch (FullSectionsException e) {
+                    
                 }
             }
         }
@@ -178,6 +140,22 @@ public class Course {
     public void removeSections() {
         this.sections.clear();
     }
+
+//    public void setProfessors(ArrayList<Professor> professors) {
+//        this.professors = professors;
+//    }
+//
+//    public ArrayList<Professor> getProfessors(){
+//        return this.professors;
+//    }
+//
+//    public String getProfessorListAsString() {
+//        String professorListString = new String();
+//        for(Professor prof :professors) {
+//            professorListString=professorListString + prof.name + ", ";
+//        }
+//        return professorListString;
+//    }
 
     public String getSectionsListAsString() {
         String sectionListString = new String();
@@ -195,16 +173,6 @@ public class Course {
                 wantedCourse = tempCourse;
         }
         return wantedCourse;
-    }
-
-    public ArrayList<LocalTime> getCourseSectionsTime() {
-        ArrayList<LocalTime> sectionsTime = new ArrayList<>();
-        for (int i = 0; i <= this.sections.size() - 1; i++) {
-            Section section = this.sections.get(i);
-            LocalTime time = section.getSectionTime();
-            sectionsTime.add(time);
-        }
-        return sectionsTime;
     }
 
     // toString

@@ -13,52 +13,22 @@ import javax.swing.ListSelectionModel;
 public class Main {
 
 	static String CURRENT_YEAR = "2022";
-	static int NUMBER_OF_YEARS = 1; // one cycle = 5 years
+	static int NUMBER_OF_YEARS = 1; 
 	static DecimalFormat _ID = new DecimalFormat("00000");
 	static int LATEST_ID;
 	public static ArrayList<Student> current_students = new ArrayList<>();
 	
 	public static void main(String[] args) throws Exception {
+		
 		createDepartments();
 		createStudentsAndProfessors(200,10);
 		
 		int YEAR_COUNT = 0;
-		while(NUMBER_OF_YEARS > YEAR_COUNT) {
+		while(NUMBER_OF_YEARS>YEAR_COUNT) {
 			startYear();
 			YEAR_COUNT++;
 		}
 		MainGUI.main(null);
-	}
-
-	public static void createDepartments() {
-		File dir = new File(System.getProperty("user.dir"));
-		File[] data = new File(dir + "\\data").listFiles();
-		Boolean exists = false;
-		Department department = null;
-		for(File major : data) {
-			try {
-				Major m = new Major(major);
-				for(Department de: Department.allDepartments) {
-					if(de.getName().substring(0,5).equals(m.getName().substring(0,5))) {
-						exists = true;
-					}
-					else {
-						exists = false;
-					}
-				}
-				if(!exists) {
-					department = new Department(m.getName().split(" ")[0], m, new ArrayList<Professor>(), new ArrayList<Student>());
-				}
-				else{
-					department.addMajors(m);
-				}
-				// To be continued
-
-			} catch (Exception e) {
-				//e.printStackTrace();
-				System.out.println("CreateMajors: Department already exists or major problem.");
-			}
-		}
 	}
 
 	private static void createStudentsAndProfessors(int numberOfStudents, int numberOfProfessors) throws Exception {
@@ -74,8 +44,8 @@ public class Main {
 			System.out.println("\nDepartment: "+department.getName()+"\nMajors: "+Department.allDepartments.get(i).allMajors());
 			department.addStudentList(departmentStudents);
 			department.addProfessorList(departmentProfessors);
-			System.out.println("Students: " + department.getStudentList());
-			System.out.println("Professers: " + department.getProfessorList());
+			System.out.println("Students: "+department.getStudentList());
+			System.out.println("Professers: "+department.getProfessorList());			
 			i++;
 		}//some files couldn't be read for some reason thats why not all majors are in the departments
 		
@@ -123,7 +93,7 @@ public class Main {
 			throw new Exception("randomID exception. LATEST_ID max limit reached.");
 		}
 	}
-	public static ArrayList<Student> newStudent(int i, Department department) throws Exception {
+	public static ArrayList<Student> newStudent(int i,Department department) throws Exception {
 		ArrayList<Student> students = new ArrayList<>();
 		for (int j = 0; j < i; j++) {
 		String name = StudentRandomNames(1).get(0);
@@ -135,27 +105,16 @@ public class Main {
 		return students;
 	}
 
-	public static ArrayList<Professor> newProfessor(int i, Department department) throws Exception {
-		ArrayList<Professor> profs = new ArrayList<>();
-		for(int j = 0; j < i; j++) {
-			String name = ProfRandomNames(1).get(0);
-			String ID = randomID();
-			ArrayList<Course> courses = randomCourse(department);
-			Professor prof = new Professor(ID, name, courses);
-			profs.add(prof);
-		}
-		return profs;
-	}
-
 	public static ArrayList<Course> randomCourse(Department department) throws Exception {
-		ArrayList<Course> courses = new ArrayList<>();
+		
+		ArrayList<Course> courses = new ArrayList<Course>();
 		Major major = department.getMajors().get(new Random().nextInt(department.getMajors().size()));
 		ArrayList<Course> randomTerm = major.getPlan().get(new Random().nextInt(major.getPlan().size()));
 		Course randomCourse1 = randomTerm.get(new Random().nextInt(randomTerm.size()));
 		Course randomCourse2 = randomTerm.get(new Random().nextInt(randomTerm.size()));
 		Course randomCourse3 = randomTerm.get(new Random().nextInt(randomTerm.size()));
-
-		if (randomCourse1.getName().contains(major.getSym()) && randomCourse2.getName().contains(major.getSym()) && randomCourse3.getName().contains(major.getSym())) {// need to make the Majors or the departments get a special words. like "EE"
+		
+		if(randomCourse1.getName().contains(major.getSym()) && randomCourse2.getName().contains(major.getSym()) && randomCourse3.getName().contains(major.getSym())) {// need to make the Majors or the departments get a special words. like "EE" 
 			courses.add(randomCourse1);
 			courses.add(randomCourse2);
 			courses.add(randomCourse3);
@@ -164,25 +123,69 @@ public class Main {
 		else {
 			return randomCourse(department);
 		}
+
+	}
+	
+	public static ArrayList<Professor> newProfessor(int i,Department department) throws Exception {
+		ArrayList<Professor> profs = new ArrayList<>();
+		for(int j = 0; j < i; j++) {
+		String name = ProfRandomNames(1).get(0);
+		String ID = randomID();
+		ArrayList<Course> courses = randomCourse(department);
+		Professor prof = new Professor(ID, name,courses);
+		profs.add(prof);
+		}
+		return profs;
 	}
 
+
+	public static void createDepartments() {
+		File dir = new File(System.getProperty("user.dir"));
+		File[] data = new File(dir + "\\data").listFiles();
+		Boolean exists = false;
+		Department department = null;
+		for(File major : data) {
+			try {
+				Major m = new Major(major);
+				for(Department de: Department.allDepartments) {
+					if(de.getName().substring(0,5).equals(m.getName().substring(0,5))) {
+						exists = true;
+					}
+					else {
+						exists = false;
+					}
+				}
+				if(!exists) {
+				 department = new Department(m.getName().split(" ")[0], m, new ArrayList<Professor>(), new ArrayList<Student>());
+				}
+				else{
+				department.addMajors(m);
+				}
+				// To be continued
+
+			} catch (Exception e) {
+				//e.printStackTrace();
+				System.out.println("CreateMajors: Department already exists or major problem.");
+			}
+		}
+	}
 	public static LocalTime randomClassTime() {
 	    Random rand = new Random();
 	    int hour = rand.nextInt(12) + 8;
 	    int minute = rand.nextInt(2)+1;
 	    System.out.println(minute);
 	    switch(minute) {
-			case 1:
-				minute=00;
-				break;
-			case 2:
-				minute = 30;
-				break;
+	    case 1:
+	    	minute=00;
+	    	break;
+	    case 2:
+	    	minute = 30;
+	    	break;
 	    	default:
 	    		minute = 30;
 	    		break;
 	    }
-	    String frmt =  String.format("%02d:%02d", hour, minute);
+	   String frmt =  String.format("%02d:%02d", hour, minute);
 	    return LocalTime.parse(frmt);
 	}
 
@@ -193,12 +196,12 @@ public class Main {
 	    int minute = rand.nextInt(2)+1;
 	    System.out.println(minute);
 	    switch(minute) {
-			case 1:
-				minute=00;
-				break;
-			case 2:
-				minute = 30;
-				break;
+	    case 1:
+	    	minute=00;
+	    	break;
+	    case 2:
+	    	minute = 30;
+	    	break;
 	    	default:
 	    		minute = 30;
 	    		break;
@@ -207,11 +210,19 @@ public class Main {
 	    return frmtTime;
 	}
 
+//	public static void createCoursesForStudent(Student s) {
+//	}
+
+
+	public static void sendStudents() {
+
+	}
 	public static void startYear() {
 		int Students = 300; //students per term
 		try {
+			int failed_count = 0;
 			current_students = Department.allDepartments.get(0).getStudentList();
-
+			
 			// pdateJList(current_students);
 
 			System.out.println("Year Starting...");
@@ -225,7 +236,12 @@ public class Main {
 			for(Student student : current_students) {
 				student.updateStudent();
 			}
-			System.out.printf("Students #%d graduated year #%s\n", current_students.size(), CURRENT_YEAR);
+			for(Student stu: current_students) {
+				if(stu.status!="Normal") {
+					failed_count++;
+				}
+			}
+			System.out.printf("Students #%d graduated year #%s\n. Number of fails this year: %d", current_students.size(), CURRENT_YEAR, failed_count);
 			CURRENT_YEAR = String.valueOf(Integer.parseInt(CURRENT_YEAR)+1);
 		} catch (Exception e) {
 			e.printStackTrace();
