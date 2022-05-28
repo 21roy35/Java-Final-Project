@@ -14,7 +14,7 @@ import javax.swing.ListSelectionModel;
 public class Main {
 
 	static String CURRENT_YEAR = "2022";
-	static int NUMBER_OF_YEARS = 1; // one cycle = 5 years
+	static int NUMBER_OF_YEARS = 5; // one cycle = 5 years
 	static DecimalFormat _ID = new DecimalFormat("00000");
 	static int LATEST_ID;
 	public static ArrayList<Student> current_students = new ArrayList<>();
@@ -22,13 +22,31 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		createDepartments();
 		createGeneralDepartments();
-		createStudentsAndProfessors(200,10);
+		createStudentsAndProfessors(200,80);
 		
 		int YEAR_COUNT = 0;
 		while(NUMBER_OF_YEARS > YEAR_COUNT) {
 			startYear();
 			YEAR_COUNT++;
 		}
+
+		int notCompletedStudents = 0;
+		int numStu = 0;
+		for(Department de: Department.allDepartments) {
+			for (int i = 0; i <= de.getStudentList().size() - 1; i++) {
+				Student student = de.getStudentList().get(i);
+				numStu += 1;
+				if (student.getCreditsCompleted() < 155) {
+					notCompletedStudents += 1;
+				}
+			}
+		}
+		System.out.println(FullSectionsException.allFullSectionsExceptions.size());
+		System.out.println(NoAvailableProfessorException.allNoAvailableProfessorExceptions.size());
+		System.out.println(StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size());
+		System.out.println(numStu);
+		System.out.println(notCompletedStudents);
+
 		MainGUI.main(null);
 	}
 
@@ -203,7 +221,6 @@ public class Main {
 	    Random rand = new Random();
 	    int hour = rand.nextInt(12) + 8;
 	    int minute = rand.nextInt(2)+1;
-	    System.out.println(minute);
 	    switch(minute) {
 			case 1:
 				minute=00;
@@ -224,7 +241,6 @@ public class Main {
 	    Random rand = new Random();
 	    int hour = rand.nextInt(12);
 	    int minute = rand.nextInt(2)+1;
-	    System.out.println(minute);
 	    switch(minute) {
 			case 1:
 				minute=00;

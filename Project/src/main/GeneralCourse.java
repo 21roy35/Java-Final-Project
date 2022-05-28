@@ -10,14 +10,14 @@ public class GeneralCourse extends Course implements GeneralCourseInterface{
 
     @Override
     public void createSections(Department department) throws Exception {
-        String departmentID = this.getName().substring(0, 2);
-        ArrayList<Course> term = Major.getTerm(department, this);
-        ArrayList<LocalTime> times = new ArrayList<>();
-        ArrayList<Course> removeList = new ArrayList<>();
+        String departmentID = this.getName().substring(0, 2); //we get ID so we can
+        ArrayList<Course> term = Major.getTerm(department, this); //we want the term of the course so we can avoid conflicts
+        ArrayList<LocalTime> times = new ArrayList<>(); // the times of the sections of the courses in the same term
+        ArrayList<Course> removeList = new ArrayList<>(); //this is the list for the courses that are not the same department
 
-        for (int i = 0; i <= term.size() - 1; i++) {
+        for (int i = 0; i <= term.size() - 1; i++) { //we add in the removeList
             Course course = term.get(i);
-            String courseID = course.getName().substring(0, 2);
+            String courseID = course.getName().substring(0, 2); //the substring of the name is the department code for the course name
             if (departmentID.equals(courseID)) {
                 removeList.add(course);
             }
@@ -79,7 +79,10 @@ public class GeneralCourse extends Course implements GeneralCourseInterface{
 
         if (professorTeachThisCourse.size() == 0) {
             throw new NoAvailableProfessorException(this);
-        } else {
+        } else if (studentsNeedThisCourseSize == 0) {
+
+        }
+        else {
             if ((studentsNeedThisCourseSize + professorTeachThisCourseSize - 1) /   professorTeachThisCourseSize > 20) {
                 int index = professorTeachThisCourseSize*20;
                 ArrayList<Student> studentsCouldNotRegister = (ArrayList<Student>) studentsNeedThisCourse.subList(index, studentsNeedThisCourseSize);
@@ -91,18 +94,24 @@ public class GeneralCourse extends Course implements GeneralCourseInterface{
                 ArrayList<Student> tempStudentList = new ArrayList<>();
 
                 try {
-                    tempStudentList.addAll((ArrayList<Student>) studentsNeedThisCourse.subList(50 * i, 50 * (i + 1)));
+                    ArrayList<Student> tempListForRegistration = (ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, 20 * (i + 1));
+                    tempStudentList.addAll(tempListForRegistration);
                 } catch (IndexOutOfBoundsException e) {
-                    tempStudentList.addAll((ArrayList<Student>) studentsNeedThisCourse.subList(50 * i, studentsNeedThisCourseSize));
+                    try {
+                        ArrayList<Student> tempListForRegistration = (ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, studentsNeedThisCourseSize);
+                        tempStudentList.addAll(tempListForRegistration); }
+                    catch (ClassCastException x) {
+                        System.out.printf("%s has problem", this.getName());
+                    }
                 }
 
                 try {
-                    Section section = new Section(this, prof, 50, sectionTime, Main.randomClassDuration(), tempStudentList);
+                    Section section = new Section(this, prof, 20, sectionTime, Main.randomClassDuration(), tempStudentList);
                     prof.addCurrentSections(section);
                     this.getSections().add(section);
                 } catch (StudentRegistrationConflictException e) {
                     tempStudentList = e.removeStudents(tempStudentList);
-                    Section section = new Section(this, prof, 50, sectionTime, Main.randomClassDuration(), tempStudentList);
+                    Section section = new Section(this, prof, 20, sectionTime, Main.randomClassDuration(), tempStudentList);
                     prof.addCurrentSections(section);
                     this.getSections().add(section);
                 }

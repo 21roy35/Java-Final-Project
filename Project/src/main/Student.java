@@ -101,6 +101,14 @@ public class Student extends Person{
 		return neededCourses;
 	}
 
+	public int getCreditsCompleted() {
+		return creditsCompleted;
+	}
+
+	public void setCreditsCompleted(int creditsCompleted) {
+		this.creditsCompleted = creditsCompleted;
+	}
+
 	public ArrayList<LocalTime> getStudentSectionsTime() {
 		ArrayList<LocalTime> sectionsTime = new ArrayList<>();
 		for (int i = 0; i <= this.currentSections.size() - 1; i++) {

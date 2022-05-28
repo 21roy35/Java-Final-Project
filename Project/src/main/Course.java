@@ -135,7 +135,10 @@ public class Course {
 
         if (professorTeachThisCourse.size() == 0) {
             throw new NoAvailableProfessorException(this);
-        } else {
+        } else if (studentsNeedThisCourseSize == 0) {
+
+        }
+        else {
             if ((studentsNeedThisCourseSize + professorTeachThisCourseSize - 1) /   professorTeachThisCourseSize > 20) {
                 int index = professorTeachThisCourseSize*20;
                 ArrayList<Student> studentsCouldNotRegister = (ArrayList<Student>) studentsNeedThisCourse.subList(index, studentsNeedThisCourseSize);
@@ -150,8 +153,12 @@ public class Course {
                     ArrayList<Student> tempListForRegistration = (ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, 20 * (i + 1));
                     tempStudentList.addAll(tempListForRegistration);
                 } catch (IndexOutOfBoundsException e) {
-                    ArrayList<Student> tempListForRegistration = (ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, studentsNeedThisCourseSize);
-                    tempStudentList.addAll(tempListForRegistration);
+                    try {
+                        ArrayList<Student> tempListForRegistration = (ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, studentsNeedThisCourseSize);
+                        tempStudentList.addAll(tempListForRegistration); }
+                    catch (ClassCastException x) {
+                        System.out.printf("%s has problem", this.name);
+                    }
                 }
 
                 try {
@@ -202,14 +209,17 @@ public class Course {
     }
 
     public String getCourseSym() {
-        int index = this.name.indexOf("1");
-        for (int i = 2; i <= 4; i++) {
-            int tempIndex = this.name.indexOf(String.valueOf(i).trim());
-            if (tempIndex < index & tempIndex > 1) {
-                index = tempIndex; }
-        }
-        String courseID = this.name.substring(0, index);
-        return courseID;
+        String Sym[] = this.name.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)");
+        return Sym[0];
+
+//        int index = this.name.indexOf("1");
+//        for (int i = 2; i <= 4; i++) {
+//            int tempIndex = this.name.indexOf(String.valueOf(i).trim());
+//            if (tempIndex < index & tempIndex > 1) {
+//                index = tempIndex;
+//            }
+//        }
+//        return this.name.substring(0, index);
     }
 
     // toString
