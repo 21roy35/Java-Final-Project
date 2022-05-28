@@ -175,17 +175,17 @@ public class Main {
 	    int minute = rand.nextInt(2)+1;
 	    System.out.println(minute);
 	    switch(minute) {
-	    case 1:
-	    	minute=00;
-	    	break;
-	    case 2:
-	    	minute = 30;
-	    	break;
+			case 1:
+				minute=00;
+				break;
+			case 2:
+				minute = 30;
+				break;
 	    	default:
 	    		minute = 30;
 	    		break;
 	    }
-	   String frmt =  String.format("%02d:%02d", hour, minute);
+	    String frmt =  String.format("%02d:%02d", hour, minute);
 	    return LocalTime.parse(frmt);
 	}
 

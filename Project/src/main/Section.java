@@ -11,8 +11,6 @@ import java.util.Random;
  */
 
 public class Section {
-	
-	
 	private Course course;
 	private Professor professor;
 	private int maxStudents;
@@ -23,18 +21,18 @@ public class Section {
 	private static ArrayList<Section> sections = new ArrayList<Section>();
 	
 	
-	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, Student students) {
+	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, Student students) throws Exception{
 //		for(Section section : getAllSections()) {
 //			while(section.getStudentList().size()<section.maxStudents) {
 //					section.addStudents(students);
 //			}
 //		}
 		if(!sections.contains(this)) {
-		this.course=course;
-		this.duration=duration;
-		this.professor=professor;
-		this.maxStudents=capacity;
-		this.sectionTime=time;
+		this.course = course;
+		this.duration = duration;
+		this.professor = professor;
+		this.maxStudents = capacity;
+		this.sectionTime = time;
 		this.students.add(students);
 		students.addCurrentSections(this);
 		this.sectionID = randomSectionID();
@@ -54,13 +52,19 @@ public class Section {
 		this.duration = duration;
 		this.professor = professor;
 		this.maxStudents = capacity;
-		this.sectionTime=time;
-		this.students=students;
+		this.sectionTime = time;
+		this.students = students;
 		for (int i = 0; i <= students.size() - 1; i++) {
 			Student student = students.get(i);
-			student.addCurrentSections(this);
+
+			if (student.getSectionsTime().contains(time)) {
+				throw new StudentRegistrationConflictException(student, this);
+			}
+			else {
+				student.addCurrentSections(this);
+			}
 		}
-		this.sectionID=randomSectionID();
+		this.sectionID = randomSectionID();
 		sections.add(this);
 		}
 	}

@@ -2,6 +2,7 @@ package main;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -12,7 +13,7 @@ public class Student extends Person{
 	int creditsCompleted;
 	ArrayList<Section> currentSections = new ArrayList<Section>();
 	
-	public Student(String id,String name,Major major) {
+	public Student(String id, String name, Major major) {
 		super(id,name);
 		this.major = major;
 	}
@@ -25,6 +26,7 @@ public class Student extends Person{
 	public void setMajor(Major major) {
 		this.major = major;
 	}
+
 	public void addCoursesCompleted(Course... courses){
 		for(Course course : courses) {
 			coursesCompleted.add(course);
@@ -93,6 +95,15 @@ public class Student extends Person{
 				}
 			}
 		return neededCourses;
+	}
+
+	public ArrayList<LocalTime> getSectionsTime() {
+		ArrayList<LocalTime> sectionsTime = new ArrayList<>();
+		for (int i = 0; i <= this.currentSections.size() - 1; i++) {
+			LocalTime time = this.currentSections.get(i).getSectionTime();
+			sectionsTime.add(time);
+		}
+		return sectionsTime;
 	}
 	
 	@Override

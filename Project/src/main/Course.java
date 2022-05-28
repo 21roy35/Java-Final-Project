@@ -111,27 +111,37 @@ public class Course {
             }
         }
 
+        int studentsNeedThisCourseSize = studentsNeedThisCourse.size();
+        int professorTeachThisCourseSize = professorTeachThisCourse.size();
+
         if (professorTeachThisCourse.size() == 0) {
-            throw new Exception("NoAvailableProfessorException. No professors teach the course: " + this.name);
+            throw new NoAvailableProfessorException(this);
         } else {
-            if ((studentsNeedThisCourse.size() + professorTeachThisCourse.size() - 1) / professorTeachThisCourse.size() > 20) {
-                throw new Exception("NotEnoughProfessorsException. need more professors to teach the course: " + this.name);
+            if ((studentsNeedThisCourseSize + professorTeachThisCourseSize - 1) /   professorTeachThisCourseSize > 20) {
+                int index = professorTeachThisCourseSize*20;
+                ArrayList<Student> studentsCouldNotRegister = (ArrayList<Student>) studentsNeedThisCourse.subList(index, studentsNeedThisCourseSize);
+                throw new FullSectionsException(this, studentsCouldNotRegister);
             }
 
-            for (int i = 0; i <= professorTeachThisCourse.size() - 1; i++) {
+            for (int i = 0; i <= professorTeachThisCourseSize - 1; i++) {
                 Professor prof = professorTeachThisCourse.get(i);
                 ArrayList<Student> tempStudentList = new ArrayList<>();
+
                 try {
                     tempStudentList.addAll((ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, 20 * (i + 1)));
                 } catch (IndexOutOfBoundsException e) {
-                    tempStudentList.addAll((ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, studentsNeedThisCourse.size()));
+                    tempStudentList.addAll((ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, studentsNeedThisCourseSize));
                 }
+
                 try {
                     Section section = new Section(this, prof, 20, Main.randomClassTime(), Main.randomClassDuration(), tempStudentList);
                     prof.addCurrentSections(section);
                     this.sections.add(section);
-                } catch (FullSectionsException e) {
-                    
+                } catch (StudentRegistrationConflictException e) {
+                    tempStudentList = e.removeStudents(tempStudentList);
+                    Section section = new Section(this, prof, 20, Main.randomClassTime(), Main.randomClassDuration(), tempStudentList);
+                    prof.addCurrentSections(section);
+                    this.sections.add(section);
                 }
             }
         }
