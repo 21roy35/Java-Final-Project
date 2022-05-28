@@ -3,6 +3,6 @@ package main;
 import java.util.ArrayList;
 
 public interface GeneralCourseInterface {
-    ArrayList<Section> createSections();
+    void createSections(Department department) throws Exception;
     boolean collegeRequirement();
 }
