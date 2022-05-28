@@ -2,22 +2,22 @@ package main;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Student extends Person{
 
 	Major major;
-	ArrayList<Course> coursesCompleted = new ArrayList<Course>();
+	private ArrayList<Course> coursesCompleted = new ArrayList<Course>();
 	int creditsCompleted;
-	ArrayList<Section> currentSections = new ArrayList<Section>();
-	ArrayList<Course> failedCourses = new ArrayList<Course>();
-	String status = "Normal";
+	private ArrayList<Section> currentSections = new ArrayList<Section>();
+	private ArrayList<ArrayList<Course>> studentPlan;
 	
-	
-	public Student(String id,String name,Major major) {
+	public Student(String id, String name, Major major) {
 		super(id,name);
 		this.major = major;
+		this.studentPlan = this.major.createPlanForStudent();
 	}
 
 	public Major getMajor() {
@@ -28,6 +28,7 @@ public class Student extends Person{
 	public void setMajor(Major major) {
 		this.major = major;
 	}
+
 	public void addCoursesCompleted(Course... courses){
 		for(Course course : courses) {
 			coursesCompleted.add(course);
@@ -36,34 +37,21 @@ public class Student extends Person{
 	public ArrayList<Course> getCoursesCompleted(){
 		return coursesCompleted;
 	}
+
 	public void updateStudent() {
 		Random rand = new Random();
-		int failFactor = rand.nextInt(100);
-		//System.out.println(failFactor + "FFFFFF");
-		if(failFactor>80) {
-			int numOfCourses = rand.nextInt(3);
-				this.status = "Not on plan";
-				for(Course course: this.coursesCompleted) {
-					for(int i= 0; i<numOfCourses;i++) {
-						this.failedCourses.add(this.coursesCompleted.get(i));
-					}
-				}
-		}
-		else {
 		
 		for(Section section: this.currentSections) {
-			this.coursesCompleted.add(section.getCourse());
+			Course course = section.getCourse();
+			this.coursesCompleted.add(course);
 		}
 		int credit = 0;
 		for(Course c: this.coursesCompleted) {
 			credit += c.getCredits();
 		}
-		this.creditsCompleted = credit;
+		this.creditsCompleted += credit;
 		this.currentSections.clear();
-		}
-		}
-	
-	
+	}
 	public void addCurrentSections(Section... sections){
 		for(Section section : sections) {
 			currentSections.add(section);
@@ -111,6 +99,16 @@ public class Student extends Person{
 				}
 			}
 		return neededCourses;
+	}
+
+	public ArrayList<LocalTime> getStudentSectionsTime() {
+		ArrayList<LocalTime> sectionsTime = new ArrayList<>();
+		for (int i = 0; i <= this.currentSections.size() - 1; i++) {
+			Section section = this.currentSections.get(i);
+			LocalTime time = section.getSectionTime();
+			sectionsTime.add(time);
+		}
+		return sectionsTime;
 	}
 	
 	@Override

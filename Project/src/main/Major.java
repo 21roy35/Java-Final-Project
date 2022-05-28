@@ -8,7 +8,7 @@ public class Major {
     private ArrayList<ArrayList<Course>> plan = new ArrayList<>();
     private int credits;
     public static ArrayList<Major> allMajors = new ArrayList<>();
-    private String sym;
+    private String sym; //this should be in department and not major
 
     public Major(File file) throws FileNotFoundException {
         Scanner input = new Scanner(file); //Here we are reading the file
@@ -196,6 +196,24 @@ public class Major {
             }
         }
         return trueCredits;
+    }
+
+    public static ArrayList<Course> getTerm(Department department, Course course) {
+        ArrayList<Major> majors = department.getMajors();
+        ArrayList<Course> term = new ArrayList<>();
+        for (int i = 0; i <= majors.size() - 1; i++) {
+            Major major = majors.get(i);
+            for (int r = 0; r <= 9; r++) {
+                ArrayList<Course> tempTerm = major.getPlan().get(r);
+                for (int s = 0; s <= tempTerm.size(); s++) {
+                    Course tempCourse = tempTerm.get(s);
+                    if (tempCourse == course) {
+                        term = tempTerm;
+                    }
+                }
+            }
+        }
+        return term;
     }
 
 	@Override

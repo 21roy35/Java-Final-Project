@@ -1,9 +1,7 @@
 package main;
 
-import java.lang.reflect.Array;
 import java.time.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Course {
     private String name;
@@ -13,13 +11,12 @@ public class Course {
     public static ArrayList<Course> allCourses = new ArrayList<>();
 
     public Course(String course, int credit, ArrayList<Course> prereqList, ArrayList<Section> sections) {
-        this.name=course;
-        this.credits=credit;
+        this.name = course;
+        this.credits = credit;
         this.prerequisites.addAll(prereqList);
         this.sections = sections;
     }
 
-    //new Course(tempName, tempCredits, tempCourses)
     public Course(String name, int credit, ArrayList<Course> prereqList) {
         this.name = name;
         this.credits = credit;
@@ -30,23 +27,16 @@ public class Course {
         this.name = course.getName();
         this.credits = course.getCredits();
         this.prerequisites.addAll(course.getPrerequisites());
+        this.sections = course.getSections();
     }
     public Course() {
-        this.name="Stats";
-        this.credits=4;
+        this.name = "Stats";
+        this.credits = 4;
         this.prerequisites = null;
-        this.sections=Section();
-//        for(int i =1; i<5; i++) {
-//            this.professors.add(new Professor());
-//        }
-    }
-    private ArrayList<Section> Section() {
-        // TODO Auto-generated method stub
-        return null;
     }
 
     public void setName(String name) {
-        this.name=name;
+        this.name = name;
     }
 
     public String getName() {
@@ -54,8 +44,8 @@ public class Course {
     }
 
     public void setCredits(int c) {
-        if (c>0) {
-            this.credits=c;
+        if (c > 0) {
+            this.credits = c;
         }
     }
 
@@ -71,10 +61,39 @@ public class Course {
         return this.prerequisites;
     }
 
+    public ArrayList<Section> getSections() {
+        return sections;
+    }
+
     public void createSections(Department department) throws Exception {
-        //public Section(Professor professor, LocalTime time)
-        //Section(d);
-        //Section creation depends on: Student.neededCourses(), Course.professors, Major.plan.get(term).sectionloop.(onlyDepartmentCourses),
+        String departmentID = this.name.substring(0, 2); //we get ID so we can
+        ArrayList<Course> term = Major.getTerm(department, this); //we want the term of the course so we can avoid conflicts
+        ArrayList<LocalTime> times = new ArrayList<>(); // the times of the sections of the courses in the same term
+        ArrayList<Course> removeList = new ArrayList<>(); //this is the list for the courses that are not the same department
+
+        for (int i = 0; i <= term.size() - 1; i++) { //we add in the removeList
+            Course course = term.get(i);
+            String courseID = course.getName().substring(0, 2); //the substring of the name is the department code for the course name
+            if (departmentID.equals(courseID)) {
+                removeList.add(course);
+            }
+        }
+
+        term.removeAll(removeList);
+
+        for (int i = 0; i <= term.size() - 1; i++) {
+            Course course = term.get(i);
+            times.addAll(course.getCourseSectionsTime());
+        }
+
+        LocalTime sectionTime = Main.randomClassTime();
+        for (int i = 0; i <= times.size() - 1; i++) {
+            LocalTime time = times.get(i);
+            if (time == sectionTime) {
+                sectionTime = Main.randomClassTime();
+            }
+        }
+
         ArrayList<Student> studentList = new ArrayList<>();
         ArrayList<Professor> professorList = new ArrayList<>();
 
@@ -111,27 +130,39 @@ public class Course {
             }
         }
 
+        int studentsNeedThisCourseSize = studentsNeedThisCourse.size();
+        int professorTeachThisCourseSize = professorTeachThisCourse.size();
+
         if (professorTeachThisCourse.size() == 0) {
-            throw new Exception("NoAvailableProfessorException. No professors teach the course: " + this.name);
+            throw new NoAvailableProfessorException(this);
         } else {
-            if ((studentsNeedThisCourse.size() + professorTeachThisCourse.size() - 1) / professorTeachThisCourse.size() > 20) {
-                throw new Exception("NotEnoughProfessorsException. need more professors to teach the course: " + this.name);
+            if ((studentsNeedThisCourseSize + professorTeachThisCourseSize - 1) /   professorTeachThisCourseSize > 20) {
+                int index = professorTeachThisCourseSize*20;
+                ArrayList<Student> studentsCouldNotRegister = (ArrayList<Student>) studentsNeedThisCourse.subList(index, studentsNeedThisCourseSize);
+                throw new FullSectionsException(this, studentsCouldNotRegister);
             }
 
-            for (int i = 0; i <= professorTeachThisCourse.size() - 1; i++) {
+            for (int i = 0; i <= professorTeachThisCourseSize - 1; i++) {
                 Professor prof = professorTeachThisCourse.get(i);
                 ArrayList<Student> tempStudentList = new ArrayList<>();
+
                 try {
-                    tempStudentList.addAll((ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, 20 * (i + 1)));
+                    ArrayList<Student> tempListForRegistration = (ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, 20 * (i + 1));
+                    tempStudentList.addAll(tempListForRegistration);
                 } catch (IndexOutOfBoundsException e) {
-                    tempStudentList.addAll((ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, studentsNeedThisCourse.size()));
+                    ArrayList<Student> tempListForRegistration = (ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, studentsNeedThisCourseSize);
+                    tempStudentList.addAll(tempListForRegistration);
                 }
+
                 try {
-                    Section section = new Section(this, prof, 20, Main.randomClassTime(), Main.randomClassDuration(), tempStudentList);
+                    Section section = new Section(this, prof, 20, sectionTime, Main.randomClassDuration(), tempStudentList);
                     prof.addCurrentSections(section);
                     this.sections.add(section);
-                } catch (FullSectionsException e) {
-                    
+                } catch (StudentRegistrationConflictException e) {
+                    tempStudentList = e.removeStudents(tempStudentList);
+                    Section section = new Section(this, prof, 20, sectionTime, Main.randomClassDuration(), tempStudentList);
+                    prof.addCurrentSections(section);
+                    this.sections.add(section);
                 }
             }
         }
@@ -141,28 +172,13 @@ public class Course {
         this.sections.clear();
     }
 
-//    public void setProfessors(ArrayList<Professor> professors) {
-//        this.professors = professors;
-//    }
-//
-//    public ArrayList<Professor> getProfessors(){
-//        return this.professors;
-//    }
-//
-//    public String getProfessorListAsString() {
-//        String professorListString = new String();
-//        for(Professor prof :professors) {
-//            professorListString=professorListString + prof.name + ", ";
-//        }
-//        return professorListString;
-//    }
-
     public String getSectionsListAsString() {
-        String sectionListString = new String();
+        StringBuilder sectionListString = new StringBuilder();
         for(Section sect : sections) {
-            sectionListString = sectionListString + sect.getID() +", ";
+            sectionListString.append(sect.getID());
+            sectionListString.append(", ");
         }
-        return sectionListString;
+        return sectionListString.toString();
     }
 
     public static Course searchForCourse(String name) {
@@ -173,6 +189,27 @@ public class Course {
                 wantedCourse = tempCourse;
         }
         return wantedCourse;
+    }
+
+    public ArrayList<LocalTime> getCourseSectionsTime() {
+        ArrayList<LocalTime> sectionsTime = new ArrayList<>();
+        for (int i = 0; i <= this.sections.size() - 1; i++) {
+            Section section = this.sections.get(i);
+            LocalTime time = section.getSectionTime();
+            sectionsTime.add(time);
+        }
+        return sectionsTime;
+    }
+
+    public String getCourseID() {
+        int index = this.name.indexOf(1);
+        for (int i = 2; i <= 4; i++) {
+            int tempIndex = this.name.indexOf(i);
+            if (tempIndex < index) {
+                index = tempIndex; }
+        }
+        String courseID = this.name.substring(0, index);
+        return courseID;
     }
 
     // toString

@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.image.AreaAveragingScaleFilter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
@@ -13,40 +14,100 @@ import javax.swing.ListSelectionModel;
 public class Main {
 
 	static String CURRENT_YEAR = "2022";
-	static int NUMBER_OF_YEARS = 1; 
+	static int NUMBER_OF_YEARS = 1; // one cycle = 5 years
 	static DecimalFormat _ID = new DecimalFormat("00000");
 	static int LATEST_ID;
 	public static ArrayList<Student> current_students = new ArrayList<>();
 	
 	public static void main(String[] args) throws Exception {
-		
 		createDepartments();
+//		createGeneralDepartments();
+		System.out.println(Department.allDepartments.get(1).getName());
 		createStudentsAndProfessors(200,10);
 		
 		int YEAR_COUNT = 0;
-		while(NUMBER_OF_YEARS>YEAR_COUNT) {
+		while(NUMBER_OF_YEARS > YEAR_COUNT) {
 			startYear();
 			YEAR_COUNT++;
 		}
 		MainGUI.main(null);
 	}
 
+	public static void createDepartments() {
+		File dir = new File(System.getProperty("user.dir"));
+		File[] data = new File(dir + "\\data").listFiles();
+		Boolean exists = false;
+		Department department = null;
+		for(File major : data) {
+			Major m = null;
+			try	{
+				m = new Major(major);
+			} catch (FileNotFoundException e) {
+			} catch (ClassCastException x) {
+			}
+
+			for(Department de: Department.allDepartments) {
+				if(de.getName().substring(0,5).equals(m.getName().substring(0,5))) {
+					exists = true;
+				}
+				else {
+					exists = false;
+				}
+			}
+			if(!exists) {
+				try {
+					department = new Department(m.getName().split(" ")[0], m, new ArrayList<>(), new ArrayList<>());
+				} catch (Exception e) {}
+			}
+			else{
+				department.addMajors(m);
+			}
+		}
+	}
+
+//	public static void createGeneralDepartments() throws Exception {
+//		ArrayList<String> scienceCodes = new ArrayList<>();
+//		scienceCodes.add(Department.Science.BIO.name());
+//		scienceCodes.add(Department.Science.CHEM.name());
+//		scienceCodes.add(Department.Science.PHYS.name());
+//		scienceCodes.add(Department.Science.MATH.name());
+//		scienceCodes.add(Department.Science.STAT.name());
+//
+//		ArrayList<String> GeneralCodes = new ArrayList<>();
+//		scienceCodes.add(Department.General.CPIT.name());
+//		scienceCodes.add(Department.General.COMM.name());
+//		scienceCodes.add(Department.General.COM.name());
+//		scienceCodes.add(Department.General.ELIS.name());
+//		scienceCodes.add(Department.General.ARAB.name());
+//		scienceCodes.add(Department.General.ISLS.name());
+//		scienceCodes.add(Department.General.LANE.name());
+//		scienceCodes.add(Department.General.HIST.name());
+//		scienceCodes.add(Department.General.GEOG.name());
+//		scienceCodes.add(Department.General.IS.name());
+//		scienceCodes.add(Department.General.SOC.name());
+//		scienceCodes.add(Department.General.PSY.name());
+//		scienceCodes.add(Department.General.BL.name());
+//		scienceCodes.add(Department.General.BLA.name());
+//
+//		Department science = new Department("Science", scienceCodes);
+//		Department general = new Department("General", GeneralCodes);
+//	}
+
 	private static void createStudentsAndProfessors(int numberOfStudents, int numberOfProfessors) throws Exception {
 		//testing
 		ArrayList<Student> departmentStudents = new ArrayList<Student>();
 		ArrayList<Professor> departmentProfessors = new ArrayList<Professor>();
 
-		int i = 0;
-		for(Department department: Department.allDepartments) {
+		for (int i = 0; i <= 6; i++) {
+			Department department = Department.allDepartments.get(i);
 			departmentStudents = newStudent(numberOfStudents, department);
 			departmentProfessors = newProfessor(numberOfProfessors, department);
 			System.out.println("\n-----------------------------------------------------");
 			System.out.println("\nDepartment: "+department.getName()+"\nMajors: "+Department.allDepartments.get(i).allMajors());
 			department.addStudentList(departmentStudents);
 			department.addProfessorList(departmentProfessors);
-			System.out.println("Students: "+department.getStudentList());
-			System.out.println("Professers: "+department.getProfessorList());			
-			i++;
+			System.out.println("Students: " + department.getStudentList());
+			System.out.println("Professers: " + department.getProfessorList());
 		}//some files couldn't be read for some reason thats why not all majors are in the departments
 		
 	}
@@ -93,28 +154,42 @@ public class Main {
 			throw new Exception("randomID exception. LATEST_ID max limit reached.");
 		}
 	}
-	public static ArrayList<Student> newStudent(int i,Department department) throws Exception {
+	public static ArrayList<Student> newStudent(int i, Department department) throws Exception {
 		ArrayList<Student> students = new ArrayList<>();
+		Random random = new Random();
 		for (int j = 0; j < i; j++) {
-		String name = StudentRandomNames(1).get(0);
-		String ID = randomID();
-		Major major = department.getMajors().get(new Random().nextInt(department.getMajors().size()));
-		Student student = new Student(ID, name, major); //ahmed wut
-		students.add(student);
+			String name = StudentRandomNames(1).get(0);
+			String ID = randomID();
+			int majorListSize = department.getMajors().size();
+
+			Major major = department.getMajors().get(random.nextInt(majorListSize));
+			Student student = new Student(ID, name, major); //ahmed wut
+			students.add(student);
 		}
 		return students;
 	}
 
+	public static ArrayList<Professor> newProfessor(int i, Department department) throws Exception {
+		ArrayList<Professor> profs = new ArrayList<>();
+		for(int j = 0; j < i; j++) {
+			String name = ProfRandomNames(1).get(0);
+			String ID = randomID();
+			ArrayList<Course> courses = randomCourse(department);
+			Professor prof = new Professor(ID, name, courses);
+			profs.add(prof);
+		}
+		return profs;
+	}
+
 	public static ArrayList<Course> randomCourse(Department department) throws Exception {
-		
-		ArrayList<Course> courses = new ArrayList<Course>();
+		ArrayList<Course> courses = new ArrayList<>();
 		Major major = department.getMajors().get(new Random().nextInt(department.getMajors().size()));
 		ArrayList<Course> randomTerm = major.getPlan().get(new Random().nextInt(major.getPlan().size()));
 		Course randomCourse1 = randomTerm.get(new Random().nextInt(randomTerm.size()));
 		Course randomCourse2 = randomTerm.get(new Random().nextInt(randomTerm.size()));
 		Course randomCourse3 = randomTerm.get(new Random().nextInt(randomTerm.size()));
-		
-		if(randomCourse1.getName().contains(major.getSym()) && randomCourse2.getName().contains(major.getSym()) && randomCourse3.getName().contains(major.getSym())) {// need to make the Majors or the departments get a special words. like "EE" 
+
+		if (randomCourse1.getName().contains(major.getSym()) && randomCourse2.getName().contains(major.getSym()) && randomCourse3.getName().contains(major.getSym())) {// need to make the Majors or the departments get a special words. like "EE"
 			courses.add(randomCourse1);
 			courses.add(randomCourse2);
 			courses.add(randomCourse3);
@@ -123,69 +198,25 @@ public class Main {
 		else {
 			return randomCourse(department);
 		}
-
-	}
-	
-	public static ArrayList<Professor> newProfessor(int i,Department department) throws Exception {
-		ArrayList<Professor> profs = new ArrayList<>();
-		for(int j = 0; j < i; j++) {
-		String name = ProfRandomNames(1).get(0);
-		String ID = randomID();
-		ArrayList<Course> courses = randomCourse(department);
-		Professor prof = new Professor(ID, name,courses);
-		profs.add(prof);
-		}
-		return profs;
 	}
 
-
-	public static void createDepartments() {
-		File dir = new File(System.getProperty("user.dir"));
-		File[] data = new File(dir + "\\data").listFiles();
-		Boolean exists = false;
-		Department department = null;
-		for(File major : data) {
-			try {
-				Major m = new Major(major);
-				for(Department de: Department.allDepartments) {
-					if(de.getName().substring(0,5).equals(m.getName().substring(0,5))) {
-						exists = true;
-					}
-					else {
-						exists = false;
-					}
-				}
-				if(!exists) {
-				 department = new Department(m.getName().split(" ")[0], m, new ArrayList<Professor>(), new ArrayList<Student>());
-				}
-				else{
-				department.addMajors(m);
-				}
-				// To be continued
-
-			} catch (Exception e) {
-				//e.printStackTrace();
-				System.out.println("CreateMajors: Department already exists or major problem.");
-			}
-		}
-	}
 	public static LocalTime randomClassTime() {
 	    Random rand = new Random();
 	    int hour = rand.nextInt(12) + 8;
 	    int minute = rand.nextInt(2)+1;
 	    System.out.println(minute);
 	    switch(minute) {
-	    case 1:
-	    	minute=00;
-	    	break;
-	    case 2:
-	    	minute = 30;
-	    	break;
+			case 1:
+				minute=00;
+				break;
+			case 2:
+				minute = 30;
+				break;
 	    	default:
 	    		minute = 30;
 	    		break;
 	    }
-	   String frmt =  String.format("%02d:%02d", hour, minute);
+	    String frmt =  String.format("%02d:%02d", hour, minute);
 	    return LocalTime.parse(frmt);
 	}
 
@@ -196,12 +227,12 @@ public class Main {
 	    int minute = rand.nextInt(2)+1;
 	    System.out.println(minute);
 	    switch(minute) {
-	    case 1:
-	    	minute=00;
-	    	break;
-	    case 2:
-	    	minute = 30;
-	    	break;
+			case 1:
+				minute=00;
+				break;
+			case 2:
+				minute = 30;
+				break;
 	    	default:
 	    		minute = 30;
 	    		break;
@@ -210,39 +241,59 @@ public class Main {
 	    return frmtTime;
 	}
 
-//	public static void createCoursesForStudent(Student s) {
-//	}
-
-
-	public static void sendStudents() {
-
-	}
 	public static void startYear() {
 		int Students = 300; //students per term
 		try {
-			int failed_count = 0;
 			current_students = Department.allDepartments.get(0).getStudentList();
-			
+
 			// pdateJList(current_students);
 
 			System.out.println("Year Starting...");
 			Thread.sleep(3000);
-			for(Student student : current_students) {
-				student.updateStudent();
-			} // TODO: Failure (F) factor not included, current method assumes all students graduate succesfully
-			System.out.println("Students graduated term 1");
-	//		current_students = newStudent(Students);
-			Thread.sleep(3000);
-			for(Student student : current_students) {
-				student.updateStudent();
-			}
-			for(Student stu: current_students) {
-				if(stu.status!="Normal") {
-					failed_count++;
+
+			for (Course course : Course.allCourses) {
+				String courseID = course.getCourseID();
+				Department department = Department.getDepartmentFromID(courseID);
+				try {
+					course.createSections(department);
+				} catch (NoAvailableProfessorException e) {
+
+				}
+				catch (FullSectionsException x) {
+
 				}
 			}
-			System.out.printf("Students #%d graduated year #%s\n. Number of fails this year: %d", current_students.size(), CURRENT_YEAR, failed_count);
-			CURRENT_YEAR = String.valueOf(Integer.parseInt(CURRENT_YEAR)+1);
+
+			for(Student student : current_students) {
+				student.updateStudent();
+			}
+
+			System.out.println("Students graduated term 1");
+	//		current_students = newStudent(Students);
+
+			Thread.sleep(3000);
+
+			for (Course course : Course.allCourses) {
+				String courseID = course.getCourseID();
+				Department department = Department.getDepartmentFromID(courseID);
+				try {
+					course.createSections(department);
+				} catch (NoAvailableProfessorException e) {
+
+				}
+				catch (FullSectionsException x) {
+
+				}
+			}
+
+			for(Student student : current_students) {
+				student.updateStudent();
+			}
+
+			System.out.printf("Students #%d graduated year #%s\n", current_students.size(), CURRENT_YEAR);
+
+			int addYear = Integer.parseInt(CURRENT_YEAR) + 1;
+			CURRENT_YEAR = String.valueOf(addYear);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
