@@ -72,9 +72,9 @@ public class Course {
     }
 
     public void createSections(Department department) throws Exception {
-    //public Section(Professor professor, LocalTime time)
-    //Section(d);
-    //Section creation depends on: Student.neededCourses(), Course.professors, Major.plan.get(term).sectionloop.(onlyDepartmentCourses),
+        //public Section(Professor professor, LocalTime time)
+        //Section(d);
+        //Section creation depends on: Student.neededCourses(), Course.professors, Major.plan.get(term).sectionloop.(onlyDepartmentCourses),
         ArrayList<Student> studentList = new ArrayList<>();
         ArrayList<Professor> professorList = new ArrayList<>();
 
@@ -113,48 +113,30 @@ public class Course {
 
         if (professorTeachThisCourse.size() == 0) {
             throw new Exception("NoAvailableProfessorException. No professors teach the course: " + this.name);
-        }
-        else {
-            if ((studentsNeedThisCourse.size() + professorTeachThisCourse.size() - 1)/professorTeachThisCourse.size() > 20) {
-                throw new Exception("NotEnoughProfessorsException. need more professors to teach the course: " + this.name); }
-
-            for (int i = 0; i <= professorTeachThisCourse.size() - 1; i++) {
-                ArrayList<Student> tempStudentList = new ArrayList<>();
-                try {
-                    tempStudentList = (ArrayList<Student>) studentsNeedThisCourse.subList(20*i, 20*(i+1));
-                } catch (IndexOutOfBoundsException e) {
-                    tempStudentList = (ArrayList<Student>) studentsNeedThisCourse.subList(20*i, studentsNeedThisCourse.size());
-                }
-
-                Section section = new Section(this, professorTeachThisCourse.get(i), 20, Main.randomClassTime(), Main.randomClassDuration(), tempStudentList);
-
-                this.sections.add(section);
-                professorTeachThisCourse.get(i).addCurrentSections(section);
+        } else {
+            if ((studentsNeedThisCourse.size() + professorTeachThisCourse.size() - 1) / professorTeachThisCourse.size() > 20) {
+                throw new Exception("NotEnoughProfessorsException. need more professors to teach the course: " + this.name);
             }
 
+            for (int i = 0; i <= professorTeachThisCourse.size() - 1; i++) {
+                Professor prof = professorTeachThisCourse.get(i);
+                ArrayList<Student> tempStudentList = new ArrayList<>();
+                try {
+                    tempStudentList.addAll((ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, 20 * (i + 1)));
+                } catch (IndexOutOfBoundsException e) {
+                    tempStudentList.addAll((ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, studentsNeedThisCourse.size()));
+                }
+                try {
+                    Section section = new Section(this, prof, 20, Main.randomClassTime(), Main.randomClassDuration(), tempStudentList);
+                    prof.addCurrentSections(section);
+                    this.sections.add(section);
+                } catch () {
+                }
+            }
         }
-
-    //Course course, Professor professor, int capacity, LocalTime time, LocalTime duration,ArrayList<Student> students, String sectionid)
-    /*
-     * for (Professor prof : this.professors) { // for each professor, a new section
-     * will be created this.sections.add( this, prof, 20, LocalTime.now(), // time
-     * should be defined in main method to avoid conflicts, LocalTime.of(00, 50), //
-     * ignore hour field, mins will be used // students not defined here. // this
-     * method should go to the main method (in the simulation)
-     */
     }
 
-    //	 public static void createSections() throws Exception {
-//		 for(Student student : current_students) {
-//			 ArrayList<Course> neededCourses = student.neededCourses();
-//			 for(Course course: neededCourses) {
-//				 int credits = course.getCredits();
-//				 Section section =  new Section(course, newProfessor(1).get(0), 20, randomClassTime(), randomClassDuration(), student);
-//			 }
-//		 }
-//	 }
-
-    public void removeSections(Department department) {
+    public void removeSections() {
         this.sections.clear();
     }
 

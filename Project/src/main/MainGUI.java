@@ -57,8 +57,6 @@ public class MainGUI {
 		initialize();
 	}
 
-
-	
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -69,11 +67,7 @@ public class MainGUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JProgressBar progressBar = new JProgressBar();
-		
-		
 
-
-		
 		JLabel lblNewLabel = new JLabel("Students:");
 		
 		JTree tree = new JTree();

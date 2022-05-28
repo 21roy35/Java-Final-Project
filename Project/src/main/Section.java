@@ -50,10 +50,10 @@ public class Section {
 //			}
 //		}
 		if(!sections.contains(this)) {
-		this.course=course;
-		this.duration=duration;
-		this.professor=professor;
-		this.maxStudents=capacity;
+		this.course = course;
+		this.duration = duration;
+		this.professor = professor;
+		this.maxStudents = capacity;
 		this.sectionTime=time;
 		this.students=students;
 		for (int i = 0; i <= students.size() - 1; i++) {
