@@ -116,7 +116,7 @@ public class MainGUI {
 						node_2 = new DefaultMutableTreeNode(d.getName());
 						
 						
-					for(Major j:d.allMajors()) {
+					for(Major j:d.getMajors()) {
 
 						
 //	for(ArrayList<Course> courses:j.getPlan()) {

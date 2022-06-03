@@ -1,37 +1,61 @@
 package main;
 
-import java.security.PublicKey;
 import java.util.ArrayList;
-import java.util.EnumSet;
+import java.util.Collections;
 
 public class Department {
-
     private String name;
-    private  ArrayList<Major> majors = new ArrayList<Major>();
-	private  ArrayList<Professor>professor= new ArrayList <Professor>();
-    private ArrayList <Student> studentList = new ArrayList <Student>();
-    public static ArrayList<Department> allDepartments = new ArrayList<Department>();
+    private  ArrayList<Major> majors = new ArrayList<>();
+	private  ArrayList<Professor>professorList = new ArrayList<>();
+    private ArrayList <Student> studentList = new ArrayList<>();
+    public static ArrayList<Department> allDepartments = new ArrayList<>();
 
-    public Department (String name , ArrayList<Major> majors , ArrayList<Professor> professors, ArrayList<Student> students) throws Exception{
-        if(allDepartments.contains(this)) {
-            throw new Exception("Department already exists.");
+    public Department (String name, ArrayList<Major> majors, ArrayList<Professor> professors, ArrayList<Student> students) throws Exception {
+        if(allDepartments.contains(this)) { //we first check if the department exists
+            for (Major m : majors) { //we loop the major to check if they exist in the department
+                if(this.majors.contains(m)) {
+                    throw new Exception("Major already exists in department.");
+                }
+                else {
+                    this.majors.add(m);
+                }
+
+                throw new Exception("Department already exists.");
+            }
+        }
+        else {
+            this.majors.addAll(majors);
         }
 
-        this.name = name;
+        this.name = name; //assign name
+        this.professorList.addAll(professors); //add professors
+        this.studentList.addAll(students); //add students
+        allDepartments.add(this); //we add the object to the allDepartments list
+    }
 
-        for(Major m : majors) {
+    public Department (String name, Major m, ArrayList<Professor> professors, ArrayList<Student> students) throws Exception {
+        //the same construct but when the major is not a list
+        if(allDepartments.contains(this)) {
+            if(this.majors.contains(m)) { //instead of a loop, we only need an if statement
+                throw new Exception("Major already exists in department.");
+            }
+            else {
+                this.majors.add(m);
+            }
+            throw new Exception("Department already exists.");
+        }
+        else {
             this.majors.add(m);
         }
 
-        for (int i=0; i<professor.size(); i++) {
-            professor.add(professors.get(i));
-        }
-
-        this.studentList = students;
+        this.name = name;
+        this.professorList.addAll(professors);
+        this.studentList.addAll(students);
         allDepartments.add(this);
     }
 
-    public Department (String name, Major m, ArrayList<Professor> professors, ArrayList<Student> students) throws Exception{
+    public Department (String name, Major m) throws Exception {
+        //in this constructor, we only assign a name and a major to the Department object
         if(allDepartments.contains(this)) {
             if(this.majors.contains(m)) {
                 throw new Exception("Major already exists in department.");
@@ -41,149 +65,127 @@ public class Department {
             }
             throw new Exception("Department already exists.");
         }
-
-        this.name = name;
-        this.majors.add(m);
-
-        for (int i = 0; i < professor.size(); i++) {
-            professor.add(professors.get(i));
-        }
-        this.studentList = students;
-
-        allDepartments.add(this);
-    }
-
-    public Department (String name) throws Exception{
-        if(allDepartments.contains(this)) {
-            throw new Exception("Department already exists.");
+        else {
+            this.majors.add(m);
         }
 
         this.name = name;
-
         allDepartments.add(this);
     }
-
-
-    public ArrayList<Major> getMajors() {
-		return majors;
-	}
-
-	public void addMajors(Major... majors){
-		for(Major major : majors) {
-			this.majors.add(major);
-		}
-	}
 
     public void setName(String name) {
         this.name=name;
     }
 
-    public String  getName () {
+    public String getName() {
         return name;
     }
 
-    public static ArrayList<Department> getAllDepartments(){
-    	return allDepartments;
+    public void addMajors(Major... majors){
+        Collections.addAll(this.majors, majors);
     }
 
-    public void addProfessorList (ArrayList<Professor>professors) {
-        for (int i=0; i<professors.size(); i++) {
-            professor.add(professors.get(i));
-        }
-    }
+    public ArrayList<Major> getMajors() {
+		return majors;
+	}
 
+    public void addProfessorList (ArrayList<Professor> professors) {
+        professorList.addAll(professors);
+    }
 
     public void removeProfessorList(ArrayList<Professor> professors) {
-
-        for (int i=0; i<professors.size(); i++) {
-            professor.remove(professors.get(i));
-        }
+        this.professorList.removeAll(professors);
     }
 
     public ArrayList<Professor> getProfessorList(){
-        return this.professor;
+        return this.professorList;
     }
 
     public void addStudentList (ArrayList<Student> students) {
-        for (int i=0; i<students.size(); i++) {
-        	studentList.add(students.get(i));
-        }
-
+        this.studentList.addAll(students);
     }
+
     public void removeStudentList(ArrayList<Student> students) {
-        for (int i=0; i<students.size(); i++) {
-            studentList.remove(students.get(i));
-        }
+        this.studentList.removeAll(students);
     }
 
     public ArrayList<Student> getStudentList (){
         return this.studentList;
     }
 
-    public static Course createCourse(String name, int credits, ArrayList<Course> prereqList) {
-        for (int i = 0; i <= Course.allCourses.size() - 1; i++) {
+    public static ArrayList<Department> getAllDepartments(){
+        return allDepartments;
+    }
+
+    public static Course createCourse(String name, int credits, ArrayList<Course> prereqList) { //this method is for creating courses
+        Course course = null; //null course
+
+        for (int i = 0; i <= Course.allCourses.size() - 1; i++) { //we first check if the courses exists
             Course tempCourse = Course.allCourses.get(i);
-            if (tempCourse.getName().equals(name)) {
-                return tempCourse;
+            if (tempCourse.getName().equals(name)) { //compare the course with the course name
+                course = tempCourse; //we assign course with exiting course
+                break;               //and break the loop
             }
         }
 
-        Course course = new Course(name, credits, prereqList);
-        Course.allCourses.add(course);
+        if (course == null) { //if course does not exist, we create new course and add to allCourses
+            course = new Course(name, credits, prereqList);
+            Course.allCourses.add(course);
+        }
         return course;
     }
 
-    public static Elective createElective(String name, ArrayList<Course> prereqList) {
-//        for (int i = 0; i <= Course.allCourses.size() - 1; i++) {
-//            Course tempCourse = Course.allCourses.get(i);
-//            if (tempCourse.getName().equals(name)) {
-//                return (Elective) tempCourse;
-//            }
-//        }
+    public static Course createElective(String name, ArrayList<Course> prereqList) {
+        Course elective = null; //null elective, we define it as Course type because the Elective object can be cast as course
 
-        Elective elective = new Elective(name, prereqList);
-        Course.allCourses.add(elective);
+        for (int i = 0; i <= Course.allCourses.size() - 1; i++) { //we first check if the courses exists
+            Course tempCourse = Course.allCourses.get(i);
+            if (tempCourse.getName().equals(name)) { //compare the course with the course name
+                elective = tempCourse; //we assign course with exiting course
+                break;                 //and break the loop
+            }
+        }
+
+        if (elective == null) { //if elective does not exist, we create new course and add to allCourses
+            elective = new Elective(name, prereqList);
+            Course.allCourses.add(elective);
+        }
         return elective;
     }
 
-    public static UniversityCourse createUniversityCourse(String name, ArrayList<Course> prereqList) {
-        for (int i = 0; i <= Course.allCourses.size() - 1; i++) {
+    public static Course createUniversityCourse(String name, ArrayList<Course> prereqList) {
+        Course universityCourse = null; //null universityCourse, we define it as Course type because the UniversityCourse object can be cast as course
+
+        for (int i = 0; i <= Course.allCourses.size() - 1; i++) { //we first check if the courses exists
             Course tempCourse = Course.allCourses.get(i);
-            if (tempCourse.getName().equals(name)) {
-                return (UniversityCourse) tempCourse;
+            if (tempCourse.getName().equals(name)) { //compare the course with the course name
+                universityCourse = tempCourse; //we assign course with exiting course
+                break;                 //and break the loop
             }
         }
 
-        UniversityCourse universityCourse = new UniversityCourse(name, prereqList);
-        Course.allCourses.add(universityCourse);
+        if (universityCourse == null) { //if university course does not exist, we create new course and add to allCourses
+            universityCourse = new UniversityCourse(name, prereqList);
+            Course.allCourses.add(universityCourse);
+        }
         return universityCourse;
     }
 
-    public ArrayList<Major> allMajors(){
-    	return majors;
-    }
+    public static Course createGeneralCourse(String name, int credits, ArrayList<Course> prereqList) {
+        Course generalCourse = null; //null generalCourse, we define it as Course type because the GeneralCourse object can be cast as course
 
-    public static GeneralCourse createGeneralCourse(String name, int credits, ArrayList<Course> prereqList) {
-        for (int i = 0; i <= Course.allCourses.size() - 1; i++) {
+        for (int i = 0; i <= Course.allCourses.size() - 1; i++) { //we first check if the courses exists
             Course tempCourse = Course.allCourses.get(i);
-            if (tempCourse.getName().equals(name)) {
-                return (GeneralCourse) tempCourse;
+            if (tempCourse.getName().equals(name)) { //compare the course with the course name
+                generalCourse = tempCourse; //we assign course with exiting course
+                break;               //and break the loop
             }
         }
 
-        GeneralCourse generalCourse = new GeneralCourse(name, credits, prereqList);
-        Course.allCourses.add(generalCourse);
+        if (generalCourse == null) { //if general course does not exist, we create new course and add to allCourses
+            generalCourse = new GeneralCourse(name, credits, prereqList);
+            Course.allCourses.add(generalCourse);
+        }
         return generalCourse;
-    }
-
-    public static Department getDepartmentFromID(String ID) {
-        Department department = null;
-        for (Department de : allDepartments) {
-            String Sym = de.getMajors().get(0).getSym();
-            if (Sym.equals(ID)) {
-                department = de;
-            }
-        }
-        return department;
     }
 }

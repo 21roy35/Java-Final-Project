@@ -1,30 +1,20 @@
 package main;
 
 import java.util.ArrayList;
-import main.Section;
+import java.util.Collections;
+
 public class Professor extends Person{
-	
-	ArrayList<Section> currentSections = new ArrayList<Section>();
+	ArrayList<Section> currentSections = new ArrayList<>();
 	final int limit = 12;
-	ArrayList<Course> courses = new ArrayList<Course>();
+	ArrayList<Course> courses;
 	
 	public Professor(String id, String name,ArrayList<Course> courses) {
-		super(id,name);
+		super(id, name);
 		this.courses = courses;
 	}
 
-	public Professor() {
-		super("1001","John Doe");
-		for(int i=1;5>i;i++) {
-			//this.currentSections.add(new Section());
-		}
-
-	}
-
 	public void addCurrentSections(Section... sections){
-		for(Section section : sections) {
-			currentSections.add(section);
-		}
+		Collections.addAll(currentSections, sections);
 	}
 
 	public void removeCurrentSections(Section... sections){
@@ -32,6 +22,7 @@ public class Professor extends Person{
 			currentSections.remove(section);
 		}
 	}
+
 	public ArrayList<Course> getCurrentCourses(){
 		return courses;
 	}

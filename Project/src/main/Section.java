@@ -2,13 +2,6 @@ package main;
 
 import java.time.*;
 import java.util.ArrayList;
-import java.util.Random;
-
-/**
- * @author Mansour Alasais
- * @since 5-25-22
- *
- */
 
 public class Section {
 	private Course course;
@@ -18,36 +11,15 @@ public class Section {
 	private String duration; // parsed as minutes 
 	private ArrayList<Student> students = new ArrayList<Student>();
 	private String sectionID;
-	private static ArrayList<Section> sections = new ArrayList<Section>();
-	
-	
+	public static ArrayList<Section> sections = new ArrayList<Section>();
+
 	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, Student student) throws Exception{
 		if(!sections.contains(this)) {
-		this.course = course;
-		this.duration = duration;
-		this.professor = professor;
-		this.maxStudents = capacity;
-		this.sectionTime = time;
-			if (student.getStudentSectionsTime().contains(time)) {
-				throw new StudentRegistrationConflictException(student, this);
-			}
-			else {
-				this.students.add(student);
-				student.addCurrentSections(this);
-			}
-		this.sectionID = randomSectionID();
-		sections.add(this);
-		}
-	}
-	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, ArrayList<Student> students) throws Exception{
-		if(!sections.contains(this)) {
-		this.course = course;
-		this.duration = duration;
-		this.professor = professor;
-		this.maxStudents = capacity;
-		this.sectionTime = time;
-		for (int i = 0; i <= students.size() - 1; i++) {
-			Student student = students.get(i);
+			this.course = course;
+			this.duration = duration;
+			this.professor = professor;
+			this.maxStudents = capacity;
+			this.sectionTime = time;
 
 			if (student.getStudentSectionsTime().contains(time)) {
 				throw new StudentRegistrationConflictException(student, this);
@@ -56,9 +28,32 @@ public class Section {
 				this.students.add(student);
 				student.addCurrentSections(this);
 			}
+
+			this.sectionID = Main.randomSectionID();
+			sections.add(this);
 		}
-		this.sectionID = randomSectionID();
-		sections.add(this);
+	}
+
+	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, ArrayList<Student> students) throws Exception{
+		if(!sections.contains(this)) {
+			this.course = course;
+			this.duration = duration;
+			this.professor = professor;
+			this.maxStudents = capacity;
+			this.sectionTime = time;
+			for (int i = 0; i <= students.size() - 1; i++) {
+				Student student = students.get(i);
+
+				if (student.getStudentSectionsTime().contains(time)) {
+					throw new StudentRegistrationConflictException(student, this);
+				}
+				else {
+					this.students.add(student);
+					student.addCurrentSections(this);
+				}
+			}
+			this.sectionID = Main.randomSectionID();
+			sections.add(this);
 		}
 	}
 
@@ -68,54 +63,63 @@ public class Section {
 	public void setID(int i) {
 		this.sectionID=String.valueOf(i);
 	}
+
 	/**
 	 * @return sectionID as integer
 	 */
 	public String getID() {
 		return this.sectionID;
 	}
+
 	/**
 	 * @return sectionTime as LocalTime
 	 */
 	public LocalTime getSectionTime() {
 		return this.sectionTime;
 	}
+
 	/**
 	 * @param time as LocalTime, sets the given parameter to sectionTime
 	 */
 	public void setSectionTime(LocalTime time) {
 		this.sectionTime=time;
 	}
+
 	/**
 	 * @return ArrayList sections
 	 */
 	public static ArrayList<Section> getAllSections(){
 		return sections;
 	}
+
 	/**
 	 * @return maxStudents as integer
 	 */
 	public int getCapacity() {
 		return maxStudents;
 	}
+
 	/**
 	 * @param number as integer, sets maxStudents to the given parameter
 	 */
 	public void setCapacity(int number) {
 		this.maxStudents=number;
 	}
+
 	/**
 	 * @param prof as Professor, sets professor to the given parameter
 	 */
 	public void setProfessor(Professor prof) {
 		this.professor=prof;
 	}
+
 	/**
 	 * @return professor
 	 */
 	public Professor getProfessor() {
 		return this.professor;
 	}
+
 	/**
 	 * @param stu as Student, adds to the students ArrayList with the given parameter.
 	 */
@@ -129,6 +133,7 @@ public class Section {
 			}
 		}
 	}
+
 	/**
 	 * @param stu as Student, removes from the students ArrayList with the given parameter.
 	 */
@@ -141,29 +146,28 @@ public class Section {
 					}
 		}
 	}
+
 	/**
 	 * @return students
 	 */
 	public ArrayList<Student> getStudentList(){
 		return this.students;
 	}
-		/**
-		 * @return formatted text about the object.
-		 */
-		@Override
-		public String toString() {
-			return  "Course Name: " + course.getName() + "\nSection Id: " + sectionID +" \nTime: " + sectionTime + "\nNumber of students: " + students.size() + "\nProfessor: " + professor;
-		}
+
+	public void endTerm() {
+		this.students.clear();
+		this.professor = null;
+	}
 
 	/**
-	 * @return a random Section ID
+	 * @return formatted text about the object.
 	 */
-	public static String randomSectionID() {
-			return String.valueOf(new Random(7).nextInt()+10000);
-	}
+	@Override
+	public String toString() {
+			return  "Course Name: " + course.getName() + "\nSection Id: " + sectionID +" \nTime: " + sectionTime + "\nNumber of students: " + students.size() + "\nProfessor: " + professor;
+		}
 
 	public Course getCourse() {
 		return this.course;
 	}
-	
 }

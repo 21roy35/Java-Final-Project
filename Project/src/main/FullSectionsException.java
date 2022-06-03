@@ -9,7 +9,7 @@ public class FullSectionsException extends Exception{
 
     public FullSectionsException(Course course, ArrayList<Student> students) {
         this.course = course;
-        this.studentsCouldNotRegister = students;
+        this.studentsCouldNotRegister.addAll(students);
         allFullSectionsExceptions.add(this);
     }
 

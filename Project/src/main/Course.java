@@ -14,25 +14,13 @@ public class Course {
         this.name = course;
         this.credits = credit;
         this.prerequisites.addAll(prereqList);
-        this.sections = sections;
+        this.sections.addAll(sections);
     }
 
     public Course(String name, int credit, ArrayList<Course> prereqList) {
         this.name = name;
         this.credits = credit;
         this.prerequisites.addAll(prereqList);
-    }
-
-    public Course(Course course) {
-        this.name = course.getName();
-        this.credits = course.getCredits();
-        this.prerequisites.addAll(course.getPrerequisites());
-        this.sections = course.getSections();
-    }
-    public Course() {
-        this.name = "Stats";
-        this.credits = 4;
-        this.prerequisites = null;
     }
 
     public void setName(String name) {
@@ -43,9 +31,9 @@ public class Course {
         return this.name;
     }
 
-    public void setCredits(int c) {
-        if (c > 0) {
-            this.credits = c;
+    public void setCredits(int credits) {
+        if (credits > 0) {
+            this.credits = credits;
         }
     }
 
@@ -61,91 +49,69 @@ public class Course {
         return this.prerequisites;
     }
 
-    public ArrayList<Section> getSections() {
-        return sections;
-    }
-
-    public void createSections(Department department) throws Exception {
-        String departmentID = this.name.substring(0, 2); //we get ID so we can
-        ArrayList<Course> term = Major.getTerm(department, this); //we want the term of the course so we can avoid conflicts
+    public void createSections() throws Exception {
+        ArrayList<Course> term = Major.getTerm(this); //we want the term of the course, so we can avoid conflicts
         ArrayList<LocalTime> times = new ArrayList<>(); // the times of the sections of the courses in the same term
-        ArrayList<Course> removeList = new ArrayList<>(); //this is the list for the courses that are not the same department
 
-        for (int i = 0; i <= term.size() - 1; i++) { //we add in the removeList
-            Course course = term.get(i);
-            String courseID = course.getName().substring(0, 2); //the substring of the name is the department code for the course name
-            if (departmentID.equals(courseID)) {
-                removeList.add(course);
-            }
+        for (int i = 0; i <= term.size() - 1; i++) { //in this loop, we collect the sections time to avoid them
+            Course course = term.get(i); //get course
+            ArrayList<LocalTime> sectionTime = course.getCourseSectionsTime(); //get the course sections time
+            times.addAll(sectionTime); //add the sections time to the list
         }
 
-        term.removeAll(removeList);
-
-        for (int i = 0; i <= term.size() - 1; i++) {
-            Course course = term.get(i);
-            times.addAll(course.getCourseSectionsTime());
-        }
-
-        LocalTime sectionTime = Main.randomClassTime();
-        for (int i = 0; i <= times.size() - 1; i++) {
+        LocalTime sectionTime = Main.randomClassTime(); //create a random section time
+        for (int i = 0; i <= times.size() - 1; i++) { //check whether the section time is appropriate by comparing with times list
             LocalTime time = times.get(i);
             if (time == sectionTime) {
                 sectionTime = Main.randomClassTime();
             }
         }
 
-        ArrayList<Student> studentList = new ArrayList<>();
-        ArrayList<Professor> professorList = new ArrayList<>();
-
-        for (int i = 0; i <= Department.allDepartments.size() - 1; i++) {
-            ArrayList<Student> tempStudentList = Department.allDepartments.get(i).getStudentList();
-            ArrayList<Professor> tempProfessorList = Department.allDepartments.get(i).getProfessorList();
-
-            for (int r = 0; r <= tempStudentList.size() - 1; r++) {
-                Student student = tempStudentList.get(r);
-                studentList.add(student);
-            }
-            for (int r = 0; r <= tempProfessorList.size() - 1; r++) {
-                Professor prof = tempProfessorList.get(r);
-                professorList.add(prof);
-            }
-        }
-
         ArrayList<Student> studentsNeedThisCourse = new ArrayList<>();
         ArrayList<Professor> professorTeachThisCourse = new ArrayList<>();
 
-        for (int i = 0; i <= studentList.size() - 1; i++) {
-            Student student = studentList.get(i);
-            ArrayList<Course> tempCourses = student.neededCourses();
-            if (tempCourses.contains(this)) {
-                studentsNeedThisCourse.add(student);
+        for (int i = 0; i <= Department.allDepartments.size() - 1; i++) { //in this loop, we get allDepartments students and professors related to this course
+            ArrayList<Student> tempStudentList = Department.allDepartments.get(i).getStudentList();
+            ArrayList<Professor> tempProfessorList = Department.allDepartments.get(i).getProfessorList();
+
+            for (int r = 0; r <= tempStudentList.size() - 1; r++) { //first we check the student who need this course
+                Student student = tempStudentList.get(r); //we get the student
+                ArrayList<Course> tempCourses = student.neededCourses(); //we get the student needed courses
+                if (tempCourses.contains(this)) { //we look if his needed courses contain this course
+                    studentsNeedThisCourse.add(student);
+                }
+            }
+
+            for (int r = 0; r <= tempProfessorList.size() - 1; r++) { //second we check the professor if he teaches the course
+                Professor prof = tempProfessorList.get(r); //we get the professor
+                ArrayList<Course> tempCourses = prof.getCurrentCourses(); //we get the current courses he teaches
+                boolean profLimit = prof.getLimit() <= 12 - this.credits;
+                if (tempCourses.contains(this) & profLimit) { //we check if he teaches this course, and he did not exceed his limit
+                    professorTeachThisCourse.add(prof);
+                }
             }
         }
 
-        for (int i = 0; i <= professorList.size() - 1; i++) {
-            Professor prof = professorList.get(i);
-            ArrayList<Course> tempCourses = prof.getCurrentCourses();
-            if (tempCourses.contains(this) & prof.getLimit() <= 12 - this.credits) {
-                professorTeachThisCourse.add(prof);
-            }
+        //this two integers is for the sizes of the two lists (students, professors)
+        int studentsListSize = studentsNeedThisCourse.size();
+        int professorsListSize = professorTeachThisCourse.size();
+
+        if (studentsListSize == 0) { //we check if there is any students who need this course
+            //skip the creation of sections because no student reached the course yet
         }
-
-        int studentsNeedThisCourseSize = studentsNeedThisCourse.size();
-        int professorTeachThisCourseSize = professorTeachThisCourse.size();
-
-        if (professorTeachThisCourse.size() == 0) {
+        else if (professorTeachThisCourse.size() == 0) { //we check if there is any available professors
             throw new NoAvailableProfessorException(this);
-        } else if (studentsNeedThisCourseSize == 0) {
-
         }
-        else {
-            if ((studentsNeedThisCourseSize + professorTeachThisCourseSize - 1) /   professorTeachThisCourseSize > 20) {
-                int index = professorTeachThisCourseSize*20;
-                ArrayList<Student> studentsCouldNotRegister = (ArrayList<Student>) studentsNeedThisCourse.subList(index, studentsNeedThisCourseSize);
+        else { //else create sections for this class
+            if ((studentsListSize + professorsListSize - 1) /   professorsListSize > 20) { //first, we check if the professors are not enough
+                //if they are not enough, we will throw FullSectionsException and add the student who could not register there
+                int index = professorsListSize * 20;
+                ArrayList<Student> studentsCouldNotRegister = (ArrayList<Student>) studentsNeedThisCourse.subList(index, studentsListSize);
                 throw new FullSectionsException(this, studentsCouldNotRegister);
             }
 
-            for (int i = 0; i <= professorTeachThisCourseSize - 1; i++) {
+            //here we loop for the professors to create section for each one
+            for (int i = 0; i <= professorsListSize - 1; i++) {
                 Professor prof = professorTeachThisCourse.get(i);
                 ArrayList<Student> tempStudentList = new ArrayList<>();
 
@@ -154,7 +120,7 @@ public class Course {
                     tempStudentList.addAll(tempListForRegistration);
                 } catch (IndexOutOfBoundsException e) {
                     try {
-                        ArrayList<Student> tempListForRegistration = (ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, studentsNeedThisCourseSize);
+                        ArrayList<Student> tempListForRegistration = (ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, studentsListSize);
                         tempStudentList.addAll(tempListForRegistration); }
                     catch (ClassCastException x) {
                         System.out.printf("%s has problem", this.name);
@@ -173,6 +139,10 @@ public class Course {
                 }
             }
         }
+    }
+
+    public ArrayList<Section> getSections() {
+        return sections;
     }
 
     public void removeSections() {
@@ -211,15 +181,6 @@ public class Course {
     public String getCourseSym() {
         String Sym[] = this.name.split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)");
         return Sym[0];
-
-//        int index = this.name.indexOf("1");
-//        for (int i = 2; i <= 4; i++) {
-//            int tempIndex = this.name.indexOf(String.valueOf(i).trim());
-//            if (tempIndex < index & tempIndex > 1) {
-//                index = tempIndex;
-//            }
-//        }
-//        return this.name.substring(0, index);
     }
 
     // toString
