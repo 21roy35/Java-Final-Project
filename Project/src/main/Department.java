@@ -1,5 +1,6 @@
 package main;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -10,7 +11,7 @@ public class Department {
     private ArrayList <Student> studentList = new ArrayList<>();
     public static ArrayList<Department> allDepartments = new ArrayList<>();
 
-    public Department (String name, ArrayList<Major> majors, ArrayList<Professor> professors, ArrayList<Student> students) throws Exception {
+    public Department(String name, ArrayList<Major> majors, ArrayList<Professor> professors, ArrayList<Student> students) throws Exception {
         if(allDepartments.contains(this)) { //we first check if the department exists
             for (Major m : majors) { //we loop the major to check if they exist in the department
                 if(this.majors.contains(m)) {
@@ -33,7 +34,7 @@ public class Department {
         allDepartments.add(this); //we add the object to the allDepartments list
     }
 
-    public Department (String name, Major m, ArrayList<Professor> professors, ArrayList<Student> students) throws Exception {
+    public Department(String name, Major m, ArrayList<Professor> professors, ArrayList<Student> students) throws Exception {
         //the same construct but when the major is not a list
         if(allDepartments.contains(this)) {
             if(this.majors.contains(m)) { //instead of a loop, we only need an if statement
@@ -54,7 +55,7 @@ public class Department {
         allDepartments.add(this);
     }
 
-    public Department (String name, Major m) throws Exception {
+    public Department(String name, Major m) throws Exception {
         //in this constructor, we only assign a name and a major to the Department object
         if(allDepartments.contains(this)) {
             if(this.majors.contains(m)) {
@@ -71,6 +72,10 @@ public class Department {
 
         this.name = name;
         allDepartments.add(this);
+    }
+
+    public Department(String name) {
+        this.name = name;
     }
 
     public void setName(String name) {
@@ -187,5 +192,21 @@ public class Department {
             Course.allCourses.add(generalCourse);
         }
         return generalCourse;
+    }
+
+    public static Section createSection(Course course, Professor prof, int capacity, LocalTime time, String duration, ArrayList<Student> students) throws Exception {
+        boolean thereIsAnException = false;
+        Section section = null;
+        while (!thereIsAnException) {
+            try {
+                section = new Section(course, prof, capacity, time, duration, students);
+                prof.addCurrentSections(section);
+                course.getSections().add(section);
+                thereIsAnException = true;
+            } catch (StudentRegistrationConflictException e) {
+                students = e.removeStudents(students);
+            }
+        }
+        return section;
     }
 }

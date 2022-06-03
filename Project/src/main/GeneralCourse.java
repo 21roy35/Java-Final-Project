@@ -63,7 +63,7 @@ public class GeneralCourse extends Course implements GeneralCourseInterface{
             throw new NoAvailableProfessorException(this);
         }
         else { //else create sections for this class
-            if ((studentsListSize + professorsListSize - 1) /   professorsListSize > 50) { //first, we check if the professors are not enough
+            if (((studentsListSize + professorsListSize - 1) / professorsListSize) > 50) { //first, we check if the professors are not enough
                 //if they are not enough, we will throw FullSectionsException and add the student who could not register there
                 int index = professorsListSize * 50;
                 ArrayList<Student> studentsCouldNotRegister = new ArrayList<>(studentsNeedThisCourse.subList(index, studentsListSize));
@@ -82,22 +82,11 @@ public class GeneralCourse extends Course implements GeneralCourseInterface{
                     try {
                         ArrayList<Student> tempListForRegistration = new ArrayList<>(studentsNeedThisCourse.subList(50 * i, studentsListSize));
                         tempStudentList.addAll(tempListForRegistration);
-                    }
-                    catch (ClassCastException x) {
-                        System.out.printf("%s has problem", this.getName());
+                    } catch (IllegalArgumentException ex) {
+                        break;
                     }
                 }
-
-                try {
-                    Section section = new Section(this, prof, 50, sectionTime, Main.ClassDuration(sectionTime), tempStudentList);
-                    prof.addCurrentSections(section);
-                    this.getSections().add(section);
-                } catch (StudentRegistrationConflictException e) {
-                    tempStudentList = e.removeStudents(tempStudentList);
-                    Section section = new Section(this, prof, 50, sectionTime, Main.ClassDuration(sectionTime), tempStudentList);
-                    prof.addCurrentSections(section);
-                    this.getSections().add(section);
-                }
+                Department.createSection(this, prof, 50, sectionTime, Main.ClassDuration(sectionTime), tempStudentList);
             }
         }
     }

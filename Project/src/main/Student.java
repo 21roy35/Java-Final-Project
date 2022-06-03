@@ -10,12 +10,12 @@ public class Student extends Person{
 	private ArrayList<Course> coursesCompleted = new ArrayList<>();
 	int creditsCompleted;
 	private ArrayList<Section> currentSections = new ArrayList<>();
-	private ArrayList<ArrayList<Course>> studentPlan = new ArrayList<>();
+	private ArrayList<ArrayList<Course>> studentPlan;
 
 	public Student(String id, String name, Major major) {
 		super(id,name);
 		this.major = major;
-		this.studentPlan.addAll(major.createPlanForStudent());
+		this.studentPlan = major.createPlanForStudent();
 	}
 
 	public void setMajor(Major major) {

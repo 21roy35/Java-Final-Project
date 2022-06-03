@@ -6,11 +6,11 @@ import java.util.Collections;
 public class Professor extends Person{
 	ArrayList<Section> currentSections = new ArrayList<>();
 	final int limit = 12;
-	ArrayList<Course> courses;
+	ArrayList<Course> courses = new ArrayList<>();
 	
-	public Professor(String id, String name,ArrayList<Course> courses) {
+	public Professor(String id, String name, ArrayList<Course> courses) {
 		super(id, name);
-		this.courses = courses;
+		this.courses.addAll(courses);
 	}
 
 	public void addCurrentSections(Section... sections){

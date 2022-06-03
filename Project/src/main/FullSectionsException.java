@@ -13,6 +13,12 @@ public class FullSectionsException extends Exception{
         allFullSectionsExceptions.add(this);
     }
 
+    public FullSectionsException(Course course, Student student) {
+        this.course = course;
+        this.studentsCouldNotRegister.add(student);
+        allFullSectionsExceptions.add(this);
+    }
+
     public Course getCourse() {
         return course;
     }

@@ -8,23 +8,18 @@ import java.util.Random;
 
 public class Main {
 	static String CURRENT_YEAR = "2022";
-	static int NUMBER_OF_YEARS = 2; // one cycle = 5 years
+	static int NUMBER_OF_YEARS = 5;
 	static DecimalFormat _ID = new DecimalFormat("00000");
 	static int LATEST_ID;
 	public static ArrayList<Student> current_students = new ArrayList<>();
 	
 	public static void main(String[] args) throws Exception {
 		createDepartments();
-		createStudentsAndProfessors(200,80);
 
 		int YEAR_COUNT = 0;
 		while(NUMBER_OF_YEARS > YEAR_COUNT) {
 			startYear();
 			YEAR_COUNT++;
-		}
-
-		for (NoAvailableProfessorException e : NoAvailableProfessorException.allNoAvailableProfessorExceptions) {
-			System.out.println(e.getCourse());
 		}
 
 		System.out.println(FullSectionsException.allFullSectionsExceptions.size());
@@ -66,28 +61,23 @@ public class Main {
 					department = new Department(departmentName, m);
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+//				e.printStackTrace();
 				System.out.println("CreateMajors: Department already exists or major problem.");
 			}
 		}
 	}
 
 	private static void createStudentsAndProfessors(int numberOfStudents, int numberOfProfessors) throws Exception {
-		//testing
 		ArrayList<Student> departmentStudents;
 		ArrayList<Professor> departmentProfessors;
 
-		for (int i = 0; i <= 6; i++) {
+		for (int i = 0; i <= Department.allDepartments.size() - 1; i++) {
 			Department department = Department.allDepartments.get(i);
 			departmentStudents = newStudent(numberOfStudents, department);
 			departmentProfessors = newProfessor(numberOfProfessors, department);
-			System.out.println("\n-----------------------------------------------------");
-			System.out.println("\nDepartment: "+department.getName()+"\nMajors: "+ Department.allDepartments.get(i).getMajors());
 			department.addStudentList(departmentStudents);
 			department.addProfessorList(departmentProfessors);
-			System.out.println("Students: " + department.getStudentList());
-			System.out.println("Professers: " + department.getProfessorList());
-		}//some files couldn't be read for some reason thats why not all majors are in the departments
+		}
 	}
 
 	public static ArrayList<String> StudentRandomNames(int number) {
@@ -96,7 +86,7 @@ public class Main {
 	    Random rand = new Random();
 	    ArrayList<String> result = new ArrayList<>();
 	    for (int i = 0; i < number; i++) {
-	        result.add( "[Student]: " + first[rand.nextInt(21)] + " " + last[rand.nextInt(21)]);
+	        result.add( "[Student]: " + first[rand.nextInt(20)] + " " + last[rand.nextInt(20)]);
 	    }
 	    return result;
 	}
@@ -107,7 +97,7 @@ public class Main {
 		Random rand = new Random();
 		ArrayList<String> result = new ArrayList<>();
 		for (int i = 0; i < number; i++) {
-			result.add( "[Professor]: " + first[rand.nextInt(21)] + " " + last[rand.nextInt(21)]);
+			result.add( "[Professor]: " + first[rand.nextInt(20)] + " " + last[rand.nextInt(20)]);
 		}
 		return result;
 	}
@@ -133,9 +123,8 @@ public class Main {
 			String name = StudentRandomNames(1).get(0);
 			String ID = randomID();
 			int majorListSize = department.getMajors().size();
-
 			Major major = department.getMajors().get(random.nextInt(majorListSize));
-			Student student = new Student(ID, name, major); //ahmed wut
+			Student student = new Student(ID, name, major);
 			students.add(student);
 		}
 		return students;
@@ -155,19 +144,35 @@ public class Main {
 
 	public static ArrayList<Course> randomCourse(Department department) {
 		ArrayList<Course> courses = new ArrayList<>();
-		Major major = department.getMajors().get(new Random().nextInt(department.getMajors().size()));
-		ArrayList<Course> randomTerm = major.getPlan().get(new Random().nextInt(major.getPlan().size()));
-		Course randomCourse1 = randomTerm.get(new Random().nextInt(randomTerm.size()));
-		Course randomCourse2 = randomTerm.get(new Random().nextInt(randomTerm.size()));
-		Course randomCourse3 = randomTerm.get(new Random().nextInt(randomTerm.size()));
+		Random rand = new Random();
 
-		if (randomCourse1.getName().contains(major.getSym()) && randomCourse2.getName().contains(major.getSym()) && randomCourse3.getName().contains(major.getSym())) {// need to make the Majors or the departments get a special words. like "EE"
-			courses.add(randomCourse1);
-			courses.add(randomCourse2);
-			courses.add(randomCourse3);
+		try {
+			int randomMajor = rand.nextInt(department.getMajors().size());
+			Major major = department.getMajors().get(randomMajor);
+
+			int yearCount = Integer.parseInt(CURRENT_YEAR) - 2021;
+			int randomTerm1 = rand.nextInt(yearCount);
+			int randomTerm2 = rand.nextInt(yearCount +  2);
+			ArrayList<Course> Term1 = major.getPlan().get(randomTerm1);
+			ArrayList<Course> Term2 = major.getPlan().get(randomTerm2);
+
+			int randomCourse1 = rand.nextInt(Term1.size());
+			int randomCourse2 = rand.nextInt(Term1.size());
+			int randomCourse3 = rand.nextInt(Term2.size());
+			int randomCourse4 = rand.nextInt(Term2.size());
+
+			Course Course1 = Term1.get(randomCourse1);
+			Course Course2 = Term1.get(randomCourse2);
+			Course Course3 = Term2.get(randomCourse3);
+			Course Course4 = Term2.get(randomCourse4);
+
+			courses.add(Course1);
+			courses.add(Course2);
+			courses.add(Course3);
+			courses.add(Course4);
 			return courses;
-		}
-		else {
+
+		} catch (IllegalArgumentException e) {
 			return randomCourse(department);
 		}
 	}
@@ -216,6 +221,8 @@ public class Main {
 
 	public static void startYear() {
 		try {
+			createStudentsAndProfessors(100,30);
+
 			for (Department de : Department.allDepartments) {
 				ArrayList<Student> departmentStudentList = de.getStudentList();
 				current_students.addAll(departmentStudentList);
@@ -223,15 +230,13 @@ public class Main {
 			// pdateJList(current_students);
 
 			System.out.println("Year Starting...");
+
 			Thread.sleep(3000);
-
 			updateTerm();
-
 			System.out.println("Students graduated term 1");
+
 			Thread.sleep(3000);
-
 			updateTerm();
-
 			System.out.printf("Students #%d graduated year #%s\n", current_students.size(), CURRENT_YEAR);
 
 			int addYear = Integer.parseInt(CURRENT_YEAR) + 1;
@@ -261,6 +266,10 @@ public class Main {
 
 			for (Section section : Section.sections) {
 				section.endTerm();
+			}
+
+			for (StudentRegistrationConflictException e : StudentRegistrationConflictException.allStudentRegistrationConflictExceptions) {
+				e.checkStudentsInException();
 			}
 
 		} catch (Exception e) {

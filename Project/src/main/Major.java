@@ -107,6 +107,11 @@ public class Major {
         input.close(); //We close the input stream
     }
 
+    public Major(String name, String sym) {
+        this.name = name;
+        this.sym = sym;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
