@@ -62,7 +62,7 @@ public class Course {
         LocalTime sectionTime = Main.randomClassTime(); //create a random section time
         for (int i = 0; i <= times.size() - 1; i++) { //check whether the section time is appropriate by comparing with times list
             LocalTime time = times.get(i);
-            if (time == sectionTime) {
+            if (time.equals(sectionTime)) {
                 sectionTime = Main.randomClassTime();
             }
         }
@@ -106,7 +106,7 @@ public class Course {
             if ((studentsListSize + professorsListSize - 1) /   professorsListSize > 20) { //first, we check if the professors are not enough
                 //if they are not enough, we will throw FullSectionsException and add the student who could not register there
                 int index = professorsListSize * 20;
-                ArrayList<Student> studentsCouldNotRegister = (ArrayList<Student>) studentsNeedThisCourse.subList(index, studentsListSize);
+                ArrayList<Student> studentsCouldNotRegister = new ArrayList<>(studentsNeedThisCourse.subList(index, studentsListSize));
                 throw new FullSectionsException(this, studentsCouldNotRegister);
             }
 
@@ -116,11 +116,11 @@ public class Course {
                 ArrayList<Student> tempStudentList = new ArrayList<>();
 
                 try {
-                    ArrayList<Student> tempListForRegistration = (ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, 20 * (i + 1));
+                    ArrayList<Student> tempListForRegistration = new ArrayList<>(studentsNeedThisCourse.subList(20 * i, 20 * (i + 1)));
                     tempStudentList.addAll(tempListForRegistration);
                 } catch (IndexOutOfBoundsException e) {
                     try {
-                        ArrayList<Student> tempListForRegistration = (ArrayList<Student>) studentsNeedThisCourse.subList(20 * i, studentsListSize);
+                        ArrayList<Student> tempListForRegistration = new ArrayList<>(studentsNeedThisCourse.subList(20 * i, studentsListSize));
                         tempStudentList.addAll(tempListForRegistration); }
                     catch (ClassCastException x) {
                         System.out.printf("%s has problem", this.name);
@@ -128,12 +128,12 @@ public class Course {
                 }
 
                 try {
-                    Section section = new Section(this, prof, 20, sectionTime, Main.randomClassDuration(), tempStudentList);
+                    Section section = new Section(this, prof, 20, sectionTime, Main.ClassDuration(sectionTime), tempStudentList);
                     prof.addCurrentSections(section);
                     this.sections.add(section);
                 } catch (StudentRegistrationConflictException e) {
                     tempStudentList = e.removeStudents(tempStudentList);
-                    Section section = new Section(this, prof, 20, sectionTime, Main.randomClassDuration(), tempStudentList);
+                    Section section = new Section(this, prof, 20, sectionTime, Main.ClassDuration(sectionTime), tempStudentList);
                     prof.addCurrentSections(section);
                     this.sections.add(section);
                 }

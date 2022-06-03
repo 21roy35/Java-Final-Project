@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
-
 	static String CURRENT_YEAR = "2022";
 	static int NUMBER_OF_YEARS = 2; // one cycle = 5 years
 	static DecimalFormat _ID = new DecimalFormat("00000");
@@ -16,7 +15,6 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		createDepartments();
-//		createGeneralDepartments();
 		createStudentsAndProfessors(200,80);
 
 		int YEAR_COUNT = 0;
@@ -25,22 +23,13 @@ public class Main {
 			YEAR_COUNT++;
 		}
 
-		int notCompletedStudents = 0;
-		int numStu = 0;
-		for(Department de: Department.allDepartments) {
-			for (int i = 0; i <= de.getStudentList().size() - 1; i++) {
-				Student student = de.getStudentList().get(i);
-				numStu += 1;
-				if (student.getCreditsCompleted() < 155) {
-					notCompletedStudents += 1;
-				}
-			}
+		for (NoAvailableProfessorException e : NoAvailableProfessorException.allNoAvailableProfessorExceptions) {
+			System.out.println(e.getCourse());
 		}
+
 		System.out.println(FullSectionsException.allFullSectionsExceptions.size());
 		System.out.println(NoAvailableProfessorException.allNoAvailableProfessorExceptions.size());
 		System.out.println(StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size());
-		System.out.println(numStu);
-		System.out.println(notCompletedStudents);
 
 		MainGUI.main(null);
 	}
@@ -83,34 +72,6 @@ public class Main {
 		}
 	}
 
-//	public static void createGeneralDepartments() throws Exception {
-//		Department science = new Department("Science");
-//		Major Math = new Major("Math", "MATH");
-//		Major Chemistry = new Major("Chemistry", "CHEM");
-//		Major Biology = new Major("Biology", "BIO");
-//		Major Physics = new Major("Physics", "PHYS");
-//		Major Stats = new Major("Stats", "STAT");
-//		science.addMajors(Math, Chemistry, Biology, Physics, Stats);
-//
-//		Department general = new Department("General");
-//		Major Arabic = new Major("Arabic", "ARAB");
-//		Major Islamic = new Major("Islamic", "ISLS");
-//		Major LANE = new Major("LANE", "LANE");
-//		Major LANF = new Major("LANF", "LANF");
-//		Major HIST = new Major("HIST", "HIST");
-//		Major GEOG = new Major("GEOG", "GEOG");
-//		Major IS = new Major("IS", "IS");
-//		Major SOC = new Major("SOC", "SOC");
-//		Major COM = new Major("COM", "COM");
-//		Major COMM = new Major("COMM", "COMM");
-//		Major PSY = new Major("PSY", "PSY");
-//		Major BL = new Major("BL", "BL");
-//		Major BLA = new Major("BLA", "BLA");
-//		Major CPIT = new Major("CPIT", "CPIT");
-//		Major ELIS = new Major("ELIS", "ELIS");
-//		general.addMajors(Arabic, Islamic, LANE, LANF, HIST, GEOG, IS, COM, COMM, PSY, SOC, BL, BLA, CPIT, ELIS);
-//	}
-
 	private static void createStudentsAndProfessors(int numberOfStudents, int numberOfProfessors) throws Exception {
 		//testing
 		ArrayList<Student> departmentStudents;
@@ -127,7 +88,6 @@ public class Main {
 			System.out.println("Students: " + department.getStudentList());
 			System.out.println("Professers: " + department.getProfessorList());
 		}//some files couldn't be read for some reason thats why not all majors are in the departments
-		
 	}
 
 	public static ArrayList<String> StudentRandomNames(int number) {
@@ -136,10 +96,7 @@ public class Main {
 	    Random rand = new Random();
 	    ArrayList<String> result = new ArrayList<>();
 	    for (int i = 0; i < number; i++) {
-	      	if(i==20) {
-	    		break; // only 20 preallocated names exist
-	    	}
-	        result.add( "[Student]: " + first[rand.nextInt(20)] + " " + last[rand.nextInt(20)]);
+	        result.add( "[Student]: " + first[rand.nextInt(21)] + " " + last[rand.nextInt(21)]);
 	    }
 	    return result;
 	}
@@ -147,16 +104,12 @@ public class Main {
 	public static ArrayList<String> ProfRandomNames(int number) {
 	    String[] first = {"Hadi", "Khalid", "Salem", "Fawaz", "Muhannad", "Moath", "Arwa", "Thamer", "Lujain", "Dana", "Hind", "Hanan", "Raneem", "Haifa", "Reem", "Abdulqudoos", "Saqer", "Sultan", "Hassan", "Ryan"};
 	    String[] last = {"Alqahtani", "Alotaibi", "Alghamdi", "Alyami", "Alshehri", "Alzahrani", "Aldossari", "Alamri", "Alsaggaf", "Alabdullah", "Aldakheil", "Aldhari", "Alrufaydi", "Almagrabi", "Alasais", "Alhabshi", "Altamimi", "Almutari", "Alkodry", "Alsulami"};
-	    Random rand = new Random();
-	    //String[] result = new String[number];
-	    ArrayList<String> result = new ArrayList<>();
-	    for (int i = 0; i < number; i++) {
-	    	if(i==20) {
-	    		break; // only 20 preallocated names exist
-	    	}
-	        result.add("[Prof]: " + first[rand.nextInt(20)] + " " + last[rand.nextInt(20)]);
-	    }
-	    return result;
+		Random rand = new Random();
+		ArrayList<String> result = new ArrayList<>();
+		for (int i = 0; i < number; i++) {
+			result.add( "[Professor]: " + first[rand.nextInt(21)] + " " + last[rand.nextInt(21)]);
+		}
+		return result;
 	}
 
 	public static String randomID() throws Exception {
@@ -220,41 +173,38 @@ public class Main {
 	}
 
 	public static LocalTime randomClassTime() {
-	    Random rand = new Random();
-	    int hour = rand.nextInt(12) + 8;
-	    int minute = rand.nextInt(2)+1;
-	    switch(minute) {
-			case 1:
-				minute=00;
-				break;
-			case 2:
-				minute = 30;
-				break;
-	    	default:
-	    		minute = 30;
-	    		break;
-	    }
-	    String frmt =  String.format("%02d:%02d", hour, minute);
-	    return LocalTime.parse(frmt);
+		Random rand = new Random();
+		int hour = rand.nextInt(10) + 8;
+		int minute = rand.nextInt(2);
+		int numOfDays = rand.nextInt(2) + 2;
+
+		if (hour%2 == 0 & numOfDays == 2) {
+			switch(minute) {
+				case 0:
+					break;
+				case 1:
+					minute = 30;
+					break;
+			}
+		}
+		else {
+			minute = 0;
+		}
+		String format = String.format("%02d:%02d:%02d", hour, minute, numOfDays);
+		LocalTime time = LocalTime.parse(format);
+		return time;
 	}
 
-	public static String randomClassDuration() {
-	    Random rand = new Random();
-	    int hour = rand.nextInt(12);
-	    int minute = rand.nextInt(2)+1;
-	    switch(minute) {
-			case 1:
-				minute=00;
-				break;
-			case 2:
-				minute = 30;
-				break;
-	    	default:
-	    		minute = 30;
-	    		break;
-	    }
-	    String frmtTime =  String.format("%02d:%02d", hour, minute);
-	    return frmtTime;
+	public static String ClassDuration(LocalTime time) {
+	    int numOfDays = time.getSecond();
+		if (numOfDays == 2) {
+			String duration = "50";
+			return duration;
+		}
+		else {
+			String duration = "75";
+			return duration;
+		}
 	}
 
 	/**
