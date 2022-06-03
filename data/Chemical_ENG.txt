@@ -1,5 +1,5 @@
 name, Chemical Engineering
-sym, Ch
+sym, ChE
 credits, 155
 CPIT110, 3
 COMM101, 3

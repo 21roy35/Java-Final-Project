@@ -1,4 +1,4 @@
-name, Nuclear Engineering (Medical Physics)
+name, Nuclear Engineering (Nuclear Power)
 sym, NE
 credits, 155
 CPIT110, 3
