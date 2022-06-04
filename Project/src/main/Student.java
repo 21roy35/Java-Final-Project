@@ -112,36 +112,36 @@ public class Student extends Person{
 	public ArrayList<Course> neededCourses() {
 		ArrayList<Course> neededCourses = new ArrayList<>();
 		int i = 0;
-			for(ArrayList<Course> courseArray: this.studentPlan){
-				for(Course course: courseArray) {
-					if(coursesCompleted.contains(course)) {
-						break;
+		for(ArrayList<Course> courseArray: this.studentPlan){
+			for(Course course: courseArray) {
+				if(coursesCompleted.contains(course)) {
+					break;
+				}
+				else {
+					if(course.getPrerequisites().isEmpty()) {
+						if(i!=6) {
+							neededCourses.add(course);
+							i++;
 						}
+					}
 					else {
-						if(course.getPrerequisites().isEmpty()) {
-							if(i!=5) {
-								neededCourses.add(course);
-								i++;
+						for(Course preCourse: course.getPrerequisites()) {
+							if(coursesCompleted.contains(preCourse)) {
+								if(!neededCourses.contains(course)) {
+									if(i!=6) {
+										neededCourses.add(course);
+										i++;
+									}
 								}
 							}
-						else {
-							for(Course preCourse: course.getPrerequisites()) {
-								if(coursesCompleted.contains(preCourse)) {
-									if(!neededCourses.contains(course)) {
-										if(i!=5) {
-											neededCourses.add(course);
-											i++;
-											}
-										}
-									}
-								else {
-									break;
-								}
+							else {
+								break;
 							}
 						}
 					}
 				}
 			}
+		}
 		return neededCourses;
 	}
 

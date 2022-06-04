@@ -34,7 +34,7 @@ public class Section {
 		}
 	}
 
-	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, ArrayList<Student> students) throws Exception{
+	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, ArrayList<Student> students) throws StudentRegistrationConflictException{
 		if(!sections.contains(this)) {
 			this.course = course;
 			this.duration = duration;

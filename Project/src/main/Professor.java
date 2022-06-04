@@ -23,6 +23,10 @@ public class Professor extends Person{
 		}
 	}
 
+	public void addCourse(Course course) {
+		this.courses.add(course);
+	}
+
 	public ArrayList<Course> getCurrentCourses(){
 		return courses;
 	}

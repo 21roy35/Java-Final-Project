@@ -203,12 +203,13 @@ public class Main {
 
 	public static String ClassDuration(LocalTime time) {
 	    int numOfDays = time.getSecond();
+		String duration;
 		if (numOfDays == 2) {
-			String duration = "50";
+			duration = "50";
 			return duration;
 		}
 		else {
-			String duration = "75";
+			duration = "75";
 			return duration;
 		}
 	}
@@ -228,15 +229,12 @@ public class Main {
 				ArrayList<Student> departmentStudentList = de.getStudentList();
 				current_students.addAll(departmentStudentList);
 			}
-			// pdateJList(current_students);
 
 			System.out.println("Year Starting...");
 
-			Thread.sleep(3000);
 			updateTerm();
 			System.out.println("Students graduated term 1");
 
-			Thread.sleep(3000);
 			updateTerm();
 			System.out.printf("Students #%d graduated year #%s\n", current_students.size(), CURRENT_YEAR);
 
@@ -248,34 +246,26 @@ public class Main {
 	}
 
 	public static void updateTerm() {
-		try {
-			for (Course course : Course.allCourses) {
-				try {
-					course.createSections();
-				} catch (NoAvailableProfessorException | FullSectionsException e) {
-					//ignore
-				}
-			}
-
-			for (StudentRegistrationConflictException e : StudentRegistrationConflictException.allStudentRegistrationConflictExceptions) {
-				e.checkStudentsInException();
-			}
-			StudentRegistrationConflictException.checkEmptyExceptions();
-
-			for (Student student : current_students) {
-				student.updateStudent();
-			}
-
-			for (Course course : Course.allCourses) {
-				course.removeSections();
-			}
-
-			for (Section section : Section.sections) {
-				section.endTerm();
-			}
-			Section.checkEmptySections();
-		} catch (Exception e) {
-			e.printStackTrace();
+		for (Course course : Course.allCourses) {
+			Department.createSections(course);
 		}
+
+		for (StudentRegistrationConflictException e : StudentRegistrationConflictException.allStudentRegistrationConflictExceptions) {
+			e.checkStudentsInException();
+		}
+		StudentRegistrationConflictException.checkEmptyExceptions();
+
+		for (Student student : current_students) {
+			student.updateStudent();
+		}
+
+		for (Course course : Course.allCourses) {
+			course.removeSections();
+		}
+
+		for (Section section : Section.sections) {
+			section.endTerm();
+		}
+		Section.checkEmptySections();
 	}
 }
