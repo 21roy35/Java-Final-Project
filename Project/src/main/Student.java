@@ -11,6 +11,7 @@ public class Student extends Person{
 	int creditsCompleted;
 	private ArrayList<Section> currentSections = new ArrayList<>();
 	private ArrayList<ArrayList<Course>> studentPlan;
+	public static ArrayList<Student> failed = new ArrayList<>();
 
 
 	public Student(String id, String name, Major major) {
@@ -59,6 +60,11 @@ public class Student extends Person{
 	}
 
 	public void updateStudent() {
+		Random rand = new Random();
+		
+		int failFactor = rand.nextInt(100);
+		
+		if (failFactor>60){	
 		int credit = 0;
 		for(Section section: this.currentSections) {
 			Course course = section.getCourse();
@@ -67,6 +73,12 @@ public class Student extends Person{
 		}
 		this.creditsCompleted += credit;
 		this.currentSections.clear();
+		}
+		else {
+			if(Student.failed.contains(this)) {
+			Student.failed.add(this);
+			}
+		}
 	}
 
 	public ArrayList<Course> neededCourses() {
