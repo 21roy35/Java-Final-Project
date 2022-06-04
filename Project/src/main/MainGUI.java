@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JSeparator;
 import java.awt.BorderLayout;
+import java.awt.Desktop;
 import java.awt.Dimension;
 
 import javax.swing.JScrollBar;
@@ -12,8 +13,14 @@ import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.JTextField;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
@@ -62,7 +69,7 @@ public class MainGUI {
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * 
 	 */
 	/**
 	 * @param tree
@@ -116,7 +123,47 @@ public class MainGUI {
 		}
 	}
 
+void btnClicked() throws IOException {
+    File outputfile = new File("ouput.txt");
+    if (outputfile.createNewFile()) {
+      System.out.println("File created @" + outputfile.getAbsolutePath());
+    } else {
+      System.out.println("File already exists. Overwriting...");
+      outputfile.delete();
+      btnClicked();
+    }
+	
+	FileWriter writer = new FileWriter(outputfile);;  
+	BufferedWriter bf = new BufferedWriter(writer);
+	
+	bf.write("Students: \n");
+	int i = 0 ;
+	for(Student s : main.Main.current_students) {
+		i++;
+		bf.write("\n Index: " + i + "\n Student name: \n" + s.name + "\n Student ID:  " 
+		+ s.ID + " Student credits: "+ s.creditsCompleted + " Student major: "+ s.getMajor().getName() + " [" + s.getMajor().getSym()+"]\n");
+	}
 
+	bf.write("\n Conflicted students: ");
+	int j = 0;
+	for(StudentRegistrationConflictException st : main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions) {
+
+		for(Student stu : st.getStudents()) {
+			if(j==st.getStudents().size()) {
+				break;
+			}
+			bf.write("\n Index: " + j +"\n Student name: \n" + stu.name + "\n Student ID:  " 
+					+ stu.ID + " Student credits: "+ stu.creditsCompleted + " Student major: "+ stu.getMajor().getName() + " [" + stu.getMajor().getSym()+"]\n");
+		}
+		j++;
+	}
+	bf.write("Output end. Info: \n");
+	bf.write(" \nYears completed: " + main.Main.NUMBER_OF_YEARS + " \nStudent count: \n" + main.Main.current_students.size());
+	bf.write("\n---------------------------------------END---------------------------------");
+	bf.close();
+	Desktop opener = Desktop.getDesktop();
+	opener.open(outputfile);
+}
 
 	private void initialize() {
 		frame = new JFrame();
@@ -125,7 +172,21 @@ public class MainGUI {
 		
 		JProgressBar progressBar = new JProgressBar();
 
-		JLabel lblNewLabel = new JLabel("Students:");
+		JButton button = new JButton();
+		button.setText("View students & professors");
+		button.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					btnClicked();
+				} catch (IOException e1) {
+
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+		
 		JTextPane textPane = new JTextPane();
 		
 		JTree tree = new JTree();
@@ -174,8 +235,8 @@ public class MainGUI {
 							.addComponent(scrollBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addComponent(textPane, GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
+							.addPreferredGap(ComponentPlacement.RELATED).addComponent(button)
+						))
 					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
@@ -185,7 +246,7 @@ public class MainGUI {
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
 						.addComponent(textPane)
 						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-							.addComponent(lblNewLabel)
+							.addComponent(button)
 							.addComponent(tree, GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE))
 						.addComponent(scrollBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
