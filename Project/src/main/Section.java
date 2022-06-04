@@ -159,6 +159,19 @@ public class Section {
 		this.professor = null;
 	}
 
+	public static void checkEmptySections() {
+		try {
+			for (int i = 0; i <= sections.size() - 1; i++) {
+				Section section = sections.get(i);
+				if (section.getStudentList().size() == 0) {
+					sections.remove(section);
+				}
+			}
+		} catch (IndexOutOfBoundsException e) {
+			//ignore
+		}
+	}
+
 	/**
 	 * @return formatted text about the object.
 	 */

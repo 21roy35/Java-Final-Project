@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Main {
 	static String CURRENT_YEAR = "2022";
-	static int NUMBER_OF_YEARS = 1;
+	static int NUMBER_OF_YEARS = 5;
 	static DecimalFormat _ID = new DecimalFormat("00000");
 	static int LATEST_ID;
 	public static ArrayList<Student> current_students = new ArrayList<>();
@@ -195,6 +195,7 @@ public class Main {
 		else {
 			minute = 0;
 		}
+
 		String format = String.format("%02d:%02d:%02d", hour, minute, numOfDays);
 		LocalTime time = LocalTime.parse(format);
 		return time;
@@ -256,6 +257,11 @@ public class Main {
 				}
 			}
 
+			for (StudentRegistrationConflictException e : StudentRegistrationConflictException.allStudentRegistrationConflictExceptions) {
+				e.checkStudentsInException();
+			}
+			StudentRegistrationConflictException.checkEmptyExceptions();
+
 			for (Student student : current_students) {
 				student.updateStudent();
 			}
@@ -267,11 +273,7 @@ public class Main {
 			for (Section section : Section.sections) {
 				section.endTerm();
 			}
-
-			for (StudentRegistrationConflictException e : StudentRegistrationConflictException.allStudentRegistrationConflictExceptions) {
-				e.checkStudentsInException();
-			}
-
+			Section.checkEmptySections();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

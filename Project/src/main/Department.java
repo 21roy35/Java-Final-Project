@@ -195,14 +195,14 @@ public class Department {
     }
 
     public static Section createSection(Course course, Professor prof, int capacity, LocalTime time, String duration, ArrayList<Student> students) throws Exception {
-        boolean thereIsAnException = false;
+        boolean thereIsNOException = false;
         Section section = null;
-        while (!thereIsAnException) {
+        while (!thereIsNOException) {
             try {
                 section = new Section(course, prof, capacity, time, duration, students);
                 prof.addCurrentSections(section);
                 course.getSections().add(section);
-                thereIsAnException = true;
+                thereIsNOException = true;
             } catch (StudentRegistrationConflictException e) {
                 students = e.removeStudents(students);
             }

@@ -8,6 +8,7 @@ import java.util.Random;
 public class Student extends Person{
 	Major major;
 	private ArrayList<Course> coursesCompleted = new ArrayList<>();
+	private ArrayList<Course> coursesFailed = new ArrayList<>();
 	int creditsCompleted;
 	private ArrayList<Section> currentSections = new ArrayList<>();
 	private ArrayList<ArrayList<Course>> studentPlan;
@@ -15,7 +16,7 @@ public class Student extends Person{
 
 
 	public Student(String id, String name, Major major) {
-		super(id,name);
+		super(id, name);
 		this.major = major;
 		this.studentPlan = major.createPlanForStudent();
 	}
@@ -36,6 +37,13 @@ public class Student extends Person{
 		return coursesCompleted;
 	}
 
+	public void addCoursesFailed(Course... courses){
+		Collections.addAll(coursesFailed, courses);
+	}
+
+	public ArrayList<Course> getCoursesFailed(){
+		return coursesFailed;
+	}
 
 	public void setCreditsCompleted(int creditsCompleted) {
 		this.creditsCompleted = creditsCompleted;
@@ -61,23 +69,43 @@ public class Student extends Person{
 
 	public void updateStudent() {
 		Random rand = new Random();
-		
 		int failFactor = rand.nextInt(100);
 		
-		if (failFactor>60){	
-		int credit = 0;
-		for(Section section: this.currentSections) {
-			Course course = section.getCourse();
-			credit += course.getCredits();
-			this.coursesCompleted.add(course);
-		}
-		this.creditsCompleted += credit;
-		this.currentSections.clear();
+		if (failFactor >= 5){
+			int credit = 0;
+			for(Section section: this.currentSections) {
+				Course course = section.getCourse();
+				credit += course.getCredits();
+				this.coursesCompleted.add(course);
+			}
+
+			this.creditsCompleted += credit;
+			this.currentSections.clear();
 		}
 		else {
-			if(Student.failed.contains(this)) {
-			Student.failed.add(this);
+			if(!Student.failed.contains(this)) {
+				Student.failed.add(this);
 			}
+			try {
+				int failCourse = rand.nextInt(this.currentSections.size());
+
+				Section failedSection = this.currentSections.get(failCourse);
+				coursesFailed.add(failedSection.getCourse());
+				this.currentSections.remove(failCourse);
+				failedSection.getStudentList().remove(this);
+			} catch (IllegalArgumentException e) {
+				//ignore
+			}
+
+			int credit = 0;
+			for(Section section: this.currentSections) {
+				Course course = section.getCourse();
+				credit += course.getCredits();
+				this.coursesCompleted.add(course);
+			}
+
+			this.creditsCompleted += credit;
+			this.currentSections.clear();
 		}
 	}
 

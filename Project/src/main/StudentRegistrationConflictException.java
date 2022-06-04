@@ -64,8 +64,19 @@ public class StudentRegistrationConflictException extends Exception{
                 }
             }
         }
-        if (students.size() == 0) {
-            allStudentRegistrationConflictExceptions.remove(this);
+    }
+
+    public static void checkEmptyExceptions() {
+        try {
+            for (int i = 0; i <= allStudentRegistrationConflictExceptions.size() - 1; i++) {
+                StudentRegistrationConflictException ex = allStudentRegistrationConflictExceptions.get(i);
+                if (ex.getStudents().size() == 0) {
+                    ex.setSection(null);
+                    allStudentRegistrationConflictExceptions.remove(ex);
+                }
+            }
+        } catch (IndexOutOfBoundsException e) {
+            //ignore
         }
     }
 }
