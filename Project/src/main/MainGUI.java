@@ -119,10 +119,8 @@ if(tp.getLastPathComponent().toString().equals("Departments")) {
 						for(StudentRegistrationConflictException src : main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions) {
 							for(Student stus2: src.getStudents()) {
 								if(stus.ID.equals(stus2.ID)) {
-									System.out.println("asdasdasd!!!!");
 									i++;
 									if(tree.getLastSelectedPathComponent().toString().substring(0,4).equals((de.getName().substring(0,4)))) {
-										System.out.println("asdasdasd!!!!4444");
 										jtp.setText("Number of student with conflicts in " + tree.getLastSelectedPathComponent().toString() + ": " +i);
 									}
 
