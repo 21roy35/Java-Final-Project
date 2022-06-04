@@ -12,6 +12,7 @@ public class Student extends Person{
 	private ArrayList<Section> currentSections = new ArrayList<>();
 	private ArrayList<ArrayList<Course>> studentPlan;
 
+
 	public Student(String id, String name, Major major) {
 		super(id,name);
 		this.major = major;

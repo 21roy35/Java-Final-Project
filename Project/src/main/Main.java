@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Main {
 	static String CURRENT_YEAR = "2022";
-	static int NUMBER_OF_YEARS = 5;
+	static int NUMBER_OF_YEARS = 1;
 	static DecimalFormat _ID = new DecimalFormat("00000");
 	static int LATEST_ID;
 	public static ArrayList<Student> current_students = new ArrayList<>();

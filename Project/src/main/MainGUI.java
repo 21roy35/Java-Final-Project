@@ -64,24 +64,48 @@ public class MainGUI {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-//	void showOnClick(JTree tree, MouseEvent me, JTextPane jtp) {
-//	    TreePath tp = tree.getPathForLocation(me.getX(), me.getY());
-//	    if (tp != null) {
-//	    	for(Student stu : main.Main.current_students) {
-//	    	    TreePath tps = tree.getPathForLocation(me.getX(), me.getY());
-//	    		if(tps.toString().substring(19, 23).equalsIgnoreCase(stu.major.getName().strip().substring(0,4))){
-//	    		      jtp.setText(tps.toString() +"\n" + "Number of failed students: " + stu.major.failedStudentsNumber);
-//	    		}
-//	    		else {
-//	    		
-//	    		}
-//	    	}
-//
-//	    }
-//	    else {
-//	      jtp.setText("");
-//	    }
-//	}
+	void showOnClick(JTree tree, MouseEvent me, JTextPane jtp) {
+		TreePath tp = tree.getPathForLocation(me.getX(), me.getY());
+		int i = 0;
+		if (tp != null){
+			if(tp.getParentPath()!=null) {
+					TreePath tps = tree.getPathForLocation(me.getX(), me.getY());
+
+					for(Department de : main.Department.allDepartments) {
+						for(Student stus: de.getStudentList()) {
+							for(StudentRegistrationConflictException src : main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions) {
+								for(Student stus2: src.getStudents()) {
+							if(stus.ID.equals(stus2.ID)) {
+								i++;
+								if(tree.getLastSelectedPathComponent().toString().substring(0,4).equals((de.getName().substring(0,4)))) {
+									jtp.setText("Number of student with conflicts in " + tree.getLastSelectedPathComponent().toString() + ": " +i);
+								}
+
+								
+							}}
+							}
+							}
+						if(!jtp.getText().contains(tree.getLastSelectedPathComponent().toString())) {
+							jtp.setText("Number of student with conflicts in " + tree.getLastSelectedPathComponent().toString() + ": 0");
+						}
+						i=0;
+					}
+				}
+
+
+			else {
+				jtp.setText("[Root] All students with conflicts: \n" + String.valueOf(main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size() + 
+						"\nFull sections count: \n" + main.FullSectionsException.allFullSectionsExceptions.size() + "\nUnavailable professors: \n" + main.NoAvailableProfessorException.allNoAvailableProfessorExceptions.size()) );
+			}
+		
+		}
+		else {
+			jtp.setText("All students with conflicts: \n" + String.valueOf(main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size()));
+		}
+	}
+
+
+
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 586, 381);
@@ -95,14 +119,14 @@ public class MainGUI {
 		JTree tree = new JTree();
 
 
-//	    int v = ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED;
-//	    int h = ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED;
-//	    JScrollPane jsp = new JScrollPane(tree, v, h);
-//	    tree.addMouseListener(new MouseAdapter() {
-//	        public void mouseClicked(MouseEvent me) {
-//	          showOnClick(tree, me, textPane);
-//	        }
-//	      });
+	    int v = ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED;
+	    int h = ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED;
+	    JScrollPane jsp = new JScrollPane(tree, v, h);
+	    tree.addMouseListener(new MouseAdapter() {
+	        public void mouseClicked(MouseEvent me) {
+	          showOnClick(tree, me, textPane);
+	        }
+	      });
 	    
 	    
 	    
@@ -115,16 +139,6 @@ public class MainGUI {
 					for(Department d : main.Department.allDepartments) {
 						node_2 = new DefaultMutableTreeNode(d.getName());
 						
-						
-					for(Major j:d.getMajors()) {
-
-						
-//	for(ArrayList<Course> courses:j.getPlan()) {
-//	for(Course course_:courses) {
-//node_2.add(new DefaultMutableTreeNode(course_.getName()));
-//	}
-//} 
-					}
 						node_1.add(node_2);
 					}
 					add(node_1);
