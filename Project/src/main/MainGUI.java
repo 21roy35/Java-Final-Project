@@ -64,33 +64,44 @@ public class MainGUI {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	/**
+	 * @param tree
+	 * @param me
+	 * @param jtp
+	 * {@summary 
+	 * This code displays the number of students with
+	 *  conflicts in a given department.
+	 *   If the mouse is clicked on the root node,
+	 *    it will display the total number of conflicts for all students.
+	 *    If there are no students with conflicts in the selected department, it will display "0".
+	 * } 
+	 * 
+	 */
 	void showOnClick(JTree tree, MouseEvent me, JTextPane jtp) {
 		TreePath tp = tree.getPathForLocation(me.getX(), me.getY());
 		int i = 0;
 		if (tp != null){
 			if(tp.getParentPath()!=null) {
-					TreePath tps = tree.getPathForLocation(me.getX(), me.getY());
+				for(Department de : main.Department.allDepartments) {
+					for(Student stus: de.getStudentList()) {
+						for(StudentRegistrationConflictException src : main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions) {
+							for(Student stus2: src.getStudents()) {
+								if(stus.ID.equals(stus2.ID)) {
+									i++;
+									if(tree.getLastSelectedPathComponent().toString().substring(0,4).equals((de.getName().substring(0,4)))) {
+										jtp.setText("Number of student with conflicts in " + tree.getLastSelectedPathComponent().toString() + ": " +i);
+									}
 
-					for(Department de : main.Department.allDepartments) {
-						for(Student stus: de.getStudentList()) {
-							for(StudentRegistrationConflictException src : main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions) {
-								for(Student stus2: src.getStudents()) {
-							if(stus.ID.equals(stus2.ID)) {
-								i++;
-								if(tree.getLastSelectedPathComponent().toString().substring(0,4).equals((de.getName().substring(0,4)))) {
-									jtp.setText("Number of student with conflicts in " + tree.getLastSelectedPathComponent().toString() + ": " +i);
-								}
 
-								
-							}}
-							}
-							}
-						if(!jtp.getText().contains(tree.getLastSelectedPathComponent().toString())) {
-							jtp.setText("Number of student with conflicts in " + tree.getLastSelectedPathComponent().toString() + ": 0");
+								}}
 						}
-						i=0;
 					}
+					if(!jtp.getText().contains(tree.getLastSelectedPathComponent().toString())) {
+						jtp.setText("Number of student with conflicts in " + tree.getLastSelectedPathComponent().toString() + ": 0");
+					}
+					i=0;
 				}
+			}
 
 
 			else {
@@ -98,7 +109,7 @@ public class MainGUI {
 						"\nFull sections count: \n" + main.FullSectionsException.allFullSectionsExceptions.size() + "\nUnavailable professors: \n" + main.NoAvailableProfessorException.allNoAvailableProfessorExceptions.size() + "\nFailed students number: \n"+
 						main.Student.failed.size()) );
 			}
-		
+
 		}
 		else {
 			jtp.setText("All students with conflicts: \n" + String.valueOf(main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size()));
