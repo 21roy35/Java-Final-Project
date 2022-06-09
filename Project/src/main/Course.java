@@ -81,13 +81,14 @@ public class Course {
         else if (professorsListSize == 0) { //we check if there is any available professors
             throw new NoAvailableProfessorException(this);
         }
-        else if (((studentsListSize + professorsListSize - 1) / professorsListSize) > 30) { //first, we check if the professors are not enough
+        else {
+            if (((studentsListSize + professorsListSize - 1) / professorsListSize) > 30) { //first, we check if the professors are not enough
             //if they are not enough, we will throw FullSectionsException and add the student who could not register there
             int index = professorsListSize * 30;
             ArrayList<Student> studentsCouldNotRegister = new ArrayList<>(studentsNeedThisCourse.subList(index, studentsListSize));
             throw new FullSectionsException(this, studentsCouldNotRegister);
-        }
-        else { //else create sections for this class
+            }
+            //else create sections for this class
             //here we loop for the professors to create section for each one
             for (int i = 0; i <= professorsListSize - 1; i++) {
                 Professor prof = professorTeachThisCourse.get(i);
