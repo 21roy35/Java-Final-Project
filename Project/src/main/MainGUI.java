@@ -45,6 +45,7 @@ public class MainGUI {
 
 	private JFrame frame;
 	Department currDepartment;
+	Major currMajor;
 
 	/**
 	 * Launch the application.
@@ -97,6 +98,18 @@ public class MainGUI {
 			System.out.println("getCurrentDepartment@MainGUI: getLastSelectedPathComponent seems to be null. User probably clicked outside of the parent.");
 		}
 	}
+	Major getCurrentMajor(JTree tree, MouseEvent me) {
+		try {
+		for(Major m : main.Major.getAllMajors()) {
+			String format = tree.getLastSelectedPathComponent().toString() + "Engineering";
+			if (format.indexOf(m.getName())!=-1) {
+				currMajor = m;
+			}
+		}} catch (NullPointerException e) {
+			System.out.println("getCurrentMajor@MainGUI: getLastSelectedPathComponent seems to be null. User probably clicked outside of the parent.");
+		}
+		return currMajor;
+	}
 	
 	
 	void showOnClick(JTree tree, MouseEvent me, JTextPane jtp) {
@@ -104,7 +117,7 @@ public class MainGUI {
 		TreePath tp = tree.getPathForLocation(me.getX(), me.getY());
 		int i = 0;
 		if (tp != null){
-if(tp.getLastPathComponent().toString().equals("Departments")) {
+			if(tp.getLastPathComponent().toString().equals("Departments")) {
 				int num = 0;
 				for( Department d : main.Department.allDepartments) {
 					for(Major m : d.getMajors()) {
@@ -112,50 +125,39 @@ if(tp.getLastPathComponent().toString().equals("Departments")) {
 					}
 				}
 				jtp.setText("There are a total of " + main.Department.allDepartments.size() + " departments, with " + num + " majors.");
-}else {
-			if(tp.getParentPath()!=null) {
-				for(Department de : main.Department.allDepartments) {
-					for(Student stus: de.getStudentList()) {
-						for(StudentRegistrationConflictException src : main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions) {
-							for(Student stus2: src.getStudents()) {
-								if(stus.ID.equals(stus2.ID)) {
-									i++;
-									if(tree.getLastSelectedPathComponent().toString().substring(0,4).equals((de.getName().substring(0,4)))) {
-										jtp.setText("Number of student with conflicts in " + tree.getLastSelectedPathComponent().toString() + ": " +i);
-									}
-
-
-								}}
-						}
-					}
+			}else {
+				if(tp.getParentPath()!=null) {
+					for(Department de : main.Department.allDepartments) {
 						if(!jtp.getText().contains(tree.getLastSelectedPathComponent().toString()) && !(tree.getLastSelectedPathComponent().toString().equals("Departments"))) {
 							String majors = "";
+							int depTotal = 0;
 							getCurrentDepartment(tree, me);
 							for(Major d : currDepartment.getMajors()) {
-								majors = majors +"\n" + d.getName();
+								String confNum = main.Main.getConflictInfo(d);
+								majors = majors +"\n" + d.getName() + " Conflicts in this major: " + main.Main.getConflictInfo(d);
+								depTotal = depTotal + Integer.parseInt(confNum);
 							}
-							//						jtp.setText("Number of student with conflicts in " + tree.getLastSelectedPathComponent().toString() + ": 0");
-							jtp.setText("Department name: "  + currDepartment.getName() + "\nNumber of student with conflicts in " + tree.getLastSelectedPathComponent().toString() + ": " +i + "\n"+
+							
+							jtp.setText("Department name: "  + currDepartment.getName() + "\nNumber of student with conflicts in " + tree.getLastSelectedPathComponent().toString() + ": " + depTotal + "\n"+
 									"Majors in this department: " + majors );
 						}
 					}
-				i=0;}
-						
+					;}
+
 				else {
-					jtp.setText("All Students: " + main.Main.current_students.size() +"\n[Root] All students with conflicts: \n" + String.valueOf(main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size() + 
+					jtp.setText("All Students: " + main.Main.current_students.size() +"\n[Root] All students with conflicts: \n" + String.valueOf(main.Main.conflictedStudents + 
 							"\nFull sections count: \n" + main.FullSectionsException.allFullSectionsExceptions.size() + "\nUnavailable professors: \n" + main.NoAvailableProfessorException.allNoAvailableProfessorExceptions.size() + "\nFailed students number: \n"+
 							main.Student.failed.size()) );
-					}}}
+				}}}
 		else {
-					jtp.setText("All students with conflicts: \n" + String.valueOf(main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size()));
-				}
-				
-				
-			
+			jtp.setText("All students with conflicts including duplicates: \n" + String.valueOf(main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size()));
+		}
 
-i=0;
 
-}
+
+
+
+	}
 	
 	void btnClicked() throws IOException {
 		File outputfile = new File("ouput.txt");

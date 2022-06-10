@@ -1,22 +1,32 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class StudentRegistrationConflictException extends Exception{
     private ArrayList<Student> students = new ArrayList<>();
     private Section section;
+    public static Map<Student, Department> students_info = new HashMap<>();
     public static ArrayList<StudentRegistrationConflictException> allStudentRegistrationConflictExceptions = new ArrayList<>();
 
     public StudentRegistrationConflictException(ArrayList<Student> students, Section section) {
         this.students = students;
         this.section = section;
+        for(Student stud : students) {
+        if(!students_info.containsKey(stud)) {
+        	students_info.put(stud, stud.getDepartment());
+        }}
     }
 
     public StudentRegistrationConflictException(Student student, Section section) {
         this.students.add(student);
         this.section = section;
         allStudentRegistrationConflictExceptions.add(this);
-    }
+        if(!students_info.containsKey(student)) {
+        	students_info.put(student, student.getDepartment());
+        }}
+    
 
     public ArrayList<Student> removeStudents(ArrayList<Student> students) {
         for (int i = 0; i <= students.size() - 1; i++) {

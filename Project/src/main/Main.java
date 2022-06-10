@@ -4,14 +4,20 @@ import java.io.File;
 import java.text.DecimalFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Random;
 
 public class Main {
 	static String CURRENT_YEAR = "2022";
-	static int NUMBER_OF_YEARS = 5;
+	static int NUMBER_OF_YEARS = 1;
 	static DecimalFormat _ID = new DecimalFormat("00000");
 	static int LATEST_ID;
+	static int conflictedStudents = 0;
 	public static ArrayList<Student> current_students = new ArrayList<>();
+	public static ArrayList<Professor> current_professors = new ArrayList<>();
 	
 	public static void main(String[] args) throws Exception {
 		createDepartments();
@@ -27,6 +33,7 @@ public class Main {
 		System.out.println(StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size());
 
 		MainGUI.main(null);
+		System.out.println(getConflictInfo());
 	}
 
 	public static void createDepartments() {
@@ -221,23 +228,122 @@ public class Main {
 		return String.valueOf(new Random(7).nextInt()+10000);
 	}
 
+	public static String getConflictInfo() {
+		int c_department = 0;
+		int c_students = 0;
+		int c_majors = 0;
+		Map<Major, Integer> majorsMap = new HashMap<>();
+		ArrayList<Department> departments = new ArrayList<>();
+		ArrayList<Student> students = new ArrayList<>();
+		ArrayList<Major> majors = new ArrayList<>();
+		
+		for (Entry<Student, Department> entry : main.StudentRegistrationConflictException.students_info.entrySet()) {
+
+			if(!departments.contains(entry.getValue())) {
+				departments.add(entry.getValue());
+				c_department+=1;
+			}
+
+			if(!students.contains(entry.getKey())) {
+				students.add(entry.getKey());
+				c_students+=1;
+			}
+			
+			if(!majors.contains(entry.getKey().getMajor())) {
+				majors.add(entry.getKey().getMajor());
+				c_majors+=1;
+			}
+		
+		}
+		//c_students = main.StudentRegistrationConflictException.students_info.size();
+		
+		int counter = 0;
+		for(Major m: majors) {
+			for(Student stud : students) {
+				if(m.equals(stud.getMajor())) {
+					counter++;
+				}
+			}
+			majorsMap.put(m, counter);
+			counter=0;
+		}
+
+		
+
+		conflictedStudents = c_students;
+
+		return String.format("Conflicts found : \n 1- Department(s) affected: %d \n 2- Major(s) affected: %d \n 3- Student(s) affected: %d", c_department, c_majors, c_students);
+	}
+	
+	public static String getConflictInfo(Major majorParam) {
+		int c_department = 0;
+		int c_students = 0;
+		int c_majors = 0;
+		Map<Major, Integer> majorsMap = new HashMap<>();
+		ArrayList<Department> departments = new ArrayList<>();
+		ArrayList<Student> students = new ArrayList<>();
+		ArrayList<Major> majors = new ArrayList<>();
+		
+		for (Entry<Student, Department> entry : main.StudentRegistrationConflictException.students_info.entrySet()) {
+
+			if(!departments.contains(entry.getValue())) {
+				departments.add(entry.getValue());
+				c_department+=1;
+			}
+
+			if(!students.contains(entry.getKey())) {
+				students.add(entry.getKey());
+				c_students+=1;
+			}
+			
+			if(!majors.contains(entry.getKey().getMajor())) {
+				majors.add(entry.getKey().getMajor());
+				c_majors+=1;
+			}
+		
+		}
+		
+		int counter = 0;
+		for(Major m: majors) {
+			for(Student stud : students) {
+				if(m.equals(stud.getMajor())) {
+					counter++;
+				}
+			}
+			majorsMap.put(m, counter);
+			counter=0;
+		}
+		
+		int NumInMajor;
+		NumInMajor = majorsMap.get(majorParam);
+
+		
+
+		
+
+		return String.valueOf(NumInMajor);
+	}
+	
+	
 	public static void startYear() {
 		try {
 			createStudentsAndProfessors(100,30);
 
 			for (Department de : Department.allDepartments) {
 				ArrayList<Student> departmentStudentList = de.getStudentList();
+				ArrayList<Professor> departmentProfessorList = de.getProfessorList();
 				current_students.addAll(departmentStudentList);
+				current_professors.addAll(departmentProfessorList);
 			}
 
-			System.out.println("Year Starting...");
+			System.out.println("Year Starting...\n---------------------------------------------");
 
 			updateTerm();
 			System.out.println("Students graduated term 1");
 
 			updateTerm();
 			System.out.printf("Students #%d graduated year #%s\n", current_students.size(), CURRENT_YEAR);
-
+			System.out.printf("Professor count this year:  %d", current_professors.size());
 			int addYear = Integer.parseInt(CURRENT_YEAR) + 1;
 			CURRENT_YEAR = String.valueOf(addYear);
 		} catch (Exception e) {
@@ -257,6 +363,10 @@ public class Main {
 
 		for (Student student : current_students) {
 			student.updateStudent();
+		}
+		
+		for(Professor professor : current_professors) {
+			professor.updateProfessor();
 		}
 
 		for (Course course : Course.allCourses) {

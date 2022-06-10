@@ -2,15 +2,25 @@ package main;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 public class Professor extends Person{
 	ArrayList<Section> currentSections = new ArrayList<>();
 	final int limit = 12;
+	final int profLimit = 92;
 	ArrayList<Course> courses = new ArrayList<>();
+	ArrayList<Professor> Professors = new ArrayList<>();
 	
 	public Professor(String id, String name, ArrayList<Course> courses) {
 		super(id, name);
-		this.courses.addAll(courses);
+		if(this.Professors.size()<profLimit) {
+		for(Professor prof : this.Professors) {
+			if(!prof.currentSections.containsAll(currentSections)) {
+				this.Professors.add(this);
+				this.courses.addAll(courses);
+			}
+		}
+		}
 	}
 
 	public void addCurrentSections(Section... sections){
@@ -42,5 +52,9 @@ public class Professor extends Person{
 	@Override
 	public String toString() {
 		return  this.name;
+	}
+
+	public void updateProfessor() {
+		this.currentSections.clear();
 	}
 }

@@ -159,5 +159,17 @@ public class Student extends Person{
 	public String toString() {
 		return "" + name + " [major]: "+major;
 	}
+
+	public Department getDepartment() {
+		for(Department department : main.Department.getAllDepartments()) {
+			for(Student student : department.getStudentList()) {
+				if(student.ID.equals(this.ID)) {
+					return department;
+				}
+			}
+	}
+		
+		return null;
+	}
 }
 
