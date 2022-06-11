@@ -194,7 +194,7 @@ public class Department {
         return generalCourse;
     }
 
-    public static Section createSection(Course course, Professor prof, int capacity, LocalTime time, String duration, ArrayList<Student> students) {
+    public static Section createSectionForCourse(Course course, Professor prof, int capacity, LocalTime time, String duration, ArrayList<Student> students) {
         boolean thereIsNOException = false;
         Section section = null;
         while (!thereIsNOException) {
@@ -210,9 +210,9 @@ public class Department {
         return section;
     }
 
-    public static void createSections(Course course) {
+    public static void createSectionsInMain(Course course) {
         int i = 0;
-        while (i < 5) {
+        while (i < 2) {
             try {
                 course.createSections();
                 i++;

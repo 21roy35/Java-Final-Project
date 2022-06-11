@@ -7,8 +7,10 @@ public class NoAvailableProfessorException extends Exception{
     public static ArrayList<NoAvailableProfessorException> allNoAvailableProfessorExceptions = new ArrayList<>();
 
     public NoAvailableProfessorException(Course course) {
-        this.course = course;
-        allNoAvailableProfessorExceptions.add(this);
+        if(!allNoAvailableProfessorExceptions.contains(this)) {
+            this.course = course;
+            allNoAvailableProfessorExceptions.add(this);
+        }
     }
 
     public Course getCourse() {
@@ -17,6 +19,20 @@ public class NoAvailableProfessorException extends Exception{
 
     public void setCourse(Course course) {
         this.course = course;
+    }
+
+    public static void checkNoAvailableProfessorException() {
+        ArrayList<NoAvailableProfessorException> tempList = new ArrayList<>();
+        for (int i = 0; i <= allNoAvailableProfessorExceptions.size() - 1; i++) {
+            NoAvailableProfessorException ex = allNoAvailableProfessorExceptions.get(i);
+            for (int r = i + 1; r <= allNoAvailableProfessorExceptions.size() - 1; r++) {
+                NoAvailableProfessorException exception = allNoAvailableProfessorExceptions.get(r);
+                if (ex.getCourse().equals(exception.getCourse())) {
+                    tempList.add(exception);
+                }
+            }
+        }
+        allNoAvailableProfessorExceptions.removeAll(tempList);
     }
 
     @Override

@@ -40,13 +40,15 @@ public class GeneralCourse extends Course implements GeneralCourseInterface{
         else if (professorsListSize == 0) { //we check if there is any available professors
             throw new NoAvailableProfessorException(this);
         }
-        else if (((studentsListSize + professorsListSize - 1) / professorsListSize) > 60) { //first, we check if the professors are not enough
-            //if they are not enough, we will throw FullSectionsException and add the student who could not register there
-            int index = professorsListSize * 60;
-            ArrayList<Student> studentsCouldNotRegister = new ArrayList<>(studentsNeedThisCourse.subList(index, studentsListSize));
-            throw new FullSectionsException(this, studentsCouldNotRegister);
-        }
-        else { //else create sections for this class
+        else {
+            if (((studentsListSize + professorsListSize - 1) / professorsListSize) > 60) { //first, we check if the professors are not enough
+                //if they are not enough, we will throw FullSectionsException and add the student who could not register there
+                int index = professorsListSize * 60;
+                ArrayList<Student> studentsCouldNotRegister = new ArrayList<>(studentsNeedThisCourse.subList(index, studentsListSize));
+                studentsNeedThisCourse.removeAll(studentsCouldNotRegister);
+                throw new FullSectionsException(this, studentsCouldNotRegister);
+            }
+            //else create sections for this class
             //here we loop for the professors to create section for each one
             for (int i = 0; i <= professorsListSize - 1; i++) {
                 Professor prof = professorTeachThisCourse.get(i);
@@ -63,7 +65,7 @@ public class GeneralCourse extends Course implements GeneralCourseInterface{
                         break;
                     }
                 }
-                Department.createSection(this, prof, 60, sectionTime, Main.ClassDuration(sectionTime), tempStudentList);
+                Department.createSectionForCourse(this, prof, 60, sectionTime, Main.ClassDuration(sectionTime), tempStudentList);
             }
         }
     }

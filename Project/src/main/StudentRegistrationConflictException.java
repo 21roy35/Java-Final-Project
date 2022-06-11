@@ -11,22 +11,27 @@ public class StudentRegistrationConflictException extends Exception{
     public static ArrayList<StudentRegistrationConflictException> allStudentRegistrationConflictExceptions = new ArrayList<>();
 
     public StudentRegistrationConflictException(ArrayList<Student> students, Section section) {
-        this.students = students;
-        this.section = section;
-        for(Student stud : students) {
-        if(!students_info.containsKey(stud)) {
-        	students_info.put(stud, stud.getDepartment());
-        }}
+        if (!allStudentRegistrationConflictExceptions.contains(this)) {
+            this.students = students;
+            this.section = section;
+            for (Student stud : students) {
+                if (!students_info.containsKey(stud)) {
+                    students_info.put(stud, stud.getDepartment());
+                }
+            }
+        }
     }
 
     public StudentRegistrationConflictException(Student student, Section section) {
-        this.students.add(student);
-        this.section = section;
-        allStudentRegistrationConflictExceptions.add(this);
-        if(!students_info.containsKey(student)) {
-        	students_info.put(student, student.getDepartment());
-        }}
-    
+        if (!allStudentRegistrationConflictExceptions.contains(this)) {
+            this.students.add(student);
+            this.section = section;
+            allStudentRegistrationConflictExceptions.add(this);
+            if (!students_info.containsKey(student)) {
+                students_info.put(student, student.getDepartment());
+            }
+        }
+    }
 
     public ArrayList<Student> removeStudents(ArrayList<Student> students) {
         for (int i = 0; i <= students.size() - 1; i++) {
@@ -76,17 +81,29 @@ public class StudentRegistrationConflictException extends Exception{
         }
     }
 
-    public static void checkEmptyExceptions() {
-        try {
-            for (int i = 0; i <= allStudentRegistrationConflictExceptions.size() - 1; i++) {
-                StudentRegistrationConflictException ex = allStudentRegistrationConflictExceptions.get(i);
-                if (ex.getStudents().size() == 0) {
-                    ex.setSection(null);
-                    allStudentRegistrationConflictExceptions.remove(ex);
+    public static void checkEmptyStudentRegistrationConflictException() {
+        ArrayList<StudentRegistrationConflictException> tempList = new ArrayList<>();
+        for (int i = 0; i <= allStudentRegistrationConflictExceptions.size() - 1; i++) {
+            StudentRegistrationConflictException ex = allStudentRegistrationConflictExceptions.get(i);
+            if (ex.getStudents().size() == 0) {
+                tempList.add(ex);
+                ex.setSection(null);
+            }
+        }
+        allStudentRegistrationConflictExceptions.removeAll(tempList);
+    }
+
+    public static void checkStudentRegistrationConflictException() {
+        ArrayList<StudentRegistrationConflictException> tempList = new ArrayList<>();
+        for (int i = 0; i <= allStudentRegistrationConflictExceptions.size() - 1; i++) {
+            StudentRegistrationConflictException ex = allStudentRegistrationConflictExceptions.get(i);
+            for (int r = i + 1; r <= allStudentRegistrationConflictExceptions.size() - 1; r++) {
+                StudentRegistrationConflictException exception = allStudentRegistrationConflictExceptions.get(r);
+                if (ex.getSection().equals(exception.getSection())) {
+                    tempList.add(exception);
                 }
             }
-        } catch (IndexOutOfBoundsException e) {
-            //ignore
         }
+        allStudentRegistrationConflictExceptions.removeAll(tempList);
     }
 }

@@ -4,7 +4,6 @@ import java.io.File;
 import java.text.DecimalFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -12,7 +11,7 @@ import java.util.Random;
 
 public class Main {
 	static String CURRENT_YEAR = "2022";
-	static int NUMBER_OF_YEARS = 1;
+	static int NUMBER_OF_YEARS = 5;
 	static DecimalFormat _ID = new DecimalFormat("00000");
 	static int LATEST_ID;
 	static int conflictedStudents = 0;
@@ -27,6 +26,9 @@ public class Main {
 			startYear();
 			YEAR_COUNT++;
 		}
+
+		NoAvailableProfessorException.checkNoAvailableProfessorException();
+		StudentRegistrationConflictException.checkStudentRegistrationConflictException();
 
 		System.out.println(FullSectionsException.allFullSectionsExceptions.size());
 		System.out.println(NoAvailableProfessorException.allNoAvailableProfessorExceptions.size());
@@ -68,7 +70,6 @@ public class Main {
 					department = new Department(departmentName, m);
 				}
 			} catch (Exception e) {
-//				e.printStackTrace();
 				System.out.println("CreateMajors: Department already exists or major problem.");
 			}
 		}
@@ -110,7 +111,7 @@ public class Main {
 	}
 
 	public static String randomID() throws Exception {
-		if (LATEST_ID<99999) {
+		if (LATEST_ID < 99999) {
 		String Latest_ID_UPDT;
 		Latest_ID_UPDT = _ID.format(LATEST_ID);
 		LATEST_ID+=1;
@@ -213,12 +214,11 @@ public class Main {
 		String duration;
 		if (numOfDays == 2) {
 			duration = "50";
-			return duration;
 		}
 		else {
 			duration = "75";
-			return duration;
 		}
+		return duration;
 	}
 
 	/**
@@ -267,9 +267,6 @@ public class Main {
 			majorsMap.put(m, counter);
 			counter=0;
 		}
-
-		
-
 		conflictedStudents = c_students;
 
 		return String.format("Conflicts found : \n 1- Department(s) affected: %d \n 2- Major(s) affected: %d \n 3- Student(s) affected: %d", c_department, c_majors, c_students);
@@ -317,17 +314,12 @@ public class Main {
 		int NumInMajor;
 		NumInMajor = majorsMap.get(majorParam);
 
-		
-
-		
-
 		return String.valueOf(NumInMajor);
 	}
-	
-	
+
 	public static void startYear() {
 		try {
-			createStudentsAndProfessors(100,30);
+			createStudentsAndProfessors(100,20);
 
 			for (Department de : Department.allDepartments) {
 				ArrayList<Student> departmentStudentList = de.getStudentList();
@@ -335,7 +327,6 @@ public class Main {
 				current_students.addAll(departmentStudentList);
 				current_professors.addAll(departmentProfessorList);
 			}
-
 			System.out.println("Year Starting...\n---------------------------------------------");
 
 			updateTerm();
@@ -343,7 +334,8 @@ public class Main {
 
 			updateTerm();
 			System.out.printf("Students #%d graduated year #%s\n", current_students.size(), CURRENT_YEAR);
-			System.out.printf("Professor count this year:  %d", current_professors.size());
+			System.out.printf("Professor count this year: %d\n", current_professors.size());
+
 			int addYear = Integer.parseInt(CURRENT_YEAR) + 1;
 			CURRENT_YEAR = String.valueOf(addYear);
 		} catch (Exception e) {
@@ -353,13 +345,18 @@ public class Main {
 
 	public static void updateTerm() {
 		for (Course course : Course.allCourses) {
-			Department.createSections(course);
+			Department.createSectionsInMain(course);
 		}
 
 		for (StudentRegistrationConflictException e : StudentRegistrationConflictException.allStudentRegistrationConflictExceptions) {
 			e.checkStudentsInException();
 		}
-		StudentRegistrationConflictException.checkEmptyExceptions();
+		StudentRegistrationConflictException.checkEmptyStudentRegistrationConflictException();
+
+		for (FullSectionsException e : FullSectionsException.allFullSectionsExceptions) {
+			e.checkStudentsInException();
+		}
+		FullSectionsException.checkEmptyFullSectionsException();
 
 		for (Student student : current_students) {
 			student.updateStudent();

@@ -197,12 +197,12 @@ public class Major {
 
         tempCourseList.add(tempUniversityCourse);
         tempCourseList.add(tempElective1);
-        studentPlan.add(8, tempCourseList);
+        studentPlan.get(8).addAll(tempCourseList);
         tempCourseList.clear();
 
         tempCourseList.add(tempElective2);
         tempCourseList.add(tempElective3);
-        studentPlan.add(9, tempCourseList);
+        studentPlan.get(9).addAll(tempCourseList);
         tempCourseList.clear();
 
         return studentPlan;

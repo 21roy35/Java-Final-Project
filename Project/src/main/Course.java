@@ -86,6 +86,7 @@ public class Course {
             //if they are not enough, we will throw FullSectionsException and add the student who could not register there
             int index = professorsListSize * 30;
             ArrayList<Student> studentsCouldNotRegister = new ArrayList<>(studentsNeedThisCourse.subList(index, studentsListSize));
+            studentsNeedThisCourse.removeAll(studentsCouldNotRegister);
             throw new FullSectionsException(this, studentsCouldNotRegister);
             }
             //else create sections for this class
@@ -105,7 +106,7 @@ public class Course {
                         break;
                     }
                 }
-                Department.createSection(this, prof, 30, sectionTime, Main.ClassDuration(sectionTime), tempStudentList);
+                Department.createSectionForCourse(this, prof, 30, sectionTime, Main.ClassDuration(sectionTime), tempStudentList);
             }
         }
     }
@@ -160,9 +161,16 @@ public class Course {
             for (int r = 0; r <= tempProfessorList.size() - 1; r++) {
                 Professor prof = tempProfessorList.get(r);
                 ArrayList<Course> tempCourses = prof.getCurrentCourses();
-                boolean profLimit = prof.getLimit() <= 12 - this.credits;
-                if (tempCourses.contains(this) & profLimit) {
-                    professorTeachThisCourse.add(prof);
+                int tempLimit = prof.getLimit();
+                int FailFactor = 0;
+
+                while (tempLimit <= prof.Limit - this.credits & FailFactor < 3) {
+                    boolean profLimit = tempLimit <= prof.Limit - this.credits;
+                    if (tempCourses.contains(this) & profLimit) {
+                        professorTeachThisCourse.add(prof);
+                    }
+                    tempLimit += this.credits;
+                    FailFactor++;
                 }
             }
         }
