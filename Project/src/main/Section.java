@@ -124,11 +124,14 @@ public class Section {
 	 * @param stu as Student, adds to the students ArrayList with the given parameter.
 	 */
 	public void addStudents(Student...stu) {
-		for (Student stus : stu) {
-			int len=students.size();
-			for(int i=0; i<len; i++) {
-				if (!students.get(i).equals(stus)) {
-					this.students.add(stus);
+		for (Student student : stu) {
+			int length = students.size();
+			for(int i = 0; i < length; i++) {
+				Student student1 = students.get(i);
+				if (!student1.equals(student)) {
+					this.students.add(student);
+					student.addCurrentSections(this);
+					break;
 				}
 			}
 		}

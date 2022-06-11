@@ -8,15 +8,19 @@ public class FullSectionsException extends Exception{
     public static ArrayList<FullSectionsException> allFullSectionsExceptions = new ArrayList<>();
 
     public FullSectionsException(Course course, ArrayList<Student> students) {
-        this.course = course;
-        this.studentsCouldNotRegister.addAll(students);
-        allFullSectionsExceptions.add(this);
+        if (!allFullSectionsExceptions.contains(this)) {
+            this.course = course;
+            this.studentsCouldNotRegister.addAll(students);
+            allFullSectionsExceptions.add(this);
+        }
     }
 
     public FullSectionsException(Course course, Student student) {
-        this.course = course;
-        this.studentsCouldNotRegister.add(student);
-        allFullSectionsExceptions.add(this);
+        if (!allFullSectionsExceptions.contains(this)) {
+            this.course = course;
+            this.studentsCouldNotRegister.add(student);
+            allFullSectionsExceptions.add(this);
+        }
     }
 
     public Course getCourse() {
@@ -33,6 +37,32 @@ public class FullSectionsException extends Exception{
 
     public void setStudentsCouldNotRegister(ArrayList<Student> studentsCouldNotRegister) {
         this.studentsCouldNotRegister = studentsCouldNotRegister;
+    }
+
+    public void checkStudentsInException() {
+        for (int i = 0; i <= studentsCouldNotRegister.size() - 1; i++) {
+            Student student = studentsCouldNotRegister.get(i);
+            for (int s = 0; s <= course.getSections().size() - 1; s++) {
+                Section section = course.getSections().get(s);
+                if (section.getStudentList().size() < section.getCapacity()) {
+                    section.addStudents(student);
+                    studentsCouldNotRegister.remove(student);
+                    break;
+                }
+            }
+        }
+    }
+
+    public static void checkEmptyFullSectionsException() {
+        ArrayList<FullSectionsException> tempList = new ArrayList<>();
+        for (int i = 0; i <= allFullSectionsExceptions.size() - 1; i++) {
+            FullSectionsException ex = allFullSectionsExceptions.get(i);
+            if (ex.getStudentsCouldNotRegister().size() == 0) {
+                ex.setCourse(null);
+                tempList.add(ex);
+            }
+        }
+        allFullSectionsExceptions.removeAll(tempList);
     }
 
     @Override
