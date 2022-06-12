@@ -169,7 +169,7 @@ public class Major {
 
     /**
      * this the a method to get the plan list
-     * @return
+     * @return plan
      */
     public ArrayList<ArrayList<Course>> getPlan() {
         return plan;
@@ -183,18 +183,34 @@ public class Major {
         this.credits = credits;
     }
 
+    /**
+     * this is a method that get credits
+     * @return credits
+     */
     public int getCredits() {
         return credits;
     }
 
+    /**
+     * this is a method to set symbol for major
+     * @param sym assign value to the sym
+     */
     public void setSym(String sym) {
         this.sym = sym;
     }
 
+    /**
+     * this is a method to get symbol
+     * @return symbol
+     */
     public String getSym() {
 		return this.sym;
 	}
 
+    /**
+     * this is a method to get list of all majors
+     * @return allMajors
+     */
     public static ArrayList<Major> getAllMajors() {
         return allMajors;
     }
