@@ -200,6 +200,13 @@ public class Main {
 		return students;
 	}
 
+    /**
+     * this is a method to create a list of new professor
+     * @param i
+     * @param department
+     * @return
+     * @throws Exception
+     */
 	public static ArrayList<Professor> newProfessor(int i, Department department) throws Exception {
 		ArrayList<Professor> profs = new ArrayList<>();
 		for(int j = 0; j < i; j++) {
@@ -212,6 +219,11 @@ public class Main {
 		return profs;
 	}
 
+    /**
+     *  this is a method to craete a random courses list
+     * @param department
+     * @return
+     */
 	public static ArrayList<Course> randomCourse(Department department) {
 		ArrayList<Course> courses = new ArrayList<>();
 		Random rand = new Random();
@@ -247,6 +259,10 @@ public class Main {
 		}
 	}
 
+    /**
+     * this is a method to initiate time
+     * @return time
+     */
 	public static LocalTime randomClassTime() {
 		Random rand = new Random();
 		int hour = rand.nextInt(10) + 8;
@@ -271,6 +287,11 @@ public class Main {
 		return time;
 	}
 
+    /**
+     *  this is a method to initiate class duration
+     * @param time
+     * @return
+     */
 	public static String ClassDuration(LocalTime time) {
 	    int numOfDays = time.getSecond();
 		String duration;
