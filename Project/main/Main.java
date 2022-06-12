@@ -305,12 +305,17 @@ public class Main {
 	}
 
 	/**
+     * this is a method to generate a random ID for sections
 	 * @return a random Section ID
 	 */
 	public static String randomSectionID() {
 		return String.valueOf(new Random(7).nextInt()+10000);
 	}
 
+    /**
+     * this is a method to  get conflect information
+     * @return
+     */
 	public static String getConflictInfo() {
 		int c_department = 0;
 		int c_students = 0;
@@ -354,7 +359,12 @@ public class Main {
 
 		return String.format("Conflicts found : \n 1- Department(s) affected: %d \n 2- Major(s) affected: %d \n 3- Student(s) affected: %d", c_department, c_majors, c_students);
 	}
-	
+
+    /**
+     * this is method to get conflect information
+     * @param majorParam assign a major
+     * @return number of conflect
+     */
 	public static String getConflictInfo(Major majorParam) {
 		int c_department = 0;
 		int c_students = 0;
@@ -400,6 +410,9 @@ public class Main {
 		return String.valueOf(NumInMajor);
 	}
 
+    /**
+     * this is a method to start the new year
+     */
 	public static void startYear() {
 		try {
 			createStudentsAndProfessors(100,20);
@@ -426,6 +439,9 @@ public class Main {
 		}
 	}
 
+    /**
+     * this is a method to update the term situation
+     */
 	public static void updateTerm() {
 		for (Course course : Course.allCourses) {
 			Department.createSectionsInMain(course);
