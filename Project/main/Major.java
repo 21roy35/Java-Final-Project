@@ -2,12 +2,32 @@ package main;
 
 import java.util.*;
 import java.io.*;
-
+/**
+ * Date: June 12-2022
+ * This is the Major class
+ * @author Team1
+ *
+ */
 public class Major {
+    /**
+     * this is name of the major
+     */
     private String name;
+    /**
+     * this is list for the plan
+     */
     private ArrayList<ArrayList<Course>> plan = new ArrayList<>();
+    /**
+     * this is credits
+     */
     private int credits;
+    /**
+     * this is major symbol
+     */
     private String sym;
+    /**
+     * this is the list for major
+      */
     public static ArrayList<Major> allMajors = new ArrayList<>();
 
 
