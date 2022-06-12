@@ -40,12 +40,25 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.JTextPane;
-
+/**
+ * Date: June 12-2022
+ * This is the Main GUI  class
+ * @author Team1
+ *
+ */
 public class MainGUI {
-
+    /**
+     * this is frame windo
+     */
 	private JFrame frame;
-	Department currDepartment;
-	Major currMajor;
+    /**
+     * this is the current deapartments
+     */
+    Department currDepartment;
+    /**
+     * this is the current major
+     */
+    Major currMajor;
 
 	/**
 	 * Launch the application.
@@ -64,7 +77,7 @@ public class MainGUI {
 	}
 
 	/**
-	 * Create the application.
+	 * Create the application .
 	 */
 	public MainGUI() {
 		initialize();
@@ -78,7 +91,7 @@ public class MainGUI {
 	 * @param me
 	 * @param jtp
 	 * {@summary
-	 * This code displays the number of students with
+	 * This code displays the number of students with ,
 	 *  conflicts in a given department.
 	 *   If the mouse is clicked on the root node,
 	 *    it will display the total number of conflicts for all students.
