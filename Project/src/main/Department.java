@@ -4,27 +4,33 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/***
+ *
+ *
+ * */
 public class Department {
     private String name;
-    private  ArrayList<Major> majors = new ArrayList<>();
-	private  ArrayList<Professor>professorList = new ArrayList<>();
-    private ArrayList <Student> studentList = new ArrayList<>();
+    private ArrayList<Major> majors = new ArrayList<>();
+    private ArrayList<Professor> professorList = new ArrayList<>();
+    private ArrayList<Student> studentList = new ArrayList<>();
     public static ArrayList<Department> allDepartments = new ArrayList<>();
 
+    /***
+     * @param name , majors ,professors
+     *
+     * */
     public Department(String name, ArrayList<Major> majors, ArrayList<Professor> professors, ArrayList<Student> students) throws Exception {
-        if(allDepartments.contains(this)) { //we first check if the department exists
+        if (allDepartments.contains(this)) { //we first check if the department exists
             for (Major m : majors) { //we loop the major to check if they exist in the department
-                if(this.majors.contains(m)) {
+                if (this.majors.contains(m)) {
                     throw new Exception("Major already exists in department.");
-                }
-                else {
+                } else {
                     this.majors.add(m);
                 }
 
                 throw new Exception("Department already exists.");
             }
-        }
-        else {
+        } else {
             this.majors.addAll(majors);
         }
 
@@ -36,16 +42,14 @@ public class Department {
 
     public Department(String name, Major m, ArrayList<Professor> professors, ArrayList<Student> students) throws Exception {
         //the same construct but when the major is not a list
-        if(allDepartments.contains(this)) {
-            if(this.majors.contains(m)) { //instead of a loop, we only need an if statement
+        if (allDepartments.contains(this)) {
+            if (this.majors.contains(m)) { //instead of a loop, we only need an if statement
                 throw new Exception("Major already exists in department.");
-            }
-            else {
+            } else {
                 this.majors.add(m);
             }
             throw new Exception("Department already exists.");
-        }
-        else {
+        } else {
             this.majors.add(m);
         }
 
@@ -57,16 +61,14 @@ public class Department {
 
     public Department(String name, Major m) throws Exception {
         //in this constructor, we only assign a name and a major to the Department object
-        if(allDepartments.contains(this)) {
-            if(this.majors.contains(m)) {
+        if (allDepartments.contains(this)) {
+            if (this.majors.contains(m)) {
                 throw new Exception("Major already exists in department.");
-            }
-            else {
+            } else {
                 this.majors.add(m);
             }
             throw new Exception("Department already exists.");
-        }
-        else {
+        } else {
             this.majors.add(m);
         }
 
@@ -91,8 +93,8 @@ public class Department {
     }
 
     public ArrayList<Major> getMajors() {
-		return majors;
-	}
+        return majors;
+    }
 
     public void addProfessorList (ArrayList<Professor> professors) {
         professorList.addAll(professors);
