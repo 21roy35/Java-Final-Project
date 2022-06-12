@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 /**
-        * Date: June 11-2022
-        * This is the FullSectionsException class that extends Exception class
+ * Date: June 11-2022
+ * This is the student class that extends person class
  * @author Team1
-        *
-        */
+ *
+ */
 
 
 public class Student extends Person{
@@ -43,10 +43,10 @@ public class Student extends Person{
     public static ArrayList<Student> failed = new ArrayList<>();
 
     /**
-     *
-     * @param id
-     * @param name
-     * @param major
+     *this is constructor that initil ID & name and major for the student
+     * @param id initiate id for student
+     * @param name initiate name for the student
+     * @param major initiate major for the student
      */
 
 	public Student(String id, String name, Major major) {
@@ -56,47 +56,47 @@ public class Student extends Person{
 	}
 
     /**
-     *
-     * @param method to set major
+     *this is method to set the major
+     * @param major assign major value
      */
 	public void setMajor(Major major) {
 		this.major = major;
 	}
 
     /**
-     *
-     * @return  major
+     *this is method to get the major
+     * @return major major value
      */
 	public Major getMajor() {
 		return major;
 	}
 
     /**
-     *
-     * @param method to add completed courses
+     *this is a method to add completed courses
+     * @param courses add completed courses
      */
 	public void addCoursesCompleted(Course... courses){
 		Collections.addAll(coursesCompleted, courses);
 	}
 
     /**
-     *
-     * @return Completed courses method
+     * method to get a list of completed courses
+     * @return completed course
      */
 	public ArrayList<Course> getCoursesCompleted(){
 		return coursesCompleted;
 	}
 
     /**
-     *
-     * @param add failed courses method
+     * method to add failed courses
+     * @param  courses failed courses
      */
 	public void addCoursesFailed(Course... courses){
 		Collections.addAll(coursesFailed, courses);
 	}
 
     /**
-     *
+     *method to get a list of failed courses
      * @return failed courses
      */
 	public ArrayList<Course> getCoursesFailed(){
@@ -105,14 +105,14 @@ public class Student extends Person{
 
     /**
      * method to set completed credits
-     * @param creditsCompleted
+     * @param creditsCompleted credits completed value
      */
 	public void setCreditsCompleted(int creditsCompleted) {
 		this.creditsCompleted = creditsCompleted;
 	}
 
     /**
-     *
+     *this is method to get completed credits
      * @return completed credits
      */
 	public int getCreditsCompleted() {
@@ -121,14 +121,14 @@ public class Student extends Person{
 
     /**
      * method to add section
-     * @param sections
+     * @param sections add multiple sections
      */
 	public void addCurrentSections(Section... sections){
 		Collections.addAll(currentSections, sections);
 	}
 
     /**
-     *
+     * this is a list to get current sections
      * @return currents section
      */
 	public ArrayList<Section> getCurrentSections(){
@@ -137,7 +137,7 @@ public class Student extends Person{
 
     /**
      * method to remove current section
-     * @param sections
+     * @param sections remove current sections
      */
 	public void removeCurrentSections(Section... sections){
 		for(Section section : sections) {
@@ -154,8 +154,8 @@ public class Student extends Person{
 	}
 
     /**
-     * set the students plan
-     * @param studentPlan
+     * method to set the student plan
+     * @param studentPlan initiate student plan
      */
 	public void setStudentPlan(ArrayList<ArrayList<Course>> studentPlan) {
 		this.studentPlan = studentPlan;
@@ -208,7 +208,7 @@ public class Student extends Person{
 
     /**
      * list of course needed
-     * @return
+     * @return needed courses
      */
 	public ArrayList<Course> neededCourses() {
 		ArrayList<Course> neededCourses = new ArrayList<>();
@@ -246,7 +246,7 @@ public class Student extends Person{
 	}
 
     /**
-     * students section time list
+     * this is a list to get student sections time
      * @return section time
      */
 	public ArrayList<LocalTime> getStudentSectionsTime() {
@@ -260,8 +260,8 @@ public class Student extends Person{
 	}
 
     /**
-     *
-     * @return major name
+     * this is method to present name & major
+     * @return name & major
      */
 	@Override
 	public String toString() {
@@ -269,7 +269,7 @@ public class Student extends Person{
 	}
 
     /**
-     *
+     * this is method to get department
      * @return department
      */
 	public Department getDepartment() {
