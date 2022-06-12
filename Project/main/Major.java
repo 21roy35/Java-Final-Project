@@ -299,7 +299,7 @@ public class Major {
 
     /**
      * this is a method to get semster
-     * @param course assign value to the course
+     * @param course assign value to the course.
      * @return term
      */
     public static ArrayList<Course> getTerm(Course course) { //we use this method to find the term where the course is taken
