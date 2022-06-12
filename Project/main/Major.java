@@ -132,19 +132,27 @@ public class Major {
     }
 
     /**
-     * this is major constructor
-      * @param name
-     * @param sym
+     * this is major constructor thats initiate major's  " name , symbol "
+      * @param name assign value to the major name
+     * @param sym  assign value to major symbol
      */
     public Major(String name, String sym) {
         this.name = name;
         this.sym = sym;
     }
 
+    /**
+     * this is method to set major name
+     * @param name assign value to the name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * this is a method to get the major's name
+     * @return name
+     */
     public String getName() {
         return name;
     }
