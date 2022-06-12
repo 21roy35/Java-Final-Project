@@ -215,6 +215,11 @@ public class Major {
         return allMajors;
     }
 
+    /**
+     *  this is a method thats create plans for students
+     * @return student plan
+     */
+
     public ArrayList<ArrayList<Course>> createPlanForStudent() {
         //this method is for creating plans for students. The major object only holds a default plan
         //Therefore we need to create a specific plan for each student
