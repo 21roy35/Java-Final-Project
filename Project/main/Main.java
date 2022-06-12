@@ -8,16 +8,47 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
-
+/**
+ * Date: June 12-2022
+ * This is the Main  class
+ * @author Team1
+ *
+ */
 public class Main {
-	static String CURRENT_YEAR = "2022";
-	static int NUMBER_OF_YEARS = 5;
+    /**
+     * this is current year
+     */
+    static String CURRENT_YEAR = "2022";
+    /**
+     * this the number of years
+     */
+    static int NUMBER_OF_YEARS = 5;
+    /**
+     * this is the limits of  ID
+     */
 	static DecimalFormat _ID = new DecimalFormat("00000");
-	static int LATEST_ID;
-	static int conflictedStudents = 0;
-	public static ArrayList<Student> current_students = new ArrayList<>();
+    /**
+     * this is latest ID
+     */
+    static int LATEST_ID;
+    /**
+     *  this is number of conflect
+     */
+    static int conflictedStudents = 0;
+    /**
+     * this is current students list
+     */
+    public static ArrayList<Student> current_students = new ArrayList<>();
+    /**
+     * this is current professor list
+     */
 	public static ArrayList<Professor> current_professors = new ArrayList<>();
-	
+
+    /**
+     * this is the main method
+     * @param args
+     * @throws Exception
+     */
 	public static void main(String[] args) throws Exception {
 		createDepartments();
 
