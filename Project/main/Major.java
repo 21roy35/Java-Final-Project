@@ -131,6 +131,11 @@ public class Major {
         input.close(); //We close the input stream
     }
 
+    /**
+     * this is major constructor
+      * @param name
+     * @param sym
+     */
     public Major(String name, String sym) {
         this.name = name;
         this.sym = sym;
