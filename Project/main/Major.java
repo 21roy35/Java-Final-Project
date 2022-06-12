@@ -30,7 +30,11 @@ public class Major {
       */
     public static ArrayList<Major> allMajors = new ArrayList<>();
 
-
+    /**
+     * this is the constructor thats initiat file
+     * @param file assign value to the file
+     * @throws FileNotFoundException
+     */
     public Major(File file) throws FileNotFoundException {
         Scanner input = new Scanner(file); //Here we are reading the file
         String[] tempArray; //we only create array, so we can split lines in the file
