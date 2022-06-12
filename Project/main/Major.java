@@ -280,6 +280,10 @@ public class Major {
         return studentPlan;
     }
 
+    /**
+     * this is a method thats check for credits
+     * @return trueCredits
+     */
     public int checkCredits() { //here we want to check the credits of a major from its plan
         int trueCredits = 10; //we first initialize 10 which corresponds to the electives and universityCourse
         for (int i = 0; i <= 9; i++) { //we loop the 10 semesters (iterations) from the plan
@@ -293,6 +297,11 @@ public class Major {
         return trueCredits;
     }
 
+    /**
+     * this is a method to get semster
+     * @param course assign value to the course
+     * @return term
+     */
     public static ArrayList<Course> getTerm(Course course) { //we use this method to find the term where the course is taken
         try {
             ArrayList<Course> term = new ArrayList<>(); //initialize arraylist for term
