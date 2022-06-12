@@ -157,14 +157,28 @@ public class Major {
         return name;
     }
 
+    /**
+     * this is a method to set the plan list
+     * @param plan assign value to the plan
+     */
+
+
     public void setPlan(ArrayList<ArrayList<Course>> plan) {
         this.plan = plan;
     }
 
+    /**
+     * this the a method to get the plan list
+     * @return
+     */
     public ArrayList<ArrayList<Course>> getPlan() {
         return plan;
     }
 
+    /**
+     * this is a method to set
+     * @param credits
+     */
     public void setCredits(int credits) {
         this.credits = credits;
     }
