@@ -2,17 +2,56 @@ package main;
 
 import java.time.*;
 import java.util.ArrayList;
-
+/**
+ * Date: June 12-2022
+ * This is the section class
+ * @author Team1
+ *
+ */
 public class Section {
-	private Course course;
-	private Professor professor;
-	private int maxStudents;
-	private LocalTime sectionTime;
-	private String duration; // parsed as minutes 
-	private ArrayList<Student> students = new ArrayList<Student>();
-	private String sectionID;
-	public static ArrayList<Section> sections = new ArrayList<Section>();
+    /**
+     * this is course
+     */
+    private Course course;
+    /**
+     *this is professor
+     */
+    private Professor professor;
+    /**
+     * this is maximum students
+     */
+    private int maxStudents;
+    /**
+     * this is section time
+     */
+    private LocalTime sectionTime;
+    /**
+     * this is duration
+     */
+    private String duration; // parsed as minutes
+    /**
+     * this is a list of students
+     */
+    private ArrayList<Student> students = new ArrayList<Student>();
+    /**
+     * this is section ID
+     */
+    private String sectionID;
+    /**
+     * this is a list of sections
+     */
+    public static ArrayList<Section> sections = new ArrayList<Section>();
 
+    /**
+     * this a constructor that initiate course,professor,capacity,time,duration,student,Exception
+     * @param course initiate course value
+     * @param professor initiate professor value
+     * @param capacity initiate capacity value
+     * @param time initiate time value
+     * @param duration  initiate duration value
+     * @param student initiate student value
+     * @throws Exception might throw  Exception
+     */
 	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, Student student) throws Exception{
 		if(!sections.contains(this)) {
 			this.course = course;
@@ -34,6 +73,16 @@ public class Section {
 		}
 	}
 
+    /**
+     * this is a constructor that initiate a course,professor,capacity,duration, list of students
+     * @param course initiate course value
+     * @param professor initiate professor value
+     * @param capacity initiate capacity value
+     * @param time initiate time value
+     * @param duration initiate duration value
+     * @param students initiate a list of students
+     * @throws StudentRegistrationConflictException
+     */
 	public Section(Course course, Professor professor, int capacity, LocalTime time, String duration, ArrayList<Student> students) throws StudentRegistrationConflictException{
 		if(!sections.contains(this)) {
 			this.course = course;
@@ -58,6 +107,7 @@ public class Section {
 	}
 
 	/**
+     * this is a method to set an section ID
 	 * @param i as integer, sets the section ID to the given parameter
 	 */
 	public void setID(int i) {
@@ -65,6 +115,7 @@ public class Section {
 	}
 
 	/**
+     * this is method to get section ID
 	 * @return sectionID as integer
 	 */
 	public String getID() {
@@ -72,6 +123,7 @@ public class Section {
 	}
 
 	/**
+     * this is method to get section time
 	 * @return sectionTime as LocalTime
 	 */
 	public LocalTime getSectionTime() {
@@ -79,6 +131,7 @@ public class Section {
 	}
 
 	/**
+     * this is method to get section time
 	 * @param time as LocalTime, sets the given parameter to sectionTime
 	 */
 	public void setSectionTime(LocalTime time) {
@@ -86,6 +139,7 @@ public class Section {
 	}
 
 	/**
+     * this is method to initiate a list of sections
 	 * @return ArrayList sections
 	 */
 	public static ArrayList<Section> getAllSections(){
@@ -93,6 +147,7 @@ public class Section {
 	}
 
 	/**
+     * this is a method to get the Capacity
 	 * @return maxStudents as integer
 	 */
 	public int getCapacity() {
@@ -100,6 +155,7 @@ public class Section {
 	}
 
 	/**
+     * this is a method to set the capacity
 	 * @param number as integer, sets maxStudents to the given parameter
 	 */
 	public void setCapacity(int number) {
@@ -107,6 +163,7 @@ public class Section {
 	}
 
 	/**
+     * this is a method that sets the professor
 	 * @param prof as Professor, sets professor to the given parameter
 	 */
 	public void setProfessor(Professor prof) {
@@ -114,6 +171,7 @@ public class Section {
 	}
 
 	/**
+     * this is a method to get the professor
 	 * @return professor
 	 */
 	public Professor getProfessor() {
@@ -121,6 +179,7 @@ public class Section {
 	}
 
 	/**
+     * this is a method that add the students
 	 * @param stu as Student, adds to the students ArrayList with the given parameter.
 	 */
 	public void addStudents(Student...stu) {
@@ -138,6 +197,7 @@ public class Section {
 	}
 
 	/**
+     * this is a method that remove the student
 	 * @param stu as Student, removes from the students ArrayList with the given parameter.
 	 */
 	public void removeStudents(Student...stu) {
@@ -151,6 +211,7 @@ public class Section {
 	}
 
 	/**
+     * this is a method that return students list
 	 * @return students
 	 */
 	public ArrayList<Student> getStudentList(){
@@ -162,6 +223,9 @@ public class Section {
 		this.professor = null;
 	}
 
+    /**
+     * this is a method that check the empty sections
+     */
 	public static void checkEmptySections() {
 		try {
 			for (int i = 0; i <= sections.size() - 1; i++) {
@@ -176,6 +240,7 @@ public class Section {
 	}
 
 	/**
+     * this is a method to present 'course name , section ID, section time' number of students 'name of professor'.
 	 * @return formatted text about the object.
 	 */
 	@Override
