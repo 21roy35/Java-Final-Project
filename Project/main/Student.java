@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class Student extends Person{
     /**
-     * this is major name
+     * this is student name
      */
     Major major;
     /**
