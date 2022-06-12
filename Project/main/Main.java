@@ -69,6 +69,9 @@ public class Main {
 		System.out.println(getConflictInfo());
 	}
 
+    /**
+     * this is a method to create a department
+     */
 	public static void createDepartments() {
 		File dir = new File(System.getProperty("user.dir")); //we want to get the directory for the data of the major plans
 		File[] data = new File(dir + "\\data").listFiles(); //here we put the major plans files into an array
@@ -106,6 +109,12 @@ public class Main {
 		}
 	}
 
+    /**
+     * this is a method to create a students & professor
+     * @param numberOfStudents
+     * @param numberOfProfessors
+     * @throws Exception
+     */
 	private static void createStudentsAndProfessors(int numberOfStudents, int numberOfProfessors) throws Exception {
 		ArrayList<Student> departmentStudents;
 		ArrayList<Professor> departmentProfessors;
@@ -119,6 +128,11 @@ public class Main {
 		}
 	}
 
+    /**
+     * this is a method for student random names list
+     * @param number
+     * @return result
+     */
 	public static ArrayList<String> StudentRandomNames(int number) {
 	    String[] first = {"Mohammed", "Ahmed", "Ali", "Sami", "Omar", "Samer", "Nour", "Tamer", "Lina", "Dina", "Nada", "Hana", "Rania", "Yasmine", "Lamia", "Salma", "Aya", "Heba", "Mona", "Reem"};
 	    String[] last = {"Alqahtani", "Alotaibi", "Alghamdi", "Alyami", "Alshehri", "Alzahrani", "Aldossari", "Alamri", "Alsaggaf", "Alabdullah", "Aldakheil", "Aldhari", "Alrufaydi", "Almagrabi", "Alasais", "Alhabshi", "Altamimi", "Almutari", "Alkodry", "Alsulami"};
@@ -130,6 +144,11 @@ public class Main {
 	    return result;
 	}
 
+    /**
+     *  this is a method for professor names list
+     * @param number
+     * @return result
+     */
 	public static ArrayList<String> ProfRandomNames(int number) {
 	    String[] first = {"Hadi", "Khalid", "Salem", "Fawaz", "Muhannad", "Moath", "Arwa", "Thamer", "Lujain", "Dana", "Hind", "Hanan", "Raneem", "Haifa", "Reem", "Abdulqudoos", "Saqer", "Sultan", "Hassan", "Ryan"};
 	    String[] last = {"Alqahtani", "Alotaibi", "Alghamdi", "Alyami", "Alshehri", "Alzahrani", "Aldossari", "Alamri", "Alsaggaf", "Alabdullah", "Aldakheil", "Aldhari", "Alrufaydi", "Almagrabi", "Alasais", "Alhabshi", "Altamimi", "Almutari", "Alkodry", "Alsulami"};
@@ -141,6 +160,11 @@ public class Main {
 		return result;
 	}
 
+    /**
+     * this is a method a generate a random ID
+     * @return return value
+     * @throws Exception
+     */
 	public static String randomID() throws Exception {
 		if (LATEST_ID < 99999) {
 		String Latest_ID_UPDT;
@@ -155,6 +179,13 @@ public class Main {
 		}
 	}
 
+    /**
+     * this is a method to crate list of new students
+     * @param i number of student
+     * @param department
+     * @return students
+     * @throws Exception
+     */
 	public static ArrayList<Student> newStudent(int i, Department department) throws Exception {
 		ArrayList<Student> students = new ArrayList<>();
 		Random random = new Random();
