@@ -32,7 +32,7 @@ public class Main {
      */
     static int LATEST_ID;
     /**
-     *  this is number of conflect
+     *  this is number of conflict
      */
     static int conflictedStudents = 0;
     /**

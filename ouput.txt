@@ -1,0 +1,4008 @@
+Students: 
+
+ Index: 1
+ Student name: 
+[Student]: Dina Alabdullah
+ Student ID:  2200000 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 2
+ Student name: 
+[Student]: Lamia Alhabshi
+ Student ID:  2200001 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 3
+ Student name: 
+[Student]: Heba Aldossari
+ Student ID:  2200002 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 4
+ Student name: 
+[Student]: Salma Alghamdi
+ Student ID:  2200003 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 5
+ Student name: 
+[Student]: Ahmed Alrufaydi
+ Student ID:  2200004 Student credits: 68 Student major: Aeronautical Engineering [AE]
+
+ Index: 6
+ Student name: 
+[Student]: Ali Alasais
+ Student ID:  2200005 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 7
+ Student name: 
+[Student]: Mona Almagrabi
+ Student ID:  2200006 Student credits: 68 Student major: Aeronautical Engineering [AE]
+
+ Index: 8
+ Student name: 
+[Student]: Dina Alotaibi
+ Student ID:  2200007 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 9
+ Student name: 
+[Student]: Reem Alsaggaf
+ Student ID:  2200008 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 10
+ Student name: 
+[Student]: Nour Alhabshi
+ Student ID:  2200009 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 11
+ Student name: 
+[Student]: Mona Alsulami
+ Student ID:  2200010 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 12
+ Student name: 
+[Student]: Hana Alamri
+ Student ID:  2200011 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 13
+ Student name: 
+[Student]: Yasmine Alqahtani
+ Student ID:  2200012 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 14
+ Student name: 
+[Student]: Lina Alshehri
+ Student ID:  2200013 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 15
+ Student name: 
+[Student]: Lina Almutari
+ Student ID:  2200014 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 16
+ Student name: 
+[Student]: Reem Alshehri
+ Student ID:  2200015 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 17
+ Student name: 
+[Student]: Ahmed Alasais
+ Student ID:  2200016 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 18
+ Student name: 
+[Student]: Heba Alrufaydi
+ Student ID:  2200017 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 19
+ Student name: 
+[Student]: Salma Almutari
+ Student ID:  2200018 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 20
+ Student name: 
+[Student]: Tamer Altamimi
+ Student ID:  2200019 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 21
+ Student name: 
+[Student]: Reem Alotaibi
+ Student ID:  2200020 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 22
+ Student name: 
+[Student]: Lina Alsulami
+ Student ID:  2200021 Student credits: 69 Student major: Aeronautical Engineering [AE]
+
+ Index: 23
+ Student name: 
+[Student]: Ali Alsulami
+ Student ID:  2200022 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 24
+ Student name: 
+[Student]: Salma Aldakheil
+ Student ID:  2200023 Student credits: 68 Student major: Aeronautical Engineering [AE]
+
+ Index: 25
+ Student name: 
+[Student]: Ahmed Alabdullah
+ Student ID:  2200024 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 26
+ Student name: 
+[Student]: Mohammed Alshehri
+ Student ID:  2200025 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 27
+ Student name: 
+[Student]: Mohammed Alamri
+ Student ID:  2200026 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 28
+ Student name: 
+[Student]: Lamia Alqahtani
+ Student ID:  2200027 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 29
+ Student name: 
+[Student]: Lamia Aldakheil
+ Student ID:  2200028 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 30
+ Student name: 
+[Student]: Yasmine Alamri
+ Student ID:  2200029 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 31
+ Student name: 
+[Student]: Yasmine Almutari
+ Student ID:  2200030 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 32
+ Student name: 
+[Student]: Aya Alghamdi
+ Student ID:  2200031 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 33
+ Student name: 
+[Student]: Lamia Altamimi
+ Student ID:  2200032 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 34
+ Student name: 
+[Student]: Tamer Alabdullah
+ Student ID:  2200033 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 35
+ Student name: 
+[Student]: Nada Altamimi
+ Student ID:  2200034 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 36
+ Student name: 
+[Student]: Samer Alghamdi
+ Student ID:  2200035 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 37
+ Student name: 
+[Student]: Reem Alasais
+ Student ID:  2200036 Student credits: 68 Student major: Aeronautical Engineering [AE]
+
+ Index: 38
+ Student name: 
+[Student]: Reem Alotaibi
+ Student ID:  2200037 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 39
+ Student name: 
+[Student]: Nada Alshehri
+ Student ID:  2200038 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 40
+ Student name: 
+[Student]: Ali Alzahrani
+ Student ID:  2200039 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 41
+ Student name: 
+[Student]: Lina Aldossari
+ Student ID:  2200040 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 42
+ Student name: 
+[Student]: Mona Alabdullah
+ Student ID:  2200041 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 43
+ Student name: 
+[Student]: Mohammed Alasais
+ Student ID:  2200042 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 44
+ Student name: 
+[Student]: Mona Alrufaydi
+ Student ID:  2200043 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 45
+ Student name: 
+[Student]: Reem Alkodry
+ Student ID:  2200044 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 46
+ Student name: 
+[Student]: Ahmed Alrufaydi
+ Student ID:  2200045 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 47
+ Student name: 
+[Student]: Ali Alyami
+ Student ID:  2200046 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 48
+ Student name: 
+[Student]: Rania Alasais
+ Student ID:  2200047 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 49
+ Student name: 
+[Student]: Aya Almutari
+ Student ID:  2200048 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 50
+ Student name: 
+[Student]: Lina Alotaibi
+ Student ID:  2200049 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 51
+ Student name: 
+[Student]: Yasmine Aldakheil
+ Student ID:  2200050 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 52
+ Student name: 
+[Student]: Lamia Alotaibi
+ Student ID:  2200051 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 53
+ Student name: 
+[Student]: Tamer Alghamdi
+ Student ID:  2200052 Student credits: 68 Student major: Aeronautical Engineering [AE]
+
+ Index: 54
+ Student name: 
+[Student]: Heba Alotaibi
+ Student ID:  2200053 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 55
+ Student name: 
+[Student]: Yasmine Alhabshi
+ Student ID:  2200054 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 56
+ Student name: 
+[Student]: Mona Alghamdi
+ Student ID:  2200055 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 57
+ Student name: 
+[Student]: Nada Alshehri
+ Student ID:  2200056 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 58
+ Student name: 
+[Student]: Dina Almagrabi
+ Student ID:  2200057 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 59
+ Student name: 
+[Student]: Heba Aldakheil
+ Student ID:  2200058 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 60
+ Student name: 
+[Student]: Nour Alamri
+ Student ID:  2200059 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 61
+ Student name: 
+[Student]: Reem Aldakheil
+ Student ID:  2200060 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 62
+ Student name: 
+[Student]: Sami Alsulami
+ Student ID:  2200061 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 63
+ Student name: 
+[Student]: Samer Altamimi
+ Student ID:  2200062 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 64
+ Student name: 
+[Student]: Tamer Almagrabi
+ Student ID:  2200063 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 65
+ Student name: 
+[Student]: Omar Alhabshi
+ Student ID:  2200064 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 66
+ Student name: 
+[Student]: Tamer Alshehri
+ Student ID:  2200065 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 67
+ Student name: 
+[Student]: Omar Alghamdi
+ Student ID:  2200066 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 68
+ Student name: 
+[Student]: Nada Alotaibi
+ Student ID:  2200067 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 69
+ Student name: 
+[Student]: Tamer Alotaibi
+ Student ID:  2200068 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 70
+ Student name: 
+[Student]: Aya Alshehri
+ Student ID:  2200069 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 71
+ Student name: 
+[Student]: Hana Altamimi
+ Student ID:  2200070 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 72
+ Student name: 
+[Student]: Tamer Alshehri
+ Student ID:  2200071 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 73
+ Student name: 
+[Student]: Ahmed Alhabshi
+ Student ID:  2200072 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 74
+ Student name: 
+[Student]: Nour Alsulami
+ Student ID:  2200073 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 75
+ Student name: 
+[Student]: Ahmed Alqahtani
+ Student ID:  2200074 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 76
+ Student name: 
+[Student]: Ali Alkodry
+ Student ID:  2200075 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 77
+ Student name: 
+[Student]: Tamer Alyami
+ Student ID:  2200076 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 78
+ Student name: 
+[Student]: Tamer Alshehri
+ Student ID:  2200077 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 79
+ Student name: 
+[Student]: Nada Almutari
+ Student ID:  2200078 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 80
+ Student name: 
+[Student]: Mohammed Alamri
+ Student ID:  2200079 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 81
+ Student name: 
+[Student]: Tamer Alqahtani
+ Student ID:  2200080 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 82
+ Student name: 
+[Student]: Yasmine Alshehri
+ Student ID:  2200081 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 83
+ Student name: 
+[Student]: Dina Alrufaydi
+ Student ID:  2200082 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 84
+ Student name: 
+[Student]: Heba Alkodry
+ Student ID:  2200083 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 85
+ Student name: 
+[Student]: Aya Alkodry
+ Student ID:  2200084 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 86
+ Student name: 
+[Student]: Samer Alsulami
+ Student ID:  2200085 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 87
+ Student name: 
+[Student]: Nada Alamri
+ Student ID:  2200086 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 88
+ Student name: 
+[Student]: Dina Altamimi
+ Student ID:  2200087 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 89
+ Student name: 
+[Student]: Nour Alrufaydi
+ Student ID:  2200088 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 90
+ Student name: 
+[Student]: Nour Alzahrani
+ Student ID:  2200089 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 91
+ Student name: 
+[Student]: Yasmine Alotaibi
+ Student ID:  2200090 Student credits: 68 Student major: Aeronautical Engineering [AE]
+
+ Index: 92
+ Student name: 
+[Student]: Lamia Alhabshi
+ Student ID:  2200091 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 93
+ Student name: 
+[Student]: Salma Alshehri
+ Student ID:  2200092 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 94
+ Student name: 
+[Student]: Nada Alkodry
+ Student ID:  2200093 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 95
+ Student name: 
+[Student]: Mona Alhabshi
+ Student ID:  2200094 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 96
+ Student name: 
+[Student]: Rania Aldossari
+ Student ID:  2200095 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 97
+ Student name: 
+[Student]: Mohammed Alyami
+ Student ID:  2200096 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 98
+ Student name: 
+[Student]: Ahmed Alhabshi
+ Student ID:  2200097 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 99
+ Student name: 
+[Student]: Hana Alshehri
+ Student ID:  2200098 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 100
+ Student name: 
+[Student]: Dina Alzahrani
+ Student ID:  2200099 Student credits: 71 Student major: Aeronautical Engineering [AE]
+
+ Index: 101
+ Student name: 
+[Student]: Dina Alqahtani
+ Student ID:  2200130 Student credits: 88 Student major: Chemical Engineering [ChE]
+
+ Index: 102
+ Student name: 
+[Student]: Salma Alkodry
+ Student ID:  2200131 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 103
+ Student name: 
+[Student]: Omar Alghamdi
+ Student ID:  2200132 Student credits: 91 Student major: Chemical Engineering [ChE]
+
+ Index: 104
+ Student name: 
+[Student]: Tamer Aldossari
+ Student ID:  2200133 Student credits: 96 Student major: Chemical Engineering [ChE]
+
+ Index: 105
+ Student name: 
+[Student]: Hana Alotaibi
+ Student ID:  2200134 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 106
+ Student name: 
+[Student]: Dina Alsulami
+ Student ID:  2200135 Student credits: 96 Student major: Chemical Engineering [ChE]
+
+ Index: 107
+ Student name: 
+[Student]: Yasmine Aldossari
+ Student ID:  2200136 Student credits: 91 Student major: Chemical Engineering [ChE]
+
+ Index: 108
+ Student name: 
+[Student]: Ahmed Alasais
+ Student ID:  2200137 Student credits: 84 Student major: Chemical Engineering [ChE]
+
+ Index: 109
+ Student name: 
+[Student]: Reem Alasais
+ Student ID:  2200138 Student credits: 91 Student major: Chemical Engineering [ChE]
+
+ Index: 110
+ Student name: 
+[Student]: Mohammed Alrufaydi
+ Student ID:  2200139 Student credits: 88 Student major: Chemical Engineering [ChE]
+
+ Index: 111
+ Student name: 
+[Student]: Aya Aldhari
+ Student ID:  2200140 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 112
+ Student name: 
+[Student]: Ali Alghamdi
+ Student ID:  2200141 Student credits: 91 Student major: Chemical Engineering [ChE]
+
+ Index: 113
+ Student name: 
+[Student]: Nada Aldakheil
+ Student ID:  2200142 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 114
+ Student name: 
+[Student]: Reem Aldhari
+ Student ID:  2200143 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 115
+ Student name: 
+[Student]: Samer Alkodry
+ Student ID:  2200144 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 116
+ Student name: 
+[Student]: Heba Aldakheil
+ Student ID:  2200145 Student credits: 91 Student major: Chemical Engineering [ChE]
+
+ Index: 117
+ Student name: 
+[Student]: Sami Almagrabi
+ Student ID:  2200146 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 118
+ Student name: 
+[Student]: Omar Almagrabi
+ Student ID:  2200147 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 119
+ Student name: 
+[Student]: Mona Almutari
+ Student ID:  2200148 Student credits: 84 Student major: Chemical Engineering [ChE]
+
+ Index: 120
+ Student name: 
+[Student]: Tamer Alshehri
+ Student ID:  2200149 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 121
+ Student name: 
+[Student]: Salma Alghamdi
+ Student ID:  2200150 Student credits: 91 Student major: Chemical Engineering [ChE]
+
+ Index: 122
+ Student name: 
+[Student]: Ahmed Alqahtani
+ Student ID:  2200151 Student credits: 96 Student major: Chemical Engineering [ChE]
+
+ Index: 123
+ Student name: 
+[Student]: Ahmed Alsaggaf
+ Student ID:  2200152 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 124
+ Student name: 
+[Student]: Ahmed Alabdullah
+ Student ID:  2200153 Student credits: 91 Student major: Chemical Engineering [ChE]
+
+ Index: 125
+ Student name: 
+[Student]: Omar Alhabshi
+ Student ID:  2200154 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 126
+ Student name: 
+[Student]: Hana Alabdullah
+ Student ID:  2200155 Student credits: 96 Student major: Chemical Engineering [ChE]
+
+ Index: 127
+ Student name: 
+[Student]: Nada Alotaibi
+ Student ID:  2200156 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 128
+ Student name: 
+[Student]: Mohammed Alghamdi
+ Student ID:  2200157 Student credits: 96 Student major: Chemical Engineering [ChE]
+
+ Index: 129
+ Student name: 
+[Student]: Omar Alghamdi
+ Student ID:  2200158 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 130
+ Student name: 
+[Student]: Nada Alsaggaf
+ Student ID:  2200159 Student credits: 91 Student major: Chemical Engineering [ChE]
+
+ Index: 131
+ Student name: 
+[Student]: Yasmine Alamri
+ Student ID:  2200160 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 132
+ Student name: 
+[Student]: Reem Alasais
+ Student ID:  2200161 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 133
+ Student name: 
+[Student]: Nada Alqahtani
+ Student ID:  2200162 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 134
+ Student name: 
+[Student]: Ahmed Alotaibi
+ Student ID:  2200163 Student credits: 88 Student major: Chemical Engineering [ChE]
+
+ Index: 135
+ Student name: 
+[Student]: Samer Almutari
+ Student ID:  2200164 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 136
+ Student name: 
+[Student]: Samer Alghamdi
+ Student ID:  2200165 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 137
+ Student name: 
+[Student]: Omar Alkodry
+ Student ID:  2200166 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 138
+ Student name: 
+[Student]: Nour Alrufaydi
+ Student ID:  2200167 Student credits: 86 Student major: Chemical Engineering [ChE]
+
+ Index: 139
+ Student name: 
+[Student]: Yasmine Alzahrani
+ Student ID:  2200168 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 140
+ Student name: 
+[Student]: Nada Alrufaydi
+ Student ID:  2200169 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 141
+ Student name: 
+[Student]: Nour Alkodry
+ Student ID:  2200170 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 142
+ Student name: 
+[Student]: Nada Alotaibi
+ Student ID:  2200171 Student credits: 96 Student major: Chemical Engineering [ChE]
+
+ Index: 143
+ Student name: 
+[Student]: Samer Altamimi
+ Student ID:  2200172 Student credits: 84 Student major: Chemical Engineering [ChE]
+
+ Index: 144
+ Student name: 
+[Student]: Rania Alotaibi
+ Student ID:  2200173 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 145
+ Student name: 
+[Student]: Ahmed Alasais
+ Student ID:  2200174 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 146
+ Student name: 
+[Student]: Aya Alrufaydi
+ Student ID:  2200175 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 147
+ Student name: 
+[Student]: Nada Alhabshi
+ Student ID:  2200176 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 148
+ Student name: 
+[Student]: Tamer Aldhari
+ Student ID:  2200177 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 149
+ Student name: 
+[Student]: Ali Aldhari
+ Student ID:  2200178 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 150
+ Student name: 
+[Student]: Sami Alasais
+ Student ID:  2200179 Student credits: 88 Student major: Chemical Engineering [ChE]
+
+ Index: 151
+ Student name: 
+[Student]: Rania Almutari
+ Student ID:  2200180 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 152
+ Student name: 
+[Student]: Mona Alsulami
+ Student ID:  2200181 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 153
+ Student name: 
+[Student]: Dina Alkodry
+ Student ID:  2200182 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 154
+ Student name: 
+[Student]: Yasmine Alotaibi
+ Student ID:  2200183 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 155
+ Student name: 
+[Student]: Lina Alotaibi
+ Student ID:  2200184 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 156
+ Student name: 
+[Student]: Mohammed Alghamdi
+ Student ID:  2200185 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 157
+ Student name: 
+[Student]: Tamer Almutari
+ Student ID:  2200186 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 158
+ Student name: 
+[Student]: Salma Aldossari
+ Student ID:  2200187 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 159
+ Student name: 
+[Student]: Omar Alotaibi
+ Student ID:  2200188 Student credits: 84 Student major: Chemical Engineering [ChE]
+
+ Index: 160
+ Student name: 
+[Student]: Tamer Alqahtani
+ Student ID:  2200189 Student credits: 91 Student major: Chemical Engineering [ChE]
+
+ Index: 161
+ Student name: 
+[Student]: Heba Alqahtani
+ Student ID:  2200190 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 162
+ Student name: 
+[Student]: Sami Aldossari
+ Student ID:  2200191 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 163
+ Student name: 
+[Student]: Mohammed Aldhari
+ Student ID:  2200192 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 164
+ Student name: 
+[Student]: Mona Alqahtani
+ Student ID:  2200193 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 165
+ Student name: 
+[Student]: Mona Alkodry
+ Student ID:  2200194 Student credits: 96 Student major: Chemical Engineering [ChE]
+
+ Index: 166
+ Student name: 
+[Student]: Aya Alabdullah
+ Student ID:  2200195 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 167
+ Student name: 
+[Student]: Reem Alyami
+ Student ID:  2200196 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 168
+ Student name: 
+[Student]: Samer Aldhari
+ Student ID:  2200197 Student credits: 96 Student major: Chemical Engineering [ChE]
+
+ Index: 169
+ Student name: 
+[Student]: Ahmed Alasais
+ Student ID:  2200198 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 170
+ Student name: 
+[Student]: Nada Alkodry
+ Student ID:  2200199 Student credits: 84 Student major: Chemical Engineering [ChE]
+
+ Index: 171
+ Student name: 
+[Student]: Lamia Alsulami
+ Student ID:  2200200 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 172
+ Student name: 
+[Student]: Yasmine Almutari
+ Student ID:  2200201 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 173
+ Student name: 
+[Student]: Tamer Aldossari
+ Student ID:  2200202 Student credits: 84 Student major: Chemical Engineering [ChE]
+
+ Index: 174
+ Student name: 
+[Student]: Dina Aldakheil
+ Student ID:  2200203 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 175
+ Student name: 
+[Student]: Lina Alamri
+ Student ID:  2200204 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 176
+ Student name: 
+[Student]: Tamer Alsulami
+ Student ID:  2200205 Student credits: 88 Student major: Chemical Engineering [ChE]
+
+ Index: 177
+ Student name: 
+[Student]: Sami Alotaibi
+ Student ID:  2200206 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 178
+ Student name: 
+[Student]: Mohammed Alghamdi
+ Student ID:  2200207 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 179
+ Student name: 
+[Student]: Lamia Alzahrani
+ Student ID:  2200208 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 180
+ Student name: 
+[Student]: Heba Aldakheil
+ Student ID:  2200209 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 181
+ Student name: 
+[Student]: Hana Altamimi
+ Student ID:  2200210 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 182
+ Student name: 
+[Student]: Nour Aldakheil
+ Student ID:  2200211 Student credits: 96 Student major: Chemical Engineering [ChE]
+
+ Index: 183
+ Student name: 
+[Student]: Hana Alqahtani
+ Student ID:  2200212 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 184
+ Student name: 
+[Student]: Ahmed Alzahrani
+ Student ID:  2200213 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 185
+ Student name: 
+[Student]: Lina Alrufaydi
+ Student ID:  2200214 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 186
+ Student name: 
+[Student]: Heba Alkodry
+ Student ID:  2200215 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 187
+ Student name: 
+[Student]: Salma Alabdullah
+ Student ID:  2200216 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 188
+ Student name: 
+[Student]: Tamer Alasais
+ Student ID:  2200217 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 189
+ Student name: 
+[Student]: Aya Altamimi
+ Student ID:  2200218 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 190
+ Student name: 
+[Student]: Heba Altamimi
+ Student ID:  2200219 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 191
+ Student name: 
+[Student]: Ahmed Alhabshi
+ Student ID:  2200220 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 192
+ Student name: 
+[Student]: Rania Aldakheil
+ Student ID:  2200221 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 193
+ Student name: 
+[Student]: Nada Alotaibi
+ Student ID:  2200222 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 194
+ Student name: 
+[Student]: Dina Alsulami
+ Student ID:  2200223 Student credits: 86 Student major: Chemical Engineering [ChE]
+
+ Index: 195
+ Student name: 
+[Student]: Heba Alrufaydi
+ Student ID:  2200224 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 196
+ Student name: 
+[Student]: Mona Almutari
+ Student ID:  2200225 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 197
+ Student name: 
+[Student]: Tamer Alasais
+ Student ID:  2200226 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 198
+ Student name: 
+[Student]: Ali Alsaggaf
+ Student ID:  2200227 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 199
+ Student name: 
+[Student]: Rania Almutari
+ Student ID:  2200228 Student credits: 99 Student major: Chemical Engineering [ChE]
+
+ Index: 200
+ Student name: 
+[Student]: Ali Alkodry
+ Student ID:  2200229 Student credits: 87 Student major: Chemical Engineering [ChE]
+
+ Index: 201
+ Student name: 
+[Student]: Tamer Alshehri
+ Student ID:  2200260 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 202
+ Student name: 
+[Student]: Samer Aldakheil
+ Student ID:  2200261 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 203
+ Student name: 
+[Student]: Nour Alzahrani
+ Student ID:  2200262 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 204
+ Student name: 
+[Student]: Yasmine Alsaggaf
+ Student ID:  2200263 Student credits: 90 Student major: Civil Engineering [CE]
+
+ Index: 205
+ Student name: 
+[Student]: Ahmed Alsaggaf
+ Student ID:  2200264 Student credits: 90 Student major: Civil Engineering [CE]
+
+ Index: 206
+ Student name: 
+[Student]: Reem Alasais
+ Student ID:  2200265 Student credits: 90 Student major: Civil Engineering [CE]
+
+ Index: 207
+ Student name: 
+[Student]: Ahmed Aldakheil
+ Student ID:  2200266 Student credits: 90 Student major: Civil Engineering [CE]
+
+ Index: 208
+ Student name: 
+[Student]: Dina Aldossari
+ Student ID:  2200267 Student credits: 90 Student major: Civil Engineering [CE]
+
+ Index: 209
+ Student name: 
+[Student]: Tamer Alasais
+ Student ID:  2200268 Student credits: 95 Student major: Civil Engineering [CE]
+
+ Index: 210
+ Student name: 
+[Student]: Lina Alabdullah
+ Student ID:  2200269 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 211
+ Student name: 
+[Student]: Heba Alsulami
+ Student ID:  2200270 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 212
+ Student name: 
+[Student]: Nour Alzahrani
+ Student ID:  2200271 Student credits: 89 Student major: Civil Engineering [CE]
+
+ Index: 213
+ Student name: 
+[Student]: Mohammed Aldakheil
+ Student ID:  2200272 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 214
+ Student name: 
+[Student]: Tamer Alyami
+ Student ID:  2200273 Student credits: 90 Student major: Civil Engineering [CE]
+
+ Index: 215
+ Student name: 
+[Student]: Yasmine Aldhari
+ Student ID:  2200274 Student credits: 95 Student major: Civil Engineering [CE]
+
+ Index: 216
+ Student name: 
+[Student]: Mona Altamimi
+ Student ID:  2200275 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 217
+ Student name: 
+[Student]: Lina Alzahrani
+ Student ID:  2200276 Student credits: 95 Student major: Civil Engineering [CE]
+
+ Index: 218
+ Student name: 
+[Student]: Heba Alqahtani
+ Student ID:  2200277 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 219
+ Student name: 
+[Student]: Mona Aldhari
+ Student ID:  2200278 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 220
+ Student name: 
+[Student]: Nour Almagrabi
+ Student ID:  2200279 Student credits: 95 Student major: Civil Engineering [CE]
+
+ Index: 221
+ Student name: 
+[Student]: Ahmed Altamimi
+ Student ID:  2200280 Student credits: 92 Student major: Civil Engineering [CE]
+
+ Index: 222
+ Student name: 
+[Student]: Mona Alzahrani
+ Student ID:  2200281 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 223
+ Student name: 
+[Student]: Lina Aldakheil
+ Student ID:  2200282 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 224
+ Student name: 
+[Student]: Lamia Alabdullah
+ Student ID:  2200283 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 225
+ Student name: 
+[Student]: Salma Alabdullah
+ Student ID:  2200284 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 226
+ Student name: 
+[Student]: Hana Alamri
+ Student ID:  2200285 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 227
+ Student name: 
+[Student]: Tamer Alyami
+ Student ID:  2200286 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 228
+ Student name: 
+[Student]: Nour Alshehri
+ Student ID:  2200287 Student credits: 95 Student major: Civil Engineering [CE]
+
+ Index: 229
+ Student name: 
+[Student]: Dina Alamri
+ Student ID:  2200288 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 230
+ Student name: 
+[Student]: Nada Alabdullah
+ Student ID:  2200289 Student credits: 92 Student major: Civil Engineering [CE]
+
+ Index: 231
+ Student name: 
+[Student]: Ahmed Alyami
+ Student ID:  2200290 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 232
+ Student name: 
+[Student]: Mohammed Alqahtani
+ Student ID:  2200291 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 233
+ Student name: 
+[Student]: Reem Alhabshi
+ Student ID:  2200292 Student credits: 95 Student major: Civil Engineering [CE]
+
+ Index: 234
+ Student name: 
+[Student]: Hana Alsulami
+ Student ID:  2200293 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 235
+ Student name: 
+[Student]: Omar Almutari
+ Student ID:  2200294 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 236
+ Student name: 
+[Student]: Mohammed Alkodry
+ Student ID:  2200295 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 237
+ Student name: 
+[Student]: Nada Alabdullah
+ Student ID:  2200296 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 238
+ Student name: 
+[Student]: Dina Aldossari
+ Student ID:  2200297 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 239
+ Student name: 
+[Student]: Rania Alshehri
+ Student ID:  2200298 Student credits: 95 Student major: Civil Engineering [CE]
+
+ Index: 240
+ Student name: 
+[Student]: Lamia Aldhari
+ Student ID:  2200299 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 241
+ Student name: 
+[Student]: Lina Altamimi
+ Student ID:  2200300 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 242
+ Student name: 
+[Student]: Mona Alasais
+ Student ID:  2200301 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 243
+ Student name: 
+[Student]: Reem Alhabshi
+ Student ID:  2200302 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 244
+ Student name: 
+[Student]: Heba Alghamdi
+ Student ID:  2200303 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 245
+ Student name: 
+[Student]: Lamia Alshehri
+ Student ID:  2200304 Student credits: 96 Student major: Civil Engineering [CE]
+
+ Index: 246
+ Student name: 
+[Student]: Nour Aldhari
+ Student ID:  2200305 Student credits: 88 Student major: Civil Engineering [CE]
+
+ Index: 247
+ Student name: 
+[Student]: Tamer Alotaibi
+ Student ID:  2200306 Student credits: 95 Student major: Civil Engineering [CE]
+
+ Index: 248
+ Student name: 
+[Student]: Nada Alsaggaf
+ Student ID:  2200307 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 249
+ Student name: 
+[Student]: Salma Alzahrani
+ Student ID:  2200308 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 250
+ Student name: 
+[Student]: Mona Alshehri
+ Student ID:  2200309 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 251
+ Student name: 
+[Student]: Lina Alsaggaf
+ Student ID:  2200310 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 252
+ Student name: 
+[Student]: Nada Alotaibi
+ Student ID:  2200311 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 253
+ Student name: 
+[Student]: Aya Aldhari
+ Student ID:  2200312 Student credits: 95 Student major: Civil Engineering [CE]
+
+ Index: 254
+ Student name: 
+[Student]: Reem Alotaibi
+ Student ID:  2200313 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 255
+ Student name: 
+[Student]: Lamia Aldakheil
+ Student ID:  2200314 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 256
+ Student name: 
+[Student]: Reem Alrufaydi
+ Student ID:  2200315 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 257
+ Student name: 
+[Student]: Aya Alsaggaf
+ Student ID:  2200316 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 258
+ Student name: 
+[Student]: Omar Alasais
+ Student ID:  2200317 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 259
+ Student name: 
+[Student]: Aya Alyami
+ Student ID:  2200318 Student credits: 95 Student major: Civil Engineering [CE]
+
+ Index: 260
+ Student name: 
+[Student]: Reem Alyami
+ Student ID:  2200319 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 261
+ Student name: 
+[Student]: Salma Almutari
+ Student ID:  2200320 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 262
+ Student name: 
+[Student]: Nada Alsulami
+ Student ID:  2200321 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 263
+ Student name: 
+[Student]: Hana Aldossari
+ Student ID:  2200322 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 264
+ Student name: 
+[Student]: Rania Altamimi
+ Student ID:  2200323 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 265
+ Student name: 
+[Student]: Nour Alzahrani
+ Student ID:  2200324 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 266
+ Student name: 
+[Student]: Yasmine Alqahtani
+ Student ID:  2200325 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 267
+ Student name: 
+[Student]: Yasmine Alabdullah
+ Student ID:  2200326 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 268
+ Student name: 
+[Student]: Mona Alghamdi
+ Student ID:  2200327 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 269
+ Student name: 
+[Student]: Rania Altamimi
+ Student ID:  2200328 Student credits: 95 Student major: Civil Engineering [CE]
+
+ Index: 270
+ Student name: 
+[Student]: Sami Almutari
+ Student ID:  2200329 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 271
+ Student name: 
+[Student]: Aya Alsulami
+ Student ID:  2200330 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 272
+ Student name: 
+[Student]: Dina Aldossari
+ Student ID:  2200331 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 273
+ Student name: 
+[Student]: Tamer Aldossari
+ Student ID:  2200332 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 274
+ Student name: 
+[Student]: Mohammed Almagrabi
+ Student ID:  2200333 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 275
+ Student name: 
+[Student]: Sami Almutari
+ Student ID:  2200334 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 276
+ Student name: 
+[Student]: Ahmed Alshehri
+ Student ID:  2200335 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 277
+ Student name: 
+[Student]: Rania Alhabshi
+ Student ID:  2200336 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 278
+ Student name: 
+[Student]: Sami Alyami
+ Student ID:  2200337 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 279
+ Student name: 
+[Student]: Heba Aldakheil
+ Student ID:  2200338 Student credits: 95 Student major: Civil Engineering [CE]
+
+ Index: 280
+ Student name: 
+[Student]: Lina Almagrabi
+ Student ID:  2200339 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 281
+ Student name: 
+[Student]: Hana Almagrabi
+ Student ID:  2200340 Student credits: 92 Student major: Civil Engineering [CE]
+
+ Index: 282
+ Student name: 
+[Student]: Reem Alotaibi
+ Student ID:  2200341 Student credits: 92 Student major: Civil Engineering [CE]
+
+ Index: 283
+ Student name: 
+[Student]: Omar Alyami
+ Student ID:  2200342 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 284
+ Student name: 
+[Student]: Mohammed Alrufaydi
+ Student ID:  2200343 Student credits: 92 Student major: Civil Engineering [CE]
+
+ Index: 285
+ Student name: 
+[Student]: Ali Aldossari
+ Student ID:  2200344 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 286
+ Student name: 
+[Student]: Aya Alqahtani
+ Student ID:  2200345 Student credits: 95 Student major: Civil Engineering [CE]
+
+ Index: 287
+ Student name: 
+[Student]: Reem Alshehri
+ Student ID:  2200346 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 288
+ Student name: 
+[Student]: Rania Alghamdi
+ Student ID:  2200347 Student credits: 92 Student major: Civil Engineering [CE]
+
+ Index: 289
+ Student name: 
+[Student]: Hana Alhabshi
+ Student ID:  2200348 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 290
+ Student name: 
+[Student]: Reem Aldhari
+ Student ID:  2200349 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 291
+ Student name: 
+[Student]: Hana Alsaggaf
+ Student ID:  2200350 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 292
+ Student name: 
+[Student]: Heba Alkodry
+ Student ID:  2200351 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 293
+ Student name: 
+[Student]: Reem Altamimi
+ Student ID:  2200352 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 294
+ Student name: 
+[Student]: Aya Aldossari
+ Student ID:  2200353 Student credits: 92 Student major: Civil Engineering [CE]
+
+ Index: 295
+ Student name: 
+[Student]: Mona Almagrabi
+ Student ID:  2200354 Student credits: 99 Student major: Civil Engineering [CE]
+
+ Index: 296
+ Student name: 
+[Student]: Aya Aldhari
+ Student ID:  2200355 Student credits: 92 Student major: Civil Engineering [CE]
+
+ Index: 297
+ Student name: 
+[Student]: Salma Alsulami
+ Student ID:  2200356 Student credits: 90 Student major: Civil Engineering [CE]
+
+ Index: 298
+ Student name: 
+[Student]: Yasmine Alqahtani
+ Student ID:  2200357 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 299
+ Student name: 
+[Student]: Sami Alzahrani
+ Student ID:  2200358 Student credits: 95 Student major: Civil Engineering [CE]
+
+ Index: 300
+ Student name: 
+[Student]: Sami Aldossari
+ Student ID:  2200359 Student credits: 91 Student major: Civil Engineering [CE]
+
+ Index: 301
+ Student name: 
+[Student]: Dina Alasais
+ Student ID:  2200390 Student credits: 99 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 302
+ Student name: 
+[Student]: Nada Alhabshi
+ Student ID:  2200391 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 303
+ Student name: 
+[Student]: Ali Altamimi
+ Student ID:  2200392 Student credits: 87 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 304
+ Student name: 
+[Student]: Lamia Alabdullah
+ Student ID:  2200393 Student credits: 87 Student major: Electrical Computer Engineering [EE]
+
+ Index: 305
+ Student name: 
+[Student]: Aya Aldhari
+ Student ID:  2200394 Student credits: 91 Student major: Electrical Computer Engineering [EE]
+
+ Index: 306
+ Student name: 
+[Student]: Aya Alyami
+ Student ID:  2200395 Student credits: 96 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 307
+ Student name: 
+[Student]: Omar Alzahrani
+ Student ID:  2200396 Student credits: 87 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 308
+ Student name: 
+[Student]: Samer Aldhari
+ Student ID:  2200397 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 309
+ Student name: 
+[Student]: Rania Alabdullah
+ Student ID:  2200398 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 310
+ Student name: 
+[Student]: Heba Altamimi
+ Student ID:  2200399 Student credits: 87 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 311
+ Student name: 
+[Student]: Lina Alrufaydi
+ Student ID:  2200400 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 312
+ Student name: 
+[Student]: Lina Almutari
+ Student ID:  2200401 Student credits: 85 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 313
+ Student name: 
+[Student]: Omar Almagrabi
+ Student ID:  2200402 Student credits: 91 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 314
+ Student name: 
+[Student]: Samer Alshehri
+ Student ID:  2200403 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 315
+ Student name: 
+[Student]: Reem Alqahtani
+ Student ID:  2200404 Student credits: 87 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 316
+ Student name: 
+[Student]: Ahmed Almagrabi
+ Student ID:  2200405 Student credits: 99 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 317
+ Student name: 
+[Student]: Mona Alkodry
+ Student ID:  2200406 Student credits: 99 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 318
+ Student name: 
+[Student]: Ahmed Alshehri
+ Student ID:  2200407 Student credits: 87 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 319
+ Student name: 
+[Student]: Nada Alabdullah
+ Student ID:  2200408 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 320
+ Student name: 
+[Student]: Nada Alhabshi
+ Student ID:  2200409 Student credits: 99 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 321
+ Student name: 
+[Student]: Reem Alshehri
+ Student ID:  2200410 Student credits: 99 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 322
+ Student name: 
+[Student]: Dina Alotaibi
+ Student ID:  2200411 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 323
+ Student name: 
+[Student]: Hana Almutari
+ Student ID:  2200412 Student credits: 84 Student major: Electrical Computer Engineering [EE]
+
+ Index: 324
+ Student name: 
+[Student]: Samer Alqahtani
+ Student ID:  2200413 Student credits: 91 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 325
+ Student name: 
+[Student]: Aya Alrufaydi
+ Student ID:  2200414 Student credits: 99 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 326
+ Student name: 
+[Student]: Nada Alyami
+ Student ID:  2200415 Student credits: 87 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 327
+ Student name: 
+[Student]: Heba Alhabshi
+ Student ID:  2200416 Student credits: 99 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 328
+ Student name: 
+[Student]: Lamia Almutari
+ Student ID:  2200417 Student credits: 88 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 329
+ Student name: 
+[Student]: Ali Alghamdi
+ Student ID:  2200418 Student credits: 91 Student major: Electrical Computer Engineering [EE]
+
+ Index: 330
+ Student name: 
+[Student]: Ali Alkodry
+ Student ID:  2200419 Student credits: 99 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 331
+ Student name: 
+[Student]: Salma Alamri
+ Student ID:  2200420 Student credits: 87 Student major: Electrical Computer Engineering [EE]
+
+ Index: 332
+ Student name: 
+[Student]: Ahmed Alrufaydi
+ Student ID:  2200421 Student credits: 91 Student major: Electrical Computer Engineering [EE]
+
+ Index: 333
+ Student name: 
+[Student]: Samer Altamimi
+ Student ID:  2200422 Student credits: 91 Student major: Electrical Computer Engineering [EE]
+
+ Index: 334
+ Student name: 
+[Student]: Mohammed Alqahtani
+ Student ID:  2200423 Student credits: 91 Student major: Electrical Computer Engineering [EE]
+
+ Index: 335
+ Student name: 
+[Student]: Yasmine Alhabshi
+ Student ID:  2200424 Student credits: 91 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 336
+ Student name: 
+[Student]: Samer Aldhari
+ Student ID:  2200425 Student credits: 91 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 337
+ Student name: 
+[Student]: Salma Alyami
+ Student ID:  2200426 Student credits: 91 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 338
+ Student name: 
+[Student]: Ahmed Alhabshi
+ Student ID:  2200427 Student credits: 91 Student major: Electrical Computer Engineering [EE]
+
+ Index: 339
+ Student name: 
+[Student]: Aya Alzahrani
+ Student ID:  2200428 Student credits: 91 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 340
+ Student name: 
+[Student]: Salma Alqahtani
+ Student ID:  2200429 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 341
+ Student name: 
+[Student]: Sami Alsulami
+ Student ID:  2200430 Student credits: 95 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 342
+ Student name: 
+[Student]: Tamer Alshehri
+ Student ID:  2200431 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 343
+ Student name: 
+[Student]: Samer Alabdullah
+ Student ID:  2200432 Student credits: 91 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 344
+ Student name: 
+[Student]: Samer Alabdullah
+ Student ID:  2200433 Student credits: 88 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 345
+ Student name: 
+[Student]: Ahmed Aldossari
+ Student ID:  2200434 Student credits: 99 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 346
+ Student name: 
+[Student]: Rania Alrufaydi
+ Student ID:  2200435 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 347
+ Student name: 
+[Student]: Lina Alyami
+ Student ID:  2200436 Student credits: 99 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 348
+ Student name: 
+[Student]: Heba Aldossari
+ Student ID:  2200437 Student credits: 99 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 349
+ Student name: 
+[Student]: Samer Alshehri
+ Student ID:  2200438 Student credits: 99 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 350
+ Student name: 
+[Student]: Aya Aldakheil
+ Student ID:  2200439 Student credits: 87 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 351
+ Student name: 
+[Student]: Lina Alyami
+ Student ID:  2200440 Student credits: 87 Student major: Electrical Computer Engineering [EE]
+
+ Index: 352
+ Student name: 
+[Student]: Omar Alabdullah
+ Student ID:  2200441 Student credits: 99 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 353
+ Student name: 
+[Student]: Omar Alasais
+ Student ID:  2200442 Student credits: 99 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 354
+ Student name: 
+[Student]: Rania Alkodry
+ Student ID:  2200443 Student credits: 99 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 355
+ Student name: 
+[Student]: Hana Altamimi
+ Student ID:  2200444 Student credits: 99 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 356
+ Student name: 
+[Student]: Ali Alhabshi
+ Student ID:  2200445 Student credits: 88 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 357
+ Student name: 
+[Student]: Reem Alasais
+ Student ID:  2200446 Student credits: 87 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 358
+ Student name: 
+[Student]: Hana Alabdullah
+ Student ID:  2200447 Student credits: 99 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 359
+ Student name: 
+[Student]: Hana Aldhari
+ Student ID:  2200448 Student credits: 87 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 360
+ Student name: 
+[Student]: Aya Alghamdi
+ Student ID:  2200449 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 361
+ Student name: 
+[Student]: Lina Alyami
+ Student ID:  2200450 Student credits: 91 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 362
+ Student name: 
+[Student]: Lina Aldakheil
+ Student ID:  2200451 Student credits: 87 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 363
+ Student name: 
+[Student]: Lina Aldhari
+ Student ID:  2200452 Student credits: 99 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 364
+ Student name: 
+[Student]: Yasmine Alkodry
+ Student ID:  2200453 Student credits: 99 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 365
+ Student name: 
+[Student]: Tamer Aldakheil
+ Student ID:  2200454 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 366
+ Student name: 
+[Student]: Tamer Alkodry
+ Student ID:  2200455 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 367
+ Student name: 
+[Student]: Salma Alasais
+ Student ID:  2200456 Student credits: 99 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 368
+ Student name: 
+[Student]: Sami Alsaggaf
+ Student ID:  2200457 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 369
+ Student name: 
+[Student]: Aya Alsaggaf
+ Student ID:  2200458 Student credits: 87 Student major: Electrical Computer Engineering [EE]
+
+ Index: 370
+ Student name: 
+[Student]: Samer Alkodry
+ Student ID:  2200459 Student credits: 99 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 371
+ Student name: 
+[Student]: Salma Alghamdi
+ Student ID:  2200460 Student credits: 99 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 372
+ Student name: 
+[Student]: Nada Alsulami
+ Student ID:  2200461 Student credits: 84 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 373
+ Student name: 
+[Student]: Dina Altamimi
+ Student ID:  2200462 Student credits: 96 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 374
+ Student name: 
+[Student]: Hana Alkodry
+ Student ID:  2200463 Student credits: 87 Student major: Electrical Computer Engineering [EE]
+
+ Index: 375
+ Student name: 
+[Student]: Reem Alqahtani
+ Student ID:  2200464 Student credits: 87 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 376
+ Student name: 
+[Student]: Yasmine Alamri
+ Student ID:  2200465 Student credits: 87 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 377
+ Student name: 
+[Student]: Ahmed Alhabshi
+ Student ID:  2200466 Student credits: 84 Student major: Electrical Computer Engineering [EE]
+
+ Index: 378
+ Student name: 
+[Student]: Heba Almutari
+ Student ID:  2200467 Student credits: 99 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 379
+ Student name: 
+[Student]: Yasmine Alsulami
+ Student ID:  2200468 Student credits: 87 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 380
+ Student name: 
+[Student]: Reem Alghamdi
+ Student ID:  2200469 Student credits: 88 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 381
+ Student name: 
+[Student]: Samer Alkodry
+ Student ID:  2200470 Student credits: 99 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 382
+ Student name: 
+[Student]: Reem Alabdullah
+ Student ID:  2200471 Student credits: 87 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 383
+ Student name: 
+[Student]: Samer Alasais
+ Student ID:  2200472 Student credits: 99 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 384
+ Student name: 
+[Student]: Lina Alsaggaf
+ Student ID:  2200473 Student credits: 87 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 385
+ Student name: 
+[Student]: Nour Aldakheil
+ Student ID:  2200474 Student credits: 87 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 386
+ Student name: 
+[Student]: Aya Aldakheil
+ Student ID:  2200475 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 387
+ Student name: 
+[Student]: Rania Alshehri
+ Student ID:  2200476 Student credits: 87 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 388
+ Student name: 
+[Student]: Nada Alsaggaf
+ Student ID:  2200477 Student credits: 99 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 389
+ Student name: 
+[Student]: Heba Alhabshi
+ Student ID:  2200478 Student credits: 99 Student major: Electrical Computer Engineering [EE]
+
+ Index: 390
+ Student name: 
+[Student]: Mohammed Alqahtani
+ Student ID:  2200479 Student credits: 84 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 391
+ Student name: 
+[Student]: Nour Alhabshi
+ Student ID:  2200480 Student credits: 87 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 392
+ Student name: 
+[Student]: Aya Almutari
+ Student ID:  2200481 Student credits: 91 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 393
+ Student name: 
+[Student]: Mohammed Alzahrani
+ Student ID:  2200482 Student credits: 87 Student major: Electrical Electronics and Communications Engineering [EE]
+
+ Index: 394
+ Student name: 
+[Student]: Ali Alabdullah
+ Student ID:  2200483 Student credits: 87 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 395
+ Student name: 
+[Student]: Ahmed Almagrabi
+ Student ID:  2200484 Student credits: 84 Student major: Electrical Computer Engineering [EE]
+
+ Index: 396
+ Student name: 
+[Student]: Omar Alzahrani
+ Student ID:  2200485 Student credits: 88 Student major: Electrical Computer Engineering [EE]
+
+ Index: 397
+ Student name: 
+[Student]: Tamer Altamimi
+ Student ID:  2200486 Student credits: 87 Student major: Electrical Computer Engineering [EE]
+
+ Index: 398
+ Student name: 
+[Student]: Rania Alamri
+ Student ID:  2200487 Student credits: 99 Student major: Electrical Biomedical Engineering [EE]
+
+ Index: 399
+ Student name: 
+[Student]: Aya Aldossari
+ Student ID:  2200488 Student credits: 99 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 400
+ Student name: 
+[Student]: Nour Aldhari
+ Student ID:  2200489 Student credits: 99 Student major: Electrical Power and machines Engineering [EE]
+
+ Index: 401
+ Student name: 
+[Student]: Mohammed Alamri
+ Student ID:  2200520 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 402
+ Student name: 
+[Student]: Hana Alamri
+ Student ID:  2200521 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 403
+ Student name: 
+[Student]: Sami Aldhari
+ Student ID:  2200522 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 404
+ Student name: 
+[Student]: Ali Aldossari
+ Student ID:  2200523 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 405
+ Student name: 
+[Student]: Salma Aldakheil
+ Student ID:  2200524 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 406
+ Student name: 
+[Student]: Ali Alshehri
+ Student ID:  2200525 Student credits: 96 Student major: Industrial Engineering [IE]
+
+ Index: 407
+ Student name: 
+[Student]: Yasmine Alamri
+ Student ID:  2200526 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 408
+ Student name: 
+[Student]: Ali Alsulami
+ Student ID:  2200527 Student credits: 88 Student major: Industrial Engineering [IE]
+
+ Index: 409
+ Student name: 
+[Student]: Samer Alrufaydi
+ Student ID:  2200528 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 410
+ Student name: 
+[Student]: Dina Alrufaydi
+ Student ID:  2200529 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 411
+ Student name: 
+[Student]: Nada Aldhari
+ Student ID:  2200530 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 412
+ Student name: 
+[Student]: Yasmine Aldhari
+ Student ID:  2200531 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 413
+ Student name: 
+[Student]: Samer Almagrabi
+ Student ID:  2200532 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 414
+ Student name: 
+[Student]: Salma Aldakheil
+ Student ID:  2200533 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 415
+ Student name: 
+[Student]: Nada Altamimi
+ Student ID:  2200534 Student credits: 96 Student major: Industrial Engineering [IE]
+
+ Index: 416
+ Student name: 
+[Student]: Ali Alqahtani
+ Student ID:  2200535 Student credits: 88 Student major: Industrial Engineering [IE]
+
+ Index: 417
+ Student name: 
+[Student]: Tamer Aldossari
+ Student ID:  2200536 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 418
+ Student name: 
+[Student]: Nour Aldossari
+ Student ID:  2200537 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 419
+ Student name: 
+[Student]: Nada Alkodry
+ Student ID:  2200538 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 420
+ Student name: 
+[Student]: Salma Alsaggaf
+ Student ID:  2200539 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 421
+ Student name: 
+[Student]: Dina Alsulami
+ Student ID:  2200540 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 422
+ Student name: 
+[Student]: Salma Almagrabi
+ Student ID:  2200541 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 423
+ Student name: 
+[Student]: Aya Aldakheil
+ Student ID:  2200542 Student credits: 96 Student major: Industrial Engineering [IE]
+
+ Index: 424
+ Student name: 
+[Student]: Salma Alqahtani
+ Student ID:  2200543 Student credits: 88 Student major: Industrial Engineering [IE]
+
+ Index: 425
+ Student name: 
+[Student]: Omar Alabdullah
+ Student ID:  2200544 Student credits: 91 Student major: Industrial Engineering [IE]
+
+ Index: 426
+ Student name: 
+[Student]: Yasmine Alabdullah
+ Student ID:  2200545 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 427
+ Student name: 
+[Student]: Omar Alsulami
+ Student ID:  2200546 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 428
+ Student name: 
+[Student]: Sami Aldhari
+ Student ID:  2200547 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 429
+ Student name: 
+[Student]: Aya Alkodry
+ Student ID:  2200548 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 430
+ Student name: 
+[Student]: Mohammed Alzahrani
+ Student ID:  2200549 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 431
+ Student name: 
+[Student]: Sami Alasais
+ Student ID:  2200550 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 432
+ Student name: 
+[Student]: Lina Alqahtani
+ Student ID:  2200551 Student credits: 96 Student major: Industrial Engineering [IE]
+
+ Index: 433
+ Student name: 
+[Student]: Rania Aldossari
+ Student ID:  2200552 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 434
+ Student name: 
+[Student]: Salma Alkodry
+ Student ID:  2200553 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 435
+ Student name: 
+[Student]: Nada Alabdullah
+ Student ID:  2200554 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 436
+ Student name: 
+[Student]: Reem Almagrabi
+ Student ID:  2200555 Student credits: 98 Student major: Industrial Engineering [IE]
+
+ Index: 437
+ Student name: 
+[Student]: Samer Alrufaydi
+ Student ID:  2200556 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 438
+ Student name: 
+[Student]: Salma Altamimi
+ Student ID:  2200557 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 439
+ Student name: 
+[Student]: Salma Aldhari
+ Student ID:  2200558 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 440
+ Student name: 
+[Student]: Nour Alshehri
+ Student ID:  2200559 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 441
+ Student name: 
+[Student]: Lamia Aldhari
+ Student ID:  2200560 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 442
+ Student name: 
+[Student]: Tamer Alzahrani
+ Student ID:  2200561 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 443
+ Student name: 
+[Student]: Mona Alkodry
+ Student ID:  2200562 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 444
+ Student name: 
+[Student]: Tamer Alqahtani
+ Student ID:  2200563 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 445
+ Student name: 
+[Student]: Nour Altamimi
+ Student ID:  2200564 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 446
+ Student name: 
+[Student]: Samer Aldhari
+ Student ID:  2200565 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 447
+ Student name: 
+[Student]: Heba Almutari
+ Student ID:  2200566 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 448
+ Student name: 
+[Student]: Yasmine Alqahtani
+ Student ID:  2200567 Student credits: 88 Student major: Industrial Engineering [IE]
+
+ Index: 449
+ Student name: 
+[Student]: Lamia Aldossari
+ Student ID:  2200568 Student credits: 91 Student major: Industrial Engineering [IE]
+
+ Index: 450
+ Student name: 
+[Student]: Ahmed Alotaibi
+ Student ID:  2200569 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 451
+ Student name: 
+[Student]: Dina Alzahrani
+ Student ID:  2200570 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 452
+ Student name: 
+[Student]: Salma Alrufaydi
+ Student ID:  2200571 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 453
+ Student name: 
+[Student]: Sami Alasais
+ Student ID:  2200572 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 454
+ Student name: 
+[Student]: Ahmed Almagrabi
+ Student ID:  2200573 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 455
+ Student name: 
+[Student]: Sami Alsaggaf
+ Student ID:  2200574 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 456
+ Student name: 
+[Student]: Heba Alrufaydi
+ Student ID:  2200575 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 457
+ Student name: 
+[Student]: Rania Alsaggaf
+ Student ID:  2200576 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 458
+ Student name: 
+[Student]: Lina Alotaibi
+ Student ID:  2200577 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 459
+ Student name: 
+[Student]: Reem Alshehri
+ Student ID:  2200578 Student credits: 91 Student major: Industrial Engineering [IE]
+
+ Index: 460
+ Student name: 
+[Student]: Mohammed Alqahtani
+ Student ID:  2200579 Student credits: 96 Student major: Industrial Engineering [IE]
+
+ Index: 461
+ Student name: 
+[Student]: Lina Alqahtani
+ Student ID:  2200580 Student credits: 88 Student major: Industrial Engineering [IE]
+
+ Index: 462
+ Student name: 
+[Student]: Heba Alsaggaf
+ Student ID:  2200581 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 463
+ Student name: 
+[Student]: Ahmed Alotaibi
+ Student ID:  2200582 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 464
+ Student name: 
+[Student]: Nada Alotaibi
+ Student ID:  2200583 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 465
+ Student name: 
+[Student]: Samer Alasais
+ Student ID:  2200584 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 466
+ Student name: 
+[Student]: Tamer Alzahrani
+ Student ID:  2200585 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 467
+ Student name: 
+[Student]: Ahmed Aldakheil
+ Student ID:  2200586 Student credits: 91 Student major: Industrial Engineering [IE]
+
+ Index: 468
+ Student name: 
+[Student]: Lina Alsaggaf
+ Student ID:  2200587 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 469
+ Student name: 
+[Student]: Lamia Aldhari
+ Student ID:  2200588 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 470
+ Student name: 
+[Student]: Mohammed Alzahrani
+ Student ID:  2200589 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 471
+ Student name: 
+[Student]: Reem Aldhari
+ Student ID:  2200590 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 472
+ Student name: 
+[Student]: Sami Aldhari
+ Student ID:  2200591 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 473
+ Student name: 
+[Student]: Aya Aldakheil
+ Student ID:  2200592 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 474
+ Student name: 
+[Student]: Ali Altamimi
+ Student ID:  2200593 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 475
+ Student name: 
+[Student]: Mohammed Alkodry
+ Student ID:  2200594 Student credits: 84 Student major: Industrial Engineering [IE]
+
+ Index: 476
+ Student name: 
+[Student]: Yasmine Aldhari
+ Student ID:  2200595 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 477
+ Student name: 
+[Student]: Omar Almagrabi
+ Student ID:  2200596 Student credits: 91 Student major: Industrial Engineering [IE]
+
+ Index: 478
+ Student name: 
+[Student]: Reem Alzahrani
+ Student ID:  2200597 Student credits: 84 Student major: Industrial Engineering [IE]
+
+ Index: 479
+ Student name: 
+[Student]: Reem Aldhari
+ Student ID:  2200598 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 480
+ Student name: 
+[Student]: Yasmine Alamri
+ Student ID:  2200599 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 481
+ Student name: 
+[Student]: Salma Alyami
+ Student ID:  2200600 Student credits: 91 Student major: Industrial Engineering [IE]
+
+ Index: 482
+ Student name: 
+[Student]: Dina Alyami
+ Student ID:  2200601 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 483
+ Student name: 
+[Student]: Lamia Alqahtani
+ Student ID:  2200602 Student credits: 91 Student major: Industrial Engineering [IE]
+
+ Index: 484
+ Student name: 
+[Student]: Mona Alabdullah
+ Student ID:  2200603 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 485
+ Student name: 
+[Student]: Hana Aldhari
+ Student ID:  2200604 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 486
+ Student name: 
+[Student]: Samer Alamri
+ Student ID:  2200605 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 487
+ Student name: 
+[Student]: Yasmine Alshehri
+ Student ID:  2200606 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 488
+ Student name: 
+[Student]: Mohammed Alrufaydi
+ Student ID:  2200607 Student credits: 91 Student major: Industrial Engineering [IE]
+
+ Index: 489
+ Student name: 
+[Student]: Omar Alasais
+ Student ID:  2200608 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 490
+ Student name: 
+[Student]: Nour Aldossari
+ Student ID:  2200609 Student credits: 91 Student major: Industrial Engineering [IE]
+
+ Index: 491
+ Student name: 
+[Student]: Tamer Alhabshi
+ Student ID:  2200610 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 492
+ Student name: 
+[Student]: Salma Alhabshi
+ Student ID:  2200611 Student credits: 91 Student major: Industrial Engineering [IE]
+
+ Index: 493
+ Student name: 
+[Student]: Reem Alabdullah
+ Student ID:  2200612 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 494
+ Student name: 
+[Student]: Mohammed Almagrabi
+ Student ID:  2200613 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 495
+ Student name: 
+[Student]: Mona Alyami
+ Student ID:  2200614 Student credits: 91 Student major: Industrial Engineering [IE]
+
+ Index: 496
+ Student name: 
+[Student]: Heba Alrufaydi
+ Student ID:  2200615 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 497
+ Student name: 
+[Student]: Samer Alzahrani
+ Student ID:  2200616 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 498
+ Student name: 
+[Student]: Lamia Aldhari
+ Student ID:  2200617 Student credits: 99 Student major: Industrial Engineering [IE]
+
+ Index: 499
+ Student name: 
+[Student]: Heba Alasais
+ Student ID:  2200618 Student credits: 91 Student major: Industrial Engineering [IE]
+
+ Index: 500
+ Student name: 
+[Student]: Hana Alrufaydi
+ Student ID:  2200619 Student credits: 87 Student major: Industrial Engineering [IE]
+
+ Index: 501
+ Student name: 
+[Student]: Dina Alghamdi
+ Student ID:  2200650 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 502
+ Student name: 
+[Student]: Ali Alsulami
+ Student ID:  2200651 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 503
+ Student name: 
+[Student]: Reem Altamimi
+ Student ID:  2200652 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 504
+ Student name: 
+[Student]: Reem Alshehri
+ Student ID:  2200653 Student credits: 88 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 505
+ Student name: 
+[Student]: Sami Alqahtani
+ Student ID:  2200654 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 506
+ Student name: 
+[Student]: Ahmed Aldossari
+ Student ID:  2200655 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 507
+ Student name: 
+[Student]: Tamer Aldossari
+ Student ID:  2200656 Student credits: 91 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 508
+ Student name: 
+[Student]: Hana Almagrabi
+ Student ID:  2200657 Student credits: 87 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 509
+ Student name: 
+[Student]: Salma Aldhari
+ Student ID:  2200658 Student credits: 91 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 510
+ Student name: 
+[Student]: Lamia Alzahrani
+ Student ID:  2200659 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 511
+ Student name: 
+[Student]: Mohammed Alqahtani
+ Student ID:  2200660 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 512
+ Student name: 
+[Student]: Reem Alkodry
+ Student ID:  2200661 Student credits: 91 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 513
+ Student name: 
+[Student]: Ali Alzahrani
+ Student ID:  2200662 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 514
+ Student name: 
+[Student]: Rania Alasais
+ Student ID:  2200663 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 515
+ Student name: 
+[Student]: Nour Alyami
+ Student ID:  2200664 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 516
+ Student name: 
+[Student]: Mohammed Alshehri
+ Student ID:  2200665 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 517
+ Student name: 
+[Student]: Sami Almutari
+ Student ID:  2200666 Student credits: 91 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 518
+ Student name: 
+[Student]: Sami Aldhari
+ Student ID:  2200667 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 519
+ Student name: 
+[Student]: Mohammed Alzahrani
+ Student ID:  2200668 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 520
+ Student name: 
+[Student]: Salma Alghamdi
+ Student ID:  2200669 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 521
+ Student name: 
+[Student]: Nada Alkodry
+ Student ID:  2200670 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 522
+ Student name: 
+[Student]: Lamia Altamimi
+ Student ID:  2200671 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 523
+ Student name: 
+[Student]: Rania Alsulami
+ Student ID:  2200672 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 524
+ Student name: 
+[Student]: Omar Alghamdi
+ Student ID:  2200673 Student credits: 88 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 525
+ Student name: 
+[Student]: Aya Alghamdi
+ Student ID:  2200674 Student credits: 87 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 526
+ Student name: 
+[Student]: Sami Alotaibi
+ Student ID:  2200675 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 527
+ Student name: 
+[Student]: Sami Alsulami
+ Student ID:  2200676 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 528
+ Student name: 
+[Student]: Ali Alsaggaf
+ Student ID:  2200677 Student credits: 88 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 529
+ Student name: 
+[Student]: Salma Aldhari
+ Student ID:  2200678 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 530
+ Student name: 
+[Student]: Nada Alrufaydi
+ Student ID:  2200679 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 531
+ Student name: 
+[Student]: Lamia Alrufaydi
+ Student ID:  2200680 Student credits: 96 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 532
+ Student name: 
+[Student]: Nour Aldossari
+ Student ID:  2200681 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 533
+ Student name: 
+[Student]: Lamia Almutari
+ Student ID:  2200682 Student credits: 87 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 534
+ Student name: 
+[Student]: Sami Alshehri
+ Student ID:  2200683 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 535
+ Student name: 
+[Student]: Ali Alotaibi
+ Student ID:  2200684 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 536
+ Student name: 
+[Student]: Samer Alyami
+ Student ID:  2200685 Student credits: 88 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 537
+ Student name: 
+[Student]: Nour Alzahrani
+ Student ID:  2200686 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 538
+ Student name: 
+[Student]: Yasmine Alzahrani
+ Student ID:  2200687 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 539
+ Student name: 
+[Student]: Yasmine Alqahtani
+ Student ID:  2200688 Student credits: 87 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 540
+ Student name: 
+[Student]: Mohammed Alotaibi
+ Student ID:  2200689 Student credits: 87 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 541
+ Student name: 
+[Student]: Ali Alyami
+ Student ID:  2200690 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 542
+ Student name: 
+[Student]: Reem Alamri
+ Student ID:  2200691 Student credits: 96 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 543
+ Student name: 
+[Student]: Dina Aldhari
+ Student ID:  2200692 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 544
+ Student name: 
+[Student]: Sami Aldossari
+ Student ID:  2200693 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 545
+ Student name: 
+[Student]: Hana Alzahrani
+ Student ID:  2200694 Student credits: 87 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 546
+ Student name: 
+[Student]: Ali Alabdullah
+ Student ID:  2200695 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 547
+ Student name: 
+[Student]: Mohammed Alsaggaf
+ Student ID:  2200696 Student credits: 84 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 548
+ Student name: 
+[Student]: Hana Almutari
+ Student ID:  2200697 Student credits: 96 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 549
+ Student name: 
+[Student]: Sami Aldhari
+ Student ID:  2200698 Student credits: 87 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 550
+ Student name: 
+[Student]: Lina Alghamdi
+ Student ID:  2200699 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 551
+ Student name: 
+[Student]: Heba Aldhari
+ Student ID:  2200700 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 552
+ Student name: 
+[Student]: Lina Almagrabi
+ Student ID:  2200701 Student credits: 88 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 553
+ Student name: 
+[Student]: Dina Alghamdi
+ Student ID:  2200702 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 554
+ Student name: 
+[Student]: Sami Alshehri
+ Student ID:  2200703 Student credits: 95 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 555
+ Student name: 
+[Student]: Tamer Alotaibi
+ Student ID:  2200704 Student credits: 87 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 556
+ Student name: 
+[Student]: Yasmine Alkodry
+ Student ID:  2200705 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 557
+ Student name: 
+[Student]: Sami Alhabshi
+ Student ID:  2200706 Student credits: 87 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 558
+ Student name: 
+[Student]: Mohammed Almutari
+ Student ID:  2200707 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 559
+ Student name: 
+[Student]: Lamia Alshehri
+ Student ID:  2200708 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 560
+ Student name: 
+[Student]: Rania Alghamdi
+ Student ID:  2200709 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 561
+ Student name: 
+[Student]: Lamia Altamimi
+ Student ID:  2200710 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 562
+ Student name: 
+[Student]: Heba Alamri
+ Student ID:  2200711 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 563
+ Student name: 
+[Student]: Heba Aldossari
+ Student ID:  2200712 Student credits: 87 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 564
+ Student name: 
+[Student]: Dina Almagrabi
+ Student ID:  2200713 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 565
+ Student name: 
+[Student]: Heba Aldakheil
+ Student ID:  2200714 Student credits: 87 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 566
+ Student name: 
+[Student]: Samer Aldhari
+ Student ID:  2200715 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 567
+ Student name: 
+[Student]: Aya Alkodry
+ Student ID:  2200716 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 568
+ Student name: 
+[Student]: Aya Alshehri
+ Student ID:  2200717 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 569
+ Student name: 
+[Student]: Omar Aldakheil
+ Student ID:  2200718 Student credits: 87 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 570
+ Student name: 
+[Student]: Reem Alshehri
+ Student ID:  2200719 Student credits: 91 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 571
+ Student name: 
+[Student]: Lamia Alabdullah
+ Student ID:  2200720 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 572
+ Student name: 
+[Student]: Reem Alkodry
+ Student ID:  2200721 Student credits: 91 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 573
+ Student name: 
+[Student]: Reem Alotaibi
+ Student ID:  2200722 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 574
+ Student name: 
+[Student]: Nour Almagrabi
+ Student ID:  2200723 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 575
+ Student name: 
+[Student]: Ahmed Alghamdi
+ Student ID:  2200724 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 576
+ Student name: 
+[Student]: Sami Alrufaydi
+ Student ID:  2200725 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 577
+ Student name: 
+[Student]: Nour Alshehri
+ Student ID:  2200726 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 578
+ Student name: 
+[Student]: Rania Alsaggaf
+ Student ID:  2200727 Student credits: 88 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 579
+ Student name: 
+[Student]: Samer Alyami
+ Student ID:  2200728 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 580
+ Student name: 
+[Student]: Yasmine Alkodry
+ Student ID:  2200729 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 581
+ Student name: 
+[Student]: Rania Aldakheil
+ Student ID:  2200730 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 582
+ Student name: 
+[Student]: Reem Almutari
+ Student ID:  2200731 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 583
+ Student name: 
+[Student]: Reem Alhabshi
+ Student ID:  2200732 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 584
+ Student name: 
+[Student]: Lamia Alsulami
+ Student ID:  2200733 Student credits: 88 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 585
+ Student name: 
+[Student]: Nada Aldossari
+ Student ID:  2200734 Student credits: 87 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 586
+ Student name: 
+[Student]: Lamia Alotaibi
+ Student ID:  2200735 Student credits: 91 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 587
+ Student name: 
+[Student]: Nour Alsaggaf
+ Student ID:  2200736 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 588
+ Student name: 
+[Student]: Aya Alrufaydi
+ Student ID:  2200737 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 589
+ Student name: 
+[Student]: Heba Almutari
+ Student ID:  2200738 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 590
+ Student name: 
+[Student]: Ali Alyami
+ Student ID:  2200739 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 591
+ Student name: 
+[Student]: Salma Altamimi
+ Student ID:  2200740 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 592
+ Student name: 
+[Student]: Samer Alkodry
+ Student ID:  2200741 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 593
+ Student name: 
+[Student]: Samer Aldhari
+ Student ID:  2200742 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 594
+ Student name: 
+[Student]: Rania Alrufaydi
+ Student ID:  2200743 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 595
+ Student name: 
+[Student]: Hana Alasais
+ Student ID:  2200744 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 596
+ Student name: 
+[Student]: Mona Aldossari
+ Student ID:  2200745 Student credits: 99 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 597
+ Student name: 
+[Student]: Sami Alsaggaf
+ Student ID:  2200746 Student credits: 91 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 598
+ Student name: 
+[Student]: Dina Alsaggaf
+ Student ID:  2200747 Student credits: 99 Student major: Mechanical Engineering (Thermal) [MEP]
+
+ Index: 599
+ Student name: 
+[Student]: Nour Alamri
+ Student ID:  2200748 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 600
+ Student name: 
+[Student]: Hana Almagrabi
+ Student ID:  2200749 Student credits: 87 Student major: Mechanical Engineering (Production) [MENG]
+
+ Index: 601
+ Student name: 
+[Student]: Tamer Alsulami
+ Student ID:  2200780 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 602
+ Student name: 
+[Student]: Aya Alabdullah
+ Student ID:  2200781 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 603
+ Student name: 
+[Student]: Sami Altamimi
+ Student ID:  2200782 Student credits: 91 Student major: Mining Engineering [MINE]
+
+ Index: 604
+ Student name: 
+[Student]: Hana Aldhari
+ Student ID:  2200783 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 605
+ Student name: 
+[Student]: Ali Alghamdi
+ Student ID:  2200784 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 606
+ Student name: 
+[Student]: Aya Alasais
+ Student ID:  2200785 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 607
+ Student name: 
+[Student]: Ahmed Aldossari
+ Student ID:  2200786 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 608
+ Student name: 
+[Student]: Heba Alasais
+ Student ID:  2200787 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 609
+ Student name: 
+[Student]: Lina Alabdullah
+ Student ID:  2200788 Student credits: 84 Student major: Mining Engineering [MINE]
+
+ Index: 610
+ Student name: 
+[Student]: Sami Aldhari
+ Student ID:  2200789 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 611
+ Student name: 
+[Student]: Hana Aldakheil
+ Student ID:  2200790 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 612
+ Student name: 
+[Student]: Aya Alshehri
+ Student ID:  2200791 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 613
+ Student name: 
+[Student]: Reem Alhabshi
+ Student ID:  2200792 Student credits: 91 Student major: Mining Engineering [MINE]
+
+ Index: 614
+ Student name: 
+[Student]: Mohammed Altamimi
+ Student ID:  2200793 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 615
+ Student name: 
+[Student]: Aya Almutari
+ Student ID:  2200794 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 616
+ Student name: 
+[Student]: Lamia Alghamdi
+ Student ID:  2200795 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 617
+ Student name: 
+[Student]: Lamia Alotaibi
+ Student ID:  2200796 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 618
+ Student name: 
+[Student]: Nada Alshehri
+ Student ID:  2200797 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 619
+ Student name: 
+[Student]: Rania Alotaibi
+ Student ID:  2200798 Student credits: 91 Student major: Mining Engineering [MINE]
+
+ Index: 620
+ Student name: 
+[Student]: Lina Alkodry
+ Student ID:  2200799 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 621
+ Student name: 
+[Student]: Aya Aldossari
+ Student ID:  2200800 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 622
+ Student name: 
+[Student]: Ahmed Alqahtani
+ Student ID:  2200801 Student credits: 84 Student major: Mining Engineering [MINE]
+
+ Index: 623
+ Student name: 
+[Student]: Lina Alabdullah
+ Student ID:  2200802 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 624
+ Student name: 
+[Student]: Reem Altamimi
+ Student ID:  2200803 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 625
+ Student name: 
+[Student]: Mona Alhabshi
+ Student ID:  2200804 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 626
+ Student name: 
+[Student]: Ahmed Alsulami
+ Student ID:  2200805 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 627
+ Student name: 
+[Student]: Tamer Alkodry
+ Student ID:  2200806 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 628
+ Student name: 
+[Student]: Lina Alkodry
+ Student ID:  2200807 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 629
+ Student name: 
+[Student]: Sami Altamimi
+ Student ID:  2200808 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 630
+ Student name: 
+[Student]: Rania Alzahrani
+ Student ID:  2200809 Student credits: 91 Student major: Mining Engineering [MINE]
+
+ Index: 631
+ Student name: 
+[Student]: Omar Alshehri
+ Student ID:  2200810 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 632
+ Student name: 
+[Student]: Nour Alqahtani
+ Student ID:  2200811 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 633
+ Student name: 
+[Student]: Rania Aldossari
+ Student ID:  2200812 Student credits: 84 Student major: Mining Engineering [MINE]
+
+ Index: 634
+ Student name: 
+[Student]: Lina Alotaibi
+ Student ID:  2200813 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 635
+ Student name: 
+[Student]: Heba Almutari
+ Student ID:  2200814 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 636
+ Student name: 
+[Student]: Ahmed Alghamdi
+ Student ID:  2200815 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 637
+ Student name: 
+[Student]: Dina Alotaibi
+ Student ID:  2200816 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 638
+ Student name: 
+[Student]: Aya Alqahtani
+ Student ID:  2200817 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 639
+ Student name: 
+[Student]: Omar Alyami
+ Student ID:  2200818 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 640
+ Student name: 
+[Student]: Rania Alasais
+ Student ID:  2200819 Student credits: 91 Student major: Mining Engineering [MINE]
+
+ Index: 641
+ Student name: 
+[Student]: Lina Alqahtani
+ Student ID:  2200820 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 642
+ Student name: 
+[Student]: Dina Alsulami
+ Student ID:  2200821 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 643
+ Student name: 
+[Student]: Hana Alotaibi
+ Student ID:  2200822 Student credits: 96 Student major: Mining Engineering [MINE]
+
+ Index: 644
+ Student name: 
+[Student]: Mona Alsulami
+ Student ID:  2200823 Student credits: 85 Student major: Mining Engineering [MINE]
+
+ Index: 645
+ Student name: 
+[Student]: Heba Altamimi
+ Student ID:  2200824 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 646
+ Student name: 
+[Student]: Nour Alshehri
+ Student ID:  2200825 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 647
+ Student name: 
+[Student]: Sami Alsulami
+ Student ID:  2200826 Student credits: 91 Student major: Mining Engineering [MINE]
+
+ Index: 648
+ Student name: 
+[Student]: Rania Aldhari
+ Student ID:  2200827 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 649
+ Student name: 
+[Student]: Ali Alzahrani
+ Student ID:  2200828 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 650
+ Student name: 
+[Student]: Ali Alzahrani
+ Student ID:  2200829 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 651
+ Student name: 
+[Student]: Lina Alsulami
+ Student ID:  2200830 Student credits: 96 Student major: Mining Engineering [MINE]
+
+ Index: 652
+ Student name: 
+[Student]: Ali Alshehri
+ Student ID:  2200831 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 653
+ Student name: 
+[Student]: Tamer Aldossari
+ Student ID:  2200832 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 654
+ Student name: 
+[Student]: Hana Alqahtani
+ Student ID:  2200833 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 655
+ Student name: 
+[Student]: Hana Alsaggaf
+ Student ID:  2200834 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 656
+ Student name: 
+[Student]: Aya Alqahtani
+ Student ID:  2200835 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 657
+ Student name: 
+[Student]: Dina Alghamdi
+ Student ID:  2200836 Student credits: 96 Student major: Mining Engineering [MINE]
+
+ Index: 658
+ Student name: 
+[Student]: Lamia Almutari
+ Student ID:  2200837 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 659
+ Student name: 
+[Student]: Reem Alamri
+ Student ID:  2200838 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 660
+ Student name: 
+[Student]: Sami Alamri
+ Student ID:  2200839 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 661
+ Student name: 
+[Student]: Ali Alhabshi
+ Student ID:  2200840 Student credits: 91 Student major: Mining Engineering [MINE]
+
+ Index: 662
+ Student name: 
+[Student]: Aya Aldhari
+ Student ID:  2200841 Student credits: 96 Student major: Mining Engineering [MINE]
+
+ Index: 663
+ Student name: 
+[Student]: Heba Alqahtani
+ Student ID:  2200842 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 664
+ Student name: 
+[Student]: Samer Alasais
+ Student ID:  2200843 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 665
+ Student name: 
+[Student]: Nada Alabdullah
+ Student ID:  2200844 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 666
+ Student name: 
+[Student]: Nour Alotaibi
+ Student ID:  2200845 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 667
+ Student name: 
+[Student]: Mohammed Alasais
+ Student ID:  2200846 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 668
+ Student name: 
+[Student]: Ali Aldakheil
+ Student ID:  2200847 Student credits: 96 Student major: Mining Engineering [MINE]
+
+ Index: 669
+ Student name: 
+[Student]: Rania Alhabshi
+ Student ID:  2200848 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 670
+ Student name: 
+[Student]: Nour Almagrabi
+ Student ID:  2200849 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 671
+ Student name: 
+[Student]: Yasmine Aldhari
+ Student ID:  2200850 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 672
+ Student name: 
+[Student]: Mohammed Alotaibi
+ Student ID:  2200851 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 673
+ Student name: 
+[Student]: Hana Alzahrani
+ Student ID:  2200852 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 674
+ Student name: 
+[Student]: Omar Alkodry
+ Student ID:  2200853 Student credits: 91 Student major: Mining Engineering [MINE]
+
+ Index: 675
+ Student name: 
+[Student]: Lina Alqahtani
+ Student ID:  2200854 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 676
+ Student name: 
+[Student]: Rania Alkodry
+ Student ID:  2200855 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 677
+ Student name: 
+[Student]: Samer Alshehri
+ Student ID:  2200856 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 678
+ Student name: 
+[Student]: Ali Alasais
+ Student ID:  2200857 Student credits: 88 Student major: Mining Engineering [MINE]
+
+ Index: 679
+ Student name: 
+[Student]: Yasmine Alyami
+ Student ID:  2200858 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 680
+ Student name: 
+[Student]: Tamer Aldhari
+ Student ID:  2200859 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 681
+ Student name: 
+[Student]: Yasmine Alshehri
+ Student ID:  2200860 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 682
+ Student name: 
+[Student]: Yasmine Alamri
+ Student ID:  2200861 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 683
+ Student name: 
+[Student]: Mona Aldhari
+ Student ID:  2200862 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 684
+ Student name: 
+[Student]: Samer Alsulami
+ Student ID:  2200863 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 685
+ Student name: 
+[Student]: Ali Alabdullah
+ Student ID:  2200864 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 686
+ Student name: 
+[Student]: Samer Alghamdi
+ Student ID:  2200865 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 687
+ Student name: 
+[Student]: Mona Alkodry
+ Student ID:  2200866 Student credits: 91 Student major: Mining Engineering [MINE]
+
+ Index: 688
+ Student name: 
+[Student]: Samer Aldakheil
+ Student ID:  2200867 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 689
+ Student name: 
+[Student]: Aya Alqahtani
+ Student ID:  2200868 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 690
+ Student name: 
+[Student]: Samer Alshehri
+ Student ID:  2200869 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 691
+ Student name: 
+[Student]: Mona Alrufaydi
+ Student ID:  2200870 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 692
+ Student name: 
+[Student]: Lamia Alyami
+ Student ID:  2200871 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 693
+ Student name: 
+[Student]: Mohammed Alzahrani
+ Student ID:  2200872 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 694
+ Student name: 
+[Student]: Ali Alhabshi
+ Student ID:  2200873 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 695
+ Student name: 
+[Student]: Dina Alzahrani
+ Student ID:  2200874 Student credits: 91 Student major: Mining Engineering [MINE]
+
+ Index: 696
+ Student name: 
+[Student]: Nada Alkodry
+ Student ID:  2200875 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 697
+ Student name: 
+[Student]: Dina Alsulami
+ Student ID:  2200876 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 698
+ Student name: 
+[Student]: Dina Alghamdi
+ Student ID:  2200877 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 699
+ Student name: 
+[Student]: Lina Altamimi
+ Student ID:  2200878 Student credits: 87 Student major: Mining Engineering [MINE]
+
+ Index: 700
+ Student name: 
+[Student]: Nour Alkodry
+ Student ID:  2200879 Student credits: 99 Student major: Mining Engineering [MINE]
+
+ Index: 701
+ Student name: 
+[Student]: Mohammed Alyami
+ Student ID:  2200910 Student credits: 88 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 702
+ Student name: 
+[Student]: Omar Altamimi
+ Student ID:  2200911 Student credits: 88 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 703
+ Student name: 
+[Student]: Omar Alotaibi
+ Student ID:  2200912 Student credits: 88 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 704
+ Student name: 
+[Student]: Nour Alotaibi
+ Student ID:  2200913 Student credits: 96 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 705
+ Student name: 
+[Student]: Tamer Alasais
+ Student ID:  2200914 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 706
+ Student name: 
+[Student]: Samer Alkodry
+ Student ID:  2200915 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 707
+ Student name: 
+[Student]: Nada Aldhari
+ Student ID:  2200916 Student credits: 99 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 708
+ Student name: 
+[Student]: Lamia Aldossari
+ Student ID:  2200917 Student credits: 91 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 709
+ Student name: 
+[Student]: Aya Alabdullah
+ Student ID:  2200918 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 710
+ Student name: 
+[Student]: Yasmine Aldakheil
+ Student ID:  2200919 Student credits: 99 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 711
+ Student name: 
+[Student]: Aya Alrufaydi
+ Student ID:  2200920 Student credits: 91 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 712
+ Student name: 
+[Student]: Ali Almagrabi
+ Student ID:  2200921 Student credits: 91 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 713
+ Student name: 
+[Student]: Salma Alzahrani
+ Student ID:  2200922 Student credits: 91 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 714
+ Student name: 
+[Student]: Nour Alhabshi
+ Student ID:  2200923 Student credits: 91 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 715
+ Student name: 
+[Student]: Nada Alzahrani
+ Student ID:  2200924 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 716
+ Student name: 
+[Student]: Sami Alrufaydi
+ Student ID:  2200925 Student credits: 91 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 717
+ Student name: 
+[Student]: Nada Aldhari
+ Student ID:  2200926 Student credits: 99 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 718
+ Student name: 
+[Student]: Rania Alzahrani
+ Student ID:  2200927 Student credits: 88 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 719
+ Student name: 
+[Student]: Tamer Alsulami
+ Student ID:  2200928 Student credits: 91 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 720
+ Student name: 
+[Student]: Samer Alsaggaf
+ Student ID:  2200929 Student credits: 96 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 721
+ Student name: 
+[Student]: Dina Alamri
+ Student ID:  2200930 Student credits: 87 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 722
+ Student name: 
+[Student]: Hana Aldossari
+ Student ID:  2200931 Student credits: 96 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 723
+ Student name: 
+[Student]: Salma Alrufaydi
+ Student ID:  2200932 Student credits: 87 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 724
+ Student name: 
+[Student]: Lina Alqahtani
+ Student ID:  2200933 Student credits: 87 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 725
+ Student name: 
+[Student]: Tamer Alotaibi
+ Student ID:  2200934 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 726
+ Student name: 
+[Student]: Ali Aldakheil
+ Student ID:  2200935 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 727
+ Student name: 
+[Student]: Dina Alotaibi
+ Student ID:  2200936 Student credits: 87 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 728
+ Student name: 
+[Student]: Mohammed Alzahrani
+ Student ID:  2200937 Student credits: 87 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 729
+ Student name: 
+[Student]: Omar Alghamdi
+ Student ID:  2200938 Student credits: 87 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 730
+ Student name: 
+[Student]: Salma Alghamdi
+ Student ID:  2200939 Student credits: 87 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 731
+ Student name: 
+[Student]: Nour Aldossari
+ Student ID:  2200940 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 732
+ Student name: 
+[Student]: Nada Aldossari
+ Student ID:  2200941 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 733
+ Student name: 
+[Student]: Dina Alotaibi
+ Student ID:  2200942 Student credits: 91 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 734
+ Student name: 
+[Student]: Heba Aldhari
+ Student ID:  2200943 Student credits: 88 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 735
+ Student name: 
+[Student]: Salma Alotaibi
+ Student ID:  2200944 Student credits: 87 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 736
+ Student name: 
+[Student]: Nour Aldossari
+ Student ID:  2200945 Student credits: 99 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 737
+ Student name: 
+[Student]: Lina Alrufaydi
+ Student ID:  2200946 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 738
+ Student name: 
+[Student]: Rania Alghamdi
+ Student ID:  2200947 Student credits: 87 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 739
+ Student name: 
+[Student]: Aya Altamimi
+ Student ID:  2200948 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 740
+ Student name: 
+[Student]: Ali Alqahtani
+ Student ID:  2200949 Student credits: 83 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 741
+ Student name: 
+[Student]: Lamia Alyami
+ Student ID:  2200950 Student credits: 87 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 742
+ Student name: 
+[Student]: Dina Alsulami
+ Student ID:  2200951 Student credits: 99 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 743
+ Student name: 
+[Student]: Tamer Alamri
+ Student ID:  2200952 Student credits: 99 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 744
+ Student name: 
+[Student]: Tamer Alghamdi
+ Student ID:  2200953 Student credits: 87 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 745
+ Student name: 
+[Student]: Ahmed Altamimi
+ Student ID:  2200954 Student credits: 86 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 746
+ Student name: 
+[Student]: Yasmine Alsaggaf
+ Student ID:  2200955 Student credits: 91 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 747
+ Student name: 
+[Student]: Samer Almagrabi
+ Student ID:  2200956 Student credits: 87 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 748
+ Student name: 
+[Student]: Yasmine Alotaibi
+ Student ID:  2200957 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 749
+ Student name: 
+[Student]: Samer Altamimi
+ Student ID:  2200958 Student credits: 87 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 750
+ Student name: 
+[Student]: Aya Alqahtani
+ Student ID:  2200959 Student credits: 88 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 751
+ Student name: 
+[Student]: Sami Aldhari
+ Student ID:  2200960 Student credits: 99 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 752
+ Student name: 
+[Student]: Rania Alyami
+ Student ID:  2200961 Student credits: 99 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 753
+ Student name: 
+[Student]: Hana Alzahrani
+ Student ID:  2200962 Student credits: 87 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 754
+ Student name: 
+[Student]: Omar Aldhari
+ Student ID:  2200963 Student credits: 87 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 755
+ Student name: 
+[Student]: Reem Almutari
+ Student ID:  2200964 Student credits: 87 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 756
+ Student name: 
+[Student]: Reem Alkodry
+ Student ID:  2200965 Student credits: 87 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 757
+ Student name: 
+[Student]: Mona Almagrabi
+ Student ID:  2200966 Student credits: 99 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 758
+ Student name: 
+[Student]: Lamia Alotaibi
+ Student ID:  2200967 Student credits: 91 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 759
+ Student name: 
+[Student]: Ali Altamimi
+ Student ID:  2200968 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 760
+ Student name: 
+[Student]: Ali Aldakheil
+ Student ID:  2200969 Student credits: 87 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 761
+ Student name: 
+[Student]: Mohammed Alrufaydi
+ Student ID:  2200970 Student credits: 99 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 762
+ Student name: 
+[Student]: Samer Alsaggaf
+ Student ID:  2200971 Student credits: 88 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 763
+ Student name: 
+[Student]: Tamer Almagrabi
+ Student ID:  2200972 Student credits: 99 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 764
+ Student name: 
+[Student]: Nada Almutari
+ Student ID:  2200973 Student credits: 88 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 765
+ Student name: 
+[Student]: Salma Alqahtani
+ Student ID:  2200974 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 766
+ Student name: 
+[Student]: Lamia Altamimi
+ Student ID:  2200975 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 767
+ Student name: 
+[Student]: Hana Alqahtani
+ Student ID:  2200976 Student credits: 99 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 768
+ Student name: 
+[Student]: Mohammed Alamri
+ Student ID:  2200977 Student credits: 88 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 769
+ Student name: 
+[Student]: Ali Alhabshi
+ Student ID:  2200978 Student credits: 87 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 770
+ Student name: 
+[Student]: Ali Alkodry
+ Student ID:  2200979 Student credits: 99 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 771
+ Student name: 
+[Student]: Salma Alotaibi
+ Student ID:  2200980 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 772
+ Student name: 
+[Student]: Salma Alghamdi
+ Student ID:  2200981 Student credits: 99 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 773
+ Student name: 
+[Student]: Sami Alrufaydi
+ Student ID:  2200982 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 774
+ Student name: 
+[Student]: Lina Alabdullah
+ Student ID:  2200983 Student credits: 87 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 775
+ Student name: 
+[Student]: Reem Alasais
+ Student ID:  2200984 Student credits: 87 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 776
+ Student name: 
+[Student]: Hana Alkodry
+ Student ID:  2200985 Student credits: 99 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 777
+ Student name: 
+[Student]: Sami Alzahrani
+ Student ID:  2200986 Student credits: 96 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 778
+ Student name: 
+[Student]: Omar Alhabshi
+ Student ID:  2200987 Student credits: 91 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 779
+ Student name: 
+[Student]: Nour Alqahtani
+ Student ID:  2200988 Student credits: 87 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 780
+ Student name: 
+[Student]: Omar Alotaibi
+ Student ID:  2200989 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 781
+ Student name: 
+[Student]: Hana Alsulami
+ Student ID:  2200990 Student credits: 87 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 782
+ Student name: 
+[Student]: Hana Altamimi
+ Student ID:  2200991 Student credits: 99 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 783
+ Student name: 
+[Student]: Omar Aldossari
+ Student ID:  2200992 Student credits: 87 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 784
+ Student name: 
+[Student]: Sami Alotaibi
+ Student ID:  2200993 Student credits: 87 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 785
+ Student name: 
+[Student]: Heba Alabdullah
+ Student ID:  2200994 Student credits: 99 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 786
+ Student name: 
+[Student]: Yasmine Alotaibi
+ Student ID:  2200995 Student credits: 99 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 787
+ Student name: 
+[Student]: Mona Alkodry
+ Student ID:  2200996 Student credits: 84 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 788
+ Student name: 
+[Student]: Mona Aldakheil
+ Student ID:  2200997 Student credits: 81 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 789
+ Student name: 
+[Student]: Lamia Alzahrani
+ Student ID:  2200998 Student credits: 99 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 790
+ Student name: 
+[Student]: Heba Alzahrani
+ Student ID:  2200999 Student credits: 99 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 791
+ Student name: 
+[Student]: Nada Alsulami
+ Student ID:  2201000 Student credits: 87 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 792
+ Student name: 
+[Student]: Reem Alabdullah
+ Student ID:  2201001 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 793
+ Student name: 
+[Student]: Rania Alamri
+ Student ID:  2201002 Student credits: 91 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 794
+ Student name: 
+[Student]: Mohammed Alasais
+ Student ID:  2201003 Student credits: 87 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 795
+ Student name: 
+[Student]: Yasmine Alghamdi
+ Student ID:  2201004 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 796
+ Student name: 
+[Student]: Omar Alzahrani
+ Student ID:  2201005 Student credits: 99 Student major: Nuclear Engineering (Nuclear Power) [NE]
+
+ Index: 797
+ Student name: 
+[Student]: Reem Alamri
+ Student ID:  2201006 Student credits: 99 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 798
+ Student name: 
+[Student]: Salma Almagrabi
+ Student ID:  2201007 Student credits: 87 Student major: Nuclear Engineering (Medical Physics) [NE]
+
+ Index: 799
+ Student name: 
+[Student]: Tamer Alamri
+ Student ID:  2201008 Student credits: 87 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Index: 800
+ Student name: 
+[Student]: Nada Alabdullah
+ Student ID:  2201009 Student credits: 87 Student major: Nuclear Engineering (Radiation Protection) [NE]
+
+ Conflicted students: Output end. Info: 
+ 
+Years completed: 1 
+Student count: 
+800
+---------------------------------------END---------------------------------

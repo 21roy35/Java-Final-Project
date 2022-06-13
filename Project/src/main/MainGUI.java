@@ -119,7 +119,7 @@ public class MainGUI {
 				currMajor = m;
 			}
 		}} catch (NullPointerException e) {
-			System.out.println("getCurrentMajor@MainGUI: getLastSelectedPathComponent seems to be null. User probably clicked outside of the parent.");
+		//	System.out.println("getCurrentMajor@MainGUI: getLastSelectedPathComponent seems to be null. User probably clicked outside of the parent.");
 		}
 		return currMajor;
 	}
