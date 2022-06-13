@@ -108,7 +108,7 @@ public class MainGUI {
 				if (format.indexOf(m.getName())!=-1) {
 					currMajor = m;
 				}
-			}} catch (NullPointerException e) {
+			}} catch (NullPointerException e) { // better to be an if condition
 				//	System.out.println("getCurrentMajor@MainGUI: getLastSelectedPathComponent seems to be null. User probably clicked outside of the parent.");
 			}
 		return currMajor;
