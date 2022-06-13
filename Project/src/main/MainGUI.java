@@ -115,6 +115,12 @@ public class MainGUI {
 	}
 
 
+	/**
+	 * @summary: This method is called to show the data on the right in the TextBox, Info like department count etc.
+	 * @param tree
+	 * @param me
+	 * @param jtp
+	 */
 	void showOnClick(JTree tree, MouseEvent me, JTextPane jtp) {
 		getCurrentDepartment(tree,me);
 		TreePath tp = tree.getPathForLocation(me.getX(), me.getY());
@@ -155,11 +161,6 @@ public class MainGUI {
 		else {
 			jtp.setText("All students with conflicts including duplicates: \n" + String.valueOf(main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size()));
 		}
-
-
-
-
-
 	}
 
 	/**
