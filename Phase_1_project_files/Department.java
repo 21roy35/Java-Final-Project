@@ -134,12 +134,12 @@ public class Department {
     }
 
     public static Elective createElective(String name, ArrayList<Course> prereqList) {
-//        for (int i = 0; i <= Course.allCourses.size() - 1; i++) {
-//            Course tempCourse = Course.allCourses.get(i);
-//            if (tempCourse.getName().equals(name)) {
-//                return (Elective) tempCourse;
-//            }
-//        }
+        for (int i = 0; i <= Course.allCourses.size() - 1; i++) {
+            Course tempCourse = Course.allCourses.get(i);
+            if (tempCourse.getName().equals(name)) {
+                return (Elective) tempCourse;
+            }
+        }
 
         Elective elective = new Elective(name, prereqList);
         Course.allCourses.add(elective);
