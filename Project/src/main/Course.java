@@ -129,6 +129,7 @@ public class Course {
             LocalTime time = times.get(i);
             if (time.equals(sectionTime)) {
                 sectionTime = Main.randomClassTime();
+                i = 0;
             }
         }
 

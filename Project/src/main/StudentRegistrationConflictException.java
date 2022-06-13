@@ -35,7 +35,7 @@ public class StudentRegistrationConflictException extends Exception{
      */
     public StudentRegistrationConflictException(ArrayList<Student> students, Section section) {
         if (!allStudentRegistrationConflictExceptions.contains(this)) {
-            this.students = students;
+            this.students.addAll(students);
             this.section = section;
             for (Student stud : students) {
                 if (!students_info.containsKey(stud)) {
@@ -149,7 +149,7 @@ public class StudentRegistrationConflictException extends Exception{
     /**
      * 
      */
-    public static void checkStudentRegistrationConflictException() {
+    public static void checkRepeatedStudentRegistrationConflictException() {
         ArrayList<StudentRegistrationConflictException> tempList = new ArrayList<>();
         for (int i = 0; i <= allStudentRegistrationConflictExceptions.size() - 1; i++) {
             StudentRegistrationConflictException ex = allStudentRegistrationConflictExceptions.get(i);

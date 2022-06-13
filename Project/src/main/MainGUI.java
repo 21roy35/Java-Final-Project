@@ -158,7 +158,7 @@ public class MainGUI {
 					;}
 
 				else {
-					jtp.setText("All Students: " + main.Main.current_students.size() +"\n[Root] All students with conflicts: \n" + String.valueOf(main.Main.conflictedStudents + 
+					jtp.setText("All Students: " + main.Main.current_students.size() +"\n[Root] All students with resolved conflicts: \n" + String.valueOf(main.Main.conflictedStudents +
 							"\nFull sections count: \n" + main.FullSectionsException.allFullSectionsExceptions.size() + "\nUnavailable professors: \n" + main.NoAvailableProfessorException.allNoAvailableProfessorExceptions.size() + "\nFailed students number: \n"+
 							main.Student.failed.size()) );
 				}}}

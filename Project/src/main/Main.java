@@ -59,11 +59,11 @@ public class Main {
 		}
 
 		NoAvailableProfessorException.checkNoAvailableProfessorException();
-		StudentRegistrationConflictException.checkStudentRegistrationConflictException();
+		StudentRegistrationConflictException.checkRepeatedStudentRegistrationConflictException();
 
-		System.out.println(FullSectionsException.allFullSectionsExceptions.size());
-		System.out.println(NoAvailableProfessorException.allNoAvailableProfessorExceptions.size());
-		System.out.println(StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size());
+		System.out.printf("FullSectionsException number: %d\n", FullSectionsException.allFullSectionsExceptions.size());
+		System.out.printf("NoAvailableProfessorException number: %d\n", NoAvailableProfessorException.allNoAvailableProfessorExceptions.size());
+		System.out.printf("StudentRegistrationConflictException number: %d\n", StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size());
 
 		MainGUI.main(null);
 		System.out.println(getConflictInfo());
