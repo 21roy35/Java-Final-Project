@@ -22,7 +22,7 @@ public class Main {
     /**
      * this the number of years
      */
-    static int NUMBER_OF_YEARS = 5;
+    static int NUMBER_OF_YEARS = 1;
     /**
      * this is the limits of  ID
      */

@@ -147,7 +147,7 @@ public class MainGUI {
 							getCurrentDepartment(tree, me);
 							for(Major d : currDepartment.getMajors()) {
 								String confNum = main.Main.getConflictInfo(d);
-								majors = majors +"\n" + d.getName() + " Conflicts in this major: " + main.Main.getConflictInfo(d);
+								majors = majors +"\n" + d.getName() + "Resolved  conflicts in this major: " + main.Main.getConflictInfo(d);
 								depTotal = depTotal + Integer.parseInt(confNum);
 							}
 							
