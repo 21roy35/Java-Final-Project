@@ -19,11 +19,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map.Entry;
-
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
-import javax.swing.JProgressBar;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JTree;
@@ -31,6 +29,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.JTextPane;
+
 /**
  * Date: June 12-2022
  * This is the Main GUI  class
@@ -38,18 +37,18 @@ import javax.swing.JTextPane;
  *
  */
 public class MainGUI {
-    /**
-     * this is frame windo
-     */
+	/**
+	 * this is frame windo
+	 */
 	private JFrame frame;
-    /**
-     * this is the current deapartments
-     */
-    Department currDepartment;
-    /**
-     * this is the current major
-     */
-    Major currMajor;
+	/**
+	 * this is the current deapartments
+	 */
+	Department currDepartment;
+	/**
+	 * this is the current major
+	 */
+	Major currMajor;
 
 	/**
 	 * Launch the application.
@@ -90,32 +89,32 @@ public class MainGUI {
 	 * }
 	 *
 	 */
-	
-	
+
+
 	void getCurrentDepartment(JTree tree, MouseEvent me) {
 		try {
-		for(Department d : main.Department.getAllDepartments()) {
-			if (tree.getLastSelectedPathComponent().toString().indexOf(d.getName())!=-1) {
-				currDepartment = d;
+			for(Department d : main.Department.getAllDepartments()) {
+				if (tree.getLastSelectedPathComponent().toString().indexOf(d.getName())!=-1) {
+					currDepartment = d;
+				}
+			}} catch (NullPointerException e) {
+				//System.out.println("getCurrentDepartment@MainGUI: getLastSelectedPathComponent seems to be null. User probably clicked outside of the parent.");
 			}
-		}} catch (NullPointerException e) {
-			//System.out.println("getCurrentDepartment@MainGUI: getLastSelectedPathComponent seems to be null. User probably clicked outside of the parent.");
-		}
 	}
 	Major getCurrentMajor(JTree tree, MouseEvent me) {
 		try {
-		for(Major m : main.Major.getAllMajors()) {
-			String format = tree.getLastSelectedPathComponent().toString() + "Engineering";
-			if (format.indexOf(m.getName())!=-1) {
-				currMajor = m;
+			for(Major m : main.Major.getAllMajors()) {
+				String format = tree.getLastSelectedPathComponent().toString() + "Engineering";
+				if (format.indexOf(m.getName())!=-1) {
+					currMajor = m;
+				}
+			}} catch (NullPointerException e) {
+				//	System.out.println("getCurrentMajor@MainGUI: getLastSelectedPathComponent seems to be null. User probably clicked outside of the parent.");
 			}
-		}} catch (NullPointerException e) {
-		//	System.out.println("getCurrentMajor@MainGUI: getLastSelectedPathComponent seems to be null. User probably clicked outside of the parent.");
-		}
 		return currMajor;
 	}
-	
-	
+
+
 	void showOnClick(JTree tree, MouseEvent me, JTextPane jtp) {
 		getCurrentDepartment(tree,me);
 		TreePath tp = tree.getPathForLocation(me.getX(), me.getY());
@@ -141,7 +140,7 @@ public class MainGUI {
 								majors = majors +"\n" + d.getName() + "\nResolved  conflicts in this major: " + main.Main.getConflictInfo(d);
 								depTotal = depTotal + Integer.parseInt(confNum);
 							}
-							
+
 							jtp.setText("Department name: "  + currDepartment.getName() + "\nNumber of student with resolved conflicts in " + tree.getLastSelectedPathComponent().toString() + ": " + depTotal + "\n"+
 									"Majors in this department: " + majors );
 						}
@@ -162,7 +161,13 @@ public class MainGUI {
 
 
 	}
-	
+
+	/**
+	 * 
+	 * {@summary:
+	 * This is a method called to make an output file, and write all the students including the ones that had conflicts. }
+	 * @throws IOException
+	 */
 	void btnClicked() throws IOException {
 		File outputfile = new File("ouput.txt");
 		if (outputfile.createNewFile()) {
@@ -187,16 +192,10 @@ public class MainGUI {
 		bf.write("\n Conflicted students: ");
 		int j = 0;
 		for(Entry<Student, Department> entry : main.StudentRegistrationConflictException.students_info.entrySet()) {
-
-//			for( entry.getKey() stu : entry.getKey()) {
-//				if(j==main.StudentRegistrationConflictException.students_info.size()) {
-//					break;
-//				}
-			
 			Student stu = entry.getKey();
-				bf.write("\n Index: " + j +"\n [Conflict resolved] \nStudent name: \n" + stu.name + "\n Student ID:  "
-						+ stu.ID + " Student credits: "+ stu.creditsCompleted + " Student major: "+ stu.getMajor().getName() + " [" + stu.getMajor().getSym()+"]\n");
-				j++;
+			bf.write("\n Index: " + j +"\n [Conflict resolved] \nStudent name: \n" + stu.name + "\n Student ID:  "
+					+ stu.ID + " Student credits: "+ stu.creditsCompleted + " Student major: "+ stu.getMajor().getName() + " [" + stu.getMajor().getSym()+"]\n");
+			j++;
 		}
 		bf.write("Output end. Info: \n");
 		bf.write(" \nYears completed: " + main.Main.NUMBER_OF_YEARS + " \nStudent count: \n" + main.Main.current_students.size());
@@ -211,7 +210,6 @@ public class MainGUI {
 		frame.setBounds(100, 100, 586, 381);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		JProgressBar progressBar = new JProgressBar();
 
 		JButton button = new JButton();
 		button.setText("View students & professors");
@@ -258,7 +256,7 @@ public class MainGUI {
 						add(node_1);
 					}
 				}
-		));
+				));
 
 		JScrollBar scrollBar = new JScrollBar();
 
@@ -266,34 +264,32 @@ public class MainGUI {
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 				groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-								.addContainerGap()
-								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-										.addComponent(progressBar, GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
-										.addGroup(groupLayout.createSequentialGroup()
-												.addComponent(tree, GroupLayout.PREFERRED_SIZE, 166, GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addComponent(scrollBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.UNRELATED)
-												.addComponent(textPane, GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-												.addPreferredGap(ComponentPlacement.RELATED).addComponent(button)
+				.addGroup(groupLayout.createSequentialGroup()
+						.addContainerGap()
+						.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+								.addGroup(groupLayout.createSequentialGroup()
+										.addComponent(tree, GroupLayout.PREFERRED_SIZE, 166, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(scrollBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addComponent(textPane, GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+										.addPreferredGap(ComponentPlacement.RELATED).addComponent(button)
 										))
-								.addContainerGap())
-		);
+						.addContainerGap())
+				);
 		groupLayout.setVerticalGroup(
 				groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addGroup(groupLayout.createSequentialGroup()
-								.addGap(21)
-								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-										.addComponent(textPane)
-										.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-												.addComponent(button)
-												.addComponent(tree, GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE))
-										.addComponent(scrollBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-								.addComponent(progressBar, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-								.addContainerGap())
-		);
+				.addGroup(groupLayout.createSequentialGroup()
+						.addGap(21)
+						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(textPane)
+								.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+										.addComponent(button)
+										.addComponent(tree, GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE))
+								.addComponent(scrollBar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+						.addContainerGap())
+				);
 		frame.getContentPane().setLayout(groupLayout);
 	}
 }
