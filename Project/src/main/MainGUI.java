@@ -21,8 +21,6 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.swing.BoxLayout;
 import javax.swing.DefaultListModel;
 import javax.swing.GroupLayout;
@@ -30,7 +28,6 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.JProgressBar;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.ListModel;
 import javax.swing.ListSelectionModel;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.event.ListSelectionEvent;
@@ -151,7 +148,7 @@ public class MainGUI {
 								depTotal = depTotal + Integer.parseInt(confNum);
 							}
 							
-							jtp.setText("Department name: "  + currDepartment.getName() + "\nNumber of student with conflicts in " + tree.getLastSelectedPathComponent().toString() + ": " + depTotal + "\n"+
+							jtp.setText("Department name: "  + currDepartment.getName() + "\nNumber of student with resolved conflicts in " + tree.getLastSelectedPathComponent().toString() + ": " + depTotal + "\n"+
 									"Majors in this department: " + majors );
 						}
 					}
