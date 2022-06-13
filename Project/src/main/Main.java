@@ -58,7 +58,7 @@ public class Main {
 			YEAR_COUNT++;
 		}
 
-		NoAvailableProfessorException.checkNoAvailableProfessorException();
+		NoAvailableProfessorException.checkRepeatedNoAvailableProfessorException();
 		StudentRegistrationConflictException.checkRepeatedStudentRegistrationConflictException();
 
 		System.out.printf("FullSectionsException number: %d\n", FullSectionsException.allFullSectionsExceptions.size());
@@ -357,7 +357,7 @@ public class Main {
 		}
 		conflictedStudents = c_students;
 
-		return String.format("Conflicts found : \n 1- Department(s) affected: %d \n 2- Major(s) affected: %d \n 3- Student(s) affected: %d", c_department, c_majors, c_students);
+		return String.format("Conflicts found and resolved: \n 1- Department(s) affected: %d \n 2- Major(s) affected: %d \n 3- Student(s) affected: %d", c_department, c_majors, c_students);
 	}
 
     /**
