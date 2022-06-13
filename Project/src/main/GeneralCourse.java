@@ -40,6 +40,7 @@ public class GeneralCourse extends Course implements GeneralCourseInterface{
             LocalTime time = times.get(i);
             if (time.equals(sectionTime)) {
                 sectionTime = Main.randomClassTime();
+                i = 0;
             }
         }
 
