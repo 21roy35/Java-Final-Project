@@ -313,7 +313,7 @@ public class Main {
 	}
 
     /**
-     * this is a method to  get conflect information
+     * this is a method to  get conflict information
      * @return
      */
 	public static String getConflictInfo() {
@@ -361,9 +361,9 @@ public class Main {
 	}
 
     /**
-     * this is method to get conflect information
+     * this is method to get conflict information
      * @param majorParam assign a major
-     * @return number of conflect
+     * @return number of conflict
      */
 	public static String getConflictInfo(Major majorParam) {
 		int c_department = 0;
