@@ -155,7 +155,9 @@ public class StudentRegistrationConflictException extends Exception{
             StudentRegistrationConflictException ex = allStudentRegistrationConflictExceptions.get(i);
             for (int r = i + 1; r <= allStudentRegistrationConflictExceptions.size() - 1; r++) {
                 StudentRegistrationConflictException exception = allStudentRegistrationConflictExceptions.get(r);
-                if (ex.getSection().equals(exception.getSection())) {
+                Section exSection = ex.getSection();
+                Section exceptionSection = exception.getSection();
+                if (exSection.equals(exceptionSection)) {
                     tempList.add(exception);
                 }
             }

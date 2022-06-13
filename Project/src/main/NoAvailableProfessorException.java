@@ -48,7 +48,7 @@ public class NoAvailableProfessorException extends Exception{
      * this is a mthod that check for available professor
      *
      */
-    public static void checkNoAvailableProfessorException() {
+    public static void checkRepeatedNoAvailableProfessorException() {
         ArrayList<NoAvailableProfessorException> tempList = new ArrayList<>();
         for (int i = 0; i <= allNoAvailableProfessorExceptions.size() - 1; i++) {
             NoAvailableProfessorException ex = allNoAvailableProfessorExceptions.get(i);
