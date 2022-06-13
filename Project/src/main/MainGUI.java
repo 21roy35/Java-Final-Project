@@ -18,6 +18,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Map.Entry;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
@@ -184,16 +186,17 @@ public class MainGUI {
 
 		bf.write("\n Conflicted students: ");
 		int j = 0;
-		for(StudentRegistrationConflictException st : main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions) {
+		for(Entry<Student, Department> entry : main.StudentRegistrationConflictException.students_info.entrySet()) {
 
-			for(Student stu : st.getStudents()) {
-				if(j==st.getStudents().size()) {
-					break;
-				}
-				bf.write("\n Index: " + j +"\n Student name: \n" + stu.name + "\n Student ID:  "
+//			for( entry.getKey() stu : entry.getKey()) {
+//				if(j==main.StudentRegistrationConflictException.students_info.size()) {
+//					break;
+//				}
+			
+			Student stu = entry.getKey();
+				bf.write("\n Index: " + j +"\n [Conflict resolved] \nStudent name: \n" + stu.name + "\n Student ID:  "
 						+ stu.ID + " Student credits: "+ stu.creditsCompleted + " Student major: "+ stu.getMajor().getName() + " [" + stu.getMajor().getSym()+"]\n");
-			}
-			j++;
+				j++;
 		}
 		bf.write("Output end. Info: \n");
 		bf.write(" \nYears completed: " + main.Main.NUMBER_OF_YEARS + " \nStudent count: \n" + main.Main.current_students.size());
