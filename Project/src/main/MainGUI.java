@@ -10,9 +10,6 @@ import java.awt.Dimension;
 
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
-import javax.swing.JList;
-import javax.swing.JTextField;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -100,7 +97,7 @@ public class MainGUI {
 				currDepartment = d;
 			}
 		}} catch (NullPointerException e) {
-			System.out.println("getCurrentDepartment@MainGUI: getLastSelectedPathComponent seems to be null. User probably clicked outside of the parent.");
+			//System.out.println("getCurrentDepartment@MainGUI: getLastSelectedPathComponent seems to be null. User probably clicked outside of the parent.");
 		}
 	}
 	Major getCurrentMajor(JTree tree, MouseEvent me) {
@@ -139,7 +136,7 @@ public class MainGUI {
 							getCurrentDepartment(tree, me);
 							for(Major d : currDepartment.getMajors()) {
 								String confNum = main.Main.getConflictInfo(d);
-								majors = majors +"\n" + d.getName() + "Resolved  conflicts in this major: " + main.Main.getConflictInfo(d);
+								majors = majors +"\n" + d.getName() + "\nResolved  conflicts in this major: " + main.Main.getConflictInfo(d);
 								depTotal = depTotal + Integer.parseInt(confNum);
 							}
 							
