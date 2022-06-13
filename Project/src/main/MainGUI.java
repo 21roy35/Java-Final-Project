@@ -91,6 +91,11 @@ public class MainGUI {
 	 */
 
 
+	/**
+	 * {@summary This method gets the current department selected in the GUI}
+	 * @param tree
+	 * @param me
+	 */
 	void getCurrentDepartment(JTree tree, MouseEvent me) {
 		try {
 			for(Department d : main.Department.getAllDepartments()) {
