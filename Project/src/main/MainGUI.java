@@ -152,19 +152,19 @@ public class MainGUI {
 								depTotal = depTotal + Integer.parseInt(confNum);
 							}
 
-							jtp.setText("Department name: "  + currDepartment.getName() + "\nNumber of student with resolved conflicts in " + tree.getLastSelectedPathComponent().toString() + ": " + depTotal + "\n"+
+							jtp.setText("Department name: "  + currDepartment.getName() + "\nCurrent unresolved conflicts: "+ main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size()+"\nNumber of student with resolved conflicts in " + tree.getLastSelectedPathComponent().toString() + ": " + depTotal + "\n"+
 									"Majors in this department: " + majors );
 						}
 					}
 					;}
 
 				else {
-					jtp.setText("All Students: " + main.Main.current_students.size() +"\n[Root] All students with resolved conflicts: \n" + String.valueOf(main.Main.conflictedStudents +
-							"\nFull sections count: \n" + main.FullSectionsException.allFullSectionsExceptions.size() + "\nUnavailable professors: \n" + main.NoAvailableProfessorException.allNoAvailableProfessorExceptions.size() + "\nFailed students number: \n"+
+					jtp.setText("All Students: " + main.Main.current_students.size() +"\nCurrent unresolved conflicts:  " +main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size()+ "\n[Root] All students with resolved conflicts: " + String.valueOf(main.Main.conflictedStudents +
+							"\nFull sections count: " + main.FullSectionsException.allFullSectionsExceptions.size() + "\nUnavailable professors: " + main.NoAvailableProfessorException.allNoAvailableProfessorExceptions.size() + "\nFailed students number: "+
 							main.Student.failed.size()) );
 				}}}
 		else {
-			jtp.setText("All students with conflicts including duplicates: \n" + String.valueOf(main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size()));
+			jtp.setText("All students with unresolved conflicts including duplicates: \n" + String.valueOf(main.StudentRegistrationConflictException.allStudentRegistrationConflictExceptions.size()));
 		}
 	}
 
